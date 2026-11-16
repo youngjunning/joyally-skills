@@ -1,0 +1,6 @@
+interface:
+  display_name: "Joyally Browser Extension Dev"
+  short_description: "开发和审查 Agent 驱动的浏览器扩展，守住运行器、Skill 与受保护工具的职责边界"
+  default_prompt: "Use $joyally-browser-extension-dev to design, implement, or review this browser extension change."
+policy:
+  allow_implicit_invocation: true

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-16
+
+1. 新增 `joyally-browser-extension-dev`：沉淀 Agent 驱动浏览器扩展的四层职责边界、语义变体处理、受保护工具设计、MV3 生命周期回归与交付验收，避免把按钮文案和业务流程写死在扩展脚本中。
+
 ## 2026-11-14
 
 1. 新增 `joyally-theme-creation`，以同内容对比检验主题的结构差异；要求组件具备主题自己的层级、细节和完整状态，不能只给 shadcn/ui 基础控件换色。Joyally Design 增加主题制作入口。

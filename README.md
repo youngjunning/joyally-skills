@@ -36,6 +36,7 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 | 你要解决的问题 | 从这里开始 |
 | --- | --- |
 | 判断产品方向、系统边界或 AI Agent 方案 | [top-architect](skills/engineering/top-architect/SKILL.md) |
+| 开发或评审 Agent 驱动的浏览器扩展，避免脚本写死业务流程 | [joyally-browser-extension-dev](skills/engineering/joyally-browser-extension-dev/SKILL.md) |
 | 向人说明进展、交付、排障或评审结论 | [joyally-report](skills/engineering/joyally-report/SKILL.md) |
 | 判断 AI 生成测试是否有用、清理测试套件负担 | [joyally-test-quality](skills/engineering/joyally-test-quality/SKILL.md) |
 | 开发或排障 Midway Web 服务 | [joyally-midway](skills/engineering/joyally-midway/SKILL.md) |
@@ -53,6 +54,7 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 | 技能 | 用途 |
 | --- | --- |
 | [top-architect](skills/engineering/top-architect/SKILL.md) | 业务产品判断、AI 架构与 Skill、Agent、数字员工交付 |
+| [joyally-browser-extension-dev](skills/engineering/joyally-browser-extension-dev/SKILL.md) | Agent 驱动浏览器扩展的 runtime、页面观察、业务 Skill 与受保护工具边界 |
 | [joyally-report](skills/engineering/joyally-report/SKILL.md) | 向人解释进展、结果、证据与下一步 |
 | [joyally-test-quality](skills/engineering/joyally-test-quality/SKILL.md) | 审查测试保护价值，保留、改写、删除或补充真正有用的测试 |
 | [joyally-midway](skills/engineering/joyally-midway/SKILL.md) | 常驻 Midway Web 应用的 Controller、Service、依赖注入、配置与 HTTP 验证；不含 FaaS |

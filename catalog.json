@@ -66,6 +66,12 @@
     "summary": "浏览器加载、资源与长会话性能审查"
   },
   {
+    "name": "joyally-browser-extension-dev",
+    "category": "engineering",
+    "path": "skills/engineering/joyally-browser-extension-dev",
+    "summary": "开发和评审 Agent 驱动的浏览器扩展，区分 runtime、页面观察、业务 Skill 与受保护工具边界"
+  },
+  {
     "name": "distill-me",
     "category": "productivity",
     "summary": "按证据蒸馏个人记录与资料，并参与项目方案管理",
