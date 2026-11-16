@@ -9,7 +9,7 @@ Joyally Design 的领域方法、专项参考、工具、素材与测试都在�
 改法已完全明确且没有新的设计判断时，直接按项目规则实施和验收；以下路径用于需要设计判断的任务。
 
 1. 读取项目指令、当前页面与用户目标，选择本次交付物和改动范围。读取 `../DESIGN_PROCESS.md` 的任务路由，再按下表读取本次领域与专项文件；不把整个 `references/` 目录一次性装入上下文。
-2. 先按[融合方法](fused-method.md#选择依据)从产品事实决定方向和组件基础，再按[token 契约](token-contract.md)与目标平台参考固定语义、状态和可读性。Joyally 品牌的七套主题是可选资产；选用景观主题时读[景观视觉规则](visual-language.md)，选用雪山时再读[雪山主题细则](alpine-snow-mountains.md)；选用香奈儿风时读[香奈儿风主题](fashion-xiaoxiang.md)及[20 张参考图](../assets/references/xiaoxiang/README.md)；选用太空时读[太空主题](space.md)。随包平台 token 完整实现青山湖预设，香奈儿风与太空另有浅色和深色语义样本；进入具体产品仍须映射组件并检查对比度。每轮留下结构、tokens、组件状态和验收证据。其他品牌沿用其现有设计系统。
+2. 先按[融合方法](fused-method.md#选择依据)从产品事实决定方向和组件基础，再按[token 契约](token-contract.md)与目标平台参考固定语义、状态和可读性。Joyally 品牌的八套主题是可选资产；选用景观主题时读[景观视觉规则](visual-language.md)，选用雪山时再读[雪山主题细则](alpine-snow-mountains.md)；选用香奈儿风时读[香奈儿风主题](fashion-xiaoxiang.md)及[20 张参考图](../assets/references/xiaoxiang/README.md)；选用太空时读[太空主题](space.md)；选用手绘时读[手绘主题](hand-drawn.md)及其 Looseleaf 来源记录。随包平台 token 完整实现青山湖预设，香奈儿风与太空另有浅色和深色语义样本，手绘提供浅色纸张语义样本与完整 registry 路径；进入具体产品仍须映射组件并检查对比度。每轮留下结构、tokens、组件状态和验收证据。其他品牌沿用其现有设计系统。
 3. 用户本轮要求、项目现有约束和平台行为决定可改范围、确认点、构建与发布。阶段确认点只在确有必要时使用；用户已授权的工作继续完成。用户已授权直接实施时完成到验收；需要独立评审且当前环境允许时可按对应评审材料与派发方法执行。
 4. Web/HTML 的对比页、截图、素材与规范校验可使用本目录工具；macOS、iOS、Android、React Native 的画面与交互验收仍用对应平台工具。报告、HTML PPT 与图表分别用 Joyally Design 的 `report`、`deck` 和 `diagram` 命令。工具输出是证据，需亲自看画面并核对真实操作。
 
@@ -28,8 +28,8 @@ Joyally Design 的领域方法、专项参考、工具、素材与测试都在�
 | 单个组件深度打磨 | `component.md` | 在真实尺寸与状态中打磨；工作区组件同时服从 `direction-workspace.md` 的组件规则 |
 | Chrome 扩展图标制作或精修 | `chrome-extension-icon.md` | 以工具栏实际显示尺寸判断识别度；生成源图时调用 `joyally-image` |
 | React Web 中后台 | `react-design-system.md` 与 `web-dashboard.md`；再读 `direction-workspace.md` | 新建项目使用 Next.js App Router；Joyally 自有中后台使用完整 shadcn/ui 基础；存量项目沿用现有架构和组件；H5、Chrome 扩展和 React Native 按各自平台路径 |
-| H5 页面 | `h5-ui.md`；按内容领域读取对应参考 | 以 daisyUI 作为默认组件基础，保留项目框架和交互合同 |
-| Chrome 扩展页面或独立窗口 | `chrome-extension-ui.md`；工作区界面再读 `direction-workspace.md` | 以 daisyUI 作为默认组件基础，按扩展打包与实际入口验收 |
+| H5 页面 | `h5-ui.md`；React 项目再读 `component-workflow.md`；按内容领域读取对应参考 | Joyally 自有 React 新界面以 shadcn/ui 为基础，非 React 或存量项目保留现有组件与交互合同 |
+| Chrome 扩展页面或独立窗口 | `chrome-extension-ui.md`；React 项目再读 `component-workflow.md`；工作区界面再读 `direction-workspace.md` | Joyally 自有 React 新界面以 shadcn/ui 为基础，并按扩展打包、CSP 与实际入口验收 |
 | 新界面方向未定 | 适用领域入口；领域未覆盖时 `design-direction.md` | 用真实产品事实与参考形成可落地方向；默认深化一个 |
 | 用户要求多方向或版式比较 | `task-explore.md`、`style-explorer.md` | 固定内容、主任务与 Joyally 品牌语义，比较结构、图像、密度或获准的变量 |
 | 去 AI 味、去模板感或检查生成界面 | `anti-ai-taste.md`；按页面领域继续读对应入口 | 从实际任务和画面定位问题，保留有语义的视觉表达 |

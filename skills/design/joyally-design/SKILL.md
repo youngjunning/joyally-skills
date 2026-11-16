@@ -9,7 +9,7 @@ description: 所有 UI 设计相关任务使用 Joyally Design，包括 Web/Reac
 
 先由用户任务、现有产品和品牌决定界面，再选领域设计方法、组件基础与视觉方向。页面用途先区分中后台与落地页：中后台支持持续的查找、处理与确认，落地页向访客介绍价值并引导下一步。这是界面任务分类，不是前后端架构或部署边界；同一网站可以同时包含两者。通过任务路径、视觉构思、存量改造和真实画面走查形成与检验方案；语义 tokens、跨平台组件状态、主题资产、报告与交互图表能力按任务使用。逐项说明采用什么、保留什么，以及依据。
 
-Joyally Design 是跨平台的设计方法与实现契约：从产品目标、读者、品牌和使用情境出发，形成语义 tokens、组件行为、内容层级和可验证的交付。当前七套并列主题为「青山湖」「西湖」「苏州园林」「马尔代夫」「阿尔卑斯雪山」、[香奈儿风](references/fashion-xiaoxiang.md)与[太空](references/space.md)。青山湖正在按四季各 5 张授权实拍重建参考画册，已核实数量和缺口见[参考目录](assets/references/qingshan-lake/README.md)；其余六套主题各有 20 张可追溯的真实参考画面。前五套按[景观视觉规则](references/visual-language.md)观察地点，香奈儿风观察包袋、山茶花、巴黎夜景、服装细节与编辑呈现；太空主题从真实拍摄与观测影像中的轨道、行星地平线和空间关系建立视觉方向；多帧拼接或科学波段着色需说明。七套共用操作语义、组件状态与可读性契约。既有参考画面位于[青山湖](assets/references/qingshan-lake/README.md)、[西湖](assets/references/west-lake/README.md)、[苏州园林](assets/references/suzhou-gardens/README.md)、[马尔代夫](assets/references/maldives/README.md)、[阿尔卑斯雪山](assets/references/alpine-snow-mountains/README.md)、[香奈儿风](assets/references/xiaoxiang/README.md)与[太空](assets/references/space/README.md)；苏州园林同时包含[留园画面](assets/references/lingering-garden/README.md)。服务其他品牌时保留设计方法和语义契约，视觉按该品牌派生。方法的唯一维护源为本目录；三位角色的参考素材随包保留，产品服务和上传配置由使用项目管理。
+Joyally Design 是跨平台的设计方法与实现契约：从产品目标、读者、品牌和使用情境出发，形成语义 tokens、组件行为、内容层级和可验证的交付。当前八套并列主题为「青山湖」「西湖」「苏州园林」「马尔代夫」「阿尔卑斯雪山」、[香奈儿风](references/fashion-xiaoxiang.md)、[太空](references/space.md)与[手绘](references/hand-drawn.md)。青山湖正在按四季各 5 张授权实拍重建参考画册，已核实数量和缺口见[参考目录](assets/references/qingshan-lake/README.md)；西湖、苏州园林、马尔代夫、阿尔卑斯雪山、香奈儿风与太空各有 20 张可追溯参考画面。前五套按[景观视觉规则](references/visual-language.md)观察地点，香奈儿风观察包袋、山茶花、巴黎夜景、服装细节与编辑呈现；太空主题从真实拍摄与观测影像中的轨道、行星地平线和空间关系建立视觉方向；多帧拼接或科学波段着色需说明。手绘主题以 [Looseleaf](https://github.com/kevintngo/looseleaf) 的完整 shadcn registry、纸笔视觉语法和可访问状态为实现来源，核对记录见[来源目录](assets/references/looseleaf/README.md)。八套共用操作语义、组件状态与可读性契约。既有参考画面位于[青山湖](assets/references/qingshan-lake/README.md)、[西湖](assets/references/west-lake/README.md)、[苏州园林](assets/references/suzhou-gardens/README.md)、[马尔代夫](assets/references/maldives/README.md)、[阿尔卑斯雪山](assets/references/alpine-snow-mountains/README.md)、[香奈儿风](assets/references/xiaoxiang/README.md)与[太空](assets/references/space/README.md)；苏州园林同时包含[留园画面](assets/references/lingering-garden/README.md)。服务其他品牌时保留设计方法和语义契约，视觉按该品牌派生。方法的唯一维护源为本目录；三位角色的参考素材随包保留，产品服务和上传配置由使用项目管理。
 
 当用户明确需要小界、小萌或小南时，按[角色参考素材](references/character-assets.md)取用随包全身像、上半身图与头像；通用设计不默认植入角色。
 
@@ -35,13 +35,13 @@ Joyally Design 是跨平台的设计方法与实现契约：从产品目标、�
 | iPhone / iPad | [iOS](references/ios.md) |
 | Android 原生 App / Compose | [Android](references/android.md)；使用 Jetpack Compose Material 3 |
 | React Native / Expo | [React Native](references/react-native.md) |
-| H5 页面 | [H5 界面](references/h5-ui.md)；Joyally 自有新界面使用 daisyUI，其他项目沿用现有组件基础 |
-| 中后台／工作台（React Web） | 新建中后台使用 Next.js App Router，按[官方安装文档](https://nextjs.org/docs/app/getting-started/installation)建立项目；读 [React](references/react-design-system.md) 与[工作台](references/web-dashboard.md)。Joyally 自有中后台以完整 shadcn/ui 为基础，可按任务加入 Magic UI 或 React Bits 组件；存量项目沿用现有架构和组件，框架迁移单独评估 |
+| H5 页面 | [H5 界面](references/h5-ui.md)；Joyally 自有 React 新界面使用 shadcn/ui，非 React 或存量项目沿用现有组件基础 |
+| 中后台／工作台（React Web） | 新建中后台使用 Next.js App Router，按[官方安装文档](https://nextjs.org/docs/app/getting-started/installation)建立项目；读 [React](references/react-design-system.md) 与[工作台](references/web-dashboard.md)。Joyally Design 的 React Web 主组件体系为完整 shadcn/ui，可按任务加入 Magic UI 或 React Bits 组件；存量项目沿用现有架构和组件，框架迁移单独评估 |
 | 落地页（含官网首页、产品介绍页） | [Landing page](references/web-landing-page.md)；按实际平台选组件基础，需要展示或交互动效时再考虑 Magic UI、React Bits；制作产品界面演示、Banner 或 Bento 展示素材时读 [StageShow 接入](references/stageshow.md) |
-| Chrome 扩展界面 | [扩展界面](references/chrome-extension-ui.md)；Joyally 自有新界面使用 daisyUI，其他项目沿用现有组件基础 |
+| Chrome 扩展界面 | [扩展界面](references/chrome-extension-ui.md)；Joyally 自有 React 新界面使用 shadcn/ui，非 React 或存量扩展沿用现有组件基础 |
 | Chrome 扩展图标 | [扩展图标](references/chrome-extension-icon.md) |
 
-按交付场景选组件基础：React 实现的 H5 页面仍按 H5 路径使用 daisyUI，React 实现的 Chrome 扩展仍按扩展路径使用 daisyUI；React Native 使用原生移动端路径。其他项目已有组件体系先沿用并按获准范围升级。
+按交付场景选组件基础：Joyally Design 的 React Web 主组件体系统一为 shadcn/ui，H5 与 Chrome 扩展的 React 新界面仍按各自平台路径处理触控、尺寸、CSP 和打包；非 React 页面、React Native 与其他原生平台沿用对应组件基础。其他项目已有组件体系先沿用并按获准范围升级。
 
 移动端保留原生触控热区与字体缩放；桌面根据任务选择信息密度。先布局与层级，再语义颜色、表面、组件状态，最后加入品牌氛围与动效。原生示例和随包湖色预设见 [平台视觉参考](references/native-visual-system.md)。
 
@@ -75,11 +75,11 @@ Joyally Design 是跨平台的设计方法与实现契约：从产品目标、�
 
 ## 设计契约
 
-内容和可读性先于氛围。正文、表格、日志与证据使用足够清晰的表面；品牌色、材质、字体与图像由具体项目确定。Joyally 品牌先按任务和已有品牌环境选择视觉主题；选用前五套景观主题时读[景观视觉规则](references/visual-language.md)，选用香奈儿风时读[香奈儿风主题](references/fashion-xiaoxiang.md)和[参考画面](assets/references/xiaoxiang/README.md)，选用太空时读[太空主题](references/space.md)。选用阿尔卑斯雪山时读[雪山主题细则](references/alpine-snow-mountains.md)，[平台视觉参考](references/native-visual-system.md)提供现有青山湖预设的具体映射。青山湖从四季画面提炼一套主题，不按季节切换；随包青瓷釉和玻璃 token 是该主题的材质样本。香奈儿风与太空分别提供独立的浅色与深色[语义 token 样本](assets/xiaoxiang-theme.tokens.json)和[语义 token 样本](assets/space-theme.tokens.json)。其他主题进入产品时要完整映射相同语义 token 并验证。其他项目从自身品牌素材派生视觉语言。图表与报告共用语义配色。避免嵌套玻璃卡片、持续装饰动画与颜色单独表示状态。
+内容和可读性先于氛围。正文、表格、日志与证据使用足够清晰的表面；品牌色、材质、字体与图像由具体项目确定。Joyally 品牌先按任务和已有品牌环境选择视觉主题；选用前五套景观主题时读[景观视觉规则](references/visual-language.md)，选用香奈儿风时读[香奈儿风主题](references/fashion-xiaoxiang.md)和[参考画面](assets/references/xiaoxiang/README.md)，选用太空时读[太空主题](references/space.md)，选用手绘时读[手绘主题](references/hand-drawn.md)并让 React Web 的完整组件基线来自 Looseleaf umbrella registry。选用阿尔卑斯雪山时读[雪山主题细则](references/alpine-snow-mountains.md)，[平台视觉参考](references/native-visual-system.md)提供现有青山湖预设的具体映射。青山湖从四季画面提炼一套主题，不按季节切换；随包青瓷釉和玻璃 token 是该主题的材质样本。香奈儿风与太空分别提供独立的浅色与深色[语义 token 样本](assets/xiaoxiang-theme.tokens.json)和[语义 token 样本](assets/space-theme.tokens.json)；手绘提供与 Looseleaf 官方浅色纸张体系对应的[语义 token 样本](assets/hand-drawn-theme.tokens.json)，深色模式须在目标项目另行完成变量、组件和对比度验收。其他主题进入产品时要完整映射相同语义 token 并验证。其他项目从自身品牌素材派生视觉语言。图表与报告共用语义配色。避免嵌套玻璃卡片、持续装饰动画与颜色单独表示状态。
 
 新建界面在写 UI 或生成效果图前，先按[反模板感检查](references/anti-ai-taste.md)的“生成前约束”锁定产品对象、首屏主角与动作、视觉方向和要避免的无职责模板元素；将这些约束与界面需求一起交给生成工具。精修时先从实际画面定位问题，不凭风格标签重起方向。交付前再按同一检查核对任务焦点、内容顺序、容器职责、装饰语义、示例数据与状态反馈。把“AI 味”当作需要定位的可观察问题，不用颜色、圆角或渐变推断界面来源；具体问题和改法对照同一内容与视口验证。
 
-语义 tokens 分为 seed、map、alias、component。Ant Design 提供分层与密度参考，Material 3 提供语义状态角色，Radix 提供无障碍行为，shadcn/ui 提供开放组件基础。Joyally 自有新建 React 中后台以完整 shadcn/ui 基础组件集建立组件库；其他项目先沿用现有组件并按任务补齐。Data Table、Date Picker 等可由基础组件组合，保留升级路径。Magic UI 借鉴 shadcn/ui，React Bits 提供可定制动画与微交互；两者都可通过 shadcn CLI 按组件接入 React 项目，官网与中后台均按任务选用。安装、许可、操作状态和动效验收见 [React 组件工作流](references/component-workflow.md)。H5 与 Chrome 扩展使用 daisyUI 时，可按项目构建条件选择 Tailwind CSS 4 插件或本地打包独立 CSS。
+语义 tokens 分为 seed、map、alias、component。Ant Design 提供分层与密度参考，Material 3 提供语义状态角色，Radix 提供无障碍行为，shadcn/ui 是 Joyally Design 的 React Web 主组件体系。Joyally 自有 React 新界面以完整 shadcn/ui 基础组件集建立组件库；手绘主题使用接口兼容的 Looseleaf 完整 registry 替换该基线，而不是只给部分控件加装饰。其他项目先沿用现有组件并按任务补齐。Data Table、Date Picker 等可由基础组件组合，保留升级路径。Magic UI 借鉴 shadcn/ui，React Bits 提供可定制动画与微交互；两者都可通过 shadcn CLI 按组件接入 React 项目，官网与中后台均按任务选用。安装、许可、操作状态和动效验收见 [React 组件工作流](references/component-workflow.md)。
 
 页面按任务组织上下文、局部工具、主要内容与支持信息。只保留一个稳定标题层；selected、focus、loading 不推动布局。组件覆盖 default、hover、pressed、selected、focus、disabled、loading、empty、error、success，以及窄屏、reduced motion 和打印状态。
 

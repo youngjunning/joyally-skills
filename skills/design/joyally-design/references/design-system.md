@@ -1,6 +1,6 @@
 # Joyally Design: design system and bundled preset
 
-Joyally Design supplies a cross-platform method for hierarchy, semantic tokens, component behavior, and evidence-rich reports. Chinese-inspired, landscape, fashion-led, and [space-inspired](space.md) aesthetics may coexist or be combined for a product. The documented [landscape direction](visual-language.md) includes Qingshan Lake, West Lake, Suzhou Gardens, Lingering Garden, Maldives, and [Alpine Snow Mountains](alpine-snow-mountains.md) as equal scene themes. The bundled [tokens](../assets/joyally-design.tokens.json) and HTML theme currently implement a Qingshan Lake preset; other themes and directions need their own mapping while retaining semantic roles and validation. Another brand may provide its own token values and theme. Ant Design, Material 3, Radix Primitives, shadcn/ui, Tailwind CSS, and Magic UI each contribute a bounded implementation strength.
+Joyally Design supplies a cross-platform method for hierarchy, semantic tokens, component behavior, and evidence-rich reports. Chinese-inspired, landscape, fashion-led, [space-inspired](space.md), and [hand-drawn](hand-drawn.md) aesthetics may coexist or be combined for a product. The documented [landscape direction](visual-language.md) includes Qingshan Lake, West Lake, Suzhou Gardens, Lingering Garden, Maldives, and [Alpine Snow Mountains](alpine-snow-mountains.md) as equal scene themes. The bundled [tokens](../assets/joyally-design.tokens.json) and HTML theme currently implement a Qingshan Lake preset; other themes and directions need their own mapping while retaining semantic roles and validation. Another brand may provide its own token values and theme. shadcn/ui is the React Web main component system; Ant Design, Material 3, Radix Primitives, Tailwind CSS, Looseleaf and Magic UI each contribute a bounded implementation strength.
 
 ## Design character
 
@@ -58,6 +58,7 @@ Joyally Design uses a multi-reference approach. Each reference system contribute
 | Material 3 | Semantic roles, tonal surface relationships, state layers, motion and accessibility | Clear state layers and appropriate tonal contrast on the chosen surfaces |
 | Radix Primitives | Keyboard behavior, focus management, WAI-ARIA patterns, overlay logic | Shared primitives must remain operable before styling is applied |
 | shadcn/ui | Open component source, composition, predictable local APIs | Components stay editable in `components/ui` and use explicit variants |
+| Looseleaf | Complete hand-drawn shadcn/ui-compatible component set | The hand-drawn theme uses its umbrella registry for the whole React Web baseline, not as isolated ornament |
 | Tailwind CSS | Theme variables and utility composition | Alias tokens exposed through `@theme`; utilities express layout |
 | Magic UI | 借鉴 shadcn/ui 的 React 组件集合，可用于官网与中后台的合适场景 | 通过 shadcn CLI 从 Magic UI registry 按需安装，映射项目 tokens 并验收操作状态；动效保持可降级 |
 | React Bits | React 动画组件、文字效果、背景与微交互 | 在目标应用中按组件选用并映射 tokens；核对许可、依赖、性能与减少动态效果状态 |

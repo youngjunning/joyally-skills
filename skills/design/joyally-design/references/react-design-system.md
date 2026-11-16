@@ -1,6 +1,6 @@
 # Joyally Design React design system reference
 
-Joyally Design 在 React Web 项目中提供可复用的语义与状态约束，页面视觉先由当前产品决定。新建中后台使用 Next.js App Router，按[官方安装文档](https://nextjs.org/docs/app/getting-started/installation)核对当前要求；存量项目沿用已有框架，迁移作为独立工程任务评估。Joyally 自有新建中后台以完整的 [shadcn/ui 官方组件集](https://ui.shadcn.com/docs/components)为基础，使用 CLI 的 `add --all` 获取本地源码，再接入自身语义 tokens、状态与页面组合。其他项目先沿用已有组件，仅按任务补齐；不因使用 Joyally 方法而迁移整套组件。Data Table、Date Picker 等复合控件可在选定基础上组合，不从零重写已有输入、弹窗和导航。Magic UI 与 React Bits 可按需用于中后台与展示页，具体组件需满足所在页面的操作、状态和可访问性要求；来源与许可按 [React 组件工作流](component-workflow.md)核对。保留项目原有的品牌、业务术语、路由和交互合同。H5、Chrome 扩展和 React Native 按各自平台路径选择组件。
+Joyally Design 在 React Web 项目中提供可复用的语义与状态约束，页面视觉先由当前产品决定。shadcn/ui 是 Joyally Design 的 React Web 主组件体系，覆盖中后台、展示页、H5 和 Chrome 扩展；新建中后台使用 Next.js App Router，按[官方安装文档](https://nextjs.org/docs/app/getting-started/installation)核对当前要求，其他 React Web 载体沿用适合其构建与发布环境的框架。Joyally 自有 React 新界面以完整的 [shadcn/ui 官方组件集](https://ui.shadcn.com/docs/components)为基础，使用 CLI 的 `add --all` 获取本地源码，再接入自身语义 tokens、状态与页面组合；[手绘主题](hand-drawn.md)改用 Looseleaf 完整 registry 提供同接口组件。其他项目先沿用已有组件，仅按任务补齐；不因使用 Joyally 方法而迁移整套组件。Data Table、Date Picker 等复合控件可在选定基础上组合，不从零重写已有输入、弹窗和导航。Magic UI 与 React Bits 可按需用于中后台与展示页，具体组件需满足所在页面的操作、状态和可访问性要求；来源与许可按 [React 组件工作流](component-workflow.md)核对。保留项目原有的品牌、业务术语、路由和交互合同。非 React 页面和 React Native 按各自平台路径选择组件。
 
 下文的湖景配色、青瓷釉、玻璃和固定尺寸是 Joyally 青山湖预设的实现样本。其他 Joyally 主题和外部产品复用语义层级、组件状态与验收方法，具体色彩、材质、布局和组件范围由目标项目决定。
 
@@ -50,6 +50,7 @@ Style and mood are separate peer-level creative descriptors layered above these 
 | Semantic roles, state layers, and tonal surfaces | Material 3 | Make selected, hover, pressed, disabled, and focus states explicit and composable |
 | Keyboard, focus, overlay, and WAI-ARIA behavior | Radix Primitives | Preserve primitive behavior and accessible names before adding brand styling |
 | Source ownership and composition | shadcn/ui | Keep primitives open in `components/ui`; use `cn` and `cva` for variants |
+| Complete hand-drawn component baseline | Looseleaf | Replace the full shadcn/ui baseline through the umbrella registry; keep APIs and local source ownership |
 | Token-to-utility implementation | Tailwind CSS 4 | Use `@theme` namespaces and semantic utilities; document measured exceptions |
 | Middle/back office component baseline | shadcn/ui CLI | Install the full available component set, then validate inventory, token mapping and interaction states |
 | Task-specific components and emphasis motion | Magic UI + React Bits | Select suitable admin or display components from their registries; map tokens and verify states, dependencies, licensing, and reduced-motion fallback |
@@ -59,7 +60,7 @@ These references are complementary. Do not merge their APIs into a new abstracti
 
 ## Complete middle/back office component baseline
 
-For a new Joyally-owned React admin system, initialize shadcn/ui for the project's existing React and Tailwind setup, then run its official CLI with `add --all`. Check the generated source inventory against the CLI result; do not describe a handful of styled examples as a complete library. Keep the installed components locally owned and updateable through the shadcn/ui registry. For other products, start with their existing component foundation and install only what the task requires.
+For a new Joyally-owned React Web system, initialize shadcn/ui for the project's existing React and Tailwind setup, then run its official CLI with `add --all`. Check the generated source inventory against the CLI result; do not describe a handful of styled examples as a complete library. Keep the installed components locally owned and updateable through the shadcn/ui registry. When the hand-drawn theme is selected, use `@looseleaf/looseleaf` instead of mixing default shadcn files with hand-styled exceptions; verify the umbrella registry covers all 123 current `registry:ui` entries before calling the theme complete. For other products, start with their existing component foundation and install only what the task requires.
 
 Map the whole baseline to Joyally semantic roles: background and surfaces, foreground and muted text, primary and secondary actions, destructive and status colors, input and border, ring, radius, chart series, and sidebar. Scope theme variables to the intended app root and include overlays portaled to the document body. A theme switch must reach Button, Input, Select, Dialog, Table, Sidebar, Toast and their focus, disabled and error states together.
 
@@ -180,6 +181,7 @@ Use semantic HTML without allowing browser defaults to destabilize compact layou
 4. Use component tokens for local density or geometry changes. Do not fork a global semantic token to fix one page.
 5. Arbitrary Tailwind values are reserved for measured one-off geometry, imported media, or a documented visual exception; repeated values graduate into tokens.
 6. Functional affordance icons must retain an accessible name and stable geometry. Branded, navigation, or illustrative icon artwork follows the project's joyally-image workflow; do not replace that artwork with a generic utility icon.
+7. The hand-drawn theme is a whole-baseline variant: use Looseleaf components, ink engine, fonts and tokens together. A page that mixes default shadcn geometry with a few Looseleaf controls is an incomplete migration, not a supported theme state.
 
 ### Magic UI component rules
 

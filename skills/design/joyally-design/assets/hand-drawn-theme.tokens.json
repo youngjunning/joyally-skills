@@ -1,0 +1,52 @@
+{
+  "name": "Joyally Design 手绘主题样本",
+  "direction": "hand-drawn",
+  "theme": "looseleaf",
+  "version": "1.0.0",
+  "format": "semantic-value-sample",
+  "source": {
+    "project": "Looseleaf",
+    "url": "https://github.com/kevintngo/looseleaf",
+    "commit": "4bdb647940e2fefb3cebb394f3bad25c766a27d2",
+    "license": "MIT",
+    "verifiedAt": "2026-11-17"
+  },
+  "supportedModes": ["light"],
+  "semantic": {
+    "light": {
+      "background": "#A8C8BB",
+      "surface": "#F8F5EE",
+      "surfaceStrong": "#FBF8F1",
+      "surfaceMuted": "#ECE6DA",
+      "text": "#2A2420",
+      "textSecondary": "#4A423B",
+      "textTertiary": "#5A554E",
+      "primary": "#DF6B3C",
+      "primaryHover": "#A4502A",
+      "primaryAction": "#DF6B3C",
+      "onPrimaryAction": "#2A2420",
+      "primaryContainer": "#F8DC4C",
+      "onPrimaryContainer": "#2A2420",
+      "success": "#3B7A4B",
+      "warning": "#A4502A",
+      "error": "#C2412D",
+      "info": "#2C4F9E",
+      "border": "#8E887F",
+      "focus": "#2C4F9E"
+    }
+  },
+  "component": {
+    "foundation": "shadcn/ui via Looseleaf umbrella registry",
+    "registry": "@looseleaf/looseleaf",
+    "verifiedComponentCount": 123,
+    "headingFont": "Kevin Sans Script with licensed CJK fallback",
+    "bodyFont": "Kevin Sans Hand with licensed CJK fallback",
+    "codeFont": "IBM Plex Mono",
+    "outlineWidth": "1.7px",
+    "cornerRadius": "3px",
+    "focusWidth": "3px",
+    "minimumTarget": "24px",
+    "defaultTarget": "40px",
+    "texture": "paper, pencil, ink, tape and grain outside dense reading surfaces"
+  }
+}
