@@ -12,6 +12,12 @@
 | 状态 | success / warning / error | 不仅靠颜色表达 |
 | 深色 | darkBackground / darkSurface / onDark | 平台深色实现映射到同一角色 |
 
+## 前景与背景成对
+
+颜色角色以可见配对交付，不把前景色当作能跨表面继承的独立装饰。组件的每个变体和状态都记录实际 `foreground / background / border / focus` 配对；局部覆盖背景时，在同一作用域同时指定匹配的前景色。浅色、半透明、渐变或图片表面使用深色前景，深色表面使用浅色前景，最终以运行时合成后的颜色为准。
+
+默认、hover、pressed、selected、focus、disabled 和 loading 分别核对。普通文字至少 4.5:1；大字、功能图标和控件可见边界至少 3:1。disabled 虽可不计入 WCAG 文本要求，Joyally 仍以 3:1 作为标签辨认底线，并说明状态和恢复条件；白字配浅色表面、深色字配深色表面均视为未完成。半透明组件必须在它实际覆盖的最亮、最暗代表背景上分别检查，不能只验证 token 源色或组件脱离页面时的样子。
+
 ## 预设与平台适配
 
 - `assets/joyally-design.tokens.json` 与 `assets/joyally-report-theme.css`：报告和 React 的完整分层、青山湖主题与材质契约；四季画面共同提供取色与构图依据。

@@ -1367,9 +1367,14 @@ body::before{content:"";position:absolute;left:0;top:0;width:12px;height:12px;ba
 .seg-label{position:relative;color:#fff}
 .pseudo-seg{position:relative;display:inline-block;padding:8px 16px;color:#fff}
 .pseudo-seg::before{content:"";position:absolute;inset:0;background:#111;border-radius:8px;z-index:-1}
+.pale-action{position:relative;border:0;padding:10px 16px;background:#f1f1ed;color:#fff}
+.pale-action::before{content:"";position:absolute;inset:0;background:#ffffff22;border-radius:8px}
+.pale-action span{position:relative}
 </style></head><body>
-<p class="soft">Secondary text at about 3.5 to 1 contrast is spared by the 3.0 floor.</p>
-<p class="low">Body text at about 2.3 to 1 contrast still fails the 3.0 floor.</p>
+<button class="pale-action"><span>Start lesson</span></button>
+<button class="pale-action" disabled><span>Unavailable lesson</span></button>
+<p class="soft">Secondary text at about 3.5 to 1 contrast fails the 4.5 floor.</p>
+<p class="low">Body text at about 2.3 to 1 contrast fails the 4.5 floor.</p>
 <p class="faint">Body text at 1.16 to 1 on a plain white background must also be reported.</p>
 <p class="faint-tiny">这是一段在白底上几乎看不见而且字号过小、行高过紧的多行中文正文，用来验证极低对比度不会跳过排版检查。</p>
 <div class="seg"><span class="seg-pill"></span><span class="seg-label">Active Tab</span></div>
@@ -1379,7 +1384,9 @@ body::before{content:"";position:absolute;left:0;top:0;width:12px;height:12px;ba
         self.shoot(output, "--size", "1280x800")
         lint = {item["rule"]: item for item in json.loads((output / "report.json").read_text(encoding="utf-8"))[0]["lint"]}
         self.assertIn("contrastLow", lint)
-        self.assertEqual(lint["contrastLow"]["count"], 3)
+        self.assertEqual(lint["contrastLow"]["count"], 6)
+        self.assertTrue(any("Start lesson" in example for example in lint["contrastLow"]["examples"]))
+        self.assertTrue(any("Unavailable lesson" in example for example in lint["contrastLow"]["examples"]))
         self.assertIn("smallText", lint)
         self.assertIn("tightLeading", lint)
 

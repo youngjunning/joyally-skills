@@ -806,7 +806,7 @@ async function check() {
 // 在页面里运行，不能引用外层变量。
 function lintPage() {
   const RULES = {
-    contrastLow: { tier: "floor", label: "文字对比度不达标（正文低于 3:1，大字低于 2.5:1）" },
+    contrastLow: { tier: "floor", label: "文字对比度不达标（普通文字低于 4.5:1，大字或禁用态低于 3:1）" },
     stuck: { tier: "floor", label: "首屏有内容停在透明状态（出场动画没触发？）" },
     smallText: { tier: "reflex", label: "正文小于 11px" },
     tightLeading: { tier: "reflex", label: "多行正文行高过紧" },
@@ -941,7 +941,7 @@ function lintPage() {
 
   for (const el of texts) {
     const s = css(el), r = el.getBoundingClientRect();
-    if (el.closest("button:disabled,[disabled],[aria-disabled='true'],input,textarea,select,option")) continue;
+    if (el.closest("input,textarea,select,option")) continue;
     const size = parseFloat(s.fontSize);
     let alpha = 1;
     for (let node = el; node && node.nodeType === 1; node = node.parentElement) alpha *= parseFloat(css(node).opacity);
@@ -951,9 +951,12 @@ function lintPage() {
       const color = over({ ...fg, a: fg.a * alpha }, bg);
       const contrast = ratio(color, bg);
       const large = size >= 24 || (size >= 18.6 && parseInt(s.fontWeight, 10) >= 700);
+      const disabled = el.closest("button:disabled,[disabled],[aria-disabled='true']");
+      const interactive = el.closest("a[href],button,[role='button'],[role='link'],summary");
       // 低于 1.5:1 且背后垫着非祖先底板或伪元素（滑块、绝对定位胶囊）时，不误报对比度；确定底色上的极低对比度照常报错
-      if (!(contrast < 1.5 && hasOverlayPlate(el, r))) {
-        if (contrast < (large ? 2.5 : 3.0)) add("contrastLow", el, contrast.toFixed(2) + ":1");
+      // 可交互控件不能借叠层豁免：按钮、链接的文字必须按当前可计算背景直接过门禁。
+      if (!(contrast < 1.5 && hasOverlayPlate(el, r) && !interactive)) {
+        if (contrast < (large || disabled ? 3.0 : 4.5)) add("contrastLow", el, contrast.toFixed(2) + ":1");
       }
     }
     // 正文：两行以上的段落
