@@ -1,16 +1,16 @@
 ---
 name: macos-app-develop
-description: Design, implement, review, refactor, debug, and profile native macOS applications with SwiftUI or AppKit using a bundled Qingshan Lake visual system. Use for macOS windows, panels, sheets, popovers, menus, sidebars, toolbars, controls, focus, accessibility, state management, view composition, lists, localization, animation, performance, Instruments traces, Sequoia/Tahoe compatibility, or making an app feel like a polished Mac citizen without relying on project-local design documentation.
+description: Implement, review, refactor, debug, and profile native macOS applications with SwiftUI or AppKit. Use for macOS API availability, windows and scenes, state management, view composition, lists, focus, localization, animation, performance, Instruments traces, and platform compatibility; use Joyally Design for visible UI design decisions.
 ---
 
 # macOS App Development
 
-Build a good Mac citizen whose SwiftUI implementation is correct, efficient, accessible, and visually coherent. Apply the bundled Qingshan Lake direction as an implementation contract unless the user explicitly chooses another visual system.
+Build a good Mac citizen whose SwiftUI implementation is correct, efficient, accessible, and compatible with the repository deployment target. Joyally Design owns product visual direction, semantic tokens, component appearance, and visual acceptance; this Skill owns the macOS engineering implementation.
 
 ## Operating rules
 
 1. Preserve native macOS behavior: menus, keyboard access, focus, window management, text editing, Services, VoiceOver, and control roles.
-2. Do not confuse native behavior with default appearance. Keep control semantics while applying the product's palette, surfaces, focus treatment, and states.
+2. Preserve native behavior while implementing the active product design contract; do not invent a visual system inside the engineering layer.
 3. Read `references/latest-apis.md` before SwiftUI implementation or review. Confirm macOS availability; do not infer it from an iOS version number.
 4. Prefer SwiftUI for new UI. Bridge to AppKit only for capabilities SwiftUI cannot provide, and keep the bridge narrow.
 5. Separate business logic from view rendering without imposing a named architecture.
@@ -23,8 +23,7 @@ Build a good Mac citizen whose SwiftUI implementation is correct, efficient, acc
 
 - Read repository instructions, deployment target, shared design tokens, and existing components.
 - Identify the app archetype, window model, primary commands, data ownership, and accessibility path.
-- Read `references/qingshan-lake-swiftui.md` before changing any visible surface. It is self-contained and does not require repository-local design files.
-- If the repository also contains a Qingshan Lake document or shared palette, treat it as a project-specific extension and preserve its stricter rules.
+- For any visible surface, read global `~/.codex/skills/joyally-design/SKILL.md` and its macOS, token, and validation references. Treat that design contract and the repository's existing components as the visual source of truth.
 - Read the actual deployment target. Do not introduce unguarded APIs from a newer macOS release, including Liquid Glass.
 
 ### 2. Route the task
@@ -33,8 +32,7 @@ Read every reference relevant to the task:
 
 | Topic | Reference |
 |---|---|
-| Native macOS design and release rubric | `references/macos-design-guide.md` |
-| Qingshan Lake controls and visual audit | `references/qingshan-lake-swiftui.md` |
+| Native macOS design, tokens, component states, and visual acceptance | global `~/.codex/skills/joyally-design/SKILL.md` plus its `references/macos.md`, `references/token-contract.md`, and `references/validation.md` |
 | Modern and deprecated APIs | `references/latest-apis.md`, `references/soft-deprecation.md` |
 | State management and data flow | `references/state-management.md` |
 | View composition, invalidation, and UI responsiveness | `references/view-structure.md`, `references/performance-patterns.md` |
@@ -79,29 +77,11 @@ For a new feature:
 - For visual work, inspect every changed state on a light background before handoff.
 - For performance claims, attach trace evidence or clearly mark the claim as a hypothesis.
 
-## Qingshan Lake visual contract
+## UI design boundary
 
-Treat Qingshan Lake as the default visual direction unless the user explicitly supplies another system.
+For visible UI work, Joyally Design decides theme, tokens, information hierarchy, component states, materials, and visual evidence. This Skill implements that contract with correct SwiftUI/AppKit semantics, availability guards, state ownership, focus, accessibility, and performance. Existing project tokens and components remain product facts; neither Skill silently replaces them.
 
-Before editing UI:
-
-1. Search for existing design tokens, surface metrics, and styled controls. If none exist, create a shared palette from the exact standalone tokens in `references/qingshan-lake-swiftui.md`.
-2. Inventory every touched button, picker, toggle, text field, editor, focus ring, sheet, alert, popover, menu, context menu, toast, loading state, empty state, and error state.
-3. Reuse shared styles before creating wrappers or new tokens.
-
-### Hard gates
-
-- Do not ship a bare `.segmented` picker, `.borderedProminent` button, default switch, default TextField bezel/focus ring, default white sheet, or default-blue selection.
-- For a themed `NavigationSplitView` sidebar, do not rely on `List(selection:)`, app tint, or the system accent to express the selected state. Use the native-control custom-row recipe in `references/qingshan-lake-swiftui.md`, including hover, pressed, focus, keyboard movement, accessibility selection, and non-color differentiation.
-- Use mist-white and lake-teal translucent layers, deep-lake/cypress text, continuous corners, and one-pixel soft borders. Reserve dawn gold for small status accents.
-- Keep native semantics. Implement project `ButtonStyle`, `ToggleStyle`, `TextFieldStyle`, or `PickerStyle` before replacing a native interaction primitive.
-- Style idle, hover, pressed, selected/on, focused, disabled, loading, error, Increased Contrast, Reduced Transparency, and Reduced Motion states.
-- Use app-level lake-teal tint only as a safety net, never as the sole style.
-- Avoid glass-on-glass and nested card chrome. Prefer layout, spacing, and typography for hierarchy.
-- For transparent `NSPanel`/`NSWindow`, style both SwiftUI and AppKit boundaries. Do not rely on rectangular AppKit shadows or opaque hosting backgrounds.
-- **Highlights belong to their host surface; they must never read as a second surface.** A static highlight must reuse the host's shape and clip boundary, be composited inside that boundary, and span the host deliberately. Do not attach an intrinsic-size `RoundedRectangle`/`Capsule` with a partial frame (for example a 10 pt `topLeading` overlay), or stack `screen`/`softLight` glows that create a second card. Prefer one restrained base gradient plus an optional same-shape 1 px stroke; reserve clipped shimmer for active progress only.
-
-Decision test: **Would the interface still behave like a good Mac app with color removed, and would every visible state still express Qingshan Lake during interaction?** Both must be true.
+Do not turn an engineering fix into an unrequested redesign. When an implementation constraint makes the approved design unsafe or impossible, report the constraint and propose the smallest viable design adjustment.
 
 ## Mac citizen requirements
 
@@ -167,7 +147,7 @@ For before/after performance claims, replay the same interaction cadence and ana
 - Native menu, keyboard, focus, text, accessibility, and window behavior remain intact.
 - State ownership and list identity pass the SwiftUI correctness gates.
 - New APIs match the deployment target or have tested fallbacks.
-- The changed product contains no unstyled system-blue controls, generic white transient surfaces, unrelated gray chrome, or rectangular transparent-window artifacts.
-- Every changed interaction state follows Qingshan Lake and remains distinguishable without color alone.
+- When visible UI changes, the applicable Joyally Design macOS, token, and validation gates pass in the real app.
+- Every changed interaction state remains understandable without color alone and preserves native input and accessibility behavior.
 - Reduced Motion/Transparency, Increased Contrast, localization, and resize paths remain usable.
 - Build/tests pass, or the exact blocker and unverified scope are reported.
