@@ -60,8 +60,6 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 | [joyally-midway](skills/engineering/joyally-midway/SKILL.md) | 常驻 Midway Web 应用的 Controller、Service、依赖注入、配置与 HTTP 验证；不含 FaaS |
 | [tauri-skills](skills/engineering/tauri-skills/SKILL.md) | Tauri 2 安全边界与 Node.js sidecar |
 | [browser-performance-audit](skills/engineering/browser-performance-audit/SKILL.md) | 加载、资源与长会话性能审查 |
-| [qoderwork-cup](skills/engineering/qoderwork-cup/SKILL.md) | QoderWork Chat 的 Computer Use 验收 |
-| [qwenwork-cup](skills/engineering/qwenwork-cup/SKILL.md) | 千问办公 Chat 的 Computer Use 验收 |
 | [macos-app-develop](skills/engineering/macos-app-develop/SKILL.md) | 原生 macOS、SwiftUI 与 Instruments 工作流（含许可改编） |
 
 ### Design

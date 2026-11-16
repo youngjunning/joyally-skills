@@ -78,18 +78,6 @@
     "path": "skills/productivity/distill-me"
   },
   {
-    "name": "qoderwork-cup",
-    "category": "engineering",
-    "summary": "QoderWork Chat 的 Computer Use 验收",
-    "path": "skills/engineering/qoderwork-cup"
-  },
-  {
-    "name": "qwenwork-cup",
-    "category": "engineering",
-    "summary": "千问办公 Chat 的 Computer Use 验收",
-    "path": "skills/engineering/qwenwork-cup"
-  },
-  {
     "name": "joyally-design",
     "category": "design",
     "summary": "跨平台界面设计与精修、HTML 报告、HTML PPT 和可探索图表",
