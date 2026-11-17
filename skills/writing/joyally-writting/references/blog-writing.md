@@ -50,6 +50,17 @@ Start from something the author actually built, configured, compared, broke, rep
 
 For a tool or product comparison, define what “good” means before listing candidates. Explain why rejected alternatives failed the stated criteria, provide a usable configuration or next step for the chosen path, and name the reader or scenario for which another option would still be better.
 
+### Evidence-led product or system analysis
+
+When one article mixes live product observation, a reproduced task, an illustrative scenario, and proposed design, classify each material claim before drafting. Keep these evidence roles distinct in prose, captions, diagrams, and conclusions:
+
+- **Observed:** directly visible in the cited page, screenshot, log, code, or response. State the account, version, date, task, or environment when it affects scope.
+- **Reproduced:** observed during a deliberately executed example. Say what was exercised and which result was not inspected or could not be verified.
+- **Illustrative:** a fictional task, comic scene, mockup, sample datum, or simplified sequence used to explain an idea. It may clarify a mechanism but cannot prove product behavior.
+- **Inferred or proposed:** an explanation, architecture, or recommendation derived from the evidence. Name the inference or proposal instead of attributing it to the observed product.
+
+For multi-stage systems, write the result as an evidence chain rather than a single success label. Identify the relevant stages—such as tool return, runtime state, source-system feedback, screenshot review, downstream writeback, notification, or production acceptance—and claim only the furthest stage independently verified. A screenshot can support a visible-state claim without proving the underlying transaction; an internal success code can support control flow without proving the external outcome. When later evidence contradicts the initial framing, revise the claim and preserve the narrower boundary rather than adding prose that tries to reconcile incompatible versions.
+
 ### Tutorial or how-to
 
 State the end state and prerequisites, provide a reproducible path, explain only the mechanisms needed to make correct decisions, include verification and failure recovery, and separate version-specific behavior from durable principles.
@@ -85,6 +96,8 @@ Human voice comes from observed scenes, decisions, friction, failed approaches, 
 
 - For Chinese-language articles, search for an official Chinese version of each useful primary source first and cite that version when its relevant content is complete and current. If the Chinese page is absent, incomplete, or behind the original, verify the claim against the current primary source and cite that source. Keep version-specific wording and normative details aligned with the original specification or documentation; a translation alone does not establish that a technical claim is current.
 - Verify load-bearing product, technical, historical, and quantitative claims from current sources or label them as inference.
+- When the user chooses a named external frame, rank system, game ladder, historical periodization, or other recognizable taxonomy, treat its labels, order, and mapping as part of the assignment. Verify the taxonomy, state the single dimension being mapped, use the mapping consistently, and name where the analogy stops. Do not silently replace it with generic numbering or let the borrowed frame supply technical evidence.
+- For implementation-based technical articles, link load-bearing explanations to the current code, configuration, schema, measurement, or maintained documentation that actually supports them. Prefer stable revision links when readers outside the working tree need reproducibility; a repository homepage or product overview is not evidence for a path-level mechanism.
 - Keep shipped, tested, committed, pushed, deployed, and publicly available states distinct.
 - For technical claims that may drift, record the version or verification date.
 - Treat copied code, screenshots, diagrams, quotations, and third-party prose according to their licenses and permissions. A link or attribution does not replace permission.
