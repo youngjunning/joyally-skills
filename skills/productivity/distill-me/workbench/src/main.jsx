@@ -5,12 +5,15 @@ import './themes.css';
 
 const presets = ['重要判断', '关键进展', '资料收藏', '待跟进', '文章草稿'];
 const key = 'distill-me-workbench-v3';
+const themeKey = 'distill-me-workbench-theme';
 const blank = () => ({ source: '', focus: '', columns: presets, items: [] });
 function load() { try { return { ...blank(), ...JSON.parse(localStorage.getItem(key) || '{}') }; } catch { return blank(); } }
+function loadTheme() { try { const theme = localStorage.getItem(themeKey); return ['qingshan', 'xihu', 'maldives'].includes(theme || '') ? theme : 'qingshan'; } catch { return 'qingshan'; } }
 
 function App() {
-  const [data, setData] = useState(load); const [newColumn, setNewColumn] = useState(''); const [notice, setNotice] = useState('本地草稿，未发送到任何服务'); const [theme, setTheme] = useState('qingshan');
+  const [data, setData] = useState(load); const [newColumn, setNewColumn] = useState(''); const [notice, setNotice] = useState('本地草稿，未发送到任何服务'); const [theme, setTheme] = useState(loadTheme);
   useEffect(() => { try { localStorage.setItem(key, JSON.stringify(data)); } catch { setNotice('浏览器禁止本地保存；仍可导出 JSON'); } }, [data]);
+  useEffect(() => { try { localStorage.setItem(themeKey, theme); } catch { setNotice('浏览器禁止本地保存；主题将在本次打开期间有效'); } }, [theme]);
   const patch = value => setData(current => ({ ...current, ...value }));
   const add = () => { if (!data.source.trim()) return setNotice('先写下本次材料'); patch({ items: [...data.items, { id: crypto.randomUUID(), title: data.focus || '未命名蒸馏', body: data.source, date: Date.now(), columns: data.columns }] }); setNotice('已加入本地时间线'); };
   const prompt = `请用 distill-me 整理以下材料。\n\n栏目：${data.columns.join('、')}\n${data.focus ? `关注重点：${data.focus}\n` : ''}要求：只输出可编辑草稿；保留出处和不确定性；不要将你的建议归为我的事实；不要写入、发布或同步任何位置。\n\n材料：\n${data.source || '（待填写）'}`;
