@@ -2,6 +2,8 @@
 
 **A general-purpose GPT Image 2.6 AI image generation Skill** — usable from any Agent runtime that supports `SKILL.md`, or by reusing its scripts directly. Powered by [apiyi](https://api.apiyi.com/register/?aff_code=ijv5), using only GPT Image 2.6 at high quality through an OpenAI-compatible image API.
 
+It can work independently or cooperate with Joyally writting and Joyally Design. A combined task keeps one lead: this skill owns raster composition, identity continuity, generation or editing, and image QA; Joyally writting owns factual copy, while Joyally Design owns interactive containers and visual systems. Cross-domain changes return to the responsible skill instead of being rewritten during support work.
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent-Skill-blueviolet)](#)
 [![apiyi](https://img.shields.io/badge/Powered_by-apiyi-orange)](https://api.apiyi.com/register/?aff_code=ijv5)

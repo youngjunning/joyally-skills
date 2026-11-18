@@ -1,6 +1,6 @@
 ---
 name: joyally-writting
-description: Write or edit reader-facing articles, books, picture books, copy, speeches, and formal reports; polish existing prose when explicitly requested. Engineering requirements, architecture decisions, implementation plans, specs, ADRs, and task tickets belong to engineering workflows, even when called drafts or documents. For those artifacts, use this skill only for an explicitly requested editorial pass, preserving the owning workflow and delivery requirements.
+description: Write or edit reader-facing articles, books, picture books, copy, speeches, and formal reports. Lead audience, facts, argument, narrative structure, and exact copy; hand interactive layout and visual systems to joyally-design, and raster artwork to joyally-image. All three skills can work independently; a combined task has one lead. Engineering artifacts remain in their owning workflows unless an editorial pass is explicitly requested.
 ---
 
 # Joyally writting
@@ -16,6 +16,17 @@ Engineering requirements, architecture decisions, implementation plans, specs, A
 An explicit request to improve the wording of an existing engineering artifact, such as “润色这份 spec，不改技术方案”, activates only an editorial pass. Keep its technical decisions, acceptance criteria, status, storage location, and owning workflow intact. If engineering design and prose editing are both requested, complete the engineering work under its own workflow and apply this skill only to the requested prose portion.
 
 Routine explanations, engineering handoffs, progress replies, PR descriptions, incidental README updates, automatic distillation, and skill configuration maintenance do not activate this workflow by themselves. A writing request embedded in a larger task qualifies only for that requested writing part. Otherwise complete the actual task directly.
+
+## Collaboration boundary
+
+Joyally writting, `joyally-design`, and `joyally-image` are independent skills that can cooperate. Use only the skill that matches a single-domain request. Combine two or three of them only when the requested deliverable genuinely crosses the corresponding domains of prose, its container, and raster artwork.
+
+- A combined task has exactly one lead skill, selected by the final deliverable. The lead owns decomposition, assembly, whole-deliverable acceptance, and delivery. Supporting skills return bounded sub-artifacts and do not re-plan the task.
+- This skill owns audience, factual claims, argument, narrative structure, exact copy, citations, and publication logic. `joyally-design` owns information hierarchy, layout, interaction, visual tokens, component states, and platform adaptation. `joyally-image` owns raster composition, character identity continuity, image generation or editing, and image QA.
+- Cross-domain changes return to the owner. This skill may define an image or layout brief and place approved results, but it does not redraw imagery or override interface behavior. When layout or image constraints require different wording, receive the concrete constraint, revise the copy here, and return a new approved version.
+- Every handoff states purpose and audience, locked content, allowed variation, size or format, must-preserve elements, and acceptance conditions. After handoff, the lead checks integration instead of silently rebuilding the supporting artifact.
+
+One explicitly named skill is the default lead. When the user names several, select the single lead by the final deliverable. If a named skill does not match that artifact, preserve the user's intent, explain the proposed handoff, and keep one lead rather than letting several skills compete.
 
 ## Core standard
 
@@ -60,7 +71,7 @@ For 漫画文章、漫画拆解 or a scene-led comic explainer, use the **Comic 
 
 For topic selection, writing, revision, or review specifically targeting `ATA 头条`, also load [references/ata-headline.md](references/ata-headline.md). Evaluate the connection between an emerging AI capability and a real business or engineering problem before packaging the title; preserve non-AI topics when that connection is absent.
 
-For article or book visuals, load [references/visual-routing.md](references/visual-routing.md) before choosing a tool: use Archify for supported diagrams whose exact relationships carry the explanation, joyally-image for scene-led covers and raster illustrations, and deterministic plotting or document tools for charts and tables. Static output alone does not make a diagram an image-generation task; mixed visuals keep semantic geometry separate from generated artwork. Honor an explicit user tool choice while preserving factual labels and relationships.
+For article or book visuals, load [references/visual-routing.md](references/visual-routing.md) before choosing a tool. Use `joyally-design` with Archify when the requested artifact must remain clickable, zoomable, editable, or explorable; use `joyally-image` for a static publishable diagram image, scene-led cover, comic, or raster illustration; use deterministic plotting or document tools for charts and tables. In either diagram route, this skill supplies the approved facts, labels, relationships, and explanatory purpose, while the visual owner supplies geometry and visual acceptance. Mixed visuals keep semantic geometry separate from generated artwork. Honor an explicit user tool choice while preserving factual labels and relationships.
 
 In Book mode, load [references/book-writing.md](references/book-writing.md). Before using third-party text as source material, adapting or translating an existing work, or approving any book for public or commercial delivery, also load [references/copyright-gate.md](references/copyright-gate.md). The copyright gate is blocking: unresolved rights, provenance, quotation, adaptation, translation, or similarity findings prevent a publish-ready result.
 

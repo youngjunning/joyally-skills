@@ -1,6 +1,6 @@
 ---
 name: joyally-design
-description: 所有 UI 设计相关任务使用 Joyally Design，包括 Web/React、macOS、iOS、Android 和 React Native 的界面设计与精修，也用于制作 HTML 报告、HTML PPT 演示文稿、社交图文卡片和交互图表。混合功能修复时参与界面方案与验收；静态架构图片由 joyally-image 主导。
+description: 设计和精修 Web、macOS、iOS、Android 与 React Native 界面，也用于 HTML 报告、HTML PPT、社交卡片和可探索图表。它主导布局、交互、视觉系统与平台验收；文稿交给 joyally-writting，独立栅格图像交给 joyally-image。三者可独立使用，联合任务仅设一个主导 Skill。
 ---
 
 # Joyally Design
@@ -18,6 +18,17 @@ Joyally Design 是跨平台的设计方法与实现契约：从产品目标、�
 创建、重做或扩展整套视觉主题时，同时按[主题制作](../joyally-theme-creation/SKILL.md)检查空间结构、组件细节、同内容差异与真实状态；单点配色微调沿用当前小改动路径。
 
 领域、方向、存量改造、组件、素材、动效、截图、评审与规范构成主流程；[专项质量检查](references/design-quality.md)仅在文字本地化、健壮性或技术审计等实际问题出现时加入。Joyally 的视觉语言、语义 tokens、跨平台行为与验收把这些方法连成同一套输出。明确改法的小改动直接完成，任务范围和交付物仍由用户决定。
+
+## 三技能协作边界
+
+Joyally Design、`joyally-writting` 与 `joyally-image` 是可独立使用的合作技能。单一专业任务只进入匹配的 Skill；只在交付物真实跨越文字、容器、图像中的两个或三个领域时协作，不为凑齐三者而增加流程。
+
+- 每个联合任务只设一个主导 Skill。主导 Skill 按用户要求的最终交付物选定，负责拆分、组装、整体验收与交付；支持 Skill 只完成明确的子产物，不重新规划整个任务。
+- `joyally-writting` 是读者、事实、论点、叙事结构与准确文案的责任人；Joyally Design 是信息层级、布局、交互、语义 tokens、组件状态与平台适配的责任人；`joyally-image` 是栅格画面、角色身份连续性、生图/改图与图像质量的责任人。
+- 跨域变更回到对应责任人。本 Skill 可调整容器中的排版、换行与展示层级，但不自行改写已核定的事实、论点、长文案或图像内容；需要变更时提出具体约束并请原责任人返回新版。
+- 交接使用最小可验收契约：用途与读者、已锁定内容、可变项、尺寸/格式、必须保留项和验收条件。支持产物返回后，主导 Skill 只验证集成与整体效果，不越界重做子产物。
+
+用户明确指定一个 Skill 时，它默认为主导 Skill；同时指定多个时，按最终交付物确定唯一主导 Skill。若指定内容与所需交付物不匹配，保留用户意图并说明建议的交接，不由多个 Skill 并行争夺主导权。
 
 ## 现有界面精修
 

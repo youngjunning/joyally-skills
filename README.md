@@ -47,6 +47,8 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 | 写文章、绘本或建设内容站点 | [Joyally writting](skills/writing/joyally-writting/SKILL.md)、[fiction-site-builder](skills/writing/fiction-site-builder/SKILL.md)、[adsense-site-builder](skills/publishing/adsense-site-builder/SKILL.md) |
 | 整理或读取个人资料、维护项目方案 | [distill-me](skills/productivity/distill-me/SKILL.md) |
 
+Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作、交互/版式设计和栅格图像任务，也可联合交付。联合任务只设一个主导 Skill：写作负责读者、事实、论证与准确文案，设计负责信息层级、布局、交互与平台适配，图像负责栅格画面、身份连续性与图像验收。跨域变更回到责任 Skill，支持 Skill 不顺手改写上游成果。
+
 ## 分类索引
 
 ### Engineering
@@ -66,16 +68,16 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 
 | 技能 | 用途 |
 | --- | --- |
-| [Joyally image](skills/design/joyally-image/SKILL.md) | 图像生成、编辑、漫画制作与素材校验 |
+| [Joyally image](skills/design/joyally-image/SKILL.md) | 栅格图像生成与编辑、漫画制作、身份连续性与图像验收 |
 | [Joyally Spotlight](skills/design/joyally-spotlight/SKILL.md) | 关键操作截图私有归档与检索；真实演示素材扫描、遮盖与成品复核 |
-| [Joyally Design](skills/design/joyally-design/SKILL.md) | 跨平台界面设计与精修、HTML 报告、HTML PPT 和可探索图表 |
+| [Joyally Design](skills/design/joyally-design/SKILL.md) | 跨平台界面、HTML 交付与可探索图表，主导布局、交互、视觉系统与平台验收 |
 | [Joyally 主题制作](skills/design/joyally-theme-creation/SKILL.md) | 从参考素材提炼构图与交互，设计有区分度的布局、自有组件和语义 token |
 
 ### Writing
 
 | 技能 | 用途 |
 | --- | --- |
-| [Joyally writting](skills/writing/joyally-writting/SKILL.md) | 中文与英文写作、博客、书稿与绘本制作，插画由 Joyally image 提供 |
+| [Joyally writting](skills/writing/joyally-writting/SKILL.md) | 中英文章、书稿与绘本写作，主导读者、事实、论证、叙事与准确文案 |
 | [fiction-site-builder](skills/writing/fiction-site-builder/SKILL.md) | 小说创作与阅读站点建设 |
 
 ### Publishing

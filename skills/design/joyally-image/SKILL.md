@@ -1,6 +1,6 @@
 ---
 name: joyally-image
-description: Generate or edit images and create sequential comics with the apiyi image API. Use for 漫画、绘本插画、封面、静态架构图与知识图谱、图标、壁纸、帧动画 and 宠物 spritesheet requests. Lead static diagram images; interactive diagrams default to joyally-design with Archify. Honor an explicitly chosen Skill. Comic production lives here; joyally-writting owns surrounding prose and complete picture-book manuscripts.
+description: Generate or edit raster images and produce comics, picture-book illustrations, covers, static diagram images, icons, wallpapers, animation frames, and pet spritesheets. Lead pixel composition, identity continuity, generation or editing, and image QA; joyally-writting owns prose and factual content, while joyally-design owns interactive containers and visual systems. All three skills can work independently; a combined task has one lead.
 ---
 
 # Joyally image
@@ -9,7 +9,18 @@ AI image generation skill powered by [apiyi](https://api.apiyi.com/register/?aff
 
 **Trigger this skill when:** the user asks to create or repair a comic, storyboard, panel sequence, image, illustration, cover, static diagram, icon, animation, or visual asset. Comic articles also use this skill for their complete comic production, while `joyally-writting` owns the article prose and factual argument. Image-only edits that must preserve a supplied design use the image-edit route.
 
-**Diagram ownership:** Honor the user's explicitly chosen Skill. Otherwise, lead static architecture, knowledge-map and flow images for articles, PPT or sharing; a diagram request without an interactive requirement defaults to a static image. Route clickable, zoomable or node/path-exploration deliverables to `joyally-design` with Archify. Exporting an existing interactive diagram preserves its source workflow. Joyally Design may supply visual guidance without taking over image production; the full deliverable routing table is in `../joyally-design/SKILL.md` under “选择路径”. This choice does not change the precise text-and-arrow workflow in `references/knowledge-map.md`.
+## Collaboration boundary
+
+Joyally image, `joyally-writting`, and `joyally-design` are independent skills that can cooperate. Use only this skill for a self-contained image request. Combine two or three skills only when the final deliverable genuinely crosses their domains of prose, an interactive or layout container, and raster artwork.
+
+- A combined task has exactly one lead skill, selected by the final deliverable. The lead owns decomposition, assembly, whole-deliverable acceptance, and delivery. Supporting skills return bounded sub-artifacts and do not re-plan the task.
+- This skill owns raster composition, character and identity continuity, generation or editing, image formats, and image QA. `joyally-writting` owns audience, factual claims, argument, narrative structure, exact copy, and citations. `joyally-design` owns information hierarchy, layout, interaction, visual tokens, component states, and platform adaptation.
+- Cross-domain changes return to the owner. This skill renders only approved copy and semantic relationships; it does not rewrite the surrounding article, alter factual labels to fit, or redesign an interactive container. If copy or container constraints block the image, return the exact spatial or visual constraint and wait for a revised brief.
+- Every handoff states purpose and audience, locked content, allowed variation, dimensions or format, must-preserve elements, and acceptance conditions. Return the image, editable or deterministic source when required, and image-specific validation evidence to the lead.
+
+One explicitly named skill is the default lead. When the user names several, select the single lead by the final deliverable. If a named skill does not match that artifact, preserve the user's intent, explain the proposed handoff, and keep one lead rather than letting several skills compete.
+
+**Diagram ownership:** Lead static architecture, knowledge-map, and flow images for articles, PPT, or sharing. A diagram request without an interactive requirement defaults to a static image. Route clickable, zoomable, editable, or node/path-exploration deliverables to `joyally-design` with Archify. `joyally-writting` supplies and approves factual labels, relationships, and the explanatory purpose when the diagram belongs to prose. Exporting an existing interactive diagram preserves its source workflow. Joyally Design may supply visual-system constraints without taking over image production; the full deliverable routing table is in `../joyally-design/SKILL.md` under “选择路径”. This choice does not change the precise text-and-arrow workflow in `references/knowledge-map.md`.
 
 **Language:** Detect the user's language from their request. If the user writes in Chinese, respond entirely in Chinese (status updates, confirmations, questions, summaries). If English, respond in English. Never mix languages mid-response.
 

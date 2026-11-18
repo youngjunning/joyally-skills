@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-18
+
+1. 统一 Joyally Design、Joyally writting 与 Joyally image 的协作边界：三者均可独立使用，联合任务只设一个主导 Skill；分别对交互/布局、事实/文案和栅格图像负责，跨域变更回到责任 Skill，避免支持阶段互相改写成果。
+
 ## 2026-11-16
 
 2. 删除不再维护的 `qoderwork-cup` 与 `qwenwork-cup`，同步清理公开目录和索引。

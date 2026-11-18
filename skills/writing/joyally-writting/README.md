@@ -2,6 +2,8 @@
 
 A general-purpose Codex writing skill for Chinese and English prose. Persistent publishing work has two top-level modes: **Blog** and **Book**.
 
+It can work independently or cooperate with Joyally Design and Joyally image. A combined task keeps one lead: this skill owns the reader, facts, argument, narrative, and approved copy; Joyally Design owns interactive layout and visual systems; Joyally image owns raster artwork and image QA. Supporting skills return bounded artifacts instead of rewriting one another's work.
+
 It activates when the user asks for a writing deliverable, continuation, rewrite, polish, or editorial review. Natural requests such as “写一篇文章” are sufficient. Routine coding, explanations, progress replies, incidental documentation updates, automatic maintenance, and questions about the skill do not activate its writing workflow.
 
 **Blog mode** covers blog posts, technical articles, ATA, tutorials, product or project introductions, and opinion essays. It owns single-article structure, current-product evidence, and publication checks.

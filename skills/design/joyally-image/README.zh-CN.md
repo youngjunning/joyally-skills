@@ -2,6 +2,8 @@
 
 **通用 GPT Image 2.6 生图 Skill** — 可接入支持 `SKILL.md` 的 Agent 运行时或直接复用其脚本；由 [apiyi](https://api.apiyi.com/register/?aff_code=ijv5) 驱动，通过 OpenAI 兼容图片接口，仅使用 GPT Image 2.6 高质量模式。
 
+它可独立完成图像任务，也可与 Joyally writting 和 Joyally Design 协作。联合任务只设一个主导 Skill：Joyally image 负责栅格画面、角色身份连续性、生图/改图和图像验收；文稿事实由 Joyally writting 负责，交互容器与视觉系统由 Joyally Design 负责。跨域修改必须回到对应责任技能。
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent-Skill-blueviolet)](#)
 [![apiyi](https://img.shields.io/badge/Powered_by-apiyi-orange)](https://api.apiyi.com/register/?aff_code=ijv5)

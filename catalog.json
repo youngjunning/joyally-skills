@@ -9,7 +9,7 @@
     "name": "joyally-image",
     "category": "design",
     "path": "skills/design/joyally-image",
-    "summary": "图像生成、编辑、漫画制作与素材校验"
+    "summary": "栅格图像生成与编辑、漫画制作、身份连续性与图像验收"
   },
   {
     "name": "joyally-spotlight",
@@ -39,7 +39,7 @@
     "name": "joyally-writting",
     "category": "writing",
     "path": "skills/writing/joyally-writting",
-    "summary": "用户要求写作时调用，支持文章、博客、书稿与绘本"
+    "summary": "文章、书稿与绘本写作，主导读者、事实、论证、叙事与准确文案"
   },
   {
     "name": "tauri-skills",
@@ -80,7 +80,7 @@
   {
     "name": "joyally-design",
     "category": "design",
-    "summary": "跨平台界面设计与精修、HTML 报告、HTML PPT 和可探索图表",
+    "summary": "跨平台界面、HTML 交付与可探索图表，主导布局、交互、视觉系统与平台验收",
     "path": "skills/design/joyally-design"
   },
   {

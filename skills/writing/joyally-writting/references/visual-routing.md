@@ -1,37 +1,34 @@
 # Visual routing for articles and books
 
-Choose by the information the reader must recover, then choose the output format. The deciding question is whether an incorrect label, relationship, arrow, or state would change the explanation. Interactivity and file extension are secondary: an exported WebP architecture diagram still needs deterministic semantic authoring.
+Choose first by the information the reader must recover, then by the artifact the user must keep using. Exact labels, relationships, arrows, and states always require deterministic semantic authoring. Artifact form decides the visual owner: `joyally-design` owns diagrams that must remain interactive, editable, zoomable, or explorable; `joyally-image` owns static publishable diagram images. File extension alone is not proof of a workflow: an export of an existing interactive diagram stays with its source workflow.
 
 ## Selection
 
-| Reader need | Default owner | What stays deterministic |
+| Reader need and artifact | Default owner | What stays deterministic |
 | --- | --- | --- |
-| Components, ownership boundaries, deployment topology, dependencies | Archify `architecture` | Nodes, containment, edges, labels, evidence |
-| Ordered steps, branches, parallel work, recovery paths | Archify `workflow` | Ordering, conditions, joins, failure routes |
-| API calls, participants, asynchronous messages, returns | Archify `sequence` | Participants, message order, direction, sync/async meaning |
-| Data pipelines, lineage, transformations | Archify `dataflow` | Sources, sinks, transformations, data movement |
-| States, events, lifecycle transitions | Archify `lifecycle` | State distinctions, transition conditions, terminal states |
+| Interactive, editable, zoomable, or explorable architecture, workflow, sequence, dataflow, or lifecycle diagram | joyally-design with the matching Archify type | Nodes, containment, ordering, edges, labels, states, and evidence |
+| Static architecture, knowledge map, flow, sequence, dataflow, or lifecycle image for an article, slide, or share | joyally-image `knowledge-map` | Nodes, containment, ordering, edges, labels, states, and evidence |
 | Scene-led or identity-led cover, editorial illustration, atmosphere, portrait, texture | joyally-image | Exact titles, figures, identifiers, or captions added outside the raster model when needed |
 | Comic article with recurring characters, scene actions, and dialogue | joyally-image owns the comic; [comic-articles.md](comic-articles.md) owns article integration | Dialogue, commands, facts, reading order, and any explanatory relationships |
 | Statistical charts, scientific plots, numeric comparisons | Standard plotting tools | Data, scales, axes, units, uncertainty, legends |
 | Lookup, specifications, small comparisons | Markdown or document table | Values and column meanings; an image is often unnecessary |
 | Current product behavior or an observed failure | Real screenshot or recording | Provenance and any annotations; identify a mockup as illustrative |
 
-Read the selected skill before producing the asset. Discover the actual available Archify entrypoint, including a project-owned Joyally Design integration when required by that project. Do not hardcode a repository path into this reusable skill. Tool mechanics, schemas, validation commands, styling, and upload procedures remain owned by their respective skills and destination repository.
+Read the selected skill before producing the asset. For interactive work, discover the actual available Archify entrypoint, including a project-owned Joyally Design integration when required by that project. Do not hardcode a repository path into this reusable skill. Tool mechanics, schemas, validation commands, styling, and upload procedures remain owned by their respective skills and destination repository.
 
 ## Archify boundary
 
-Use Archify when the figure's contribution is an exact relationship covered by one of its five diagram types. Model the entities and relations from evidence first; render and validate them with the selected schema. Keep the editable specification beside the delivered asset when the destination calls for maintainable source.
+Use Joyally Design with Archify when the requested diagram must remain interactive, editable, zoomable, or explorable, or when an existing Archify source remains the source of truth. Model the entities and relations from evidence first; render and validate them with the selected schema. Keep the editable specification beside every delivered artifact.
 
-For an article, use a readable static export inline and provide the interactive HTML as an optional companion when useful. An HTML-only delivery is insufficient for a renderer that strips iframes. Validate the exported figure as well as the interactive artifact; inspect text and arrows at the article's actual reading width. Preserve required relationship labels instead of deleting them to make a layout pass.
+When an article includes that interactive artifact, use a readable static export inline and provide the interactive HTML as a companion. This export remains part of the Joyally Design workflow because it is derived from the interactive source; it does not create a second owner. An HTML-only delivery is insufficient for a renderer that strips iframes. Validate both forms and inspect text and arrows at the article's actual reading width. Preserve required relationship labels instead of deleting them to make a layout pass.
 
 A domain taxonomy, annotated illustration, geographic map, or unusual knowledge layout may not fit Archify. Use a deterministic SVG/HTML or specialist renderer when its grammar expresses the subject more accurately. Do not force every labeled visual into a component diagram. A simple relationship may be clearer as one sentence or a table.
 
 ## joyally-image boundary
 
-Use joyally-image when the contribution is appearance, scene, identity, mood, or a raster asset. Follow the cover brief and acceptance requirements in `article-cover.md` for article covers. Keep covers distinct from explanatory figures.
+Use joyally-image when the deliverable is a static publishable image or when its contribution is appearance, scene, identity, mood, or raster artwork. Follow the cover brief and acceptance requirements in `article-cover.md` for article covers. Keep covers distinct from explanatory figures.
 
-Its `knowledge-map` workflow also uses deterministic HTML/CSS/SVG for semantics; the image model supplies only an optional text-free backdrop. The presence of that workflow is not a reason to route every architecture request through image generation. Prefer Archify for a supported node-and-edge diagram; use the custom deterministic path when the needed layout is unsupported or the user explicitly selects it.
+Its `knowledge-map` workflow uses deterministic HTML/CSS/SVG for every semantic element; the image model supplies only an optional text-free backdrop. Use that workflow for new static architecture, knowledge-map, flow, sequence, dataflow, and lifecycle images. Exact semantics do not move ownership back to Joyally Design; they remain a hard acceptance condition inside the image workflow.
 
 For a mixed figure, generate only the visual layer that benefits from generation. Render exact labels, numbers, arrows, UI annotations, and state distinctions separately, then check the composite. Skip the generated background when it adds no explanatory value. Existing vector diagrams should normally be edited in their source format.
 
@@ -39,9 +36,9 @@ For a mixed figure, generate only the visual layer that benefits from generation
 
 | Request | Route and acceptance |
 | --- | --- |
-| “写 AnyUse 架构文章，配封面和架构图” | joyally-image creates a cover; Archify creates the component/ownership diagram; verify them independently |
-| “把白板草图整理成框架图” | Recover the intended topology, mark ambiguous handwriting, then use Archify when its grammar fits; do not rasterize the handwriting as evidence of a confirmed design |
-| “做一张静态 PNG 的请求时序图” | Archify `sequence`, then static export; PNG does not change the semantic owner |
+| “写 AnyUse 架构文章，配封面和架构图” | joyally-image creates both static assets from separate approved briefs; verify cover and semantic diagram independently |
+| “把白板草图整理成可缩放的框架图” | Recover the intended topology, mark ambiguous handwriting, then use Joyally Design with Archify; do not treat handwriting as confirmed evidence |
+| “做一张静态 PNG 的请求时序图” | joyally-image `knowledge-map`; keep participants, ordering, direction, and labels deterministic |
 | “知识体系画成河流或山脉，术语必须准确” | Custom deterministic semantic labels over optional joyally-image scenery; use real coordinates and a legend only if they carry meaning |
 | “对比三种执行器的成功率和 P95” | Verified measurements in a table or plotting tool; neither a generated chart nor an architecture diagram supplies evidence |
 | “保持这张插画的人物，换背景” | Image-edit workflow with the identity reference; preserve identity rather than rebuilding it as diagram nodes |
@@ -57,4 +54,4 @@ For a mixed figure, generate only the visual layer that benefits from generation
 
 ## Basis and maintenance
 
-Routing reviewed on 2026-10-27 against the available Archify 2.17 skill (`architecture`, `workflow`, `sequence`, `dataflow`, `lifecycle`), joyally-image's `portrait`, `text-poster`, and `knowledge-map` references, and this skill's cover contract. This is a writing-layer selection rule, not a fork of those tool manuals; consult their current instructions for generation and validation.
+Routing reviewed on 2026-11-18 against Joyally Design's Archify paths, joyally-image's `portrait`, `text-poster`, and `knowledge-map` references, and this skill's cover contract. This is a writing-layer selection rule, not a fork of those tool manuals; consult their current instructions for generation and validation.
