@@ -29,7 +29,7 @@
 <dialog id="promptDialog"><section><h2>复制给 Agent</h2><p class="hint">Agent 会先整理草稿；除非你在对话中明确指定写入位置和授权，否则不应保存到外部位置。</p><pre id="prompt"></pre><div class="actions"><button class="primary" id="copy">复制请求</button><button id="close">关闭</button></div></section></dialog>
 <script>
 (() => {
-  const key='distill-me-workbench-v1'; const defaults=['重要判断','关键进展','资料收藏','待跟进'];
+  const key='distill-me-workbench-v1'; const defaults=['重要判断','关键进展','资料收藏','待跟进','文章草稿'];
   let state={source:'',note:'',buckets:[...defaults],drafts:[]};
   const $=id=>document.getElementById(id), esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   function load(){try{const x=JSON.parse(localStorage.getItem(key));if(x&&Array.isArray(x.buckets))state={...state,...x};}catch{ $('saveState').textContent='浏览器未启用本地保存'; }}
