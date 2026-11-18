@@ -68,8 +68,14 @@
   {
     "name": "distill-me",
     "category": "productivity",
-    "summary": "按证据蒸馏个人记录与资料，并参与项目方案管理",
+    "summary": "用零部署本地工作台整理材料与草稿，栏目可自由取舍",
     "path": "skills/productivity/distill-me"
+  },
+  {
+    "name": "distill-yangjunning",
+    "category": "productivity",
+    "summary": "维护俊宁的个人记录、资料、项目方案与工作脉络",
+    "path": "skills/productivity/distill-yangjunning"
   },
   {
     "name": "joyally-design",
