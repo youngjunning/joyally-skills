@@ -62,7 +62,7 @@
 | --- | --- |
 | 字体、色彩、层级、图标拿不准，或评审指出层级与可读性问题 | [通用视觉规则](references/visual-craft.md)；交付前的细节精修见 [视觉自查与精修](references/visual-polish.md)；选用景观主题时再读 [景观视觉规则](references/visual-language.md) |
 | 表单、选择、提交、多种状态与失败恢复 | [交互与状态](references/interaction-and-state.md) |
-| 多栏、弹窗、浮层、独立滚动区域；设备适配与窄屏 | [空间、滚动与浮层](references/layout-surfaces.md)；[布局与视口](references/layout-and-viewport.md) |
+| Tooltip、Cursor tip、Popover、Popconfirm、弹窗、抽屉、多栏、独立滚动区域；设备适配与窄屏 | [空间、滚动与浮层](references/layout-surfaces.md)；[布局与视口](references/layout-and-viewport.md) |
 | 需要图：选素材、生成配图、让图和页面接成一体、3D 与视频 | [素材](references/media.md) |
 | 先生成 UI 设计稿再实现 | [生图设计与还原校准](references/image-ideation.md) |
 | 动效手感、界面过渡、时长 | [动效](references/motion.md) |

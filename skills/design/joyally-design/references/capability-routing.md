@@ -46,7 +46,7 @@ Joyally Design 的领域方法、专项参考、工具、素材与测试都在�
 | --- | --- |
 | 视觉层级、字体、色彩、表面或细节粗糙 | [通用视觉规则](visual-craft.md)、`visual-polish.md`；选用景观主题时再读[景观视觉规则](visual-language.md) |
 | 状态、表单、列表、错误恢复或操作层级 | `interaction-and-state.md` |
-| 多栏、浮层、独立滚动、窄屏或截图比例 | `layout-surfaces.md`、`layout-and-viewport.md` |
+| Tooltip、Cursor tip、Popover、Popconfirm、弹窗、抽屉、多栏、独立滚动、窄屏或截图比例 | `layout-surfaces.md`、`layout-and-viewport.md` |
 | 主视觉、真实素材、配图许可、成套图或 UI 生图 | `media.md`、`image-ideation.md` |
 | 交互反馈、空间连续性、滚动叙事或少量特效 | `motion.md`、`scroll-narrative.md`、`ornament.md`；按产品任务决定是否需要，不把特效变成默认要求 |
 | 视觉或 UX 独立走查、修正轮次 | 主执行者读 `visual-review.md`、`ux-review.md`、`review-loop.md`；独立评审者按评审协议读 `reviewer-manual.md`、`review-modes.md`、`ux-reviewer.md`；评审结论仍需主执行者核对实际画面与功能 |
