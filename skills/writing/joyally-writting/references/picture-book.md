@@ -1,6 +1,6 @@
 # Picture books — Book mode
 
-`joyally-writting` owns story, page planning, exact copy, typography, print-template adaptation, review and final delivery. Designate `joyally-image` as the raster illustration provider, following its generation and editing instructions. It returns artwork and metadata; this writing workflow determines the story, count and edition contract.
+`joyally-writting` owns story, page count and narrative planning, exact copy, edition contract, final package validation, and delivery. `joyally-design` owns the book's visual direction, page and spread composition system, typography, print-template adaptation, and design acceptance. `joyally-image` is the raster illustration provider and owns pixel production, identity continuity, image metadata, and technical image QA.
 
 Explicitly separate total images from interior pages. 20 images including front and back covers means 1 front cover + 18 interiors + 1 back cover. When counts change, remove or merge redundant beats while preserving required learning outcomes, renumber visible folios and filenames, and rebuild the package. Reuse approved art for ordering and text-only changes.
 
@@ -8,7 +8,7 @@ For short private family picture books, use page-level planning and reader-level
 
 ## Illustration handoff and templates
 
-Pass approved copy, scene/action, camera, visible evidence, references with roles, quiet text surface and protected objects to `joyally-image`. Review returned illustrations and request bounded repairs there; exact lettering and package acceptance stay here.
+Pass the audience, edition contract, approved copy, scene/action, visible evidence, and identity constraints to `joyally-design`. It returns the visual direction, page composition, camera, typography, quiet text surface, protected objects, and template geometry as an approved design brief. Pass that brief and the relevant references to `joyally-image`; request bounded pixel repairs there. Exact-copy verification and package acceptance stay here, while design acceptance stays with Joyally Design.
 
 Record cover and interior geometry independently: upload canvas, trim, bleed, safe area and binding groove can differ. Match template ratios without stretching subjects. Screenshot measurements are estimates, not certified millimetres. Extend expendable scenery to the boundary while keeping text, faces, hands and story evidence within safety and binding clearances. Review objects as well as text bounds. Distinguish source pixels from export DPI; local guides do not prove printer acceptance. Label cover placement according to the actual template, and exclude guides from print-image packages.
 
@@ -22,7 +22,7 @@ Separate rewrite invariants (cast, appearance, medium, palette) from changes (pl
 
 ## Plan pages with observable differences
 
-Maintain one authoritative page manifest. Each page records exact copy, narrative purpose, scene/action, focal subject, shot size, camera angle, composition, emotional beat, visible evidence, references with roles, and output paths. Include a text region in normalized coordinates and the natural surface behind it, such as sky, wall, floor, or blanket. The renderer reads this same copy; avoid alternate hardcoded text hidden in export scripts.
+Maintain one authoritative page manifest. Each page records exact copy, narrative purpose, scene/action, focal subject, emotional beat, visible evidence, references with roles, and output paths. Joyally Design adds the shot size, camera angle, composition, text region in normalized coordinates, and natural surface behind it, such as sky, wall, floor, or blanket. The renderer reads the same approved copy; avoid alternate hardcoded text hidden in export scripts.
 
 Give the protagonist a question or wish, an attempt, a change, and a response. Map each required educational outcome to visible evidence and the recap. Keep one main idea per page; deliberate read-aloud repetition is compatible with changing action and images.
 
@@ -49,7 +49,7 @@ Keep the scene prominent. A long repeated family description can dominate a shor
 
 ## Validate pilot pages before the batch
 
-Generate and typeset two or three representative pages before the remaining batch: different cameras, the longest text, and a detail or difficult interaction. An existing accepted page can count. Inspect these finished pages together for identity, composition diversity, visible evidence, and lettering.
+Generate and typeset two or three representative pages before the remaining batch: different cameras, the longest text, and a detail or difficult interaction. An existing accepted page can count. Joyally Design checks composition diversity, typography, rhythm, and design acceptance; Joyally Image checks identity and pixel defects; this workflow checks visible evidence and exact copy.
 
 This is an agent QA step, not an automatic request for user approval. Continue under existing authorization once it passes. If the pilot repeats a composition or lacks text space, repair references/prompt/layout before multiplying the defect across the book.
 

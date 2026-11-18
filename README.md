@@ -47,7 +47,7 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 | 写文章、绘本或建设内容站点 | [Joyally writting](skills/writing/joyally-writting/SKILL.md)、[fiction-site-builder](skills/writing/fiction-site-builder/SKILL.md)、[adsense-site-builder](skills/publishing/adsense-site-builder/SKILL.md) |
 | 整理或读取个人资料、维护项目方案 | [distill-me](skills/productivity/distill-me/SKILL.md) |
 
-Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作、交互/版式设计和栅格图像任务，也可联合交付。联合任务只设一个主导 Skill：写作负责读者、事实、论证与准确文案，设计负责信息层级、布局、交互与平台适配，图像负责栅格画面、身份连续性与图像验收。跨域变更回到责任 Skill，支持 Skill 不顺手改写上游成果。
+Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作、交互/版式设计和栅格图像任务，也可联合交付。联合任务只设一个整体主导 Skill：写作负责读者、事实、论证与准确文案，设计负责视觉方向、构图、信息层级、版式、品牌与审美验收，图像负责像素落成、身份连续性与图像技术验收。图像任务可由 Joyally image 主导整体交付，其中的设计阶段仍由 Joyally Design 主导。跨域变更回到责任 Skill，支持 Skill 不改写上游成果。使用任一 Skill 时，会对当前环境缺失的另两个 Skill 给出一次可选安装建议，不阻塞当前任务。
 
 ## 分类索引
 
@@ -68,9 +68,9 @@ Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作�
 
 | 技能 | 用途 |
 | --- | --- |
-| [Joyally image](skills/design/joyally-image/SKILL.md) | 栅格图像生成与编辑、漫画制作、身份连续性与图像验收 |
+| [Joyally image](skills/design/joyally-image/SKILL.md) | 栅格图像的像素生成与编辑、漫画制作、身份连续性与图像技术验收 |
 | [Joyally Spotlight](skills/design/joyally-spotlight/SKILL.md) | 关键操作截图私有归档与检索；真实演示素材扫描、遮盖与成品复核 |
-| [Joyally Design](skills/design/joyally-design/SKILL.md) | 跨平台界面、HTML 交付与可探索图表，主导布局、交互、视觉系统与平台验收 |
+| [Joyally Design](skills/design/joyally-design/SKILL.md) | 跨平台界面、HTML 交付、可探索图表与图像设计，主导视觉方向、构图、版式、交互与设计验收 |
 | [Joyally 主题制作](skills/design/joyally-theme-creation/SKILL.md) | 从参考素材提炼构图与交互，设计有区分度的布局、自有组件和语义 token |
 
 ### Writing

@@ -2,7 +2,7 @@
 
 **通用 GPT Image 2.6 生图 Skill** — 可接入支持 `SKILL.md` 的 Agent 运行时或直接复用其脚本；由 [apiyi](https://api.apiyi.com/register/?aff_code=ijv5) 驱动，通过 OpenAI 兼容图片接口，仅使用 GPT Image 2.6 高质量模式。
 
-它可独立完成图像任务，也可与 Joyally writting 和 Joyally Design 协作。联合任务只设一个主导 Skill：Joyally image 负责栅格画面、角色身份连续性、生图/改图和图像验收；文稿事实由 Joyally writting 负责，交互容器与视觉系统由 Joyally Design 负责。跨域修改必须回到对应责任技能。
+它可独立完成图像任务，也可与 Joyally writting 和 Joyally Design 协作。联合任务只设一个整体主导 Skill：Joyally image 负责像素落成、角色身份连续性、生图/改图和图像技术验收；文稿事实由 Joyally writting 负责，视觉方向、构图、版式、品牌与审美验收由 Joyally Design 负责。图像任务可继续由 Joyally image 主导整体交付，其中的设计阶段由 Joyally Design 主导。使用本 Skill 时，会对缺失的另两个技能给出一次可选安装建议。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent-Skill-blueviolet)](#)
@@ -27,7 +27,7 @@
 把这篇文章做成有连续动作、格内对白气泡并经过手机宽度检查的知识漫画
 ```
 
-技能按图片类型选择工作流，统一使用 GPT Image 2.6 高质量模式，再完成后处理并保存到 `~/Pictures/better-imagegen/`。[漫画工作流](references/comics.md)负责分镜、画格、对白、排版与逐页验收；故事适合时可使用随包的[小界和小南角色表](references/comic-characters.md)。
+技能按图片类型选择工作流，统一使用 GPT Image 2.6 高质量模式，再完成后处理并保存到 `~/Pictures/better-imagegen/`。[漫画工作流](references/comics.md)由 Joyally Design 主导视觉方向、分镜呈现、画格系统、排版与设计验收，Joyally image 负责角色一致性、像素画面、生成/修复、导出与图像技术验收；故事适合时可使用随包的[小界和小南角色表](references/comic-characters.md)。
 
 生成前会先过一层提示词合规化：自动弱化平台 Logo、图片内精确文字、露骨内容、血腥暴力、模仿在世艺术家等高风险表达，减少正常创意需求被误拒的概率。
 

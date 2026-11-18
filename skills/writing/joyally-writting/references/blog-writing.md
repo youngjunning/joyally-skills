@@ -67,7 +67,7 @@ State the end state and prerequisites, provide a reproducible path, explain only
 
 ### Comic article
 
-Use [comic-articles.md](comic-articles.md) when scenes, recurring characters, and dialogue explain a mechanism or practical task. Keep the complete article and factual argument readable alongside the comic; hand its verified claims and scene purpose to joyally-image, which owns the comic production and character references. This is a Blog article shape, not Book production or an image-only deliverable.
+Use [comic-articles.md](comic-articles.md) when scenes, recurring characters, and dialogue explain a mechanism or practical task. Keep the complete article and factual argument readable alongside the comic. Give verified claims, approved dialogue, and scene purpose to Joyally Design for storyboard presentation, panel system, composition, lettering layout, and design acceptance; give the approved design brief to Joyally Image for character identity, pixel art, generation or repair, export, and technical image QA. This is a Blog article shape, not Book production or an image-only deliverable.
 
 ### Product or project introduction
 

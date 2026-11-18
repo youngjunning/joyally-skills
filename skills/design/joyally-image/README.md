@@ -2,7 +2,7 @@
 
 **A general-purpose GPT Image 2.6 AI image generation Skill** — usable from any Agent runtime that supports `SKILL.md`, or by reusing its scripts directly. Powered by [apiyi](https://api.apiyi.com/register/?aff_code=ijv5), using only GPT Image 2.6 at high quality through an OpenAI-compatible image API.
 
-It can work independently or cooperate with Joyally writting and Joyally Design. A combined task keeps one lead: this skill owns raster composition, identity continuity, generation or editing, and image QA; Joyally writting owns factual copy, while Joyally Design owns interactive containers and visual systems. Cross-domain changes return to the responsible skill instead of being rewritten during support work.
+It can work independently or cooperate with Joyally writting and Joyally Design. A combined task keeps one overall lead: this skill owns pixel production, identity continuity, generation or editing, and technical image QA; Joyally writting owns factual copy, while Joyally Design owns visual direction, composition, layout, brand adaptation, and design acceptance. An image task can keep Joyally image as its overall lead while Joyally Design leads its design phase. On first use, the skill recommends any missing companions once as optional installations without blocking the task.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent-Skill-blueviolet)](#)
@@ -27,7 +27,7 @@ Turn this technical article's architecture, dependency, and update-flow text blo
 Create a knowledge comic with connected panels, in-panel speech balloons, and phone-width review
 ```
 
-The skill routes each image type to the right workflow, uses GPT Image 2.6 at high quality, post-processes output, and saves files to `~/Pictures/better-imagegen/`. Its [comic workflow](references/comics.md) owns storyboards, panel art, lettering, layout, and page review; the bundled [小界、小萌、小南 character references](references/comic-characters.md) include fullbody, halfbody, and avatar images for reuse when the story calls for them.
+The skill routes each image type to the right workflow, uses GPT Image 2.6 at high quality, post-processes output, and saves files to `~/Pictures/better-imagegen/`. In its [comic workflow](references/comics.md), Joyally Design leads visual direction, storyboard presentation, panel system, lettering layout, and design acceptance; Joyally image handles cast identity, pixel art, generation or repair, export, and technical image QA. The bundled [小界、小萌、小南 character references](references/comic-characters.md) include fullbody, halfbody, and avatar images for reuse when the story calls for them.
 
 It also applies a prompt compliance layer before generation: prompts are normalized away from platform logos, exact in-image text, explicit content, graphic violence, and living-artist imitation so routine creative requests are less likely to be rejected accidentally.
 

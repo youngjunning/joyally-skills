@@ -9,7 +9,7 @@
     "name": "joyally-image",
     "category": "design",
     "path": "skills/design/joyally-image",
-    "summary": "栅格图像生成与编辑、漫画制作、身份连续性与图像验收"
+    "summary": "栅格图像的像素生成与编辑、漫画制作、身份连续性与图像技术验收"
   },
   {
     "name": "joyally-spotlight",
@@ -80,7 +80,7 @@
   {
     "name": "joyally-design",
     "category": "design",
-    "summary": "跨平台界面、HTML 交付与可探索图表，主导布局、交互、视觉系统与平台验收",
+    "summary": "跨平台界面、HTML 交付、可探索图表与图像设计，主导视觉方向、构图、版式、交互与设计验收",
     "path": "skills/design/joyally-design"
   },
   {

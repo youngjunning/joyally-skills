@@ -4,7 +4,7 @@ Use this reference for every persistent reader-facing article, blog post, ATA, t
 
 ## Ownership
 
-`joyally-writting` owns the cover decision: what promise the cover should make, which identity and facts it must preserve, where it appears, whether an existing cover remains valid, and what evidence proves it is deliverable. An image-generation skill or tool may create the pixels, but it does not decide the article's thesis or publication state.
+`joyally-writting` owns the cover's editorial decision: what promise it should make, which identity and facts it must preserve, where it appears, whether an existing cover remains valid, and what evidence proves it is deliverable. `joyally-design` owns the visual direction, composition, typography, brand adaptation, and design acceptance. `joyally-image` owns pixel production, identity-preserving generation or editing, file output, and technical image QA. The article's thesis and publication state remain here.
 
 ## Hard requirement
 
@@ -23,7 +23,7 @@ Reuse the current cover when it still matches the title, central judgment, produ
 
 ## Cover brief
 
-Write this compact brief before generation or selection:
+Write the editorial fields in this compact brief, then have `joyally-design` approve its visual fields before generation when the cover needs a new or changed design:
 
 ```text
 Article:
@@ -56,7 +56,7 @@ Avoid generic AI glows, floating dashboard cards, illegible pseudo-UI, decorativ
 
 Use [visual-routing.md](visual-routing.md) to distinguish a cover from an explanatory figure and to route mixed artwork plus semantic content. The cover-specific requirements below still apply.
 
-When a new cover is required, use the image-generation capability available in the current environment. If `joyally-image` is available, route scene-led covers through its cover/portrait reference and text-heavy covers through its text-poster reference. Do not route a cover through the knowledge-map or architecture-diagram reference.
+When a new cover is required, give the editorial brief to `joyally-design` for visual direction, composition, typography, brand adaptation, and design acceptance, then give the approved design brief to the image-generation capability. If `joyally-image` is available, route scene-led covers through its cover/portrait reference and text-heavy covers through its text-poster reference. Do not route a cover through the knowledge-map or architecture-diagram reference. If Joyally Design is unavailable, preserve the publication's existing cover system or the explicit user direction and report that no separate design review occurred.
 
 Pass the cover brief and every required identity reference to the image workflow. Identity preservation outranks stylistic reinterpretation. Keep exact title text out of the raster model when deterministic overlay is available.
 
