@@ -51,14 +51,14 @@ npx skills add youngjunning/skills --skill joyally-writting -g
    ```
    The helper creates and reuses `$SKILL_DIR/.venv`, then installs `requirements.txt` only into that venv when Pillow is missing. Every local Python command below must use `$BETTER_IMAGEGEN_PYTHON`.
 3. If the API key is missing: tell the user to set their key — `export APIYI_API_KEY="your-key"` — and register at https://api.apiyi.com/register/?aff_code=ijv5 to get one.
-4. Load `references/generation.md`, then `references/prompt-compliance.md`, then the one type-specific reference from the routing table below.
+4. Load `references/generation.md`, then `references/prompt-compliance.md`, then the one type-specific reference for the requested asset. For a coordinated article set, load `references/article-illustration-production.md` once and the matching type reference for each figure as it enters production.
 5. Classify every supplied image before resolving style: `edit target`, `identity reference`, or `style reference`. Explicit requests such as “人物形象要保留”, “参考图里的人物保持一样”, or “只改文字” make the image an identity reference and route to `references/image-edit.md`; this takes precedence over style translation. For style-only requests that mention `全职猎人`, `Hunter x Hunter`, or the user-supplied 1999-era anime key visuals, load `references/strategic-adventure-manga-style.md`. For cinematic Chinese cultivation-fantasy requests or the routing phrase `凡人修仙传风格`, load `references/cinematic-xianxia-style.md`. Translate either named direction into its original, franchise-free traits. Otherwise, unless the user named another visual style, load `references/qingshan-lake-style.md` and choose its Light or Dark mode. Default to Light for documents, ATA, knowledge maps, and unspecified canvases.
 6. Normalize the outbound prompt through the compliance layer before calling GPT.
 7. Generate with GPT using that type's reference and post-process with `references/post-process.md` when the type requires it.
 
 **Large-response safety (mandatory):** Image APIs may return multi-megabyte `b64_json`. Never capture the raw HTTP response with command substitution, assign it to a shell variable, export it as an environment variable, or pass it through argv. Decode directly from stdin or save the response to a temporary file and let Python read that file. See `references/generation.md`.
 
-**Always load `references/generation.md` and `references/prompt-compliance.md` before generating any image. Load only the type-specific reference needed for the request.**
+**Always load `references/generation.md` and `references/prompt-compliance.md` before generating any image. Load only the type-specific reference needed for each requested asset; a coordinated article set additionally loads its production reference once.**
 
 ---
 
@@ -83,12 +83,13 @@ Model verification scope is in `references/apiyi.md`. The sizes above remain req
 
 ## Type Routing
 
-Pick one type reference per task:
+Pick one type reference per asset. A coordinated article set first loads its shared production reference, then routes each figure independently:
 
 | Request | Load |
 |---|---|
 | **Comic / knowledge comic / 漫画文章里的连续画面、分镜、对白与排版** | `references/comics.md`; use `references/comic-characters.md` when the 小界和小南 cast is selected, and `references/image-edit.md` for an existing-panel repair. |
 | **Picture-book illustration or repair / 绘本插画 / recurring characters** | `references/picture-book.md`; use `references/image-edit.md` for existing art. Route complete-book planning and delivery to `joyally-writting`. |
+| **Coordinated inline illustration set for an article, ATA, tutorial, report, or document** | `references/article-illustration-production.md`, then one matching type reference per figure |
 | **Structured knowledge map / architecture diagram / domain concept graph with accurate labels and relationships** | `references/knowledge-map.md` |
 | **Text-heavy cover / technical book cover / competition (大赛/黑客松) entry cover / product KV / PPT hero where accurate text + product info must appear** | `references/text-poster.md`; additionally load `references/book-cover.md` for a book cover |
 | Portrait, cover, banner, hero, illustration, product image (no baked-in text) | `references/portrait.md` |
@@ -151,6 +152,8 @@ Treat clipping, edge contact, and accidental visual disconnection as release-blo
 - Reserve visible breathing room on all four canvas sides. For structured diagrams, use at least `24px` on a logical `1600×900` canvas unless a type-specific reference requires more; expand the canvas or simplify the composition rather than shrinking copy to fit.
 - For flows, a deliberate routing gutter is valid only when it carries a clearly visible connector or has an explicit grouping purpose. Do not leave a blank strip that visually detaches an owner/lane card from its first process node; add the source-to-first-node connector or redesign the grouping.
 - Run the applicable deterministic validator where available, then perform a raster visual review. Both must pass before delivery or publication.
+
+For an article, ATA, tutorial, report, or document that needs several coordinated inline figures, load `references/article-illustration-production.md`. Consume the writing layer's illustration manifest when available; otherwise create the smallest equivalent manifest before production. Preserve each figure's reader question, locked semantics, caption, alt text, insertion anchor, dimensions, and continuity group through generation and follow-up style changes. A produced file is not `inserted` until the destination document has actually been updated and rendered successfully.
 
 For long technical articles, audit every `text`/ASCII block before delivery. Convert blocks that express flow, architecture, branches, dependencies, state transitions, distribution, or update paths into deterministic diagrams. Keep only executable commands, configuration, literal paths, and short copyable inventories as code blocks. Do not impose a maximum illustration count; choose one figure per distinct reader question and run the density, layout, asset-completeness, and publication gates in `references/knowledge-map.md` before export or handoff.
 
@@ -248,6 +251,7 @@ When the user asks for a logo, icon, app icon source art, favicon, mascot sticke
 - `references/prompt-compliance.md` — GPT Image prompt normalization, safety boundary, rejection retry policy
 - `references/post-process.md` — WebP conversion, resize, PNG compression
 - `references/portrait.md` — portraits, covers, banners, hero images, general single-image pipeline
+- `references/article-illustration-production.md` — coordinated article figures: purpose-specific production, shared continuity, insertion-ready asset packs, and selective style revision
 - `references/text-poster.md` — text-heavy covers / competition (大赛/黑客松) entries: GPT atmospheric backdrop + HTML/CSS text layer composited via headless Chrome (accurate Chinese text, structured product info)
 - `references/knowledge-map.md` — structured domain knowledge maps and architecture diagrams: explicit content model + deterministic HTML/CSS/SVG graph over an AI-generated text-free backdrop
 - `references/logo-icon.md` — transparent logos, icons, favicons, cutouts

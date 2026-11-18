@@ -29,6 +29,8 @@ Create a knowledge comic with connected panels, in-panel speech balloons, and ph
 
 The skill routes each image type to the right workflow, uses GPT Image 2.6 at high quality, post-processes output, and saves files to `~/Pictures/better-imagegen/`. In its [comic workflow](references/comics.md), Joyally Design leads visual direction, storyboard presentation, panel system, lettering layout, and design acceptance; Joyally image handles cast identity, pixel art, generation or repair, export, and technical image QA. The bundled [小界、小萌、小南 character references](references/comic-characters.md) include fullbody, halfbody, and avatar images for reuse when the story calls for them.
 
+For a coordinated set of inline figures in an article, ATA, tutorial, report, or document, the skill consumes an illustration manifest that records each reader question, purpose (explanation, comparison, resonance, section introduction, or evidence), insertion anchor, locked facts, caption, alt text, dimensions, and continuity group. It keeps a shared visual system across the set, produces insertion-ready assets, and supports selective follow-up style changes without silently changing semantics, placement, or already accepted figures. See [article illustration production](references/article-illustration-production.md).
+
 It also applies a prompt compliance layer before generation: prompts are normalized away from platform logos, exact in-image text, explicit content, graphic violence, and living-artist imitation so routine creative requests are less likely to be rejected accidentally.
 
 ---
