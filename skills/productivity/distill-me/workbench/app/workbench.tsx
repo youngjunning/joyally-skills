@@ -8,7 +8,7 @@ type ThemeId = 'qingshan' | 'xihu' | 'maldives';
 type SectionId = 'memory' | 'practice' | 'articles' | 'treasure' | 'topics';
 
 type TwinSection = { id: SectionId; code: string; icon: LucideIcon; name: string; meaning: string; promise: string; prompt: string };
-type Fragment = { id: string; title: string; body: string; date: string; sections: SectionId[] };
+type Fragment = { id: string; title: string; body: string; date: string; sections: SectionId[]; origin?: 'automatic' | 'manual' };
 type TwinData = { source: string; focus: string; sections: SectionId[]; fragments: Fragment[] };
 
 const twinSections: TwinSection[] = [
@@ -40,33 +40,58 @@ export default function Workbench() {
   const [notice, setNotice] = useState('所有内容只在本机');
 
   useEffect(() => {
-    try {
-      const stored = JSON.parse(localStorage.getItem(storageKey) || 'null') as Partial<TwinData> | null;
-      if (stored) {
-        const knownIds = new Set(twinSections.map((section) => section.id));
-        setData({
-          source: typeof stored.source === 'string' ? stored.source : '',
-          focus: typeof stored.focus === 'string' ? stored.focus : '',
-          sections: Array.isArray(stored.sections) ? stored.sections.filter((item): item is SectionId => knownIds.has(item as SectionId)) : defaultData.sections,
-          fragments: Array.isArray(stored.fragments) ? stored.fragments : [],
-        });
+    let active = true;
+    async function load() {
+      try {
+        const response = await fetch('/api/twin', { cache: 'no-store' });
+        if (!response.ok) throw new Error('local data unavailable');
+        const stored = await response.json() as Partial<TwinData>;
+        if (active) setData({ ...defaultData, ...stored, fragments: Array.isArray(stored.fragments) ? stored.fragments : [] });
+      } catch {
+        try {
+          const stored = JSON.parse(localStorage.getItem(storageKey) || 'null') as Partial<TwinData> | null;
+          if (stored && active) setData({ ...defaultData, ...stored, fragments: Array.isArray(stored.fragments) ? stored.fragments : [] });
+          if (active) setNotice('本地数据文件暂不可用，已使用浏览器备份');
+        } catch { if (active) setNotice('本地存储不可用，仍可复制或导出'); }
+      } finally {
+        const storedTheme = localStorage.getItem(themeKey);
+        if (active && themes.some((item) => item.id === storedTheme)) setTheme(storedTheme as ThemeId);
+        if (active) setReady(true);
       }
-      const storedTheme = localStorage.getItem(themeKey);
-      if (themes.some((item) => item.id === storedTheme)) setTheme(storedTheme as ThemeId);
-    } catch { setNotice('本地存储不可用，仍可复制或导出'); }
-    finally { setReady(true); }
+    }
+    void load();
+    return () => { active = false; };
   }, []);
 
   useEffect(() => {
     if (!ready) return;
-    try {
-      localStorage.setItem(storageKey, JSON.stringify(data));
-      localStorage.setItem(themeKey, theme);
-    } catch { setNotice('本地存储不可用，仍可复制或导出'); }
+    const timer = window.setTimeout(() => {
+      try {
+        localStorage.setItem(storageKey, JSON.stringify(data));
+        localStorage.setItem(themeKey, theme);
+      } catch { setNotice('本地存储不可用，仍可复制或导出'); }
+      void fetch('/api/twin', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+        .catch(() => setNotice('本地数据文件写入失败，已保留浏览器备份'));
+    }, 250);
+    return () => window.clearTimeout(timer);
   }, [data, theme, ready]);
+
+  useEffect(() => {
+    if (!ready) return;
+    const timer = window.setInterval(async () => {
+      try {
+        const response = await fetch('/api/twin', { cache: 'no-store' });
+        if (!response.ok) return;
+        const stored = await response.json() as TwinData;
+        setData((current) => JSON.stringify(current.fragments) === JSON.stringify(stored.fragments) ? current : { ...current, fragments: stored.fragments });
+      } catch { /* keep the last local view */ }
+    }, 5000);
+    return () => window.clearInterval(timer);
+  }, [ready]);
 
   const activeSections = twinSections.filter((section) => data.sections.includes(section.id));
   const latest = useMemo(() => data.fragments[0], [data.fragments]);
+  const automaticCount = useMemo(() => data.fragments.filter((fragment) => fragment.origin === 'automatic').length, [data.fragments]);
   const sectionCounts = useMemo(() => Object.fromEntries(twinSections.map((section) => [section.id, data.fragments.filter((fragment) => fragment.sections.includes(section.id)).length])), [data.fragments]);
 
   function chooseSection(id: SectionId) { setData((current) => ({ ...current, sections: [id] })); scrollTo('start'); }
@@ -81,6 +106,7 @@ export default function Workbench() {
       body,
       date: new Date().toISOString(),
       sections: data.sections,
+      origin: 'manual',
     };
     setData((current) => ({ ...current, source: '', focus: '', fragments: [fragment, ...current.fragments] }));
     setNotice('新的分身片段已留在本机');
@@ -128,10 +154,10 @@ export default function Workbench() {
         <section className="identity-hero" id="overview" aria-labelledby="identity-title">
           <div className="identity-overline"><span>DISTILL ME</span><span>A DIGITAL TWIN THAT GROWS WITH YOU</span></div>
           <div className="identity-main">
-            <div className="identity-copy"><span className="identity-kicker">从真实材料里，长出一个可以被认识的你</span><h1 id="identity-title">把散落的你，<span>整理成一个持续生长的数字分身。</span></h1><p className="identity-description">你的经历、做事方式、文章和收藏，本来就散落在聊天、笔记与项目里。Distill Me 把它们整理成可以阅读、可以追问、也可以继续更新的你。</p><div className="identity-actions"><button className="primary-button" type="button" onClick={() => scrollTo('start')}>开始建立我的分身 <ArrowRight size={15} strokeWidth={1.8} aria-hidden="true" /></button><button className="secondary-button" type="button" onClick={() => scrollTo('twin')}>看看它如何形成 <ArrowUpRight size={15} strokeWidth={1.8} aria-hidden="true" /></button></div></div>
+            <div className="identity-copy"><span className="identity-kicker">不用另开一套记录习惯</span><h1 id="identity-title">让每天使用的 Agent，<span>持续蒸馏出你的数字分身。</span></h1><p className="identity-description">你的判断、做事方式、文章和关注，本来就会出现在与 Codex 等 Agent 的日常协作里。Distill Me 在每轮收尾时只蒸馏有价值的增量，再在本地工作台里让你查看和继续维护。</p><div className="identity-actions"><button className="primary-button" type="button" onClick={() => scrollTo('forming-title')}>查看我的分身 <ArrowRight size={15} strokeWidth={1.8} aria-hidden="true" /></button><button className="secondary-button" type="button" onClick={() => scrollTo('twin')}>看看它蒸馏什么 <ArrowUpRight size={15} strokeWidth={1.8} aria-hidden="true" /></button></div></div>
             <nav className="identity-route" aria-label="认识数字分身"><span>一个完整的数字分身</span><button type="button" onClick={() => scrollTo('memory')}><small>01 / 认识你</small><strong>有来处</strong><ArrowUpRight size={17} strokeWidth={1.7} aria-hidden="true" /></button><button type="button" onClick={() => scrollTo('practice')}><small>02 / 理解你</small><strong>有方法</strong><ArrowUpRight size={17} strokeWidth={1.7} aria-hidden="true" /></button><button type="button" onClick={() => scrollTo('topics')}><small>03 / 看见方向</small><strong>有关注</strong><ArrowUpRight size={17} strokeWidth={1.7} aria-hidden="true" /></button></nav>
           </div>
-          <div className="identity-bottom"><div className="identity-count"><span><strong>5</strong> 个核心栏目</span><span><strong>{data.fragments.length}</strong> 个本地片段</span><span><strong>0</strong> 次自动上传</span></div><div className="identity-skill"><div><span className="eyebrow">START WITH WHAT YOU ALREADY HAVE</span><h2>不用先写自我介绍</h2><p>给它一段聊天、一篇笔记或一个项目复盘，数字分身会从真实材料里慢慢长出来。</p></div><button className="compact-button" type="button" onClick={() => scrollTo('start')}>放入第一段材料 <ArrowRight size={14} strokeWidth={1.8} aria-hidden="true" /></button></div></div>
+          <div className="identity-bottom"><div className="identity-count"><span><strong>5</strong> 个核心栏目</span><span><strong>{data.fragments.length}</strong> 个本地片段</span><span><strong>{automaticCount}</strong> 个自动蒸馏</span></div><div className="identity-skill"><div><span className="eyebrow">GROW FROM EVERYDAY WORK</span><h2>不用记得投喂它</h2><p>照常与 Agent 聊需求、写文章、做复盘。有值得留下的增量时，Distill Me 会在收尾时自动整理到本机。</p></div><button className="compact-button" type="button" onClick={() => scrollTo('forming-title')}>查看最新蒸馏 <ArrowRight size={14} strokeWidth={1.8} aria-hidden="true" /></button></div></div>
         </section>
 
         <section className="home-section twin-section" id="twin" aria-labelledby="twin-title">
@@ -140,12 +166,12 @@ export default function Workbench() {
         </section>
 
         <section className="home-section start-section" id="start" aria-labelledby="start-title">
-          <div className="section-heading"><span>FROM MATERIAL TO SELF</span><div><h2 id="start-title">从一段你已经拥有的材料开始</h2><p>不用填复杂档案。选择它要进入的栏目，把原始材料交给工作台；你可以先留在本地，也可以复制给 Agent 继续蒸馏。</p></div></div>
+          <div className="section-heading"><span>MANUAL WHEN YOU NEED IT</span><div><h2 id="start-title">需要时，也可以手动补一段</h2><p>自动蒸馏是主路径。当一段旧笔记、外部资料或没有出现在 Agent 对话里的内容也值得留下时，再从这里补充。</p></div></div>
           <div className="start-grid"><div className="material-form"><label htmlFor="focus">它大概关于什么</label><input id="focus" value={data.focus} onChange={(event) => setData((current) => ({ ...current, focus: event.target.value }))} placeholder="例如：我为什么决定重做这个产品" /><label htmlFor="source">把真实材料放进来</label><textarea id="source" value={data.source} onChange={(event) => setData((current) => ({ ...current, source: event.target.value }))} placeholder="一段聊天、一篇笔记、一次复盘，或任何能代表你的内容。它只保存在当前浏览器。" /></div><aside className="destination-panel"><span className="eyebrow">WHERE IT BELONGS</span><h3>它会让哪一部分的你更完整？</h3><LucianToggleGroup className="destination-list" type="multiple" value={data.sections} onValueChange={(value) => setData((current) => ({ ...current, sections: value as SectionId[] }))} label="选择数字分身栏目">{twinSections.map((section) => <LucianToggleItem key={section.id} value={section.id} label={section.name}><span className="destination-mark" aria-hidden="true"><section.icon size={15} strokeWidth={1.8} /></span><span><strong>{section.name}</strong><small>{section.meaning}</small></span><span className="destination-state">{data.sections.includes(section.id) ? '已选择' : '选择'}</span></LucianToggleItem>)}</LucianToggleGroup><div className="start-actions"><button className="primary-button" type="button" onClick={saveFragment}>留在我的分身里 <ArrowRight size={14} strokeWidth={1.8} aria-hidden="true" /></button><button className="secondary-button" type="button" onClick={copyPrompt}>交给 Agent 蒸馏</button></div></aside></div>
         </section>
 
         <section className="home-section forming-section" aria-labelledby="forming-title">
-          <div className="section-heading section-heading-row"><span>THE TWIN TAKES SHAPE</span><div><h2 id="forming-title">你的分身，正在形成</h2><p>{latest ? `最近在 ${formatDate(latest.date)} 留下了“${latest.title}”。` : '还没有内容也没关系。一个可信的数字分身，本来就应该从真实材料开始。'}</p></div><button className="text-button" type="button" onClick={exportData}>导出我的数据 <ArrowUpRight size={13} strokeWidth={1.8} aria-hidden="true" /></button></div>
+          <div className="section-heading section-heading-row"><span>THE TWIN TAKES SHAPE</span><div><h2 id="forming-title">Agent 正在帮你积累</h2><p>{latest ? `最近在 ${formatDate(latest.date)} ${latest.origin === 'automatic' ? '自动蒸馏' : '手动留下'}了“${latest.title}”。` : '照常使用 Agent 即可。只有有依据、值得持续保留的内容才会进入你的数字分身。'}</p></div><button className="text-button" type="button" onClick={exportData}>导出我的数据 <ArrowUpRight size={13} strokeWidth={1.8} aria-hidden="true" /></button></div>
           <div className="forming-grid">{twinSections.map((section) => <article key={section.id}><span className="forming-mark" aria-hidden="true"><section.icon size={15} strokeWidth={1.8} /></span><div><strong>{section.name}</strong><small>{sectionCounts[section.id]} 个片段</small></div></article>)}</div>
           {data.fragments.length ? <div className="fragment-grid">{data.fragments.map((fragment) => <article className="fragment-card" key={fragment.id}><div className="fragment-meta"><time dateTime={fragment.date}>{formatDate(fragment.date)}</time><span>{fragment.sections.map((id) => twinSections.find((section) => section.id === id)?.name).filter(Boolean).join(' · ')}</span></div><h3>{fragment.title}</h3><p>{fragment.body}</p><button type="button" onClick={() => removeFragment(fragment.id)}>从本机移除</button></article>)}</div> : <div className="empty-state"><span>YOUR FIRST TRACE</span><h3>不用完整，先留下一段真实的你。</h3><button className="secondary-button" type="button" onClick={() => scrollTo('start')}>放入第一段材料 <ArrowUpRight size={14} strokeWidth={1.8} aria-hidden="true" /></button></div>}
         </section>
