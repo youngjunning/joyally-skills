@@ -4,7 +4,7 @@ import { ToggleGroup } from 'radix-ui';
 import { useEffect, useMemo, useState } from 'react';
 
 type ThemeId = 'qingshan' | 'xihu' | 'maldives';
-type SectionId = 'memory' | 'practice' | 'articles' | 'treasure' | 'conversation';
+type SectionId = 'memory' | 'practice' | 'articles' | 'treasure' | 'topics';
 
 type TwinSection = { id: SectionId; code: string; mark: string; name: string; meaning: string; promise: string; prompt: string };
 type Fragment = { id: string; title: string; body: string; date: string; sections: SectionId[] };
@@ -15,7 +15,7 @@ const twinSections: TwinSection[] = [
   { id: 'practice', code: 'PRACTICE', mark: '做', name: '做事方式', meaning: '能力、协作与创造', promise: '不只展示结果，也让你的方法、边界和长处可以被理解。', prompt: '提炼反复出现的方法、协作习惯、能力证据与适用边界。' },
   { id: 'articles', code: 'ARTICLES', mark: '文', name: '文章', meaning: '持续写作与系统表达', promise: '把零散想法变成有观点、有依据、值得继续写的主题。', prompt: '整理可写的选题、核心观点、结构、证据与尚待确认的部分。' },
   { id: 'treasure', code: 'COLLECTION', mark: '藏', name: '百宝箱', meaning: '资源与知识笔记', promise: '收藏不止是链接，而是知道它为什么有用、何时再拿出来。', prompt: '保留资料名称、来源、摘要、用途与适合再次取用的场景。' },
-  { id: 'conversation', code: 'CONVERSATION', mark: '聊', name: '和我聊聊', meaning: '有来源的数字分身对话', promise: '让前面的积累变成可追问的回答，同时保留来源与不确定性。', prompt: '生成可追问的问题、基于材料的回答要点、来源和不确定边界。' },
+  { id: 'topics', code: 'SUBJECTS', mark: '题', name: '关注主题', meaning: '长期兴趣与问题意识', promise: '看见你持续关注什么，以及这些主题如何连接经历、文章与收藏。', prompt: '提炼持续关注的主题、核心问题、相关经历与内容依据，避免只凭一次提及下结论。' },
 ];
 
 const themes: { id: ThemeId; label: string }[] = [
@@ -24,7 +24,7 @@ const themes: { id: ThemeId; label: string }[] = [
   { id: 'maldives', label: '马尔代夫' },
 ];
 
-const storageKey = 'distill-me-digital-twin-v1';
+const storageKey = 'distill-me-digital-twin-v2';
 const themeKey = 'distill-me-workbench-theme';
 const defaultData: TwinData = { source: '', focus: '', sections: twinSections.map((section) => section.id), fragments: [] };
 
@@ -128,7 +128,7 @@ export default function Workbench() {
           <div className="identity-overline"><span>DISTILL ME</span><span>A DIGITAL TWIN THAT GROWS WITH YOU</span></div>
           <div className="identity-main">
             <div className="identity-copy"><span className="identity-kicker">从真实材料里，长出一个可以被认识的你</span><h1 id="identity-title">把散落的你，<span>整理成一个持续生长的数字分身。</span></h1><p className="identity-description">你的经历、做事方式、文章和收藏，本来就散落在聊天、笔记与项目里。Distill Me 把它们整理成可以阅读、可以追问、也可以继续更新的你。</p><div className="identity-actions"><button className="primary-button" type="button" onClick={() => scrollTo('start')}>开始建立我的分身 <span aria-hidden="true">→</span></button><button className="secondary-button" type="button" onClick={() => scrollTo('twin')}>看看它如何形成 <span aria-hidden="true">↗</span></button></div></div>
-            <nav className="identity-route" aria-label="认识数字分身"><span>一个完整的数字分身</span><button type="button" onClick={() => scrollTo('memory')}><small>01 / 认识你</small><strong>有来处</strong><span aria-hidden="true">↗</span></button><button type="button" onClick={() => scrollTo('practice')}><small>02 / 理解你</small><strong>有方法</strong><span aria-hidden="true">↗</span></button><button type="button" onClick={() => scrollTo('conversation')}><small>03 / 继续了解</small><strong>能对话</strong><span aria-hidden="true">↗</span></button></nav>
+            <nav className="identity-route" aria-label="认识数字分身"><span>一个完整的数字分身</span><button type="button" onClick={() => scrollTo('memory')}><small>01 / 认识你</small><strong>有来处</strong><span aria-hidden="true">↗</span></button><button type="button" onClick={() => scrollTo('practice')}><small>02 / 理解你</small><strong>有方法</strong><span aria-hidden="true">↗</span></button><button type="button" onClick={() => scrollTo('topics')}><small>03 / 看见方向</small><strong>有关注</strong><span aria-hidden="true">↗</span></button></nav>
           </div>
           <div className="identity-bottom"><div className="identity-count"><span><strong>5</strong> 个核心栏目</span><span><strong>{data.fragments.length}</strong> 个本地片段</span><span><strong>0</strong> 次自动上传</span></div><div className="identity-skill"><div><span className="eyebrow">START WITH WHAT YOU ALREADY HAVE</span><h2>不用先写自我介绍</h2><p>给它一段聊天、一篇笔记或一个项目复盘，数字分身会从真实材料里慢慢长出来。</p></div><button className="compact-button" type="button" onClick={() => scrollTo('start')}>放入第一段材料 <span aria-hidden="true">→</span></button></div></div>
         </section>
