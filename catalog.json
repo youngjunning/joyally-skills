@@ -30,6 +30,12 @@
     "summary": "审查测试能否阻止真实回归，治理 AI 生成测试与套件膨胀"
   },
   {
+    "name": "joyally-git",
+    "category": "engineering",
+    "path": "skills/engineering/joyally-git",
+    "summary": "判断 Git 改动应提交并推送、只提交、保留还是请求确认，并安全执行获准动作"
+  },
+  {
     "name": "joyally-writting",
     "category": "writing",
     "path": "skills/writing/joyally-writting",
