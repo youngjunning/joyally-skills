@@ -1,13 +1,13 @@
 ---
 name: joyally-image
-description: Generate or edit raster images and produce comics, picture-book illustrations, covers, static diagram images, icons, wallpapers, animation frames, and pet spritesheets. Lead pixel production, identity continuity, generation or editing, and technical image QA; joyally-design leads visual direction, composition, brand and layout decisions, while joyally-writting owns prose and factual content. All three skills can work independently; a combined task has one overall lead.
+description: Generate or edit raster images and produce comics, picture-book illustrations, covers, game-ready 2D assets, static diagram images, icons, wallpapers, animation frames, and pet spritesheets. Lead pixel production, identity continuity, generation or editing, and technical image QA; joyally-design leads visual direction, composition, brand and layout decisions, while joyally-writting owns prose and factual content. All three skills can work independently; a combined task has one overall lead.
 ---
 
 # Joyally image
 
 AI image generation skill powered by [apiyi](https://api.apiyi.com/register/?aff_code=ijv5) using only GPT Image 2.6 (`gpt-image-2.6-sunburst`, `quality=high`) through an OpenAI-compatible image API.
 
-**Trigger this skill when:** the user asks to create or repair a comic, storyboard, panel sequence, image, illustration, cover, static diagram, icon, animation, or visual asset. Comic articles also use this skill for their complete comic production, while `joyally-writting` owns the article prose and factual argument. Image-only edits that must preserve a supplied design use the image-edit route.
+**Trigger this skill when:** the user asks to create or repair a comic, storyboard, panel sequence, image, illustration, cover, static diagram, icon, animation, game asset, sprite, tileset, game prop, game UI art, or visual asset. Comic articles also use this skill for their complete comic production, while `joyally-writting` owns the article prose and factual argument. Image-only edits that must preserve a supplied design use the image-edit route.
 
 ## Collaboration boundary
 
@@ -95,6 +95,7 @@ Pick one type reference per asset. A coordinated article set first loads its sha
 | Portrait, cover, banner, hero, illustration, product image (no baked-in text) | `references/portrait.md` |
 | Logo, favicon, app icon source art, mascot sticker, transparent cutout | `references/logo-icon.md` |
 | Product UI navigation icon family, sidebar icon set, repeated 16–24px icons | `references/navigation-icon.md` |
+| **Game-ready 2D asset family: characters, props, tilesets, game UI art, effects, animation clips, atlases, or import-ready packs** | `references/game-assets.md`; involve `joyally-design` when the game visual system, UI composition, or art direction is not already approved |
 | **macOS app icon deliverable** (`.icns` / iconset / Dock icon) from art or a website logo | `references/macos-app-icon.md` |
 | Static Mac/desktop wallpaper | `references/static-wallpaper.md` |
 | Light/Dark Mac dynamic wallpaper | `references/dynamic-wallpaper.md` |
@@ -220,6 +221,8 @@ Use the summary helpers in `references/generation.md`; do not rely on memory or 
 
 **Exception — sprite loop:** generate a sprite sheet, split into numbered PNG frames, produce `preview.gif`, and save `manifest.json`. Follow `references/sprite-loop.md`.
 
+**Exception — game-ready 2D assets:** retain the source PNGs and the game asset manifest; choose PNG/WebP only after the target runtime, alpha requirements, atlas contract, and import settings are known. Follow `references/game-assets.md`; do not force the ordinary article WebP convention onto a game asset pack.
+
 **Exception — Codex v2 pet:** keep the final spritesheet as transparent PNG or WebP (never generic WebP conversion), produce `pet.json` with `spriteVersionNumber: 2`, and retain the required QA artifacts. Follow `references/codex-pet.md`.
 
 **Exception — picture-book illustrations:** preserve source artwork as PNG or high-quality JPEG with native pixel dimensions and request metadata. Do not apply article WebP defaults. Return assets to `joyally-writting` for exact lettering, edition geometry, validation and packaging. Follow `references/picture-book.md`.
@@ -256,6 +259,7 @@ When the user asks for a logo, icon, app icon source art, favicon, mascot sticke
 - `references/knowledge-map.md` — structured domain knowledge maps and architecture diagrams: explicit content model + deterministic HTML/CSS/SVG graph over an AI-generated text-free backdrop
 - `references/logo-icon.md` — transparent logos, icons, favicons, cutouts
 - `references/navigation-icon.md` — transparent product UI navigation icon families and small-size QA
+- `references/game-assets.md` — game-ready 2D asset families: brief, style lock, grid/alpha/pivot/atlas contract, QA and import-ready manifests
 - `references/macos-app-icon.md` — turn icon art / a website logo into a native macOS app icon: autocrop padding → macOS squircle mask → 10-size iconset → `.icns` + 1024 `AppIcon.png`
 - `references/static-wallpaper.md` — Mac/static wallpaper PNG pipeline
 - `references/dynamic-wallpaper.md` — Mac dynamic wallpaper: 2-frame Light/Dark HEIC with `apple_desktop:apr`
