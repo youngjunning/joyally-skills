@@ -1,16 +1,19 @@
 # Joyally Design 统一 token 契约
 
-采用 `Seed → Map → Alias → Component`。文件中的 `semantic` 就是 Alias；平台示例可以省略没有派生值的 Map 层，但不得另立语义体系。
+采用 `Seed → Map → Alias → Component`。文件中的 `semantic` 就是 Alias；平台示例可以省略没有派生值的 Map 层，但不得另立语义体系。颜色属性、色阶、双模式角色、状态矩阵与色域边界见[颜色体系](color-system.md)。
 
 | 角色 | 语义 token | 使用约定 |
 | --- | --- | --- |
-| 画布与阅读表面 | background / surface / surfaceMuted | 长文、表格、代码和证据用不透明表面 |
-| 正文 | text / textSecondary | 在实际背景上验证对比度 |
+| 画布与阅读表面 | background / surface / surfaceElevated / surfaceMuted | 长文、表格、代码和证据用不透明表面 |
+| 正文 | text / textSecondary / textTertiary | 在实际背景上验证对比度 |
 | 操作 | primaryAction / onPrimaryAction | primary 是视觉强调，不能默认用于小号白字按钮 |
 | 选中 | primaryContainer / onPrimaryContainer | 不改变控件几何；配合文字或图标 |
 | 焦点 | focus | 保留键盘可见焦点 |
-| 状态 | success / warning / error | 不仅靠颜色表达 |
-| 深色 | darkBackground / darkSurface / onDark | 平台深色实现映射到同一角色 |
+| 状态 | success / warning / error / info | 不仅靠颜色表达 |
+| 边界 | border / borderStrong | 普通分隔与需要 3:1 的控件边界分开 |
+| 遮罩 | overlay | 与 surface 和组件 opacity 分开管理 |
+| 禁用 | disabledSurface / disabledText | 颜色与真实不可操作行为同时成立 |
+| 深色 | mode.dark 的完整角色映射 | 不用反相或零散 dark token 代替完整映射 |
 
 ## 前景与背景成对
 

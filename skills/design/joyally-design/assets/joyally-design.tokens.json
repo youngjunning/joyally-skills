@@ -60,6 +60,35 @@
     "primitiveStrategy": "shadcn-open-code",
     "motionEnhancement": "magic-ui-progressive"
   },
+  "colorSystem": {
+    "authoringSpace": "oklch-preferred-with-srgb-fallback",
+    "publishedFormat": "six-digit-srgb-hex",
+    "scaleRule": "stable-order-not-lightness-percentage",
+    "roleLayers": [
+      "color-properties",
+      "scale",
+      "semantic-role",
+      "mode-and-state",
+      "component"
+    ],
+    "requiredStates": [
+      "default",
+      "hover",
+      "pressed",
+      "selected",
+      "focus-visible",
+      "disabled",
+      "loading"
+    ],
+    "contrast": {
+      "normalText": 4.5,
+      "largeText": 3,
+      "functionalGraphic": 3,
+      "controlBoundary": 3,
+      "disabledLabelFloor": 3
+    },
+    "gamutRule": "reduce-chroma-before-publishing-when-target-gamut-clips"
+  },
   "appearanceContract": {
     "themeTokens": {
       "background": "{color.canvas}",
@@ -158,6 +187,7 @@
   "color": {
     "canvas": "#F7F5F0",
     "surface": "#FFFDFA",
+    "surfaceElevated": "#FFFFFF",
     "surfaceMuted": "#E8EEEA",
     "mistWhite": "#F2F7F2",
     "cloudBelt": "#B8CCDB",
@@ -165,6 +195,7 @@
     "summerLeaf": "#4F8D50",
     "primary": "#397A46",
     "primaryHover": "#306A3D",
+    "primaryPressed": "#1F482A",
     "primaryAction": "#275A34",
     "primaryContainer": "#DFEDDA",
     "primarySubtle": "#EFF6ED",
@@ -179,8 +210,23 @@
     "errorStrong": "#A7472D",
     "info": "#4D7180",
     "border": "#D6E0D3",
+    "borderStrong": "#748B76",
+    "overlay": "#1F2E2E",
     "darkCanvas": "#0F2B36",
     "darkSurface": "#183B40",
+    "darkSurfaceMuted": "#234B50",
+    "darkSurfaceElevated": "#203F44",
+    "darkBorder": "#49676B",
+    "darkBorderStrong": "#719296",
+    "darkPrimary": "#A8D3AC",
+    "darkPrimaryHover": "#B9DDBD",
+    "darkPrimaryPressed": "#8FBD94",
+    "darkPrimaryContainer": "#254735",
+    "darkSuccess": "#A8D3AC",
+    "darkWarning": "#E5C47B",
+    "darkError": "#E5A394",
+    "darkInfo": "#A9C9E0",
+    "darkOverlay": "#071A21",
     "white": "#FFFFFF",
     "inkBlack": "#1F2E2E",
     "cinnabar": "#B34A3C",
@@ -199,6 +245,7 @@
   },
   "map": {
     "colorPrimaryHover": "{color.primaryHover}",
+    "colorPrimaryPressed": "{color.primaryPressed}",
     "colorPrimaryAction": "{color.primaryAction}",
     "colorPrimaryContainer": "{color.primaryContainer}",
     "colorSuccess": "{color.successStrong}",
@@ -209,12 +256,15 @@
     "background": "{color.canvas}",
     "surface": "{color.surface}",
     "surfaceStrong": "{color.surface}",
+    "surfaceElevated": "{color.surfaceElevated}",
     "surfaceMuted": "{color.surfaceMuted}",
     "text": "{color.text}",
     "textSecondary": "{color.textSecondary}",
     "textTertiary": "{color.textTertiary}",
     "primary": "{color.primary}",
+    "accent": "{color.summerLeaf}",
     "primaryHover": "{color.primaryHover}",
+    "primaryPressed": "{color.primaryPressed}",
     "primaryAction": "{color.primaryAction}",
     "onPrimaryAction": "{color.white}",
     "primaryContainer": "{color.primaryContainer}",
@@ -225,7 +275,11 @@
     "error": "{color.errorStrong}",
     "info": "{color.info}",
     "border": "{color.border}",
+    "borderStrong": "{color.borderStrong}",
     "focus": "{color.primaryAction}",
+    "disabledSurface": "{color.surfaceMuted}",
+    "disabledText": "{color.textSecondary}",
+    "overlay": "{color.overlay}",
     "darkBackground": "{color.darkCanvas}",
     "darkSurface": "{color.darkSurface}",
     "onDark": "{color.mistWhite}",
@@ -238,12 +292,67 @@
   "component": {
     "primaryButtonBackground": "{semantic.primaryAction}",
     "primaryButtonForeground": "{semantic.onPrimaryAction}",
+    "primaryButtonHoverBackground": "{semantic.primaryHover}",
+    "primaryButtonPressedBackground": "{semantic.primaryPressed}",
+    "primaryButtonDisabledBackground": "{semantic.disabledSurface}",
+    "primaryButtonDisabledForeground": "{semantic.disabledText}",
+    "interactiveHoverBackground": "{semantic.primarySubtle}",
+    "interactivePressedBackground": "{semantic.primaryContainer}",
     "selectedBackground": "{semantic.primaryContainer}",
+    "selectedForeground": "{semantic.onPrimaryContainer}",
     "focusRing": "{semantic.focus}",
+    "controlBorder": "{semantic.borderStrong}",
+    "dialogOverlay": "{semantic.overlay}",
     "evidenceSurface": "{semantic.surfaceStrong}",
     "successForeground": "{semantic.success}",
     "warningForeground": "{semantic.warning}",
     "errorForeground": "{semantic.error}"
+  },
+  "mode": {
+    "light": {
+      "background": "{semantic.background}",
+      "surface": "{semantic.surface}",
+      "surfaceMuted": "{semantic.surfaceMuted}",
+      "surfaceElevated": "{semantic.surfaceElevated}",
+      "text": "{semantic.text}",
+      "textSecondary": "{semantic.textSecondary}",
+      "border": "{semantic.border}",
+      "borderStrong": "{semantic.borderStrong}",
+      "primaryAction": "{semantic.primaryAction}",
+      "onPrimaryAction": "{semantic.onPrimaryAction}",
+      "primaryContainer": "{semantic.primaryContainer}",
+      "onPrimaryContainer": "{semantic.onPrimaryContainer}",
+      "success": "{semantic.success}",
+      "warning": "{semantic.warning}",
+      "error": "{semantic.error}",
+      "info": "{semantic.info}",
+      "focus": "{semantic.focus}",
+      "disabledSurface": "{semantic.disabledSurface}",
+      "disabledText": "{semantic.disabledText}",
+      "overlay": "{semantic.overlay}"
+    },
+    "dark": {
+      "background": "{color.darkCanvas}",
+      "surface": "{color.darkSurface}",
+      "surfaceMuted": "{color.darkSurfaceMuted}",
+      "surfaceElevated": "{color.darkSurfaceElevated}",
+      "text": "{color.mistWhite}",
+      "textSecondary": "{color.cloudBelt}",
+      "border": "{color.darkBorder}",
+      "borderStrong": "{color.darkBorderStrong}",
+      "primaryAction": "{color.darkPrimary}",
+      "onPrimaryAction": "{color.darkCanvas}",
+      "primaryContainer": "{color.darkPrimaryContainer}",
+      "onPrimaryContainer": "{color.mistWhite}",
+      "success": "{color.darkSuccess}",
+      "warning": "{color.darkWarning}",
+      "error": "{color.darkError}",
+      "info": "{color.darkInfo}",
+      "focus": "{color.darkPrimary}",
+      "disabledSurface": "{color.darkSurfaceMuted}",
+      "disabledText": "{color.cloudBelt}",
+      "overlay": "{color.darkOverlay}"
+    }
   },
   "dimension": {
     "radiusXS": "4px",
@@ -307,6 +416,14 @@
     "loadingOpacity": "0.64",
     "hoverLift": "0 1px 2px rgba(35, 78, 74, 0.06)"
   },
+  "stateLayer": {
+    "hover": 0.08,
+    "pressed": 0.12,
+    "selected": 0.12,
+    "focus": 1,
+    "disabled": 0.48,
+    "overlay": 0.56
+  },
   "density": {
     "defaultControl": "36px",
     "compactControl": "32px",
@@ -343,6 +460,16 @@
       "minimum": 4.5
     },
     {
+      "foreground": "semantic.disabledText",
+      "background": "semantic.disabledSurface",
+      "minimum": 3
+    },
+    {
+      "foreground": "semantic.borderStrong",
+      "background": "semantic.background",
+      "minimum": 3
+    },
+    {
       "foreground": "semantic.success",
       "background": "semantic.surface",
       "minimum": 4.5
@@ -365,6 +492,36 @@
     {
       "foreground": "semantic.onDarkSecondary",
       "background": "semantic.darkBackground",
+      "minimum": 4.5
+    },
+    {
+      "foreground": "mode.dark.onPrimaryAction",
+      "background": "mode.dark.primaryAction",
+      "minimum": 4.5
+    },
+    {
+      "foreground": "mode.dark.onPrimaryContainer",
+      "background": "mode.dark.primaryContainer",
+      "minimum": 4.5
+    },
+    {
+      "foreground": "mode.dark.success",
+      "background": "mode.dark.surface",
+      "minimum": 4.5
+    },
+    {
+      "foreground": "mode.dark.warning",
+      "background": "mode.dark.surface",
+      "minimum": 4.5
+    },
+    {
+      "foreground": "mode.dark.error",
+      "background": "mode.dark.surface",
+      "minimum": 4.5
+    },
+    {
+      "foreground": "mode.dark.info",
+      "background": "mode.dark.surface",
       "minimum": 4.5
     }
   ],

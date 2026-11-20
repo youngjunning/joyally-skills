@@ -19,18 +19,77 @@ REQUIRED_SEMANTIC = {
     "background",
     "surface",
     "surfaceStrong",
+    "surfaceElevated",
     "surfaceMuted",
     "text",
     "textSecondary",
+    "textTertiary",
     "primary",
+    "accent",
+    "primaryHover",
+    "primaryPressed",
     "primaryAction",
     "onPrimaryAction",
+    "primaryContainer",
+    "onPrimaryContainer",
     "success",
     "warning",
     "error",
+    "info",
+    "border",
+    "borderStrong",
     "focus",
+    "disabledSurface",
+    "disabledText",
+    "overlay",
     "darkBackground",
     "onDark",
+}
+REQUIRED_COMPONENT_ROLES = {
+    "primaryButtonBackground",
+    "primaryButtonForeground",
+    "primaryButtonHoverBackground",
+    "primaryButtonPressedBackground",
+    "primaryButtonDisabledBackground",
+    "primaryButtonDisabledForeground",
+    "interactiveHoverBackground",
+    "interactivePressedBackground",
+    "selectedBackground",
+    "selectedForeground",
+    "focusRing",
+    "controlBorder",
+    "dialogOverlay",
+}
+REQUIRED_MODE_ROLES = {
+    "background",
+    "surface",
+    "surfaceMuted",
+    "surfaceElevated",
+    "text",
+    "textSecondary",
+    "border",
+    "borderStrong",
+    "primaryAction",
+    "onPrimaryAction",
+    "primaryContainer",
+    "onPrimaryContainer",
+    "success",
+    "warning",
+    "error",
+    "info",
+    "focus",
+    "disabledSurface",
+    "disabledText",
+    "overlay",
+}
+REQUIRED_STATES = {
+    "default",
+    "hover",
+    "pressed",
+    "selected",
+    "focus-visible",
+    "disabled",
+    "loading",
 }
 REQUIRED_THEME_ROLES = {
     "background",
@@ -207,6 +266,68 @@ def check_appearance_contract(document: dict, errors: list[str]) -> tuple[int, i
     return len(theme_tokens) if isinstance(theme_tokens, dict) else 0, material_count
 
 
+def check_color_system(document: dict, errors: list[str]) -> tuple[int, int]:
+    contract = document.get("colorSystem")
+    if not isinstance(contract, dict):
+        errors.append("colorSystem must be an object")
+        return 0, 0
+
+    if contract.get("authoringSpace") != "oklch-preferred-with-srgb-fallback":
+        errors.append("colorSystem.authoringSpace must prefer OKLCH with an sRGB fallback")
+    states = contract.get("requiredStates")
+    if not isinstance(states, list) or set(states) != REQUIRED_STATES:
+        errors.append("colorSystem.requiredStates must contain the complete interaction state set")
+
+    contrast_contract = contract.get("contrast")
+    required_contrast = {
+        "normalText": 4.5,
+        "largeText": 3,
+        "functionalGraphic": 3,
+        "controlBoundary": 3,
+        "disabledLabelFloor": 3,
+    }
+    if not isinstance(contrast_contract, dict):
+        errors.append("colorSystem.contrast must be an object")
+    else:
+        for role, minimum in required_contrast.items():
+            if contrast_contract.get(role) != minimum:
+                errors.append(f"colorSystem.contrast.{role} must be {minimum}")
+
+    modes = document.get("mode")
+    mode_count = 0
+    if not isinstance(modes, dict):
+        errors.append("mode must be an object")
+    else:
+        for mode_name in ("light", "dark"):
+            roles = modes.get(mode_name)
+            if not isinstance(roles, dict):
+                errors.append(f"mode.{mode_name} must be an object")
+                continue
+            mode_count += 1
+            missing = sorted(REQUIRED_MODE_ROLES - roles.keys())
+            if missing:
+                errors.append(f"mode.{mode_name} is missing roles: {', '.join(missing)}")
+            for role in roles:
+                try:
+                    resolve_color(document, f"mode.{mode_name}.{role}")
+                except (KeyError, ValueError) as error:
+                    errors.append(str(error))
+
+    state_layers = document.get("stateLayer")
+    required_layers = {"hover", "pressed", "selected", "focus", "disabled", "overlay"}
+    if not isinstance(state_layers, dict):
+        errors.append("stateLayer must be an object")
+    else:
+        missing = sorted(required_layers - state_layers.keys())
+        if missing:
+            errors.append(f"stateLayer is missing: {', '.join(missing)}")
+        for role, value in state_layers.items():
+            if not isinstance(value, (int, float)) or not 0 <= value <= 1:
+                errors.append(f"stateLayer.{role} must be a number between 0 and 1")
+
+    return mode_count, len(states) if isinstance(states, list) else 0
+
+
 def main() -> int:
     document = json.loads(TOKEN_FILE.read_text(encoding="utf-8"))
     errors: list[str] = []
@@ -217,6 +338,14 @@ def main() -> int:
         missing = sorted(REQUIRED_SEMANTIC - semantic.keys())
         if missing:
             errors.append(f"missing semantic roles: {', '.join(missing)}")
+
+    component = document.get("component")
+    if not isinstance(component, dict):
+        errors.append("component must be an object")
+    else:
+        missing = sorted(REQUIRED_COMPONENT_ROLES - component.keys())
+        if missing:
+            errors.append(f"missing component color roles: {', '.join(missing)}")
 
     for group_name in ("color", "semantic", "component"):
         group = document.get(group_name, {})
@@ -252,6 +381,7 @@ def main() -> int:
         parse_css_tokens(THEME_FILE), THEME_MAPPING, document, "HTML theme", errors
     )
     theme_role_count, material_count = check_appearance_contract(document, errors)
+    mode_count, state_count = check_color_system(document, errors)
 
     if errors:
         for error in errors:
@@ -261,7 +391,8 @@ def main() -> int:
     print(
         f"validated {len(document['color'])} colors, {len(document['semantic'])} semantic roles, "
         f"{passed_pairs} contrast pairs, {theme_passed} HTML theme mappings, "
-        f"{theme_role_count} theme roles, {material_count} material presets"
+        f"{theme_role_count} theme roles, {material_count} material presets, "
+        f"{mode_count} color modes, {state_count} interaction states"
     )
     return 0
 
