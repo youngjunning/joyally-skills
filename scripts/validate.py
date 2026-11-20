@@ -8,7 +8,7 @@ import sys
 from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
-SKIP = {'.git', '__pycache__', '.venv', 'node_modules'}
+SKIP = {'.git', '.next', '__pycache__', '.venv', 'node_modules'}
 PATTERNS = {
     'personal absolute path': re.compile('/' + r'Users/[^/\s]+/'),
     'internal host': re.compile(r'\b(?:[\w-]+\.)*(?:alibaba-inc|aliway|fliggy)\.com\b'),
