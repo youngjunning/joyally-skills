@@ -1,6 +1,6 @@
-# Logo / Icon / Transparent Asset
+# Icon / Favicon / Transparent Asset
 
-Use for logos, favicons, app icon source art, stickers, badges, mascots, cutouts, and any asset where transparency matters.
+Use for favicons, app icon source art, generic icons, stickers, badges, mascots, cutouts, and other assets where transparency matters. If the request needs a brand brief, exact name treatment, wordmark, logotype, brand emblem, mascot brand mark, or multiple logo lockups, use `references/brand-logo.md` instead.
 
 Load first:
 - `references/generation.md`

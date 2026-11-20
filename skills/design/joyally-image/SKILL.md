@@ -1,13 +1,13 @@
 ---
 name: joyally-image
-description: Generate or edit raster images and produce comics, picture-book illustrations, covers, game-ready 2D assets, static diagram images, icons, wallpapers, animation frames, and pet spritesheets. Lead pixel production, identity continuity, generation or editing, and technical image QA; joyally-design leads visual direction, composition, brand and layout decisions, while joyally-writting owns prose and factual content. All three skills can work independently; a combined task has one overall lead.
+description: Generate or edit raster images and produce comics, picture-book illustrations, covers, brand logos and wordmarks, game-ready 2D assets, static diagram images, icons, wallpapers, animation frames, and pet spritesheets. Lead pixel production, identity continuity, generation or editing, and technical image QA; joyally-design leads visual direction, composition, brand and layout decisions, while joyally-writting owns prose and factual content. All three skills can work independently; a combined task has one overall lead.
 ---
 
 # Joyally image
 
 AI image generation skill powered by [apiyi](https://api.apiyi.com/register/?aff_code=ijv5) using only GPT Image 2.6 (`gpt-image-2.6-sunburst`, `quality=high`) through an OpenAI-compatible image API.
 
-**Trigger this skill when:** the user asks to create or repair a comic, storyboard, panel sequence, image, illustration, cover, static diagram, icon, animation, game asset, sprite, tileset, game prop, game UI art, or visual asset. Comic articles also use this skill for their complete comic production, while `joyally-writting` owns the article prose and factual argument. Image-only edits that must preserve a supplied design use the image-edit route.
+**Trigger this skill when:** the user asks to create or repair a comic, storyboard, panel sequence, image, illustration, cover, brand logo, wordmark, static diagram, icon, animation, game asset, sprite, tileset, game prop, game UI art, or visual asset. Comic articles also use this skill for their complete comic production, while `joyally-writting` owns the article prose and factual argument. Image-only edits that must preserve a supplied design use the image-edit route.
 
 ## Collaboration boundary
 
@@ -71,7 +71,7 @@ Generation and editing use only `gpt-image-2.6-sunburst` with explicit `quality=
 | Use case | Default size | Model |
 |---|---|---|
 | Portrait / illustration | `848×1280` | GPT Image 2.6 |
-| Logo / favicon | `1280×1280` | GPT Image 2.6 |
+| Brand logo / wordmark / favicon source art | `1280×1280` | GPT Image 2.6 |
 | **Mac wallpaper (static)** | `3840×2160` (16:9 4K) | GPT Image 2.6 |
 | **Mac dynamic wallpaper (apr)** | `3840×2160` × 2 frames | GPT Image 2.6 (per frame) |
 | **Sprite loop** | `1280×960` sheet → 12 frames | GPT Image 2.6 |
@@ -93,7 +93,8 @@ Pick one type reference per asset. A coordinated article set first loads its sha
 | **Structured knowledge map / architecture diagram / domain concept graph with accurate labels and relationships** | `references/knowledge-map.md` |
 | **Text-heavy cover / technical book cover / competition (大赛/黑客松) entry cover / product KV / PPT hero where accurate text + product info must appear** | `references/text-poster.md`; additionally load `references/book-cover.md` for a book cover |
 | Portrait, cover, banner, hero, illustration, product image (no baked-in text) | `references/portrait.md` |
-| Logo, favicon, app icon source art, mascot sticker, transparent cutout | `references/logo-icon.md` |
+| **Brand logo, wordmark, logotype, brand emblem, mascot brand mark, or logo system exploration** | `references/brand-logo.md` |
+| Favicon, app icon source art, generic badge, mascot sticker, transparent cutout | `references/logo-icon.md` |
 | Product UI navigation icon family, sidebar icon set, repeated 16–24px icons | `references/navigation-icon.md` |
 | **Game-ready 2D asset family: characters, props, tilesets, game UI art, effects, animation clips, atlases, or import-ready packs** | `references/game-assets.md`; involve `joyally-design` when the game visual system, UI composition, or art direction is not already approved |
 | **macOS app icon deliverable** (`.icns` / iconset / Dock icon) from art or a website logo | `references/macos-app-icon.md` |
@@ -257,6 +258,7 @@ When the user asks for a logo, icon, app icon source art, favicon, mascot sticke
 - `references/article-illustration-production.md` — coordinated article figures: purpose-specific production, shared continuity, insertion-ready asset packs, and selective style revision
 - `references/text-poster.md` — text-heavy covers / competition (大赛/黑客松) entries: GPT atmospheric backdrop + HTML/CSS text layer composited via headless Chrome (accurate Chinese text, structured product info)
 - `references/knowledge-map.md` — structured domain knowledge maps and architecture diagrams: explicit content model + deterministic HTML/CSS/SVG graph over an AI-generated text-free backdrop
+- `references/brand-logo.md` — brand logos and wordmarks: brief, direction routing, exact-name handling, variants and small-size QA
 - `references/logo-icon.md` — transparent logos, icons, favicons, cutouts
 - `references/navigation-icon.md` — transparent product UI navigation icon families and small-size QA
 - `references/game-assets.md` — game-ready 2D asset families: brief, style lock, grid/alpha/pivot/atlas contract, QA and import-ready manifests

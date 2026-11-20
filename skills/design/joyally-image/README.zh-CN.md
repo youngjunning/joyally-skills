@@ -59,7 +59,8 @@
 | 漫画 / 知识漫画 | GPT Image 2.6 画格 + 可编辑对白与排版 | 连续页面或条漫，附分镜、源文件与验收记录 |
 | 知识图谱 / 架构图 / 生命周期图 | GPT 无文字底图 + HTML/CSS/SVG 确定性语义层 | 3200×1800 PNG + WebP + 布局门禁报告 |
 | 人像 / 插图 | GPT Image 2.6 | `.webp` q78，≤ 300 KB |
-| Logo / favicon | GPT Image 2.6 | `.png`（pngquant），≤ 100 KB |
+| 品牌 Logo / 字标 | GPT Image 2.6 概念图 + 可编辑确定性字标 | 透明主标、所需组合、缩小验收与元数据 |
+| favicon / 图标源图 | GPT Image 2.6 | `.png`（pngquant），≤ 100 KB |
 | Mac 静态壁纸（4K） | GPT Image 2.6 | `wallpaper.png`（无损 PNG） |
 | Mac 动态壁纸 | 每帧 GPT Image 2.6 | `wallpaper-apr.heic`（2 帧，亮/暗模式切换） |
 | Sprite loop 帧动画 | GPT Image 2.6 | 序列帧 PNG + `preview.gif` |
@@ -177,7 +178,8 @@ references/
   portrait.md                 ← 人像、封面、banner、通用单图
   knowledge-map.md            ← 精确技术图、插图密度审计、强制布局门禁
   high-allure.md              ← 高质感 romance / editorial 图片
-  logo-icon.md                ← 透明 Logo、图标、favicon、抠图素材
+  brand-logo.md               ← 品牌 Logo、字标、组合规范、精确文字与缩小验收
+  logo-icon.md                ← 透明图标、favicon、徽章与抠图素材
   static-wallpaper.md         ← 静态壁纸 PNG 流程
   dynamic-wallpaper.md        ← Mac 动态壁纸：生成 + HEIC 打包
   sprite-loop.md              ← Runcat 类序列帧动画资产

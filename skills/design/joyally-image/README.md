@@ -60,7 +60,8 @@ Full model specifications and size constraints are in `references/apiyi.md`.
 | Comic / knowledge comic | GPT Image 2.6 panel art + editable lettering and layout | Sequential page or vertical strip with storyboard, sources, and review notes |
 | Knowledge map / architecture / lifecycle diagram | GPT backdrop + deterministic HTML/CSS/SVG | 3200×1800 PNG + WebP + layout-gate report |
 | Portrait / illustration | GPT Image 2.6 | `.webp` q78, ≤ 300 KB |
-| Logo / favicon | GPT Image 2.6 | `.png` (pngquant), ≤ 100 KB |
+| Brand logo / wordmark | GPT Image 2.6 concept art + editable deterministic lettering | Transparent source mark, required lockups, small-size QA and metadata |
+| Favicon / icon source art | GPT Image 2.6 | `.png` (pngquant), ≤ 100 KB |
 | Mac static wallpaper (4K) | GPT Image 2.6 | `wallpaper.png` (lossless PNG) |
 | Mac dynamic wallpaper | GPT Image 2.6 per frame | `wallpaper-apr.heic` (2-frame, Light/Dark) |
 | Sprite loop | GPT Image 2.6 | numbered PNG frames + `preview.gif` |
@@ -179,7 +180,8 @@ references/
   portrait.md                 ← portraits, covers, banners, general single images
   knowledge-map.md            ← exact diagrams, illustration-density audit, mandatory layout gate
   high-allure.md              ← suggestive romance/editorial images
-  logo-icon.md                ← transparent logos, icons, favicons, cutouts
+  brand-logo.md               ← brand logos, wordmarks, lockups, exact-name handling and QA
+  logo-icon.md                ← transparent icons, favicons, badges and cutouts
   static-wallpaper.md         ← static wallpaper PNG pipeline
   dynamic-wallpaper.md        ← Mac dynamic wallpaper: generation + HEIC packaging
   sprite-loop.md              ← RunCat-like frame animation assets
