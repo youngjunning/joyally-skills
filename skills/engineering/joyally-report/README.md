@@ -126,6 +126,10 @@ Choose by the reader’s next decision:
 
 Templates and examples are in [`references/report-types.md`](references/report-types.md). Strict measurement rules are in [`references/performance-comparison.md`](references/performance-comparison.md).
 
+## End-of-turn report / 回合收尾
+
+在兼容的 `Stop` Hook 明确要求收尾时，Joyally Report 使用 [`references/turn-report.md`](references/turn-report.md) 汇总本轮蒸馏、工作脉络、实际使用的 Skills 以及 Git/交付状态。它只负责统一表达：各领域流程仍分别完成自己的检查与写入，不在最终回复中各自追加第二套收尾段落。
+
 ## Output modes / 输出模式
 
 交互式 Codex CLI/TUI、Codex App/chat、IDE chat、PR、Issue 和文档默认使用 `markdown`。joyally-report 负责生成干净的 Markdown source，宿主 presentation layer 负责标题、列表、代码、颜色和列宽的最终显示。
@@ -228,6 +232,7 @@ SKILL.md                                  Runtime reporting rules / 运行规则
 references/report-types.md                Decision-specific formats / 场景模板
 references/reporting-principles.md        Public-source synthesis / 公开资料研究
 references/performance-comparison.md      Comparable measurement rules / 性能对比规则
+references/turn-report.md                 Unified end-of-turn closing report / 统一回合收尾报告
 agents/openai.yaml                        Agent-facing metadata / Agent 元数据
 ```
 
