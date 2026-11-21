@@ -2,7 +2,7 @@
 
 Choose the type by the next reader’s decision. Do not combine types unless the same reader genuinely needs both decisions. Keep the conclusion and action layer short; add detail only when it changes the judgment.
 
-The examples below define content and section selection, not a mandatory literal layout. Select the output mode using `SKILL.md`. Markdown mode is the default: turn labels such as `【结论】` into `## 结论` headings and use numbered, Roman-numeral, or circled-number lists where helpful; never use unordered lists. In `terminal` mode, render them with plain-text sections and status emoji; convert tables into labeled metric blocks. Keep the same emoji-only status vocabulary in both modes.
+The examples below define content and section selection, not a mandatory literal layout. Select the output mode using `SKILL.md`. Use the first judgment in each example as the opening summary, then select body sections and use numbered, Roman-numeral, or circled-number lists where helpful; never use unordered lists. In `terminal` mode, render them with plain-text sections and status emoji; convert tables into labeled metric blocks. Keep the same emoji-only status vocabulary in both modes.
 
 ## 1. Leadership or project status
 
