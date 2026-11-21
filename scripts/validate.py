@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Check the public skill catalog, local references, and disclosure boundaries."""
+"""Check the public catalog, references, CI paths, and disclosure boundaries."""
 import ast
+import glob
 import json
 from pathlib import Path
 import re
+import shlex
 import sys
 from urllib.parse import unquote
 
@@ -17,6 +19,65 @@ PATTERNS = {
     'live ad account': re.compile(r'ca-pub-\d{10,}|div-gpt-ad-\d{10,}'),
     'live pixel config': re.compile(r"(?:fbq\(['\"]init['\"],\s*['\"]|Pixel\s+[`'\"]?)\d{12,}"),
 }
+WORKFLOW_PATH_PREFIXES = ('scripts/', 'skills/', 'tests/', 'docs/', '.github/')
+
+
+def workflow_commands(path):
+    """Yield (line number, shell command) pairs without requiring a YAML package."""
+    lines = path.read_text().splitlines()
+    index = 0
+    while index < len(lines):
+        match = re.match(r'^(\s*)(?:-\s+)?run:\s*(.*)$', lines[index])
+        if not match:
+            index += 1
+            continue
+        line_number = index + 1
+        value = match.group(2).strip()
+        if value not in {'|', '>', '|-', '>-', '|+', '>+'}:
+            yield line_number, value
+            index += 1
+            continue
+        indentation = len(match.group(1))
+        command_lines = []
+        index += 1
+        while index < len(lines):
+            line = lines[index]
+            if line.strip() and len(line) - len(line.lstrip()) <= indentation:
+                break
+            command_lines.append(line.strip())
+            index += 1
+        yield line_number, ' '.join(command_lines)
+
+
+def validate_workflow_paths(root):
+    """Catch stale repository paths in CI commands before GitHub Actions runs them."""
+    errors = []
+    workflows = root / '.github/workflows'
+    if not workflows.is_dir():
+        return errors
+    for workflow in sorted((*workflows.glob('*.yml'), *workflows.glob('*.yaml'))):
+        for line_number, command in workflow_commands(workflow):
+            try:
+                tokens = shlex.split(command, comments=True)
+            except ValueError:
+                continue
+            for token in tokens:
+                candidate = token.split('=', 1)[-1].removeprefix('./').rstrip(';,')
+                if '$' in candidate or not candidate.startswith(WORKFLOW_PATH_PREFIXES):
+                    continue
+                target = root / candidate
+                exists = (
+                    bool(glob.glob(str(target), recursive=True))
+                    if glob.has_magic(candidate)
+                    else target.exists()
+                )
+                if not exists:
+                    relative_workflow = workflow.relative_to(root)
+                    errors.append(
+                        'workflow command path does not exist: '
+                        f'{relative_workflow}:{line_number}: {candidate}'
+                    )
+    return errors
 
 
 def validate(root=ROOT):
@@ -60,6 +121,7 @@ def validate(root=ROOT):
     stale_paths = readme_paths - {path + '/SKILL.md' for path in paths}
     if stale_paths:
         errors.append(f'stale README skill links: {sorted(stale_paths)}')
+    errors.extend(validate_workflow_paths(root))
     for p in root.rglob('*'):
         rel = p.relative_to(root)
         if any(part in SKIP for part in rel.parts):
@@ -103,4 +165,7 @@ if __name__ == '__main__':
         print('\n'.join(problems), file=sys.stderr)
         sys.exit(1)
     count = len(json.loads((ROOT / 'catalog.json').read_text()))
-    print(f'Validated {count} public skills, catalog, entry links, Python/JSON, and disclosure patterns.')
+    print(
+        f'Validated {count} public skills, catalog, entry links, CI paths, '
+        'Python/JSON, and disclosure patterns.'
+    )
