@@ -59,13 +59,13 @@ adsense-site-builder/
 Install globally and select your Agent when prompted:
 
 ```bash
-npx skills add youngjunning/skills --skill adsense-site-builder -g
+npx skills add youngjunning/joyally-skills --skill adsense-site-builder -g
 ```
 
 For a project installation, omit `-g`:
 
 ```bash
-npx skills add youngjunning/skills --skill adsense-site-builder
+npx skills add youngjunning/joyally-skills --skill adsense-site-builder
 ```
 
 After installation, tell the agent to use `adsense-site-builder` in a new session.

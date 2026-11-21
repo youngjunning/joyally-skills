@@ -149,7 +149,7 @@ export APIYI_API_KEY="your-key-here"
 **3. Install it in your Agent's skill directory**
 ```bash
 # Use the location and loading convention for your Agent runtime.
-npx skills add youngjunning/skills --skill joyally-image -g
+npx skills add youngjunning/joyally-skills --skill joyally-image -g
 ```
 
 **4. Install the core local dependency**

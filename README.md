@@ -9,13 +9,13 @@
 选择需要的技能：
 
 ```bash
-npx skills add youngjunning/skills
+npx skills add youngjunning/joyally-skills
 ```
 
 安装单个技能：
 
 ```bash
-npx skills add youngjunning/skills --skill top-architect -g
+npx skills add youngjunning/joyally-skills --skill top-architect -g
 ```
 
 `skills` CLI 的 Agent 选择与目标位置以安装时显示的选项为准。安装第三方工具不代表本仓库提供其服务、账号或额度。
@@ -23,7 +23,7 @@ npx skills add youngjunning/skills --skill top-architect -g
 维护者也可以使用同一个 checkout，通过软链接安装；以后 `git pull` 即可更新源文件：
 
 ```bash
-git clone https://github.com/youngjunning/skills.git
+git clone https://github.com/youngjunning/joyally-skills.git
 cd skills
 python3 scripts/link-skills.py --dest ~/.codex/skills --dry-run
 python3 scripts/link-skills.py --dest ~/.codex/skills

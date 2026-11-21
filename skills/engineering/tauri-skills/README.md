@@ -11,7 +11,7 @@ An Agent Skill for designing, implementing, reviewing, and verifying secure Taur
 ## Install
 
 ```bash
-npx skills add youngjunning/skills --skill tauri-skills -g -y
+npx skills add youngjunning/joyally-skills --skill tauri-skills -g -y
 ```
 
 This directory is the Skill package: [`SKILL.md`](SKILL.md) contains the workflow, with detailed guidance under [`references/`](references/).

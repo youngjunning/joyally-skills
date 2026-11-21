@@ -11,7 +11,7 @@
 ### 1. 安装 Skill
 
 ```text
-请从 https://github.com/youngjunning/skills/tree/main/skills/productivity/distill-me 安装 distill-me Skill。只安装这个 Skill；安装完成后告诉我安装位置和结果。
+请从 https://github.com/youngjunning/joyally-skills/tree/main/skills/productivity/distill-me 安装 distill-me Skill。只安装这个 Skill；安装完成后告诉我安装位置和结果。
 ```
 
 ### 2. 初始化自动蒸馏与本地工作台
@@ -51,7 +51,7 @@
 ### 更新 Skill
 
 ```text
-请把本机已安装的 distill-me 更新到 https://github.com/youngjunning/skills/tree/main/skills/productivity/distill-me 的最新版本。保留现有本地数据和每轮自动蒸馏指令；更新后重新打开工作台并告诉我结果，不要部署。
+请把本机已安装的 distill-me 更新到 https://github.com/youngjunning/joyally-skills/tree/main/skills/productivity/distill-me 的最新版本。保留现有本地数据和每轮自动蒸馏指令；更新后重新打开工作台并告诉我结果，不要部署。
 ```
 
 ## 本地与隐私

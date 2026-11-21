@@ -24,7 +24,7 @@ $top-architect Design a digital employee for this business duty: what belongs in
 Install it globally in Codex:
 
 ```bash
-npx skills add youngjunning/skills --skill top-architect -g
+npx skills add youngjunning/joyally-skills --skill top-architect -g
 ```
 
 For a shared source checkout and local links, see the repository [installation guide](../../../README.md#安装).

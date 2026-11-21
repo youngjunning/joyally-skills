@@ -9,13 +9,13 @@ This README is intentionally limited to installation and usage. Operational rule
 ### Global install
 
 ```bash
-npx skills add youngjunning/skills --skill joyally-fiction -g
+npx skills add youngjunning/joyally-skills --skill joyally-fiction -g
 ```
 
 ### Project install
 
 ```bash
-npx skills add youngjunning/skills --skill joyally-fiction
+npx skills add youngjunning/joyally-skills --skill joyally-fiction
 ```
 
 ## Enable

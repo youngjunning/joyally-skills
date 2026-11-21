@@ -51,8 +51,8 @@ Joyally Design、`joyally-writting` 与 `joyally-image` 是可独立使用的合
 本轮首次使用 Joyally Design 时，检查当前环境是否已提供 `joyally-writting` 和 `joyally-image`。只对缺失的 Skill 在首次进度更新末尾集中建议一次，说明它们是可选协作能力，不阻塞当前任务；已安装或本轮已提示时不重复。
 
 ```bash
-npx skills add youngjunning/skills --skill joyally-writting -g
-npx skills add youngjunning/skills --skill joyally-image -g
+npx skills add youngjunning/joyally-skills --skill joyally-writting -g
+npx skills add youngjunning/joyally-skills --skill joyally-image -g
 ```
 
 ## 现有界面精修

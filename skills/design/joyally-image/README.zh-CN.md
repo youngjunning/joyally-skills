@@ -149,7 +149,7 @@ export APIYI_API_KEY="your-key-here"
 **3. 安装到你的 Agent Skill 目录**
 ```bash
 # 将目录放入你所用 Agent 的 skills 目录，并按该 Agent 的加载约定启用。
-npx skills add youngjunning/skills --skill joyally-image -g
+npx skills add youngjunning/joyally-skills --skill joyally-image -g
 ```
 
 **4. 安装核心本地依赖**

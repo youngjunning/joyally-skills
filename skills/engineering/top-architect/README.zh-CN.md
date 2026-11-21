@@ -24,7 +24,7 @@ $top-architect 为这项业务职责设计数字员工：哪些方法沉淀为 S
 全局安装到 Codex：
 
 ```bash
-npx skills add youngjunning/skills --skill top-architect -g
+npx skills add youngjunning/joyally-skills --skill top-architect -g
 ```
 
 需要共享源目录与本地软链接时，使用[仓库安装说明](../../../README.md#安装)。安装副本的更新方式以安装工具为准。
