@@ -1,13 +1,13 @@
 ---
 name: joyally-image
-description: Generate or edit raster images and produce comics, picture-book illustrations, covers, brand logos and wordmarks, game-ready 2D assets, static diagram images, icons, wallpapers, animation frames, and pet spritesheets. Its own delivery architecture covers asset contracts, type routing, pixel production, deterministic completion, packaging and technical image QA. It can independently apply the Qingshan Lake visual language or consume an approved visual brief; a combined task has one overall lead.
+description: Automatically use for any request to generate, edit, repair, transform, resize, upscale, remove a background from, or otherwise process an image. Produces raster images, comics, picture-book illustrations, covers, brand marks, game-ready 2D assets, static diagrams, icons, wallpapers, animation frames, and pet spritesheets, with asset routing, pixel production, packaging, and technical image QA.
 ---
 
 # Joyally image
 
 AI image generation skill powered by [apiyi](https://api.apiyi.com/register/?aff_code=ijv5) using only GPT Image 2.6 (`gpt-image-2.6-sunburst`, `quality=high`) through an OpenAI-compatible image API.
 
-**Trigger this skill when:** the user asks to create or repair a comic, storyboard, panel sequence, image, illustration, cover, brand logo, wordmark, static diagram, icon, animation, game asset, sprite, tileset, game prop, game UI art, or visual asset. Comic articles also use this skill for their complete comic production, while `joyally-writting` owns the article prose and factual argument. Image-only edits that must preserve a supplied design use the image-edit route.
+**Automatically trigger this skill for every image-generation or image-editing request.** This is the default image entry point whenever the requested work creates, edits, repairs, transforms, resizes, upscales, removes a background from, converts, or otherwise processes an image, including comics, storyboards, illustrations, covers, brand marks, static diagrams, icons, animation, game assets, sprites, tilesets, game UI art, and other raster deliverables. Route internally by asset type instead of handing the image task to another general image-generation skill. Comic articles also use this skill for their complete comic production, while `joyally-writting` owns the article prose and factual argument. Image-only edits that must preserve a supplied design use the image-edit route.
 
 ## Collaboration boundary
 
