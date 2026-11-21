@@ -44,7 +44,7 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 | 自动留存关键操作截图、找回写作素材或制作脱敏演示 | [Joyally Spotlight](skills/design/joyally-spotlight/SKILL.md) |
 | 统一设计、制作 HTML 报告、HTML PPT 或交互图表 | [Joyally Design](skills/design/joyally-design/SKILL.md) |
 | 为产品制作或重做整套主题，避免只换配色 | [Joyally 主题制作](skills/design/joyally-theme-creation/SKILL.md) |
-| 写文章、绘本或建设内容站点 | [Joyally writting](skills/writing/joyally-writting/SKILL.md)、[fiction-site-builder](skills/writing/fiction-site-builder/SKILL.md)、[adsense-site-builder](skills/publishing/adsense-site-builder/SKILL.md) |
+| 写文章、绘本或建设内容站点 | [Joyally writting](skills/writing/joyally-writting/SKILL.md)、[Joyally Fiction](skills/writing/joyally-fiction/SKILL.md)、[adsense-site-builder](skills/publishing/adsense-site-builder/SKILL.md) |
 | 本地整理对话、笔记和资料，不部署也可使用 | [distill-me](skills/productivity/distill-me/SKILL.md) |
 | 维护紫升与俊宁的个人记录、资料、项目方案与工作脉络 | [distill-zisheng](skills/productivity/distill-zisheng/SKILL.md) |
 
@@ -79,7 +79,7 @@ Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作�
 | 技能 | 用途 |
 | --- | --- |
 | [Joyally writting](skills/writing/joyally-writting/SKILL.md) | 中英文章、书稿与绘本写作，主导读者、事实、论证、叙事与准确文案 |
-| [fiction-site-builder](skills/writing/fiction-site-builder/SKILL.md) | 小说创作与阅读站点建设 |
+| [Joyally Fiction](skills/writing/joyally-fiction/SKILL.md) | 小说创作与阅读站点建设 |
 
 ### Publishing
 
@@ -94,7 +94,7 @@ Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作�
 | [distill-me](skills/productivity/distill-me/SKILL.md) | 用零部署本地工作台整理材料与草稿，栏目可自由取舍 |
 | [distill-zisheng](skills/productivity/distill-zisheng/SKILL.md) | 维护紫升与俊宁的个人记录、资料、项目方案与工作脉络 |
 
-Joyally Design、Joyally 主题制作、Joyally image 和 Joyally writting 的安装与调用标识分别为 `joyally-design`、`joyally-theme-creation`、`joyally-image` 和 `joyally-writting`。机器可读目录见 [catalog.json](catalog.json)。
+Joyally Design、Joyally 主题制作、Joyally image、Joyally writting 和 Joyally Fiction 的安装与调用标识分别为 `joyally-design`、`joyally-theme-creation`、`joyally-image`、`joyally-writting` 和 `joyally-fiction`。机器可读目录见 [catalog.json](catalog.json)。
 
 ## 使用与维护
 

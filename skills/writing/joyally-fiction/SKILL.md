@@ -1,9 +1,9 @@
 ---
-name: fiction-site-builder
+name: joyally-fiction
 description: write fiction and build the reading site end-to-end. use when the user asks to write a novel or short story (long-form novel, short-form story, write chapters, continue writing, story setup, import a manuscript, review prose, remove AI flavor), or asks for a mobile-first fiction reading site, web novel H5, work list/detail/catalog/reader pages, markdown chapters, multilingual reading sites in english/spanish/korean, or a simple fiction site for social traffic campaigns. do not use for creator dashboards, ranking systems, bookshelf platforms, or reader community features unless the user explicitly asks for those.
 ---
 
-# Fiction Arbitrage Builder
+# Joyally Fiction
 
 ## The Model
 
@@ -343,12 +343,12 @@ For review and redesign tasks, start at the relevant phase and load only the ref
 This skill works in Claude Code and Codex-style coding agents. Before doing anything else, verify that shell command execution and file editing are available:
 
 ```bash
-echo "fiction-site-builder-ok"
+echo "joyally-fiction-ok"
 ```
 
 If shell execution or file editing is unavailable, stop immediately and output:
 ```
-ERROR: fiction-site-builder requires a coding-agent session with shell and file-edit access.
+ERROR: joyally-fiction requires a coding-agent session with shell and file-edit access.
 ```
 
 Read project instructions before site work:

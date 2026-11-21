@@ -1,4 +1,4 @@
-> [MERGED] Rules from this skill have been integrated into the fiction-site-builder framework. Load the target files for runtime use — this file is attribution only.
+> [MERGED] Rules from this skill have been integrated into the joyally-fiction framework. Load the target files for runtime use — this file is attribution only.
 
 ---
 

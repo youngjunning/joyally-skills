@@ -1,4 +1,4 @@
-# Fiction Site Builder
+# Joyally Fiction
 
 Claude Code skill for writing fiction content and building mobile-first fiction reading sites.
 
@@ -9,13 +9,13 @@ This README is intentionally limited to installation and usage. Operational rule
 ### Global install
 
 ```bash
-npx skills add youngjunning/skills --skill fiction-site-builder -g
+npx skills add youngjunning/skills --skill joyally-fiction -g
 ```
 
 ### Project install
 
 ```bash
-npx skills add youngjunning/skills --skill fiction-site-builder
+npx skills add youngjunning/skills --skill joyally-fiction
 ```
 
 ## Enable
@@ -57,7 +57,7 @@ Build only the site.
 You can also refer to the skill by name when you want to force the context:
 
 ```text
-Use fiction-site-builder to add a new book.
+Use joyally-fiction to add a new book.
 ```
 
 ## Reference Entry Points
