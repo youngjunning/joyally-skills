@@ -1,0 +1,4 @@
+interface:
+  display_name: "Joyally Voice"
+  short_description: "人声录制、修复、合成、克隆、转换、对齐与交付验收"
+  default_prompt: "Use $joyally-voice to design and verify an authorized, reproducible voice workflow for this task."
