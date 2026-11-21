@@ -51,6 +51,7 @@ Ad density cap: ~3–4 units per 1,000 words, ad area ≤ 30% of content area. S
 - Fixed good typography beats user-adjustable bad typography.
 - Content language determines layout, font, and line-flow decisions.
 - **Writing language is a first-class routing decision.** Before A1, select exactly one prose profile: `references/writing-english-fiction.md` for English chapters or `references/writing-chinese-fiction.md` for Chinese chapters. Do not draft in one profile and translate into the other, do not apply Chinese serial defaults to English prose, and do not treat either profile as a mere localization pass. Shared plot engineering (causality, ensemble action, evidence, reversals, and hook-outs) remains shared; prose rhythm, scene density, emotional expression, chapter packaging, and copy QA are language-specific. Other languages require their own guide or an explicit user-provided brief; never silently fall back to the English profile.
+- **Human decisions precede prose generation.** For fiction setup, outlining, drafting, continuation, revision, and review, load `references/story-human-drafting.md`. Build emotional beat rows, character trigger contracts, and dialogue asymmetry before prose; draft in scene-sized units and repair the failing layer instead of regenerating whole chapters blindly. AI-detector scores are never authorship, quality, or publication gates.
 - Realistic content only. Never ship placeholder text to readers.
 - Load only the references needed for the current task phase.
 
@@ -469,6 +470,7 @@ Load references only when entering that phase. Do not preload all references at 
 
 ### L2 — Session Depth references
 
+- **`story-human-drafting.md`** — mandatory for all fiction setup, outlining, drafting, continuation, revision, and review. Defines the four-layer human-led workflow, emotional beat sheet, character trigger contracts, dialogue asymmetry, controlled drafting units, decision pass, detector limits, and named-platform rule checks.
 - **`story-long-write.md`** — long-form chapter writing pipeline, context handoff, pacing guidelines, mandatory cliffhanger techniques, scene-level suspense rules, chapter 1 cold-traffic hook structure (200-word beat checkpoints, line-1 bans, backstory cap). Load at A1 long-form.
 - **Writing language profiles** — before writing a chapter, load exactly one: `writing-english-fiction.md` for English, or `writing-chinese-fiction.md` for Chinese. The language profile governs sentence rhythm, exposition compression, dialogue/subtext, emotional escalation, chapter titles, synopses, and language-specific review checks. It supplements rather than replaces the selected genre guide. Do not use one profile to judge the other.
 - **Pressure-genre guides** — when the external conflict below is a primary story engine, load its dedicated guide alongside `story-long-write.md` and the broad genre file. These guides define the power system, evidence chain, escalation architecture, public reversal, safety boundaries, and genre-specific QA:

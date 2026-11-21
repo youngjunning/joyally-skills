@@ -35,3 +35,8 @@ Before A3 passes, verify:
 3. Kinship terms, social address, money units, legal/workplace vocabulary, and regional wording are internally consistent.
 4. Each high-emotion scene contains an observable action or changed relationship, not only inner judgment.
 5. Titles, tagline, and synopsis use the target script and native reader language; `zh-TW` copy passes the Taiwan vocabulary checks in `internationalization.md`.
+6. The outline records scene entry/exit emotion, an on-page trigger, and a visible consequence; “爽、虐、甜、燃” labels alone are not emotional design.
+7. Major characters have behavior triggers, defenses, tells, and breach costs rather than only personality adjectives.
+8. Dialogue preserves Chinese social address, face, obligation, and power asymmetry through subtext; characters do not narrate feelings or shared background merely for the reader.
+9. Drafting and revision followed `story-human-drafting.md`; no AI-detector percentage is used as an authorship, originality, or platform-compliance threshold.
+10. Before publishing to a named Chinese platform, its current official content, originality, AI-assistance declaration, and labeling rules have been checked and recorded separately from prose quality.

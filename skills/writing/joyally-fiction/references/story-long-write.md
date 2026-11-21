@@ -1,6 +1,6 @@
 # Story Long Write
 
-Load this reference when the user asks to write, continue, or revise long-form novel chapters.
+Load this reference when the user asks to write, continue, or revise long-form novel chapters. Also load `story-human-drafting.md`; it governs emotional causality, character triggers, dialogue subtext, drafting-unit size, and the human decision pass.
 
 **Before writing:** load the relevant broad genre file alongside this reference — `genre-romance.md`, `genre-mystery.md`, `genre-horror.md`, `genre-fantasy.md`, `genre-scifi.md`, or `genre-drama.md`. If the premise uses a pressure genre listed in `SKILL.md` (family captivity, workplace persecution, medical conspiracy, digital blackmail, and related systems), load that dedicated guide too. The broad file controls emotional and scene technique; the pressure-genre guide controls the power system, evidence chain, escalation, public reversal, and safety boundary.
 
@@ -422,7 +422,7 @@ Before spawning any agents, expand `outline/outline.md` so every chapter has a c
 Ch-NNN: [primary emotion] | cast: {active scene participants} | threads: {A/B/C advanced} | hook: {1-sentence} | conflict action: {who acts against whose goal} | complication: {why the attempted solution makes matters worse} | turn: {material change} | relationship shifts: {at least 2 edges, or 1 edge + 1 damaged storyline} | consequence: {reversible/irreversible} | hook-out: {open question}
 ```
 
-All chapters must have this before any parallel writing starts. The beat entries replace `tracking/context.md` as the coordination signal during parallel writing.
+For each scene inside the chapter, add the `entry state`, `wanted outcome`, `pressure source`, `tactic`, `trigger`, `exit state`, and `visible consequence` fields from `story-human-drafting.md`. All chapters must have this before any parallel writing starts. The beat entries replace `tracking/context.md` as the coordination signal during parallel writing.
 
 ### Step 2 — Write Chapters 1–3 as a sequential conversion batch
 
@@ -479,14 +479,16 @@ Use this for adding one chapter to an existing book (incremental update only).
 
 1. Read `tracking/context.md` — know the exact last beat.
 2. Read the chapter's outline entry in `outline/outline.md`.
-3. Name the chapter's **primary emotion** (tension / release / shock / ache / warmth).
-4. Name the chapter's **turn**: what changes from start to end?
-5. Name the **active cast**, the A/B/C storyline(s) advanced, and which character acts against another character's goal.
-6. Write the **hook** (≤3 sentences): drop into motion, not setup.
-7. Write the **escalation**: raise stakes through action/dialogue. No passive reflection blocks.
-8. Write the **turn**: the moment that changes something — reveal, decision, or loss.
-9. Write the **hook-out**: end mid-motion or on an open question. Never summarize.
-10. **Length guidance** — treat word count as a pacing signal, not a hard gate:
+3. Write the chapter and scene emotional beat rows from `story-human-drafting.md`; name the specific entry and exit states, not only `tension`, `shock`, or `warmth`.
+4. Load the trigger contracts for the active cast. If a major character has only personality adjectives, add the contract before drafting.
+5. Name the chapter's **turn**: what changes from start to end?
+6. Name the **active cast**, the A/B/C storyline(s) advanced, and which character acts against another character's goal.
+7. For consequential dialogue, fill the asymmetry table: each side's want, belief, withheld knowledge, protected secret, leverage, and cover topic.
+8. Draft one scene or coherent beat cluster at a time. Write the **hook** (≤3 sentences): drop into motion, not setup.
+9. Write the **escalation**: raise stakes through action/dialogue. No passive reflection blocks.
+10. Write the **turn**: the moment that changes something — reveal, decision, or loss. Stop and repair the unit if causality, point of view, or character behavior drifted.
+11. Write the **hook-out**: end mid-motion or on an open question. Never summarize.
+12. **Length guidance** — treat word count as a pacing signal, not a hard gate:
 
    | Chapter type | Preferred range | Typical soft ceiling |
    |---|---|---|
@@ -500,11 +502,12 @@ Use this for adding one chapter to an existing book (incremental update only).
    Adjust the outline accordingly.
    Do not pad with reflection or summary to hit a length target.
 
-11. Save to `content/{book-title}/chapters/ch-NNN-{title}.md` from the project root, with correct zero-padded number.
-12. **If split occurred in step 10:** update `src/lib/books.ts` — increment `chapterCount` by 1 for the book, and ensure all chapter filenames in `content/{book-title}/chapters/` match the final chapter numbering.
-13. Update `tracking/context.md`: last beat + open threads + any foreshadow planted.
-14. Update `tracking/threads.md` if foreshadow added or resolved.
-15. Update `tracking/character-status.md` for any character changes, including goal, leverage, and alignment shifts.
+13. Run the decision pass from `story-human-drafting.md`: causality → character → information gain → dialogue → embodiment → voice → original contribution.
+14. Save to `content/{book-title}/chapters/ch-NNN-{title}.md` from the project root, with correct zero-padded number.
+15. **If split occurred in step 12:** update `src/lib/books.ts` — increment `chapterCount` by 1 for the book, and ensure all chapter filenames in `content/{book-title}/chapters/` match the final chapter numbering.
+16. Update `tracking/context.md`: actual last beat, changed facts and relationships, open threads, next incoming emotion, and any foreshadow planted.
+17. Update `tracking/threads.md` if foreshadow added or resolved.
+18. Update `tracking/character-status.md` for any character changes, including goal, leverage, alignment, trigger, and breach cost shifts.
 
 ## Chapter File Format
 

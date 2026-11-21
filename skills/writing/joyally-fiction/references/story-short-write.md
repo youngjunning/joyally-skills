@@ -1,6 +1,6 @@
 # Story Short Write
 
-Load this reference when the user asks to write a short story or flash fiction.
+Load this reference when the user asks to write a short story or flash fiction. Also load `story-human-drafting.md`; its emotional beat sheet, character trigger contracts, dialogue asymmetry, controlled drafting units, and decision pass are mandatory here.
 
 **Genre-specific short form guidance** is in the relevant genre file — `genre-romance.md` (Romance Heat Level short form), `genre-mystery.md` (Mystery & Suspense short form), `genre-horror.md` (Short Form Horror), `genre-fantasy.md` (Short Form Fantasy), `genre-scifi.md` (Short Form Sci-Fi & Dystopian), `genre-drama.md` (Short Form Drama). Load the relevant genre file alongside this reference.
 
@@ -65,11 +65,15 @@ Write a beat-level outline with section markers. Target 6–12 beats for 8,000�
 
 For genre-specific beat structures (mystery investigation, horror, fantasy portal fiction, sci-fi/dystopian), load the relevant genre file.
 
+For every beat, append the fields from `story-human-drafting.md`: `entry state`, `wanted outcome`, `pressure source`, `tactic`, `trigger`, `exit state`, and `visible consequence`. Before drafting, add a trigger contract for each major character; personality adjectives alone do not count as setup.
+
 Save as `content/short/{story-title}/beat-outline.md` from the project root.
 
 ### Step 3: Write prose
 
-Write full prose section by section following the beat outline. Save all to `content/short/{story-title}/prose.md` from the project root.
+Write prose one beat or coherent scene at a time following the outline. For consequential dialogue, fill the dialogue-asymmetry table before prose. Stop at the planned turn, check the actual output for causality and character drift, then update continuity before drafting the next unit. Do not regenerate the complete story to repair one weak layer.
+
+After the full draft, run the decision pass from `story-human-drafting.md` before `story-deslop.md`. Save all to `content/short/{story-title}/prose.md` from the project root.
 
 Prose formatting:
 - Adjacent paragraphs: blank line between them (`\n\n`). CommonMark collapses a single `\n` into a space — do not use single newlines between paragraphs.
@@ -83,6 +87,10 @@ Prose formatting:
 - Twist: arrives from setup, not from nowhere?
 - Ending: has one image or line that lingers?
 - No consecutive 3+ sentences with identical syntactic structure.
+- Every beat changes knowledge, options, relationship state, risk, or emotion through an observable event; no repeated explanation or reaction loops.
+- Major behavior changes have a present trigger and a retained cost.
+- Consequential dialogue contains inferable subtext rather than spoken inner monologue or reader-facing exposition.
+- A human decision pass is recorded; detector scores, when requested, are diagnostic notes rather than pass/fail thresholds.
 - Total word count: 8,000–20,000 characters for a self-contained short story.
 
 ## After Story Completion → Cover Generation (automatic, no prompt)

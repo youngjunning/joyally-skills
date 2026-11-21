@@ -1,6 +1,6 @@
 # Story Review
 
-Load this reference when the user asks for a review, audit, or quality check of written chapters or a complete manuscript.
+Load this reference when the user asks for a review, audit, or quality check of written chapters or a complete manuscript. Also load `story-human-drafting.md` and audit the manuscript's emotional causality, character triggers, dialogue asymmetry, and human decision pass.
 
 ## Purpose
 
@@ -102,6 +102,16 @@ Do not rewrite prose in a review — that is `/story-deslop`'s job. Point to spe
 
 Flag: name variants, contradictory descriptions, timeline breaks, unresolved foreshadows that appear forgotten.
 
+### 5. Human-Drafting Audit
+
+- Can each scene's exit emotion or decision be traced to an on-page trigger and visible consequence?
+- Do major character choices follow a trigger contract, or does the story earn and retain the cost of breaking pattern?
+- Does consequential dialogue contain different spoken and negotiated layers, or do characters announce their inner state and explain facts they both know?
+- Does each scene add information, change options, move a relationship, or increase risk? Flag repeated explanation, recap, and reaction loops as waste even when the prose is fluent.
+- Is there evidence of authorial decisions in premise, scene selection, observation, revision, and final judgment, rather than only prompt length and surface synonym changes?
+- If detector results are supplied, treat them as unverified diagnostics. Never infer authorship from a score or recommend evasion.
+- For a named publication platform, was the current official rule and declaration/label route checked separately from manuscript quality?
+
 ## Report Format
 
 ```md
@@ -137,6 +147,15 @@ Worst passages: {location + problem + fix direction}
 
 ### Consistency
 {Problems found. Quote conflicting details if possible.}
+
+### Human Drafting
+Emotional causality: {scene-level trigger/consequence failures}
+Character triggers: {unearned behavior or retained-cost failures}
+Dialogue subtext: {explicit exposition or asymmetry failures}
+Information gain: {repeated explanation/reaction loops}
+Authorial decision pass: {recorded / missing / insufficient evidence}
+Detector evidence: {not used / diagnostic only, with limitations}
+Platform gate: {not applicable / official rule checked on date / still required}
 
 ---
 
