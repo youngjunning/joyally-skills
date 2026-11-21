@@ -2,6 +2,8 @@
 
 Load this reference when the user asks to write, continue, or revise long-form novel chapters. Also load `story-human-drafting.md`; it governs emotional causality, character triggers, dialogue subtext, drafting-unit size, and the human decision pass.
 
+Apply the mode selected in `SKILL.md`. The 201-chapter launch floor, traffic conversion gates, universal hook-out requirement, 6–8-character floor, 30% lead-only cap, and fixed reversal cadence are Traffic-site defaults. In Authoring mode, use the user's form, the genre's actual needs, and the named platform's current rules; keep causal change and continuity audits, but do not manufacture extra chapters, characters, reversals, or cliffhangers to satisfy traffic metrics.
+
 **Before writing:** load the relevant broad genre file alongside this reference — `genre-romance.md`, `genre-mystery.md`, `genre-horror.md`, `genre-fantasy.md`, `genre-scifi.md`, or `genre-drama.md`. If the premise uses a pressure genre listed in `SKILL.md` (family captivity, workplace persecution, medical conspiracy, digital blackmail, and related systems), load that dedicated guide too. The broad file controls emotional and scene technique; the pressure-genre guide controls the power system, evidence chain, escalation, public reversal, and safety boundary.
 
 ## Niche Research Input

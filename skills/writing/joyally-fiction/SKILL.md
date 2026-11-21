@@ -5,14 +5,26 @@ description: write fiction and build the reading site end-to-end. use when the u
 
 # Joyally Fiction
 
-## The Model
+## Mode Router
+
+Choose the operating mode before loading detailed references:
+
+| Mode | Use when | Governing outcome |
+|---|---|---|
+| **Authoring** (default) | Write, continue, revise, import, or review fiction; target 番茄小说, 起点, 公众号, a manuscript, or an unspecified reader channel | Authorial intent, story quality, target-language craft, continuity, originality, and the named platform's current rules |
+| **Traffic site** | The user explicitly asks for a paid-traffic fiction site, Meta/Facebook acquisition, AdSense/AdX monetization, session-depth optimization, or the full site pipeline | Sustainable traffic economics plus reader experience and policy compliance |
+| **Hybrid** | The same manuscript must serve a named publication platform and a paid-traffic site | Keep authoring and site acceptance gates separate; traffic metrics may package and distribute the story but may not override its emotional logic, platform rules, or authorship boundaries |
+
+Do not infer Traffic site mode merely because the skill contains site-building references. In Authoring mode, do not apply the 201-chapter launch floor, universal chapter cliffhangers, Meta cover rules, ad-density rules, or pageview targets unless the user explicitly adopts them. Preserve an existing project's declared mode.
+
+## The Traffic-Site Model
 
 ```
 Profit = (viewable session RPM × pageviews/session / 1000) − Facebook CPC
           ↑ Lever 3 (L3)        ↑ Lever 2 (L2)               ↑ Lever 1 (L1)
 ```
 
-This skill builds a **Facebook paid-traffic → AdSense/AdX display-ad arbitrage** business. Buy a click on Meta for $X, monetize a multi-pageview reading session for $X + margin. Every decision — what to write, which genre, what image to generate, how to lay out ads — is a revenue decision traceable back to one of the three levers above.
+In Traffic site mode, this skill builds a **Facebook paid-traffic → AdSense/AdX display-ad arbitrage** business. Buy a click on Meta for $X, monetize a multi-pageview reading session for $X + margin. Traffic acquisition, packaging, page flow, ad layout, and site performance decisions should trace back to the three levers below. Story truth and prose decisions still follow the Authoring workflow and are not reduced to revenue metrics.
 
 The skill uses **fiction** as the delivery vehicle. Why fiction specifically:
 - Romance and paranormal readers have some of the highest display CPMs on the internet
@@ -35,17 +47,17 @@ Ad density cap: ~3–4 units per 1,000 words, ad area ≤ 30% of content area. S
 
 ## Operating Principles
 
-- **Every chapter must end on a cliffhanger.** This is not a style preference — it is the mechanism that makes the next pageview happen. A chapter that resolves cleanly ends the session. See `story-long-write.md`.
-- **Suspense is not a Chapter 1-only rule.** Every scene, every chapter opening, and every hook-out should leave one meaningful question unanswered. Chapter 1 gets the strongest cold-traffic bait, but later chapters still need tension, withheld information, and forward pull.
-- **Ensemble causality is mandatory.** Long-form books use 6–8 active named characters, at least 4 recurring plot actors, three interacting storylines, and no more than 30% lead-only chapters. Supporting characters must pursue goals and change the leads' options; names and passive confidants do not count.
+- **Forward pull must fit the mode.** Traffic site chapters end with a strong hook-out because the next pageview is part of that product. Authoring chapters may resolve a local beat; they still need a changed situation, earned emotional residue, or a live consequence, but a manufactured cliffhanger is not mandatory.
+- **Suspense is not a Chapter 1-only rule when suspense is part of the promise.** Traffic openings need strong cold-traffic bait. Other fiction should maintain the genre's appropriate unanswered pressure without forcing every scene to conceal information.
+- **Ensemble causality scales to the story.** Traffic-site long-form defaults to 6–8 active named characters, at least 4 recurring plot actors, three interacting storylines, and no more than 30% lead-only chapters. Authoring mode uses the smallest cast and thread count that sustains the user's premise; supporting characters that do exist must still pursue goals and change options.
 - **Escalation must change the situation.** Every 2–3 chapters produces an irreversible consequence and every 5–6 chapters a major reversal. A withheld answer or interrupted conversation is a hook-out technique, not a substitute for plot movement.
 - **Plot volatility and relationship complexity are defaults.** Long-form fiction should feel tortuous and eventful: alliances shift, secrets collide, apparent victories create larger costs, and personal relationships interfere with external goals. Do not write a smooth two-lead progression with decorative side characters. Every major turn should alter at least two relationships or force one character to choose between conflicting loyalties.
-- **Long-form novels must exceed 200 chapters.** A publishable novel must contain at least 201 chapter files. Short-form stories remain the only exception; never pad a short story into a novel to satisfy this threshold.
+- **The 201-chapter floor is a Traffic-site launch target, not a definition of a novel.** Authoring mode follows the user's intended form and the named platform's current expectations. Never pad a story to satisfy a site metric.
 - **Do not make everything romance.** Treat `romance` as a primary genre only when the love relationship is the story's main conflict and resolution engine. Kidnapping, mafia, bullying, revenge, crime, legal, horror, thriller, dark academia, family, medical, fantasy, and sci-fi premises keep their own primary taxonomy when those external conflicts drive the plot; a relationship subplot does not justify adding `Romance` to the book genres, collection name, route slug, SEO keyword, article title, cover label, or promotional copy. For multi-book batches and collection pages, deliberately mix primary genres and audit reader-facing copy for unnecessary `romance` repetition before build.
-- **The cover is an ad creative first, a book cover second.** Design and generate to stop the scroll in 0.3 seconds. For traffic fiction, default to a **normally exposed, high-readability melodramatic short-drama thumbnail**: a frozen scandal, an active accusation or interruption, visible proof, exaggerated shock/panic/guilt/fury, and a complicated 3–4-person relationship tableau. Use no more than 4 discernible people. Ban `premium`, `prestige`, `editorial`, `elegant`, `sophisticated`, `subtle emotion`, `restrained expression`, `calm power`, and atmosphere-first movie-poster direction from traffic-cover prompts unless the user explicitly requests that aesthetic. Neutral model poses, everyone looking away, beautiful couple portraits, romantic embraces, and polished family groups are hard failures. See `story-cover.md`, `cover-allure-elements.md`, and `facebook-ads.md`.
+- **In Traffic site mode, the cover is an ad creative first and a book cover second.** Design and generate to stop the scroll in 0.3 seconds. Default to a **normally exposed, high-readability melodramatic short-drama thumbnail**: a frozen scandal, an active accusation or interruption, visible proof, exaggerated shock/panic/guilt/fury, and a complicated 3–4-person relationship tableau. Use no more than 4 discernible people. Ban `premium`, `prestige`, `editorial`, `elegant`, `sophisticated`, `subtle emotion`, `restrained expression`, `calm power`, and atmosphere-first movie-poster direction from traffic-cover prompts unless the user explicitly requests that aesthetic. Neutral model poses, everyone looking away, beautiful couple portraits, romantic embraces, and polished family groups are hard failures. Authoring mode follows the target edition and user brief instead. See `story-cover.md`, `cover-allure-elements.md`, and `facebook-ads.md`.
 - **Avoid exposure extremes.** Dangerous subject matter does not prescribe a dark palette, and a bright palette must not become blown highlights, white fog, washed-out skin, or a near-opaque pale lower third. Default to mid-key exposure with natural skin tones, readable shadow detail, controlled highlights, and local contrast. Follow any user-specified palette first; white, ivory, silver, pale blue, daylight, and other bright palettes are valid. Preserve a supplied reference image's luminance and whitespace as first-class composition features. Apply the exposure gates in `story-cover.md` before accepting any cover.
-- **Landing page = Chapter 1, not the homepage.** Facebook ads link directly to ch1. The ch1 hook is the first pageview; if it doesn't grab in 200 words, the session ends at 1.
-- **The chapter page is the product.** Every other page is a path to it.
+- **Traffic site landing page = Chapter 1, not the homepage.** Facebook ads link directly to ch1. The ch1 hook is the first pageview; if it doesn't grab in 200 words, the session ends at 1.
+- **In a reading site, the chapter page is the product.** Every other page is a path to it.
 - **Mobile first — not mobile only.** Social traffic is 90% mobile. 390px must work perfectly; desktop must still get a purposeful layout.
 - Prefer the simplest tech choice that meets the brief. Complexity needs a reason.
 - Fixed good typography beats user-adjustable bad typography.

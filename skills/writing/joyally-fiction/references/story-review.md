@@ -2,6 +2,8 @@
 
 Load this reference when the user asks for a review, audit, or quality check of written chapters or a complete manuscript. Also load `story-human-drafting.md` and audit the manuscript's emotional causality, character triggers, dialogue asymmetry, and human decision pass.
 
+Read the mode declared by `SKILL.md` or the project. Apply traffic-specific cast counts, conversion gates, chapter floors, hook-out rules, and reversal cadence only in Traffic site or explicitly opted-in Hybrid work. In Authoring mode, review against the user's form, genre, and named platform rather than failing a manuscript for not behaving like an ad-arbitrage serial.
+
 ## Purpose
 
 Find structural, character, prose, and consistency problems and give actionable revision instructions. The mandate is to find problems — not to validate what works.

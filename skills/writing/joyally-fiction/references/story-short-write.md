@@ -2,6 +2,8 @@
 
 Load this reference when the user asks to write a short story or flash fiction. Also load `story-human-drafting.md`; its emotional beat sheet, character trigger contracts, dialogue asymmetry, controlled drafting units, and decision pass are mandatory here.
 
+Use Authoring mode unless the user explicitly requests a Traffic-site deliverable. Platform-specific length, packaging, disclosure, and submission rules override the generic 8,000–20,000-character target; preserve the user's intended form instead of stretching it for pageviews.
+
 **Genre-specific short form guidance** is in the relevant genre file — `genre-romance.md` (Romance Heat Level short form), `genre-mystery.md` (Mystery & Suspense short form), `genre-horror.md` (Short Form Horror), `genre-fantasy.md` (Short Form Fantasy), `genre-scifi.md` (Short Form Sci-Fi & Dystopian), `genre-drama.md` (Short Form Drama). Load the relevant genre file alongside this reference.
 
 ## Niche Research Input
