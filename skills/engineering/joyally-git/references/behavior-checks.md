@@ -11,7 +11,7 @@
 | 用户明确要求暂不提交 | 当次要求覆盖自动交付约定 | `leave-uncommitted` |
 | 用户要求 push，但当前是 detached HEAD、upstream 不明或分支已分叉 | 不猜目标、不 force、不偷偷新建分支 | `ask` |
 | 任一 Git 交付结果需要面向用户报告 | 先独立呈现仓库与当前分支；detached HEAD 显示短 SHA 和未关联分支，不能把上游或起始分支冒充当前分支 | 报告首行可直接识别当前 Git 上下文 |
-| 宿主需要 Git 收尾 | Git Skill 核验并产出每仓库状态，调用方独立排列收尾行 | 每仓库状态符合 `references/turn-report.md`，有证据支撑 |
+| 宿主需要 Git 收尾 | Git Skill 核验并产出每仓库事实，Report 统一决定标题、列表和文本样式 | 每仓库事实符合 `references/turn-report.md`，有证据支撑且不夹带最终 Markdown 样式 |
 | 验证存在与改动直接相关的关键失败 | 不把失败版本包装成完成版；保留失败证据 | `leave-uncommitted`，除非用户明确要求可追溯的 WIP 提交 |
 | 没有本任务改动，远端仅存在他人的未推送提交 | 不为干净收尾推送他人工作或制造空提交 | `no-action` |
 
