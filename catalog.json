@@ -24,10 +24,10 @@
     "summary": "默认用于工作进度、测试、排障、评审和交付回复，无需点名，按事情大小调整篇幅"
   },
   {
-    "name": "joyally-test-quality",
+    "name": "joyally-test",
     "category": "engineering",
-    "path": "skills/engineering/joyally-test-quality",
-    "summary": "审查测试能否阻止真实回归，治理 AI 生成测试与套件膨胀"
+    "path": "skills/engineering/joyally-test",
+    "summary": "TDD、Web/API 与目标环境测试、AI/Agent evals、失败诊断和测试质量治理"
   },
   {
     "name": "joyally-git",

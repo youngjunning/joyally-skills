@@ -38,7 +38,7 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 | 判断产品方向、系统边界或 AI Agent 方案 | [top-architect](skills/engineering/top-architect/SKILL.md) |
 | 开发或评审 Agent 驱动的浏览器扩展，避免脚本写死业务流程 | [joyally-browser-extension-dev](skills/engineering/joyally-browser-extension-dev/SKILL.md) |
 | 向人说明进展、交付、排障或评审结论 | [joyally-report](skills/engineering/joyally-report/SKILL.md) |
-| 判断 AI 生成测试是否有用、清理测试套件负担 | [joyally-test-quality](skills/engineering/joyally-test-quality/SKILL.md) |
+| 设计、实现、运行或治理测试与 AI/Agent evals，判断证据能否挡住真实回归 | [joyally-test](skills/engineering/joyally-test/SKILL.md) |
 | 判断 Git 改动是否应自动提交和推送，并安全收尾 | [joyally-git](skills/engineering/joyally-git/SKILL.md) |
 | 生成图像、漫画或静态架构图片 | [Joyally image](skills/design/joyally-image/SKILL.md) |
 | 自动留存关键操作截图、找回写作素材或制作脱敏演示 | [Joyally Spotlight](skills/design/joyally-spotlight/SKILL.md) |
@@ -59,7 +59,7 @@ Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作�
 | [top-architect](skills/engineering/top-architect/SKILL.md) | 业务产品判断、AI 架构与 Skill、Agent、数字员工交付 |
 | [joyally-browser-extension-dev](skills/engineering/joyally-browser-extension-dev/SKILL.md) | Agent 驱动浏览器扩展的 runtime、页面观察、业务 Skill 与受保护工具边界 |
 | [joyally-report](skills/engineering/joyally-report/SKILL.md) | 向人解释进展、结果、证据与下一步 |
-| [joyally-test-quality](skills/engineering/joyally-test-quality/SKILL.md) | 审查测试保护价值，保留、改写、删除或补充真正有用的测试 |
+| [joyally-test](skills/engineering/joyally-test/SKILL.md) | TDD、测试策略与执行、Web/API 目标环境、AI/Agent evals、失败诊断与质量治理 |
 | [joyally-git](skills/engineering/joyally-git/SKILL.md) | 判断任务改动应提交并推送、只提交、保留还是请求确认，并安全执行获准动作 |
 | [tauri-skills](skills/engineering/tauri-skills/SKILL.md) | Tauri 2 安全边界与 Node.js sidecar |
 | [browser-performance-audit](skills/engineering/browser-performance-audit/SKILL.md) | 加载、资源与长会话性能审查 |
