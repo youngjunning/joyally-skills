@@ -1,6 +1,6 @@
 interface:
   display_name: "Joyally Report"
   short_description: "Clear, evidence-based progress, completion, and decision updates"
-  default_prompt: "Use $joyally-report before drafting the final reply. Give summary and closing standalone headings, and separate all three regions with stable Markdown styling."
+  default_prompt: "Use $joyally-report before drafting the final reply. Keep the summary short, make the body evidence-complete, and separate summary, body, and closing with stable Markdown styling."
 policy:
   allow_implicit_invocation: true
