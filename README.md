@@ -43,6 +43,7 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 | 生成图像、漫画或静态架构图片 | [Joyally image](skills/design/joyally-image/SKILL.md) |
 | 自动留存关键操作截图、找回写作素材或制作脱敏演示 | [Joyally Spotlight](skills/design/joyally-spotlight/SKILL.md) |
 | 统一设计、制作 HTML 报告、HTML PPT 或交互图表 | [Joyally Design](skills/design/joyally-design/SKILL.md) |
+| 录音、配音、人声修复、TTS、声音克隆、音色转换或转写对齐 | [Joyally Voice](skills/design/joyally-voice/SKILL.md) |
 | 为产品制作或重做整套主题，避免只换配色 | [Joyally 主题制作](skills/design/joyally-theme-creation/SKILL.md) |
 | 写文章、绘本或建设内容站点 | [Joyally writting](skills/writing/joyally-writting/SKILL.md)、[Joyally Fiction](skills/writing/joyally-fiction/SKILL.md)、[adsense-site-builder](skills/publishing/adsense-site-builder/SKILL.md) |
 | 从 B 站、微信等视频链接或音视频文件提取字幕、时间点与结构化内容 | [Joyally Media Reading](skills/productivity/joyally-media-reading/SKILL.md) |
@@ -73,6 +74,7 @@ Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作�
 | [Joyally image](skills/design/joyally-image/SKILL.md) | 栅格图像的像素生成与编辑、漫画制作、身份连续性与图像技术验收 |
 | [Joyally Spotlight](skills/design/joyally-spotlight/SKILL.md) | 关键操作截图私有归档与检索；真实演示素材扫描、遮盖与成品复核 |
 | [Joyally Design](skills/design/joyally-design/SKILL.md) | 跨平台界面、HTML 交付、可探索图表与图像设计，主导视觉方向、构图、版式、交互与设计验收 |
+| [Joyally Voice](skills/design/joyally-voice/SKILL.md) | 人声录制、修复、合成、配音、克隆、音色转换、转写对齐与授权验收 |
 | [Joyally 主题制作](skills/design/joyally-theme-creation/SKILL.md) | 从参考素材提炼构图与交互，设计有区分度的布局、自有组件和语义 token |
 
 ### Writing
@@ -96,7 +98,7 @@ Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作�
 | [distill-me](skills/productivity/distill-me/SKILL.md) | 用零部署本地工作台整理材料与草稿，栏目可自由取舍 |
 | [distill-zisheng](skills/productivity/distill-zisheng/SKILL.md) | 维护紫升与俊宁的个人记录、资料、项目方案与工作脉络 |
 
-Joyally Design、Joyally 主题制作、Joyally image、Joyally writting、Joyally Fiction 和 Joyally Media Reading 的安装与调用标识分别为 `joyally-design`、`joyally-theme-creation`、`joyally-image`、`joyally-writting`、`joyally-fiction` 和 `joyally-media-reading`。机器可读目录见 [catalog.json](catalog.json)。
+Joyally Design、Joyally Voice、Joyally 主题制作、Joyally image、Joyally writting、Joyally Fiction 和 Joyally Media Reading 的安装与调用标识分别为 `joyally-design`、`joyally-voice`、`joyally-theme-creation`、`joyally-image`、`joyally-writting`、`joyally-fiction` 和 `joyally-media-reading`。机器可读目录见 [catalog.json](catalog.json)。
 
 ## 使用与维护
 

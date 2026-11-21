@@ -90,6 +90,12 @@
     "path": "skills/design/joyally-design"
   },
   {
+    "name": "joyally-voice",
+    "category": "design",
+    "summary": "人声录制、修复、合成、配音、克隆、音色转换、转写对齐与授权验收",
+    "path": "skills/design/joyally-voice"
+  },
+  {
     "name": "joyally-theme-creation",
     "category": "design",
     "summary": "从参考素材制作有结构差异的主题，完成语义 token、自有组件与同内容验收",

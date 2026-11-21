@@ -2,6 +2,7 @@
 
 ## 2026-11-21
 
+5. 新增 `joyally-voice`：覆盖录音、人声修复、TTS、配音、声音克隆、说话/歌声音色转换、转写对齐及授权与质量验收；配音作为 Voice 分支统一维护。
 4. 优化 `joyally-git` 的并行交付：脏工作区、无关 staged 内容和分支分叉优先转入基于目标 ref 的隔离 worktree，复验任务补丁后 fast-forward push；只有任务语义无法拆分、真实冲突或目标不明时才停止请求决定。
 3. 新增 `joyally-media-reading`：从 B 站、微信视频号和公众号视频等托管页面、直接媒体链接及本地音视频提取字幕、转写、时间线和关键画面；显式报告覆盖范围与证据来源，并把结构化材料交给后续写作、小说或视频工作流。
 2. 将 `joyally-test-quality` 更名为 `joyally-test`，融合 10 个 AI Native 测试 Skill 的差异化机制，扩展为 TDD、性质/fuzz/mutation、Web/E2E/辅助技术、API 契约、AI/Agent evals、失败诊断与套件治理的统一入口；保留按真实回归判断测试价值的核心标准与来源许可边界。
