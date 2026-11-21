@@ -17,7 +17,7 @@ description: 在 Codex、千问办公等 Agent 的日常对话收尾时，自动
 
 ## 每轮自动蒸馏
 
-当长期指令在最终回复前调用本 Skill 时，先读 [轻量门禁](references/automatic-gate.md)。未命中时不加载完整处理流程，直接报告“蒸馏：无新增”。命中后读 [自动蒸馏协议](references/automatic-distillation.md)，只处理本轮增量。
+当长期指令在最终回复前调用本 Skill 时，先读 [轻量门禁](references/automatic-gate.md)。未命中时不加载完整处理流程，保留“蒸馏：无新增”作为本轮收尾事实；命中后读 [自动蒸馏协议](references/automatic-distillation.md)，只处理本轮增量。宿主已有统一收尾 Report 时，将该事实交给 Report 汇总，不另加第二段结尾；自动模式不依赖 Stop Hook 或可见提示注入。
 
 默认提供 5 个核心栏目，它们来自成熟数字分身的真实内容结构：
 
