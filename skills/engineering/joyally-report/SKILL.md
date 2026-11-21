@@ -12,7 +12,8 @@ Use this skill when drafting a progress update, diagnosis, review, decision, or 
 1. **Establish the result.** Identify the user's objective, what actually happened, and the evidence for it. Keep implementation, tests, artifacts, push, deployment and user acceptance distinct. A successful earlier step establishes only that step. Attribute hypotheses and recommendations explicitly.
 2. **Write the opening summary.** Follow the [summary contract](references/turn-report.md). Choose the result and the one limitation or decision that most affects the reader. Place them at the very top. For a small result, the summary can be the entire answer.
 3. **Develop the body as needed.** Put consequential unfinished work first. Distinguish missing implementation from implemented behavior awaiting verification. Identify a present blocker and its unblock condition, or an uncertain risk and its consequence. Follow with only the evidence or explanation needed to judge or continue the work. Include an owner or deadline only when known.
-4. **Check the assembled reply.** Compare the first paragraph with the strongest supporting evidence and the most important open item. Remove repeated conclusions, empty sections, process narration and next actions that do not follow from the request.
+4. **Assemble the three regions.** For a Markdown reply containing an opening summary, a main body, and host-required closing records, put `---` between summary and body and another `---` between body and closing. Report owns these dividers; closing owners supply their facts without adding layout. Omit the divider beside any omitted region, including a one-sentence answer with no body or closing.
+5. **Check the assembled reply.** Compare the first paragraph with the strongest supporting evidence and the most important open item. Remove repeated conclusions, empty sections, process narration and next actions that do not follow from the request.
 
 ## Select detail and format
 
@@ -24,4 +25,4 @@ Honor `REPORT_FORMAT=markdown` and `REPORT_FORMAT=terminal`. In terminal mode us
 
 ## Integration boundary
 
-The skill produces the opening summary and main body in one composition pass. The caller independently handles any required closing records after the body. Use an already verified domain fact in the summary when it changes the verdict. Operational checks, writes, skill inventories and receipt assembly belong to their respective owners. Report can finish with just the task evidence available to it.
+The skill produces the opening summary and main body in one composition pass, then owns the final section layout when the caller supplies closing records. The caller independently obtains the closing facts and places them after the body; their domain owners do not choose the surrounding dividers. Use an already verified domain fact in the summary when it changes the verdict. Operational checks, writes, skill inventories and receipt assembly belong to their respective owners. Report can finish with just the task evidence available to it.

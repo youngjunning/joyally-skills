@@ -1,10 +1,27 @@
-# Opening summary contract
+# Opening summary and section layout contract
 
 The input is the user's objective and the verified state at the moment of writing. The output is the first paragraph of the main reply. Use the reader's language. In a structured Chinese report, begin with **摘要**. For a small answer, a single opening sentence carries the summary.
 
 1. State what the user can now do or decide. Qualify the claim to the environment where it was observed.
 2. When required work remains, include the highest-impact gap and the next condition that changes the result. Keep the entire summary to one to three sentences.
-3. Continue directly with evidence and details if needed. Any host-required closing records follow the main reply independently. Keep one copy of the summary.
+3. When a main body follows, insert a blank line, `---`, and another blank line between the summary and body.
+4. When host-required closing records follow the body, insert the same divider between body and closing. Report inserts both dividers; the closing providers supply facts only. Never place a divider before the first region, after the last region, or beside an omitted region. Keep one copy of the summary.
+
+For a complete Markdown reply, assemble the regions as:
+
+```markdown
+**摘要**　一句到三句结论。
+
+---
+
+正文证据与关键未完成项。
+
+---
+
+**收尾**
+
+领域收尾事实。
+```
 
 ## Acceptance examples
 
