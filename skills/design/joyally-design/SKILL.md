@@ -32,6 +32,20 @@ Joyally Design、`joyally-writting` 与 `joyally-image` 是可独立使用的合
 
 当图像任务需要新建或改变视觉方向、构图体系、品牌语言、版式字体或审美标准时，由 Joyally Design 主导设计阶段，将经验收的设计 brief 交给 `joyally-image` 落成。已有明确设计 brief 的直接生图、局部改图、格式转换与图像技术修复无需重复设计。
 
+## 纸面与静态成品
+
+纸面与静态成品是 Joyally Design 的内建交付模式，不是另一套产品 UI 体系。内容已锁定、以单页或分页阅读为主的 PDF、PNG、可编辑 PPTX 或静态 HTML，先由 Joyally Design 确定读者、信息层级、品牌适配、素材职责和验收，再使用本 Skill 的报告、演示、社交卡片或静态 HTML 路径完成排版与渲染。典型场景包括 one-pager、方案、长文档、信件、简历、作品集、打印型报告、静态演示稿和社交卡片。
+
+静态模式不替代需要持续操作、响应式状态、复杂导航或长期维护的产品网页、工作台、原生 App、交互图表与 HTML PPT；这些仍使用 Joyally Design 的平台路径、组件体系和生成器。一次性的静态产品介绍页只在无需复杂交互、多语言站点结构或产品级组件维护时采用。
+
+静态成品沿用 Joyally 的设计契约：从所选主题或项目现有 tokens 派生颜色、字体、表面、间距和层级；保留品牌识别与语义色，不把任何外部模板的纸张、墨色或字体默认值带入成品。最小 brief 包含用途与读者、已核定的文案和事实、品牌素材与可用颜色、目标格式与页数、屏幕或打印优先级、可变项、必须保留项和验收条件。输出后检查结构、渲染与逐页视觉效果；再复核品牌一致性、信息层级、可读性和对应交付场景的体验。浏览器成品还需检查桌面与窄屏。
+
+### 分流与交接示例
+
+1. **一页方案给管理层决策**：用户提供已审定的目标、三项证据、预算和下一步，要求一张可打印的中文 PDF。Joyally Design 先确认最重要的结论、品牌色和证据顺序，再用静态报告路径制作 one-pager；交付写明“1 页、A4、打印优先、保留全部数字与来源链接”。输出 HTML、PDF 和页面图后，检查结论是否首屏可见、表格是否可读、品牌色与打印对比度是否合格。
+2. **八页技术分享，需要现场演讲与讲稿**：虽然内容已基本完成，但需要逐页播放、演讲者视图、动效控制和离线单文件交付。这走 Joyally Design 的 `deck` 路径，检查翻页、讲稿、投屏画面、窄屏预览及导出 PDF。若会后要把同一内容整理成可打印的六页讲义，单独建立阅读型静态成品，不复用演示运行时。
+3. **产品功能的一次性静态介绍页**：已有品牌 logo、三张产品截图和锁定文案，目标是给合作方邮件附上一个静态 HTML 与 PDF，不需要表单、账户、深链接或持续维护。Joyally Design 定义首屏主张、截图裁切和品牌色，用静态 HTML 路径实现，并要求“桌面与窄屏均可读、保留截图原比例、无虚构指标”。若后续增加注册流程、导航、国际化或长期更新，则迁入 Joyally Design 的落地页路径。
+
 ## 可选配套安装提示
 
 本轮首次使用 Joyally Design 时，检查当前环境是否已提供 `joyally-writting` 和 `joyally-image`。只对缺失的 Skill 在首次进度更新末尾集中建议一次，说明它们是可选协作能力，不阻塞当前任务；已安装或本轮已提示时不重复。
@@ -78,6 +92,7 @@ npx skills add youngjunning/skills --skill joyally-image -g
 | 可折叠、缩放、持续编辑的思维导图 | `joyally-design`；读 [思维导图](references/mindmaps.md)，保留 Markmap 源文件 |
 | 可编辑、按职责组织的分层架构图 | `joyally-design`；读 [分层架构图](references/layered-architecture.md)，保留 HTML 源文件 |
 | 网页或工作台的新建与局部精修、报告整体设计、跨平台设计系统 | `joyally-design`；其中的静态插图交给 `joyally-image` |
+| 内容已锁定的 one-pager、方案、长文档、信件、简历、作品集、打印型报告、静态演示稿或社交卡片 | `joyally-design` 的静态成品模式；按报告、演示、社交卡片或静态 HTML 路径排版、渲染与逐页检查 |
 | Chrome 扩展图标的设计、尺寸适配和真实工具栏验收 | `joyally-design` 主导小尺寸识别与使用情境；需要生成源图时调用 `joyally-image` |
 
 仅说“画架构图”且现有交付上下文未要求交互时，默认按静态图片处理。Joyally Design 可提供配色、字体、层级与材质参考；采用这些视觉规范不改变主导 Skill，也不自动增加交互页面。生成工具、绘制方式与视觉风格分别确定；`joyally-image` 的结构图仍按其知识图谱流程完成精确文字和箭头排版。
@@ -85,6 +100,7 @@ npx skills add youngjunning/skills --skill joyally-image -g
 1. 新建报告：明确读者、决策与证据结构，读取 [设计系统](references/design-system.md)、[报告语言](references/report-language.md)、[布局](references/layout.md) 与 [HTML 报告](references/html-reports.md)。报告只用 Joyally 自有模板和样式。
    制作需要逐页播放、讲稿或现场演示的 HTML PPT 时读[演示文稿](references/presentations.md)，选 Joyally 主题并用独立的 `deck` 命令；阅读型报告继续用 `report`。
    制作社交平台封面、轮播内页或可分享图文时读[社交卡片](references/social-cards.md)，按内容选 `editorial`、`swiss` 或 `poster`，生成单张 HTML 并导出 PNG；这一路径与阅读型报告、演示文稿分别交付。
+   当报告或演示转为内容已锁定、纸面优先的静态成品时，按“纸面与静态成品”选择对应 Joyally 输出路径；需要可编辑 PPTX 时在 brief 中明确格式。不要同时以 `report`、`deck` 与静态文档重复出多版，先确定一次明确交付。
 2. 改造已有 HTML：先读 [改造约定](references/adapting-existing-html.md)，保留 DOM、锚点、事件与导出功能，优先增加 scoped theme。
 3. React 设计系统：读 [React 约定](references/react-design-system.md)，依次核对 tokens、共享 primitives、组件状态和页面组合。
    编码 Agent 需要为 React Web 选用、安装或组合组件时，再读 [React 组件工作流](references/component-workflow.md)，从目标项目或选定来源取得真实源码，并逐项验收预览。

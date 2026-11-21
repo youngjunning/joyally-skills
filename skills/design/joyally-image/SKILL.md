@@ -1,6 +1,6 @@
 ---
 name: joyally-image
-description: Generate or edit raster images and produce comics, picture-book illustrations, covers, brand logos and wordmarks, game-ready 2D assets, static diagram images, icons, wallpapers, animation frames, and pet spritesheets. Lead pixel production, identity continuity, generation or editing, and technical image QA; joyally-design leads visual direction, composition, brand and layout decisions, while joyally-writting owns prose and factual content. All three skills can work independently; a combined task has one overall lead.
+description: Generate or edit raster images and produce comics, picture-book illustrations, covers, brand logos and wordmarks, game-ready 2D assets, static diagram images, icons, wallpapers, animation frames, and pet spritesheets. Its own delivery architecture covers asset contracts, type routing, pixel production, deterministic completion, packaging and technical image QA. It can independently apply the Qingshan Lake visual language or consume an approved visual brief; a combined task has one overall lead.
 ---
 
 # Joyally image
@@ -20,7 +20,19 @@ Joyally image, `joyally-writting`, and `joyally-design` are independent skills t
 
 One explicitly named skill is the default lead. When the user names several, select the single lead by the final deliverable. If a named skill does not match that artifact, preserve the user's intent, explain the proposed handoff, and keep one lead rather than letting several skills compete.
 
-When the image request needs a new or changed visual direction, composition system, brand language, layout or typography, or aesthetic acceptance criteria, ask `joyally-design` to lead that design phase before generation and treat its approved brief as locked input. This skill may still be the overall lead for the final image while Joyally Design owns the design decisions. Direct generation from an explicit approved brief, bounded image edits, identity-preserving repairs, format conversion, and technical post-processing do not repeat the design phase. If Joyally Design is unavailable, recommend it once, continue from the user's explicit constraints, the destination's existing design system, or this skill's documented default, and state that no separate design review occurred.
+When an approved visual direction, brand system, composition rule, layout or typography contract already exists, consume it as locked input. When it does not, this skill establishes the image-specific direction through the asset brief and its documented Qingshan Lake default; it does not depend on another Skill to start or complete a self-contained image delivery. Bring in `joyally-design` only when the user explicitly asks for broader design-system work, an interactive/container deliverable, or a cross-channel visual system that exceeds one image asset. Direct generation, bounded edits, identity-preserving repairs, format conversion and technical post-processing remain wholly within this skill.
+
+## Top-level delivery architecture
+
+Joyally Image is not a shelf of generation features. Every asset travels through the same five-layer production architecture; the asset type changes the route and acceptance gates, not the ownership model:
+
+1. **Asset contract** — identify the consumer, placement, target platform, dimensions, format, alpha requirement, semantic invariants and acceptance conditions.
+2. **Type routing** — select exactly one asset route and its reference: narrative illustration, text-heavy KV, deterministic knowledge map, icon family, game package, wallpaper, animation, pet atlas or identity-preserving edit.
+3. **Pixel production** — generate or edit only the visual variables that may change: composition, material, lighting, camera, scene and atmosphere. Use the fixed model and prompt-compliance contract.
+4. **Deterministic completion** — move exact text, numbers, relationships, arrow direction, identity locks, frame order, alpha, native packaging and other non-negotiable semantics out of the model into HTML/CSS/SVG, locked raster layers or type-specific tooling.
+5. **Package and acceptance** — deliver final files, metadata and required deterministic sources; then verify at real reading size, target background, runtime or import surface. A successful image API response proves only that a file exists.
+
+The default visual language is also self-contained: when no visual brief is supplied, use `references/qingshan-lake-style.md` in Light or Dark mode. It governs palette, material, whitespace and atmosphere, not a mandatory scene, character or brand. A supplied brand, identity reference or approved brief overrides incompatible defaults.
 
 ## Optional companion installation prompt
 
