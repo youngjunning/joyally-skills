@@ -1,6 +1,6 @@
 ---
 name: joyally-report
-description: Produce an evidence-based progress, completion, diagnosis, review, release, or handoff report when the user explicitly invokes this skill.
+description: Default evidence-based reporting workflow for task progress and completion. Apply automatically to fixes, tests, diagnoses, reviews, releases, handoffs, and delivery replies, even when the user does not name the skill; scale the report to the work.
 ---
 
 # Joyally Report
@@ -9,15 +9,15 @@ Turn verified work into a decision artifact that is easy for both people and dow
 
 ## When to use
 
-Use this workflow only when the user explicitly invokes `joyally-report`. Do not load it automatically for ordinary progress updates, small fixes, test results, diagnoses, reviews, releases, handoffs, or completion replies.
+Apply this workflow automatically before sending a task progress or completion reply. This includes small fixes, test outcomes, diagnoses, reviews, releases, handoffs, and deliveries; the user does not need to request a report or name the skill. Explicit requests for a report or `joyally-report` always activate it. Simple factual answers and acknowledgments can remain direct unless host instructions require a closing report.
 
-Once invoked, reuse it throughout the current task's reporting. Reader-facing articles and formal prose may additionally use a writing skill; that separate route does not exclude this reporting workflow.
+Once activated, reuse it throughout the current task's reporting. Reader-facing articles and formal prose may additionally use a writing skill; that separate route does not exclude this reporting workflow.
 
 Scale the output to the reader's decision. For a small change or progress update, use one to three direct sentences with no template or heading. For a consequential delivery, failure, or handoff, add only the sections needed to show evidence and next action. Do not turn every update into an audit of all possible risks.
 
 ## End-of-turn route
 
-When the host's global instructions require automatic closing, use [Turn Report](references/turn-report.md) as the sole compact closing format. It receives domain facts from `distill-zisheng` and `joyally-git`, then applies this skill's human-and-agent-friendly synthesis, ordering, wording, and evidence boundaries. It does not own or repeat either domain workflow. This route is a host-directed exception to explicit invocation, not a reason to load the full reporting workflow for ordinary updates.
+When host instructions require automatic closing, apply the full reporting workflow to the main reply, then read [Turn Report](references/turn-report.md) and append its single compact handoff block. The handoff receives domain facts from `distill-zisheng` and `joyally-git`; it does not replace the conclusion, evidence, unfinished-work audit, risk judgment, or next action in the main report. This skill owns synthesis, ordering, wording, and evidence boundaries without repeating either domain workflow.
 
 ## Output modes
 

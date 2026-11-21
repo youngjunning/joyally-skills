@@ -128,7 +128,7 @@ Templates and examples are in [`references/report-types.md`](references/report-t
 
 ## End-of-turn report / 回合收尾
 
-在宿主通过用户级全局 `AGENTS.md` 要求自动收尾时，Joyally Report 使用 [`references/turn-report.md`](references/turn-report.md) 将已核验的领域结果整理成人和下游 Agent 都友好的报告。蒸馏与工作脉络由 `distill-zisheng` 负责，Git 与交付状态由 `joyally-git` 负责；Joyally Report 保留信息选择、证据边界、顺序、措辞和最终呈现能力。
+在宿主通过用户级全局 `AGENTS.md` 要求自动收尾时，Joyally Report 每轮先完成与任务复杂度相称的完整汇报，再使用 [`references/turn-report.md`](references/turn-report.md) 附加一份紧凑的接续摘要。蒸馏与工作脉络由 `distill-zisheng` 负责，Git 与交付状态由 `joyally-git` 负责；Joyally Report 负责结论、证据边界、未完成项、风险、下一步以及整体顺序和措辞。轻量摘要不能替代完整汇报。
 
 ## Output modes / 输出模式
 
