@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-21
+
+1. 将 `joyally-test-quality` 更名为 `joyally-test`，融合 10 个 AI Native 测试 Skill 的差异化机制，扩展为 TDD、性质/fuzz/mutation、Web/E2E/辅助技术、API 契约、AI/Agent evals、失败诊断与套件治理的统一入口；保留按真实回归判断测试价值的核心标准与来源许可边界。
+
 ## 2026-11-18
 
 3. 新增 `joyally-git`：在任务收尾时先核对授权、改动归属、验证、分支、远端和发布副作用，再判断提交并推送、只提交、保留改动或请求确认；只暂存本任务文件，区分 Git 交付与部署、发布及真实业务结果。
