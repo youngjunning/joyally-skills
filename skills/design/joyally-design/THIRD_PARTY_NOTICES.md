@@ -20,3 +20,7 @@ Modified for Joyally Design: condensed and translated the review, audit, refinem
 ## Hallmark
 
 The tier names, selected default-pattern checks and before/kept preservation concept in `references/quality-gates.md` were inspired by Hallmark, https://github.com/nutlope/hallmark, MIT, copyright 2026 Hallmark contributors. Joyally Design independently implements the browser rules, explainable exception format and DOM contract comparison; it does not bundle Hallmark themes or page assets. The pinned source commit and scope are recorded in `legal/hallmark/UPSTREAM.json`, with the upstream license and adaptation notice alongside it.
+
+## External design-method research
+
+`references/external-design-projects.md` synthesizes bounded workflow ideas from Taste Skill (Leon Lin, MIT), Impeccable (Paul Bakaus and contributors, Apache-2.0), shadcn/ui (shadcn, MIT), UI UX Pro Max (Next Level Builder, MIT), and Awesome DESIGN.md (VoltAgent, MIT). The exact repositories, commits, adopted mechanisms and non-adoption boundaries are listed in that reference. No upstream code, components, visual assets, brand identities or long-form instruction text are bundled by this synthesis; Impeccable-derived guidance already distributed by Joyally Design remains covered by `legal/quality-guidance/`.
