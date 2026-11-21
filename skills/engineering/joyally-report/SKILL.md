@@ -1,19 +1,23 @@
 ---
 name: joyally-report
-description: Default reporting workflow for work updates and delivery replies. Apply automatically to progress, small fixes, test results, diagnoses, reviews, releases, handoffs, and completion reports, even when the user does not ask for a report. Also use whenever the user names report or joyally-report. Scale length to the work.
+description: Produce an evidence-based progress, completion, diagnosis, review, release, or handoff report when the user explicitly invokes this skill.
 ---
 
 # Joyally Report
 
-Turn verified work into a decision artifact. The report should let its reader understand the outcome, judge the evidence, see what remains uncertain, and take the next action without reconstructing the work from a tool diary.
+Turn verified work into a decision artifact that is easy for both people and downstream agents to read, challenge, and continue. The report should let either reader understand the outcome, judge the evidence, see what remains uncertain, and take the next action without reconstructing the work from a tool diary.
 
 ## When to use
 
-Apply this workflow by default before sending a work progress update or delivery reply. Load it when reporting starts and reuse it throughout the task. This includes small changes, test outcomes, diagnoses, reviews, releases, and handoffs; the user does not need to request a report or name the skill. Explicit requests for report or joyally-report always activate it. Simple factual answers and acknowledgments can remain direct replies.
+Use this workflow only when the user explicitly invokes `joyally-report`. Do not load it automatically for ordinary progress updates, small fixes, test results, diagnoses, reviews, releases, handoffs, or completion replies.
 
-For skill routing, ordinary engineering updates belong here. Reader-facing articles and formal prose may additionally use a writing skill; that separate route does not exclude this reporting workflow.
+Once invoked, reuse it throughout the current task's reporting. Reader-facing articles and formal prose may additionally use a writing skill; that separate route does not exclude this reporting workflow.
 
 Scale the output to the reader's decision. For a small change or progress update, use one to three direct sentences with no template or heading. For a consequential delivery, failure, or handoff, add only the sections needed to show evidence and next action. Do not turn every update into an audit of all possible risks.
+
+## End-of-turn route
+
+When the host's global instructions require automatic closing, use [Turn Report](references/turn-report.md) as the sole compact closing format. It receives domain facts from `distill-zisheng` and `joyally-git`, then applies this skill's human-and-agent-friendly synthesis, ordering, wording, and evidence boundaries. It does not own or repeat either domain workflow. This route is a host-directed exception to explicit invocation, not a reason to load the full reporting workflow for ordinary updates.
 
 ## Output modes
 
