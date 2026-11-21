@@ -2,6 +2,8 @@
 
 ## 2026-11-21
 
+4. 优化 `joyally-git` 的并行交付：脏工作区、无关 staged 内容和分支分叉优先转入基于目标 ref 的隔离 worktree，复验任务补丁后 fast-forward push；只有任务语义无法拆分、真实冲突或目标不明时才停止请求决定。
+3. 新增 `joyally-media-reading`：从 B 站、微信视频号和公众号视频等托管页面、直接媒体链接及本地音视频提取字幕、转写、时间线和关键画面；显式报告覆盖范围与证据来源，并把结构化材料交给后续写作、小说或视频工作流。
 2. 将 `joyally-test-quality` 更名为 `joyally-test`，融合 10 个 AI Native 测试 Skill 的差异化机制，扩展为 TDD、性质/fuzz/mutation、Web/E2E/辅助技术、API 契约、AI/Agent evals、失败诊断与套件治理的统一入口；保留按真实回归判断测试价值的核心标准与来源许可边界。
 1. Joyally Fiction 新增 Authoring、Traffic site 与 Hybrid 模式路由，普通小说创作不再默认继承广告套利的 201 章、统一 cliffhanger、固定群像和 Meta 封面约束；同时加入人类主导的生成工作流：先固定故事事实、情绪因果、人物触发机制和对话潜台词，再按场景小批生成并执行因果、人设、信息增量、语言与原创决策走读。AI 检测分数只作噪声较高的诊断线索，不作为作者身份、原创性、平台合规或规避检测的目标。
 

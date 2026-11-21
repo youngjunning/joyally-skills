@@ -1,0 +1,4 @@
+interface:
+  display_name: "Joyally Media Reading"
+  short_description: "从 B 站、微信或本地音视频提取带时间点和证据边界的内容"
+  default_prompt: "Use $joyally-media-reading to extract evidence-backed, timestamped source notes from this media."
