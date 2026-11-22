@@ -1,0 +1,4 @@
+interface:
+  display_name: "Joyally Music"
+  short_description: "音乐创作、生成、歌声合成、分轨、混音与母带验收"
+  default_prompt: "Use $joyally-music to create and verify an editable, rights-aware music workflow for this project."

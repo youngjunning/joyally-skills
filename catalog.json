@@ -114,6 +114,12 @@
     "path": "skills/design/joyally-voice"
   },
   {
+    "name": "joyally-music",
+    "category": "design",
+    "summary": "音乐创作、歌声合成、分轨、音频转 MIDI、混音与母带验收",
+    "path": "skills/design/joyally-music"
+  },
+  {
     "name": "joyally-theme-creation",
     "category": "design",
     "summary": "从参考素材制作有结构差异的主题，完成语义 token、自有组件与同内容验收",
