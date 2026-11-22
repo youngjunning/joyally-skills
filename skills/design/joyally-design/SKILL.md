@@ -1,6 +1,6 @@
 ---
 name: joyally-design
-description: 设计和精修 Web、macOS、iOS、Android 与 React Native 界面，也用于 HTML 报告、HTML PPT、社交卡片，以及图像和图表任务的视觉系统、构图与设计验收。图表统一由 joyally-image 接收，本 Skill 提供 Archify 后端和设计支持；文稿交给 joyally-writting。三者可独立使用，联合任务仅设一个整体主导 Skill。
+description: 设计和精修 Web、macOS、iOS、Android 与 React Native 界面，也用于 HTML 报告、HTML PPT、社交卡片，以及图像和图表任务的视觉系统、构图与设计验收。图表及其运行时统一由 joyally-image 负责，本 Skill 只提供可选设计支持；文稿交给 joyally-writting。三者可独立使用，联合任务仅设一个整体主导 Skill。
 ---
 
 # Joyally Design
@@ -87,14 +87,14 @@ npx skills add youngjunning/joyally-skills --skill joyally-image -g
 
 | 交付物 | 主导 Skill |
 | --- | --- |
-| 静态或交互式架构图、知识图谱、流程图、时序图、数据流图、生命周期图及其他可探索图表 | `joyally-image`；静态走 Knowledge Map，交互走 Archify |
+| 静态或交互式架构图、知识图谱、流程图、时序图、数据流图、生命周期图及其他可探索图表 | `joyally-image`；静态走 Knowledge Map，交互走随包交互图分支 |
 | 可折叠、缩放、持续编辑的思维导图 | `joyally-design`；读 [思维导图](references/mindmaps.md)，保留 Markmap 源文件 |
 | 可编辑、按职责组织的分层架构图 | `joyally-design`；读 [分层架构图](references/layered-architecture.md)，保留 HTML 源文件 |
 | 网页或工作台的新建与局部精修、报告整体设计、跨平台设计系统 | `joyally-design`；其中的静态插图交给 `joyally-image` |
 | 内容已锁定的 one-pager、方案、长文档、信件、简历、作品集、打印型报告、静态演示稿或社交卡片 | `joyally-design` 的静态成品模式；按报告、演示、社交卡片或静态 HTML 路径排版、渲染与逐页检查 |
 | Chrome 扩展图标的设计、尺寸适配和真实工具栏验收 | `joyally-design` 主导小尺寸识别与使用情境；需要生成源图时调用 `joyally-image` |
 
-所有图形请求统一由 `joyally-image` 接收；未要求交互时默认按静态图片处理，要求点击、缩放、聚焦、持续编辑或路径探索时由它内部调用 Archify。Joyally Design 可提供配色、字体、层级、材质和设计验收；采用这些视觉规范不改变图形任务的主导 Skill。生成工具、绘制方式与视觉风格分别确定。
+所有图形请求和交互图运行时统一由 `joyally-image` 负责；未要求交互时默认按静态图片处理，要求点击、缩放、聚焦、持续编辑或路径探索时由它调用随包运行时。Joyally Design 只按需提供配色、字体、层级、材质和设计验收；采用这些视觉规范不改变图形任务的主导 Skill，也不把运行时归回本 Skill。生成工具、绘制方式与视觉风格分别确定。
 
 1. 新建报告：明确读者、决策与证据结构，读取 [设计系统](references/design-system.md)、[报告语言](references/report-language.md)、[布局](references/layout.md) 与 [HTML 报告](references/html-reports.md)。报告只用 Joyally 自有模板和样式。
    制作需要逐页播放、讲稿或现场演示的 HTML PPT 时读[演示文稿](references/presentations.md)，选 Joyally 主题并用独立的 `deck` 命令；阅读型报告继续用 `report`。
@@ -103,7 +103,7 @@ npx skills add youngjunning/joyally-skills --skill joyally-image -g
 2. 改造已有 HTML：先读 [改造约定](references/adapting-existing-html.md)，保留 DOM、锚点、事件与导出功能，优先增加 scoped theme。
 3. React 设计系统：读 [React 约定](references/react-design-system.md)，依次核对 tokens、共享 primitives、组件状态和页面组合。
    编码 Agent 需要为 React Web 选用、安装或组合组件时，再读 [React 组件工作流](references/component-workflow.md)，从目标项目或选定来源取得真实源码，并逐项验收预览。
-4. 图表视觉系统或 Archify 后端：图形任务由 `joyally-image` 主导；本 Skill 仅在需要新的视觉系统、设计评审或调用随包 Archify 运行时时提供支持。读 [交互图表](references/interactive-diagrams.md)；需要表达系统、服务、资源之间的调用和依赖时再读 [系统架构关系图](references/system-architecture-relationships.md)。使用统一入口验证 typed JSON IR，再生成自包含 HTML。既有交互图表的静态导出沿用其源文件。
+4. 图表视觉系统与设计评审：图形任务、类型化结构源、渲染和运行时都由 `joyally-image` 主导；本 Skill 仅在需要新的视觉系统或设计评审时提供支持。读 [交互图表设计评审](references/interactive-diagrams.md)；需要表达系统、服务、资源之间的调用和依赖时再读 [系统架构关系图](references/system-architecture-relationships.md)。生产命令和运行时约定以 `joyally-image` 为准，既有交互图表的静态导出沿用其源文件。
 5. 思维导图：读 [思维导图](references/mindmaps.md)，交付可编辑的 Markmap Markdown 与可阅读的交互视图。它表达主题归属与层级；需要说明调用、数据流或依赖时转用系统架构关系图。
 6. 分层架构图：读 [分层架构图](references/layered-architecture.md)，交付可编辑的 HTML 与可阅读的分层视图。它表达职责和技术位置；具体调用与依赖使用系统架构关系图。
 7. 界面评审或精修：按[能力路由](references/capability-routing.md)读取评审、精修、回改或存量路径。技术审计再读[专项质量检查](references/design-quality.md)，结论需可复现条件与证据。
@@ -140,7 +140,7 @@ python3 <skill-dir>/scripts/validate-diagram-theme.py
 node <skill-dir>/scripts/validate-joyally-html.mjs <output-dir>/index.html
 ```
 
-静态通过后检查桌面、窄屏、键盘、长文本、空状态、错误与打印输出。动态图表运行 `design-engine.mjs diagram validate` 和 `diagram deliver`；正文保留文字摘要或静态 fallback，分别报告确定性校验与视觉证据。
+静态通过后检查桌面、窄屏、键盘、长文本、空状态、错误与打印输出。动态图表通过 `joyally-image/scripts/joyally-diagram.mjs` 运行 `validate` 和 `deliver`；正文保留文字摘要或静态 fallback，分别报告确定性校验与视觉证据。
 
 ## 交付与来源
 

@@ -4,7 +4,7 @@
 
 它可独立使用，也可与 Joyally writting 和 Joyally image 协作。联合任务只设一个整体主导 Skill：Joyally Design 负责视觉方向、构图、信息层级、版式、品牌、交互与设计验收；准确文稿由 Joyally writting 负责，像素落成与图像技术验收由 Joyally image 负责。图像任务可由 Joyally image 主导整体交付，其中的设计阶段由 Joyally Design 主导。使用本 Skill 时，会对缺失的另两个技能给出一次可选安装建议。
 
-统一的跨平台设计 Skill：从产品与品牌建立视觉语言，覆盖原生平台适配、React 组件契约、可移植 HTML 报告、HTML PPT，并为 `joyally-image` 的图表分支提供视觉系统和 Archify 后端。七套并列主题为「青山湖」「西湖」「苏州园林」「马尔代夫」「阿尔卑斯雪山」、[香奈儿风](references/fashion-xiaoxiang.md)与[太空](references/space.md)；青山湖正在补齐四季参考，其余六套主题各有 20 张可追溯的参考画面。前五套的[景观视觉规则](references/visual-language.md)从地点取景，香奈儿风从包袋、山茶花、巴黎夜景、时装细节与编辑式呈现取材，太空主题从真实观测影像研究轨道与行星地平线。香奈儿风与太空分别有[浅色与深色 token 样本](assets/xiaoxiang-theme.tokens.json)和[浅色与深色 token 样本](assets/space-theme.tokens.json)；现有平台 tokens 与四季预设是青山湖主题的实现样本。真实参考画面保存在[青山湖](assets/references/qingshan-lake/README.md)、[西湖](assets/references/west-lake/README.md)、[苏州园林](assets/references/suzhou-gardens/README.md)、[马尔代夫](assets/references/maldives/README.md)、[阿尔卑斯雪山](assets/references/alpine-snow-mountains/README.md)、[香奈儿风](assets/references/xiaoxiang/README.md)与[太空](assets/references/space/README.md)目录；苏州园林也使用[留园照片](assets/references/lingering-garden/README.md)。
+统一的跨平台设计 Skill：从产品与品牌建立视觉语言，覆盖原生平台适配、React 组件契约、可移植 HTML 报告、HTML PPT，并可为 `joyally-image` 的图表分支提供视觉系统和设计评审；图表运行时由 `joyally-image` 自己维护。七套并列主题为「青山湖」「西湖」「苏州园林」「马尔代夫」「阿尔卑斯雪山」、[香奈儿风](references/fashion-xiaoxiang.md)与[太空](references/space.md)；青山湖正在补齐四季参考，其余六套主题各有 20 张可追溯的参考画面。前五套的[景观视觉规则](references/visual-language.md)从地点取景，香奈儿风从包袋、山茶花、巴黎夜景、时装细节与编辑式呈现取材，太空主题从真实观测影像研究轨道与行星地平线。香奈儿风与太空分别有[浅色与深色 token 样本](assets/xiaoxiang-theme.tokens.json)和[浅色与深色 token 样本](assets/space-theme.tokens.json)；现有平台 tokens 与四季预设是青山湖主题的实现样本。真实参考画面保存在[青山湖](assets/references/qingshan-lake/README.md)、[西湖](assets/references/west-lake/README.md)、[苏州园林](assets/references/suzhou-gardens/README.md)、[马尔代夫](assets/references/maldives/README.md)、[阿尔卑斯雪山](assets/references/alpine-snow-mountains/README.md)、[香奈儿风](assets/references/xiaoxiang/README.md)与[太空](assets/references/space/README.md)目录；苏州园林也使用[留园照片](assets/references/lingering-garden/README.md)。
 
 ```bash
 npx skills add youngjunning/joyally-skills --skill joyally-design -g
@@ -27,7 +27,7 @@ npx skills add youngjunning/joyally-skills --skill joyally-design -g
 | 实现中后台组件 | `$joyally-design 在现有 React 工作台实现任务列表。先检查组件来源，选用 Button、Input、Select、Table 与反馈组件；保留数据层，验证搜索、筛选、空状态、窄屏和键盘操作。` | 本地组件源码、可操作页面和验证结果 |
 | 生成 HTML 周报 | `$joyally-design 把附上的工单数据整理成可离线打开和打印的 HTML 周报，给运营同学看。先写响应时长的变化，再列数据和下一步。` | 报告 HTML 和资源目录 |
 | 制作 HTML PPT | `$joyally-design 把项目进展做成给团队评审的逐页 HTML 演示稿。按结论、证据和下一步组织，使用青山湖主题，每页附讲稿。` | 可离线播放的演示目录、逐页源稿及可选 PNG/PDF |
-| 设计图表视觉系统 | `$joyally-design 为工具调用审批图定义视觉层级、状态色和交互验收标准，图表本身由 joyally-image 的 Archify 分支交付。` | 视觉 brief、语义 token 与设计验收标准 |
+| 设计图表视觉系统 | `$joyally-design 为工具调用审批图定义视觉层级、状态色和交互验收标准，图表及运行时由 joyally-image 交付。` | 视觉 brief、语义 token 与设计验收标准 |
 
 也可以在 macOS 或 Linux 终端进入 Skill 目录，运行下面的示例。命令会打印可用浏览器打开的产物路径。
 
@@ -47,9 +47,9 @@ printf "%s\n" "$output_dir/joyally-deck/index.html"
 
 ```bash
 output_dir=$(mktemp -d)
-example="runtime/diagram/examples/agent-tool-call.workflow.json"
-node scripts/design-engine.mjs diagram validate workflow "$example" &&
-  node scripts/design-engine.mjs diagram deliver workflow "$example" "$output_dir/agent-workflow.html" &&
+example="../joyally-image/runtime/diagram/examples/agent-tool-call.workflow.json"
+node ../joyally-image/scripts/joyally-diagram.mjs validate workflow "$example" &&
+  node ../joyally-image/scripts/joyally-diagram.mjs deliver workflow "$example" "$output_dir/agent-workflow.html" &&
   printf "%s\n" "$output_dir/agent-workflow.html"
 ```
 

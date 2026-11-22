@@ -5,6 +5,7 @@ import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1] / 'skills/design/joyally-design'
+IMAGE_ROOT = ROOT.parent / 'joyally-image'
 
 
 class ReportRuntimeTests(unittest.TestCase):
@@ -39,11 +40,11 @@ class ReportRuntimeTests(unittest.TestCase):
     def test_diagram_runtime_delivers_from_bundled_assets(self):
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / 'diagram.html'
-            result = self.run_command('node', str(ROOT / 'scripts/design-engine.mjs'), 'diagram', 'deliver', 'workflow', str(ROOT / 'examples/archify-minimal.workflow.json'), str(output), '--json')
+            result = self.run_command('node', str(IMAGE_ROOT / 'scripts/joyally-diagram.mjs'), 'deliver', 'workflow', str(IMAGE_ROOT / 'examples/interactive-minimal.workflow.json'), str(output), '--json')
             self.assertTrue(json.loads(result.stdout)['ok'])
             html = output.read_text()
             self.assertIn('<svg', html)
-            self.assertIn('<meta name="generator" content="Joyally Design">', html)
+            self.assertIn('<meta name="generator" content="Joyally Image">', html)
             self.assertNotIn('<a class="diagram-guide-credit"', html)
             self.assertGreater(output.stat().st_size, 1000)
 

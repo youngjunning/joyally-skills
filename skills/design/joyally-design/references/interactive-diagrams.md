@@ -1,12 +1,12 @@
-# Joyally Design 交互图表
+# Joyally Design 交互图表设计评审
 
-使用 Joyally Design 从结构化输入生成自包含的交互图表，或将图表嵌入报告。
+本参考只负责交互图表的视觉系统、容器集成和设计验收。图表请求、类型化结构源、渲染命令、运行时和最终交付统一归 `joyally-image`。
 
 ## 使用场景
 
 系统架构关系图使用已有的 `architecture` 类型，并按[系统架构关系图](system-architecture-relationships.md)区分产品入口、运行组件、平台资源及连线语义；不新增与现有渲染器重复的图表类型。
 
-图形任务统一由 `joyally-image` 主导；本参考维护随包 Archify 后端的实现和验收方法，供 `joyally-image` 的交互图分支调用，也供 Joyally Design 做视觉系统与设计验收。需要可点击、缩放、聚焦节点或探索路径的架构图、工作流图、时序图、数据流图、生命周期图、ERD、树图、类图、时间线、瀑布图或解释型图文时使用本后端。既有交互图表的静态导出继续使用原始源文件。根据要表达的关系选择图表类型；视觉风格不决定生成工具。图表仍然是可选增强：省略、阻塞、打印或启用 Reduced Motion 时，正文必须仍然可理解。
+需要可点击、缩放、聚焦节点或探索路径的架构图、工作流图、时序图、数据流图、生命周期图、ERD、树图、类图、时间线、瀑布图或解释型图文时，由 `joyally-image` 的交互图分支完成生产。本 Skill 只在任务需要新的视觉语言、跨容器版式或独立设计评审时参与。既有交互图表的静态导出继续使用原始源文件。根据要表达的关系选择图表类型；视觉风格不决定生成工具。图表仍然是可选增强：省略、阻塞、打印或启用 Reduced Motion 时，正文必须仍然可理解。
 
 ## 交付契约
 
@@ -14,23 +14,23 @@
 2. 交付前验证候选图表：
 
    ```bash
-   node .codex/skills/joyally-design/scripts/design-engine.mjs diagram validate architecture input.json --quality showcase --json
+   node .codex/skills/joyally-image/scripts/joyally-diagram.mjs validate architecture input.json --quality showcase --json
    ```
 
 3. 只有验证通过后才交付自包含 HTML/SVG 产物：
 
    ```bash
-   node .codex/skills/joyally-design/scripts/design-engine.mjs diagram deliver architecture input.json output.html --quality showcase --json
+   node .codex/skills/joyally-image/scripts/joyally-diagram.mjs deliver architecture input.json output.html --quality showcase --json
    ```
 
 4. 需要浏览器证据时运行 `visual-check`。确定性产物、浏览器证据和感知层视觉审查必须分别陈述。
 5. 默认交付已验证的本地 HTML；用户要求托管时，按 [分享约定](sharing.md) 使用已有授权的上传方式并读回校验。
 
-使用本地运行时可离线生成图表。
+`joyally-image` 的随包运行时可离线生成图表；Joyally Design 不再提供运行时副本或转发命令。
 
 ## 生成与嵌入
 
-报告和 React 项目通过 `scripts/design-engine.mjs diagram` 生成图表，再嵌入经校验的 HTML。
+报告和 React 项目通过 `joyally-image/scripts/joyally-diagram.mjs` 生成图表，再嵌入经校验的 HTML。
 
 图表输入、产物和验证文件放在用户指定位置或系统临时目录，交付前保留最终结果：
 
@@ -85,7 +85,7 @@ Markdown 文档直接使用原生 HTML 块，前后留空行。独立打开链�
 
 容器必须设置 `aspect-ratio` 或明确的最小高度、`max-width: 100%` 和窄屏纵向降级；不要用 `overflow: hidden` 掩盖查看器的溢出诊断。`sandbox`、`title` 和 `figcaption` 是默认可访问性边界，若需要导出或交互桥接，必须在具体报告中说明扩展权限。
 
-更新运行时时根据 `runtime/diagram/UPSTREAM.json` 核对本地修改。图表配色由 `assets/joyally-design.tokens.json` 的 `diagram.light` / `diagram.dark` 管理；重新同步 viewer 后核对八组主题和打印映射，运行 `python3 scripts/validate-diagram-theme.py`。
+更新运行时时根据 `../joyally-image/runtime/diagram/UPSTREAM.json` 核对本地修改。图表配色由 `assets/joyally-design.tokens.json` 的 `diagram.light` / `diagram.dark` 管理；重新同步 viewer 后核对八组主题和打印映射，运行 `python3 scripts/validate-diagram-theme.py`。这个校验是 Joyally Design 对 Joyally Image 运行时的视觉契约检查，不代表运行时归属。
 
 ## Joyally Design 视觉映射
 
