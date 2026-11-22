@@ -1,6 +1,6 @@
 # Article illustration planning
 
-Use this workflow when an article, ATA, tutorial, report, or document needs inline figures rather than only a cover. The writing workflow owns why each figure exists, which claims it may express, where it belongs, and the caption and alt text. Visual direction belongs to `joyally-design`; pixel production and image QA belong to `joyally-image`.
+Use this workflow when an article, ATA, tutorial, report, or document needs inline figures rather than only a cover. The writing workflow owns why each figure exists, which claims it may express, where it belongs, and the caption and alt text. `joyally-image` owns static or interactive diagram and raster-artwork production; `joyally-design` may supply a broader visual system and design acceptance.
 
 ## Plan from reader questions
 
@@ -48,7 +48,7 @@ The manifest is a production contract, not a prompt dump. Do not copy the whole 
 
 For a multi-figure article, define one compact system before production: palette, material or rendering style, typography rules, line and icon treatment, background density, caption convention, and any recurring metaphor or character. Reuse it across the set while allowing composition to follow each figure's job. Consistency does not mean making every figure the same layout.
 
-Ask `joyally-design` to approve a new or changed system. Give the approved system and each manifest row to `joyally-image` or the deterministic renderer. When no separate design workflow is available, use explicit user constraints, the destination's existing design language, or the image skill's documented default and disclose that no independent design review occurred.
+For a new or changed system that spans several assets or channels, ask `joyally-design` to approve it, then give the approved system and each manifest row to `joyally-image`. For a self-contained figure set, use explicit user constraints, the destination's existing design language, or the image skill's documented default; disclose whether a separate design review occurred.
 
 ## Insert and continue
 

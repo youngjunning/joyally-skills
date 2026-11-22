@@ -58,7 +58,8 @@ Full model specifications and size constraints are in `references/apiyi.md`.
 | Request | Model | Output |
 |---------|--------------|--------|
 | Comic / knowledge comic | GPT Image 2.6 panel art + editable lettering and layout | Sequential page or vertical strip with storyboard, sources, and review notes |
-| Knowledge map / architecture / lifecycle diagram | GPT backdrop + deterministic HTML/CSS/SVG | 3200×1800 PNG + WebP + layout-gate report |
+| Static knowledge map / architecture / lifecycle diagram | Optional GPT backdrop + deterministic HTML/CSS/SVG | PNG + WebP + editable source + layout-gate report |
+| Interactive / editable / zoomable diagram | Archify typed JSON IR + self-contained viewer | Interactive HTML + static preview + browser evidence |
 | Portrait / illustration | GPT Image 2.6 | `.webp` q78, ≤ 300 KB |
 | Brand logo / wordmark | GPT Image 2.6 concept art + editable deterministic lettering | Transparent source mark, required lockups, small-size QA and metadata |
 | Favicon / icon source art | GPT Image 2.6 | `.png` (pngquant), ≤ 100 KB |
@@ -72,7 +73,7 @@ Full model specifications and size constraints are in `references/apiyi.md`.
 
 ## Technical Diagrams and Illustration Density
 
-For structured knowledge maps, architecture diagrams, dependency graphs, build pipelines, release flows, and updater state machines, the image model generates only a restrained text-free backdrop. Every node, edge, arrow, label, legend, and lifecycle state is rendered deterministically with HTML/CSS/SVG so technical terminology and directionality stay exact.
+All diagram requests enter Joyally Image. Static knowledge maps, architecture diagrams, dependency graphs, build pipelines, release flows, and updater state machines use deterministic HTML/CSS/SVG; the image model may generate only a restrained text-free backdrop. Interactive, editable, zoomable, focusable, or explorable diagrams use the Archify branch and deliver a self-contained HTML viewer plus a static preview from the same typed source. Every node, edge, arrow, label, legend, and lifecycle state remains deterministic so technical terminology and directionality stay exact.
 
 Long technical articles get an illustration-opportunity audit before delivery. There is no maximum image count: a diagram is preferred whenever readers must understand three or more ordered steps, branches, ownership or runtime boundaries, dependency propagation, state transitions, rollback, or cross-module lifecycle differences. ASCII/TXT diagrams are content-model drafts, not final article assets. Executable commands, configuration, literal paths, and short copyable inventories remain code blocks.
 
