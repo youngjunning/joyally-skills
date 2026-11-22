@@ -1,0 +1,4 @@
+interface:
+  display_name: "Joyally Loop"
+  short_description: "用独立 reviewer 做有限轮次的证据化代码复审"
+  default_prompt: "Use $joyally-loop to review this change until the author and reviewer agree or the round budget ends."

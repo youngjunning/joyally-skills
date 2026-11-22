@@ -36,6 +36,24 @@
     "summary": "判断 Git 改动应提交并推送、只提交、保留还是请求确认，并安全执行获准动作"
   },
   {
+    "name": "joyally-loop",
+    "category": "engineering",
+    "path": "skills/engineering/joyally-loop",
+    "summary": "用一个独立 reviewer 做有限轮次复审，以最小改动解决 blocker 与 should"
+  },
+  {
+    "name": "joyally-send",
+    "category": "engineering",
+    "path": "skills/engineering/joyally-send",
+    "summary": "把任务自主推进到直接证明、独立复审、PR 检查通过并合并"
+  },
+  {
+    "name": "joyally-stop",
+    "category": "engineering",
+    "path": "skills/engineering/joyally-stop",
+    "summary": "完成与 Joyally Send 相同的 PR 准备流程，但把 merge 保留给用户"
+  },
+  {
     "name": "joyally-writting",
     "category": "writing",
     "path": "skills/writing/joyally-writting",

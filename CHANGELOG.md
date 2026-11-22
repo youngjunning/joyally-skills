@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-22
+
+1. 新增 `joyally-loop`、`joyally-send` 与 `joyally-stop`：把有限轮次独立复审、无人值守 PR 合并和“做到可合并但不合并”三种信任边界接入 Joyally Skills；保留 t3dotgg/tstack 的 MIT 来源与署名，并用宿主无关的 reviewer、证明、merge gate 和 handoff 规则替代 T3 Code 专用接口。
+
 ## 2026-11-21
 
 5. 新增 `joyally-voice`：覆盖录音、人声修复、TTS、配音、声音克隆、说话/歌声音色转换、转写对齐及授权与质量验收；配音作为 Voice 分支统一维护。

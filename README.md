@@ -40,6 +40,9 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 | 向人说明进展、交付、排障或评审结论 | [joyally-report](skills/engineering/joyally-report/SKILL.md) |
 | 设计、实现、运行或治理测试与 AI/Agent evals，判断证据能否挡住真实回归 | [joyally-test](skills/engineering/joyally-test/SKILL.md) |
 | 判断 Git 改动是否应自动提交和推送，并安全收尾 | [joyally-git](skills/engineering/joyally-git/SKILL.md) |
+| 让独立 reviewer 在有限轮次内复审当前改动 | [joyally-loop](skills/engineering/joyally-loop/SKILL.md) |
+| 离开线程，让 Agent 把任务自主推进到 PR 合并 | [joyally-send](skills/engineering/joyally-send/SKILL.md) |
+| 让 Agent 把 PR 做到可合并，但保留最终 merge 决定 | [joyally-stop](skills/engineering/joyally-stop/SKILL.md) |
 | 生成图像、漫画或静态架构图片 | [Joyally image](skills/design/joyally-image/SKILL.md) |
 | 自动留存关键操作截图、找回写作素材或制作脱敏演示 | [Joyally Spotlight](skills/design/joyally-spotlight/SKILL.md) |
 | 统一设计、制作 HTML 报告、HTML PPT 或交互图表 | [Joyally Design](skills/design/joyally-design/SKILL.md) |
@@ -63,6 +66,9 @@ Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作�
 | [joyally-report](skills/engineering/joyally-report/SKILL.md) | 向人解释进展、结果、证据与下一步 |
 | [joyally-test](skills/engineering/joyally-test/SKILL.md) | TDD、测试策略与执行、Web/API 目标环境、AI/Agent evals、失败诊断与质量治理 |
 | [joyally-git](skills/engineering/joyally-git/SKILL.md) | 判断任务改动应提交并推送、只提交、保留还是请求确认，并安全执行获准动作 |
+| [joyally-loop](skills/engineering/joyally-loop/SKILL.md) | 一个独立 reviewer、有限轮次、finding ledger 与最小修复的复审闭环 |
+| [joyally-send](skills/engineering/joyally-send/SKILL.md) | 直接证明、独立复审、提 PR、守候检查并在过门后合并 |
+| [joyally-stop](skills/engineering/joyally-stop/SKILL.md) | 完整准备并守候 PR 到可合并，禁止 Agent 执行 merge |
 | [tauri-skills](skills/engineering/tauri-skills/SKILL.md) | Tauri 2 安全边界与 Node.js sidecar |
 | [browser-performance-audit](skills/engineering/browser-performance-audit/SKILL.md) | 加载、资源与长会话性能审查 |
 | [macos-app-develop](skills/engineering/macos-app-develop/SKILL.md) | 原生 macOS、SwiftUI 与 Instruments 工作流（含许可改编） |
@@ -98,7 +104,7 @@ Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作�
 | [distill-me](skills/productivity/distill-me/SKILL.md) | 用零部署本地工作台整理材料与草稿，栏目可自由取舍 |
 | [distill-zisheng](skills/productivity/distill-zisheng/SKILL.md) | 维护紫升与俊宁的个人记录、资料、项目方案与工作脉络 |
 
-Joyally Design、Joyally Voice、Joyally 主题制作、Joyally image、Joyally writting、Joyally Fiction 和 Joyally Media Reading 的安装与调用标识分别为 `joyally-design`、`joyally-voice`、`joyally-theme-creation`、`joyally-image`、`joyally-writting`、`joyally-fiction` 和 `joyally-media-reading`。机器可读目录见 [catalog.json](catalog.json)。
+Joyally Design、Joyally Voice、Joyally 主题制作、Joyally image、Joyally writting、Joyally Fiction、Joyally Media Reading、Joyally Loop、Joyally Send 和 Joyally Stop 的安装与调用标识分别为 `joyally-design`、`joyally-voice`、`joyally-theme-creation`、`joyally-image`、`joyally-writting`、`joyally-fiction`、`joyally-media-reading`、`joyally-loop`、`joyally-send` 和 `joyally-stop`。机器可读目录见 [catalog.json](catalog.json)。
 
 ## 使用与维护
 

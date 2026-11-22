@@ -1,0 +1,4 @@
+interface:
+  display_name: "Joyally Stop"
+  short_description: "完成直接证明、独立复审与 PR 检查，并把最终合并决定交还用户"
+  default_prompt: "Use $joyally-stop to make this pull request ready for me to merge without merging it."

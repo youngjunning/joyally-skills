@@ -10,6 +10,10 @@
 | 隔离后的任务补丁依赖另一个未提交功能，无法在不采用对方实现的情况下通过验证 | 不擅自扩大任务或复制整个脏工作区；说明依赖与最小采用范围 | 无法独立采用时 `ask`；用户要求保留草稿时 `leave-uncommitted` |
 | 自动交付已获授权，本地提交安全，但 push 到目标分支会立即触发生产发布或数据库迁移 | 普通 Git 授权不自动扩大为发布授权 | `commit-only`；只有无法先安全提交时才 `ask` |
 | 用户只要求修复，没有任何项目或全局自动交付授权 | 实现授权不等于远端写入授权 | `ask`；确认前保持未提交 |
+| 用户要求完成任务但没有明确触发 `joyally-send` 或 `joyally-stop` | 普通实现、交付或“帮我发掉”的含糊表达不授权创建或合并 PR；继续按原有 commit/push 授权判断 | 不进入 Send/Stop；无普通远端写入授权时 `ask` |
+| 用户明确触发 `joyally-send`；任务分支、直接证明、独立复审、required checks、review 处理、同步状态与平台 mergeability 全部通过 | PR 创建与合并是本次显式授权；仍不得绕过保护、使用 admin、发布版本或操作其他分支 | 创建并守候 PR，只有 merge gate 在最新 head 上全部通过才合并并回读 merge commit |
+| 用户明确触发 `joyally-send`，但任务分支 push、PR 合并或后续动作会直接触发生产发布、数据库迁移或其他未授权高影响副作用 | Send 不扩大生产、发布、迁移或数据操作权限 | 保留可恢复的本地提交或开放 PR；不触发高影响动作，使用阻塞式提问取得对应授权 |
+| 用户明确触发 `joyally-stop`，且 readiness gate 已全部通过 | Stop 授权创建和更新任务 PR，但 merge、auto-merge、merge queue 与默认分支直推始终禁止 | PR 保持开放且未合并，报告最终 head、proof、review 结果和 ready-to-merge 状态 |
 | 用户明确要求暂不提交 | 当次要求覆盖自动交付约定 | `leave-uncommitted` |
 | 用户要求 push，当前是 detached HEAD 或分支已分叉，但目标远端 ref 可由请求、upstream 或项目协议唯一确定 | 保留原 checkout，从目标 ref 创建已说明的任务分支/worktree；不 force，不夹带原分支历史 | 隔离后 `commit-and-push`；只有目标仍不唯一时 `ask` |
 | 任一 Git 交付结果需要面向用户报告 | 先独立呈现仓库与当前分支；detached HEAD 显示短 SHA 和未关联分支，不能把上游或起始分支冒充当前分支 | 报告首行可直接识别当前 Git 上下文 |

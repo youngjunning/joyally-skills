@@ -1,0 +1,4 @@
+interface:
+  display_name: "Joyally Send"
+  short_description: "从直接证明、独立复审到 PR 检查通过并合并的无人值守交付闭环"
+  default_prompt: "Use $joyally-send to take this task to a merged pull request while I am away."
