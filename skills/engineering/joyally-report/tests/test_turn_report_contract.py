@@ -17,7 +17,7 @@ class TurnReportContractTests(unittest.TestCase):
         self.assertIn("Decision only: no divider.", CONTRACT_TEXT)
         self.assertIn("Decision + evidence + handoff: two dividers.", CONTRACT_TEXT)
         self.assertIn("claim → evidence → boundary", CONTRACT_TEXT)
-        self.assertIn("![Git](https://cdn.simpleicons.org/git/F05032) [owner/repository](repository URL)", CONTRACT_TEXT)
+        self.assertIn("![Git](https://api.iconify.design/logos/git-icon.svg?width=16&height=16) [owner/repository](repository URL)", CONTRACT_TEXT)
         self.assertNotIn("⎇", CONTRACT_TEXT)
         self.assertIn("browsable remote homepage", CONTRACT_TEXT)
         self.assertIn("one concise, task-specific contribution", CONTRACT_TEXT)
