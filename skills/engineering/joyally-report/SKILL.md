@@ -1,6 +1,6 @@
 ---
 name: joyally-report
-description: Compose evidence-complete Codex final answers for progress, delivery, diagnosis, review, and decisions. Lead with a decision surface, support it with an evidence surface, and append a compact handoff strip when the host requires closing records.
+description: Compose evidence-complete Codex final answers for progress, delivery, diagnosis, review, and decisions. Lead with a decision surface, support it with an evidence surface, then keep host-supplied distillation and status records in separate closing regions.
 metadata:
   author: 杨俊宁
   email: luozhu2021@gmail.com
@@ -16,7 +16,7 @@ Use this skill when drafting a progress update, diagnosis, review, decision, or 
 2. **Compose the decision surface.** Follow the [final-answer architecture](references/turn-report.md). Open with the result and the one limitation, decision, or next condition that most changes what the reader can do. A small answer can end here.
 3. **Build the evidence surface.** Before shortening, account for every material question: the objective, result, and current state; what changed and what intentionally stayed outside scope; first-hand evidence and its environment; which implementation, test, artifact, push, deployment, and acceptance gates passed or remain open; risks, unknowns, or alternative explanations; and the next action or decision with its completion or unblock condition. Organize this material by reader question, not execution chronology. Omit an irrelevant category instead of creating an empty section.
 4. **Set the depth.** A direct fact can remain one sentence. A standard engineering delivery uses the evidence floor above. A diagnosis, decision, release, incident, or performance report also carries the causal, tradeoff, rollback, or measurement detail selected by its [report type](references/report-types.md). Brevity applies to the decision surface, repetition, and ceremony—not to evidence needed to verify, reproduce, operate, or hand off the result.
-5. **Assemble the final answer.** Render the decision surface, optional evidence surface, and optional host-supplied handoff strip according to the [final-answer architecture](references/turn-report.md). Separate only the regions that are present. Report owns the information gradient and dividers; closing owners supply facts without adding layout.
+5. **Assemble the final answer.** Render the decision surface, optional evidence surface, optional host-supplied distillation strip, and optional host-supplied status strip according to the [final-answer architecture](references/turn-report.md). Separate every rendered region exactly once. Report owns the information gradient and dividers; closing owners supply facts without adding layout.
 6. **Check the assembled answer.** Verify that the decision surface matches the strongest evidence and highest-impact open item, every material evidence-floor question is answered or genuinely irrelevant, and each fact has one home. Then remove repeated conclusions, empty regions, process narration, and unsupported next actions. Never use pruning to hide a missing gate, unknown, scope boundary, or decision condition.
 
 ## Select detail and format
@@ -29,4 +29,4 @@ Honor `REPORT_FORMAT=markdown` and `REPORT_FORMAT=terminal`. In terminal mode us
 
 ## Integration boundary
 
-The skill produces the decision and evidence surfaces in one composition pass, then owns the final-answer layout when the caller supplies the handoff strip. The caller independently obtains closing facts and preserves the host-defined domain order; domain owners do not choose the surrounding dividers. Use an already verified domain fact in the decision surface when it changes the verdict. Operational checks, writes, skill inventories and receipt assembly belong to their respective owners. Report can finish with only the decision surface when nothing else materially helps the reader.
+The skill produces the decision and evidence surfaces in one composition pass, then owns the final-answer layout when the caller supplies separate distillation and status facts. The caller independently obtains those facts and preserves the host-defined domain order inside each region; domain owners do not choose the surrounding dividers. Use an already verified domain fact in the decision surface when it changes the verdict. Operational checks, writes, skill inventories and receipt assembly belong to their respective owners. Report can finish with only the decision surface when nothing else materially helps the reader.
