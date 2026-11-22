@@ -39,19 +39,19 @@
     "name": "joyally-loop",
     "category": "engineering",
     "path": "skills/engineering/joyally-loop",
-    "summary": "用一个独立 reviewer 做有限轮次复审，以最小改动解决 blocker 与 should"
+    "summary": "在实质行为改动后自动用独立 reviewer 做有限轮次复查、修正与复验"
   },
   {
     "name": "joyally-send",
     "category": "engineering",
     "path": "skills/engineering/joyally-send",
-    "summary": "把任务自主推进到直接证明、独立复审、PR 检查通过并合并"
+    "summary": "让 Codex 自动完成工程实现、直接证明、独立复查与既有授权内的交付"
   },
   {
     "name": "joyally-stop",
     "category": "engineering",
     "path": "skills/engineering/joyally-stop",
-    "summary": "完成与 Joyally Send 相同的 PR 准备流程，但把 merge 保留给用户"
+    "summary": "完成工程实现、验证与复查，但停在 Git 和外部交付之前"
   },
   {
     "name": "joyally-writting",

@@ -6,7 +6,7 @@
 4. 接入 `joyally-music` 与 YingMusic-Singer V1 本地试验入口，固定代码、权重与依赖版本，补充 CPU 注意力和音频读取适配及产物记录；MIDI、旋律音频与不同采样参数已实际出声。短句歌词检查通过，旋律保持和本人音色尚未验收；官方权重为 CC-BY-NC-4.0，不将试验能力标为成品质量。
 3. 重整 `distill-zisheng` 收尾：移除已下线的“工作脉络”能力与固定回执，只保留经门禁和实际保存结果核验的蒸馏事实；Skills 与 Git 继续由各自 Skill 独立提供。
 2. 将 `joyally-media-reading` 更名为 `joyally-media`，同步目录、Skill 名称、安装入口、UI 元数据与公开索引；能力与触发范围保持不变。
-1. 新增 `joyally-loop`、`joyally-send` 与 `joyally-stop`：把有限轮次独立复审、无人值守 PR 合并和“做到可合并但不合并”三种信任边界接入 Joyally Skills；保留 t3dotgg/tstack 的 MIT 来源与署名，并用宿主无关的 reviewer、证明、merge gate 和 handoff 规则替代 T3 Code 专用接口。
+1. 重整 `joyally-loop`、`joyally-send` 与 `joyally-stop`：从 PR 和分支编排改为 Codex 可自动选择的工程完成闭环；分别负责独立复查修正、既有授权内完成交付，以及完成本地验证后停在 Git 与外部交付之前。保留 t3dotgg/tstack 的 MIT 来源与署名。
 
 ## 2026-11-21
 

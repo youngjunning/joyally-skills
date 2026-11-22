@@ -1,4 +1,6 @@
 interface:
   display_name: "Joyally Send"
-  short_description: "从直接证明、独立复审到 PR 检查通过并合并的无人值守交付闭环"
-  default_prompt: "Use $joyally-send to take this task to a merged pull request while I am away."
+  short_description: "让 Codex 自动实现、验证、复查并按现有授权完成工程交付"
+  default_prompt: "Use $joyally-send to autonomously complete, verify, review, and deliver this engineering task within its existing authorization."
+policy:
+  allow_implicit_invocation: true
