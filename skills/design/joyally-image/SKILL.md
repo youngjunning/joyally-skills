@@ -34,6 +34,8 @@ Joyally Image is not a shelf of generation features. Every asset travels through
 
 The default visual language is also self-contained: when no visual brief is supplied, use `references/qingshan-lake-style.md` in Light or Dark mode. It governs palette, material, whitespace and atmosphere, not a mandatory scene, character or brand. A supplied brand, identity reference or approved brief overrides incompatible defaults.
 
+Capability provenance never determines visual style. Absorbing or merging a route, workflow, or technical capability carries over only its functional contract and applicable acceptance evidence. Resolve appearance from the Joyally Qingshan Lake default, an explicit user style, or an approved visual brief; never import the source project's palette, composition grammar, characters, materials, or aesthetic by implication.
+
 ## Optional companion discovery
 
 On the first use of this skill in a task, inspect the available Skill catalog and the shared user Skill directory (`~/.agents/skills/`) for `joyally-design` and `joyally-writting` independently. Do not infer either from a similarly named folder, an earlier task, or a past installation.
