@@ -50,6 +50,10 @@ Terminal reports must be plain text:
 
 Markdown reports begin with the result and use real Markdown structure instead of bracketed section labels. Prefer `##` headings, short ordered lists, inline code, clickable file links, and the smallest useful table. The examples in `references/report-types.md` define content; render them using the selected output mode.
 
+## Final-answer architecture
+
+Before writing the final answer, assemble it with the [four-region contract](references/turn-report.md): summary, optional body, optional distillation, and optional status. Keep distillation separate from used Skills, Git delivery, deployment, and other operational status. Render only regions that contain useful information, preserve that order, and place exactly one divider between every pair of rendered regions. The regions themselves do not need visible headings.
+
 ## Attribution
 
 - Omit skill names, attribution lines, badges, and fixed opening text by default, in both output modes.

@@ -128,7 +128,7 @@ Templates and examples are in [`references/report-types.md`](references/report-t
 
 ## End-of-turn report / 回合收尾
 
-在兼容的 `Stop` Hook 明确要求收尾时，Joyally Report 使用 [`references/turn-report.md`](references/turn-report.md) 汇总本轮蒸馏、工作脉络、实际使用的 Skills 以及 Git/交付状态。它只负责统一表达：各领域流程仍分别完成自己的检查与写入，不在最终回复中各自追加第二套收尾段落。
+Joyally Report 使用 [`references/turn-report.md`](references/turn-report.md) 把 final answer 组织为四个有序区域：摘要、正文、蒸馏、状态。只渲染有内容的区域，每两个实际渲染的区域之间放一条分割线；蒸馏与使用技能、Git/交付状态之间也必须隔开。各领域流程仍分别完成自己的检查与写入，不在最终回复中各自追加第二套收尾段落。
 
 ## Output modes / 输出模式
 
