@@ -6,6 +6,7 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
+DIAGRAM_RUNTIME = ROOT.parent / 'joyally-image/runtime/diagram'
 spec = importlib.util.spec_from_file_location('tokens', Path(__file__).with_name('validate-joyally-tokens.py'))
 tokens = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(tokens)
@@ -13,7 +14,7 @@ spec.loader.exec_module(tokens)
 
 def validate():
     document = json.loads((ROOT / 'assets/joyally-design.tokens.json').read_text())
-    template = (ROOT / 'runtime/diagram/assets/template.html').read_text()
+    template = (DIAGRAM_RUNTIME / 'assets/template.html').read_text()
     count = 0
     for mode in ('light', 'dark'):
         expected = {key: tokens.resolve_color(document, f'diagram.{mode}.{key}')
@@ -42,7 +43,7 @@ def validate():
     expected_print = {k: tokens.resolve_color(document, f'diagram.light.{k}') for k in document['diagram']['light']}
     expected_print.update(bg='#FFFFFF', panel='#FFFFFF', mask='#FFFFFF', grid='TRANSPARENT')
     assert {k: v.upper() for k, v in printed.items()} == expected_print, 'Print palette drift'
-    reader = (ROOT / 'runtime/diagram/explainer/reader.css').read_text()
+    reader = (DIAGRAM_RUNTIME / 'explainer/reader.css').read_text()
     reader_count = 0
     for line in reader.splitlines():
         if '--paper:' not in line:

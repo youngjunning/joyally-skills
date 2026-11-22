@@ -1,0 +1,6 @@
+interface:
+  display_name: "Joyally Arch"
+  short_description: "Progressive business, product, AI architecture, and delivery"
+  default_prompt: "Use $joyally-arch to connect this business or user problem to product scope, progressive architecture decisions, technical and AI choices, and verifiable delivery; for Skills, Agents or digital employees, define capability, execution, operating and acceptance boundaries."
+policy:
+  allow_implicit_invocation: true

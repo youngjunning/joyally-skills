@@ -1,6 +1,9 @@
 ---
 name: adsense-site-builder
 description: builds and audits adsense-ready niche websites from idea to launch. use when asked to create one or many websites for adsense approval or monetization, including niche validation, keyword planning, site architecture, useful page or tool creation, trust pages, technical seo, adsense readiness review, and safe initial traffic plans without invalid traffic tactics.
+metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
 ---
 
 # AdSense Site Builder

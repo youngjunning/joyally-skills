@@ -12,7 +12,7 @@ Translate landscape layers into interface responsibilities:
 | Lake teal | primary action, selection, focus, progress |
 | Cypress green | success, online, growth, completion |
 | Gray-blue hills | secondary text, structure, inactive states |
-| Deep lake ink | primary text and dark surfaces |
+| Neutral lake-shore ink | primary text without adding another scenic green |
 | Duckweed | no more than 5% natural liveliness |
 | Dawn light | rare emphasis, warning, reward, edge light |
 | Wet wood / clay | grounded separators and restrained danger |
@@ -25,23 +25,24 @@ Use Seed → Map → Alias → Component mapping; `semantic` stores Alias roles.
 
 | Role | Default | Notes |
 | --- | --- | --- |
-| Canvas | `#F4F6F1` | warm mist, low noise |
-| Surface | `#FBFCFA` | readable content surface |
-| Surface muted | `#E8EEEA` | filters, secondary containers |
-| Text | `#183B40` | deep lake ink |
-| Text secondary | `#4D676B` | passes normal-text contrast on canvas |
-| Primary | `#2E948A` | visual accent; do not place small white text on it |
-| Primary strong | `#286B66` | accessible action fill and focus |
-| Primary container | `#DCEFEB` | selected or informative background |
+| Canvas | `#F8F7F3` | warm mist, low noise |
+| Surface | `#FFFDFB` | readable content surface |
+| Surface muted | `#EDF3F1` | filters, secondary containers |
+| Text | `#23393D` | neutral ink, not a scenic green |
+| Text secondary | `#52696B` | passes normal-text contrast on canvas |
+| Primary | `#63ACA2` | visual accent; do not place small white text on it |
+| Primary action | `#78BEB3` | clear lake fill paired with `#23393D` text |
+| Focus | `#57958E` | visible boundary without becoming a large dark fill |
+| Primary container | `#E1F2EE` | selected or informative background |
 | Success | `#356439` | accessible foreground role |
 | Warning | `#7A5B1E` | accessible foreground role |
 | Error | `#8E493E` | accessible foreground role |
-| Border | `#D4DFDC` | subtle division, not primary structure |
-| Dark canvas | `#0F2B36` | never pure black |
-| Dark surface | `#183B40` | layered deep water |
-| On dark | `#F2F7F2` | mist-white content |
+| Border | `#D9E5E2` | subtle division, not primary structure |
+| Dark canvas | `#1D3036` | dark-mode neutral, never pure black |
+| Dark surface | `#253A40` | lifted dark-mode layer |
+| On dark | `#F4F8F6` | mist-white content |
 
-The scenic palette remains available for gradients, illustration, charts, and atmosphere. Use the stronger semantic variants for small text and actionable controls.
+The scenic palette remains available for gradients, illustration, charts, and atmosphere. The light theme has no deep-lake-green seed: large actions and selected surfaces stay in the clear lake range with dark text, while stronger teal is limited to small text, icons, and focus boundaries.
 
 ## Type and spacing
 

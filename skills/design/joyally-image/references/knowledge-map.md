@@ -2,7 +2,7 @@
 
 Use for domain knowledge graphs, architecture overviews, lifecycle maps, responsibility boundaries, dependency graphs, and other explanatory visuals where exact terminology and relationships matter.
 
-This workflow delivers static images. Apply the entrypoint's diagram ownership rule before starting: follow an explicit Skill choice, otherwise route interactive deliverables to Joyally Design / Archify. Visual styling from Joyally Design does not change this workflow's ownership or turn an image request into an interactive page. The HTML/SVG below is a precise drawing source for image export, not an additional user-facing website.
+This workflow delivers static images. Apply the entrypoint's diagram ownership rule before starting: interactive deliverables stay inside `joyally-image` and use its interactive-diagram route. Visual styling from Joyally Design does not change this workflow's ownership or turn an image request into an interactive page. The HTML/SVG below is a precise drawing source for image export, not an additional user-facing website.
 
 Load first:
 
@@ -166,7 +166,7 @@ Wide abstract technical-systems backdrop in Qingshan Lake dark visual language. 
 PROMPT="Wide abstract technical-systems backdrop in Qingshan Lake light visual language. Warm mist-white canvas, subtle pale lake haze, restrained lake-teal and cypress-green topology only around the outer edges, distant gray-blue hill layering, rare soft dawn-gold accent. Center and all content lanes stay clean, calm, low-contrast, and empty for a precise diagram overlay. no text, no letters, no numbers, no watermark, no logos, no icons, no cards, no arrows, no flowchart, no central subject, no humanoid figure. Wide 16:9."
 OUTPUT_PATH="/tmp/knowledge_map_bg.png"
 if   GEN_LOG=$(gen_image_apiyi "$MODEL_GPT"    "1280x720" "$OUTPUT_PATH"); then MODEL_USED="$MODEL_GPT";    SIZE="1280x720"
-else echo "KNOWLEDGE_MAP_BACKDROP_GENERATION_FAILED"; exit 1
+else GEN_STATUS=$?; if [ "$GEN_STATUS" -eq 4 ]; then echo "APIYI_FALLBACK_REQUIRED"; exit 4; fi; echo "KNOWLEDGE_MAP_BACKDROP_GENERATION_FAILED"; exit 1
 fi
 GENERATION_MS=$(printf '%s\n' "$GEN_LOG" | awk -F: '/^ELAPSED_MS:/{v=$2} END{print v+0}')
 RESPONSE_FORMAT=$(printf '%s\n' "$GEN_LOG" | awk -F: '/^RESPONSE_FORMAT:/{v=$2} END{print v}')

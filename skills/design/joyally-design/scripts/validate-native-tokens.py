@@ -27,6 +27,7 @@ REQUIRED_SEMANTIC = {
     "darkBackground",
     "onDark",
 }
+LEGACY_LIGHT_SEEDS = {"deepLakeInk", "lakeTealStrong"}
 
 
 def resolve_path(document: dict, dotted: str) -> object:
@@ -74,6 +75,24 @@ def main() -> int:
         missing = sorted(REQUIRED_SEMANTIC - semantic.keys())
         if missing:
             errors.append(f"missing semantic roles: {', '.join(missing)}")
+
+    color = document.get("color", {})
+    if isinstance(color, dict):
+        legacy = sorted(LEGACY_LIGHT_SEEDS & color.keys())
+        if legacy:
+            errors.append(f"Qingshan Lake light palette still exposes legacy deep seeds: {', '.join(legacy)}")
+
+    try:
+        action = resolve_color(document, "semantic.primaryAction")
+        primary = resolve_color(document, "semantic.primary")
+        action_foreground = resolve_color(document, "semantic.onPrimaryAction")
+        text = resolve_color(document, "semantic.text")
+        if relative_luminance(action) <= relative_luminance(primary):
+            errors.append("Qingshan Lake primaryAction must stay lighter than primary")
+        if action_foreground != text:
+            errors.append("Qingshan Lake light action must use the neutral text color")
+    except (KeyError, ValueError) as error:
+        errors.append(str(error))
 
     for group_name in ("color", "semantic"):
         group = document.get(group_name, {})

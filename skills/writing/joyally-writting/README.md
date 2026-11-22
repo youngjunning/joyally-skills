@@ -27,7 +27,7 @@ When a book's technical方案 refers to open-source projects, the gate distingui
 Clone this repository into your Codex skills directory:
 
 ```bash
-npx skills add youngjunning/skills --skill joyally-writting -g
+npx skills add youngjunning/joyally-skills --skill joyally-writting -g
 ```
 
 Restart Codex if the skill does not appear immediately.

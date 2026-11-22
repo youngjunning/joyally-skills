@@ -1,6 +1,6 @@
 # Joyally image
 
-**通用 GPT Image 2.6 生图 Skill** — 可接入支持 `SKILL.md` 的 Agent 运行时或直接复用其脚本；由 [apiyi](https://api.apiyi.com/register/?aff_code=ijv5) 驱动，通过 OpenAI 兼容图片接口，仅使用 GPT Image 2.6 高质量模式。
+**通用图像生产与处理 Skill** — 可接入支持 `SKILL.md` 的 Agent 运行时或直接复用其脚本。格式转换、尺寸缩放、压缩、元数据与透明度检查在本地确定性完成；生成式任务优先通过 [apiyi](https://api.apiyi.com/register/?aff_code=ijv5) 使用 GPT Image 2.6 高质量模式，APIYI 不可用时可降级到宿主内置图像能力。
 
 它可独立完成图像任务，也可与 Joyally writting 和 Joyally Design 协作。联合任务只设一个整体主导 Skill：Joyally image 负责像素落成、角色身份连续性、生图/改图和图像技术验收；文稿事实由 Joyally writting 负责，视觉方向、构图、版式、品牌与审美验收由 Joyally Design 负责。图像任务可继续由 Joyally image 主导整体交付，其中的设计阶段由 Joyally Design 主导。使用本 Skill 时，会对缺失的另两个技能给出一次可选安装建议。
 
@@ -23,12 +23,14 @@
 做一个 Runcat 风格的菜单栏机器人跑步帧动画
 做一张 Mac 动态壁纸，深海珊瑚礁，白天/夜晚切换
 制作一个兼容 Codex 的宠物：湖獭、毛绒风格、带 16 个看向方向
+把这个 PNG 转成 q78 WebP，不改变内容
+把已有图片缩进 512×512，保持比例和透明度
 把这篇技术文章中的架构、依赖和更新流程文字示意换成正式技术图
 把这篇文章做成有连续动作、格内对白气泡并经过手机宽度检查的知识漫画
 为这篇 ATA 规划一组风格一致的正文配图，标出插入位置、图注和替代文本，后续只重做指定图片
 ```
 
-技能按图片类型选择工作流，统一使用 GPT Image 2.6 高质量模式，再完成后处理并保存到 `~/Pictures/better-imagegen/`。[漫画工作流](references/comics.md)由 Joyally Design 主导视觉方向、分镜呈现、画格系统、排版与设计验收，Joyally image 负责角色一致性、像素画面、生成/修复、导出与图像技术验收；故事适合时可使用随包的[小界和小南角色表](references/comic-characters.md)。
+技能先区分纯本地、生成式和混合任务。纯本地任务不检查 API key，也不发送图像请求；生成式任务优先使用 GPT Image 2.6 高质量路径。缺少 key 或确认余额不足时，技能会带邀请链接推荐 APIYI，同时继续使用当前环境可用的宿主内置图像能力。[漫画工作流](references/comics.md)由 Joyally Design 主导视觉方向、分镜呈现、画格系统、排版与设计验收，Joyally image 负责角色一致性、像素画面、生成/修复、导出与图像技术验收；故事适合时可使用随包的[小界和小南角色表](references/comic-characters.md)。
 
 生成前会先过一层提示词合规化：自动弱化平台 Logo、图片内精确文字、露骨内容、血腥暴力、模仿在世艺术家等高风险表达，减少正常创意需求被误拒的概率。
 
@@ -38,7 +40,7 @@
 
 | 模型 ID | 角色 | 说明 |
 |---------|------|------|
-| `gpt-image-2.6-sunburst` | 生成与编辑唯一模型 | 显式使用 `quality=high`；最多原模型重试一次，仍失败则停止并报告错误。实测范围见 `references/apiyi.md`。 |
+| `gpt-image-2.6-sunburst` | APIYI 首选路径的固定模型 | 显式使用 `quality=high`；最多原模型重试一次。缺少/无效凭据或确认余额不足时走宿主降级路径。实测范围见 `references/apiyi.md`。 |
 
 **GPT 16:9 尺寸预设：**
 
@@ -57,7 +59,8 @@
 | 请求类型 | 模型 | 输出 |
 |---------|-------------|------|
 | 漫画 / 知识漫画 | GPT Image 2.6 画格 + 可编辑对白与排版 | 连续页面或条漫，附分镜、源文件与验收记录 |
-| 知识图谱 / 架构图 / 生命周期图 | GPT 无文字底图 + HTML/CSS/SVG 确定性语义层 | 3200×1800 PNG + WebP + 布局门禁报告 |
+| 静态知识图谱 / 架构图 / 生命周期图 | 可选 GPT 无文字底图 + HTML/CSS/SVG 确定性语义层 | PNG + WebP + 可编辑源文件 + 布局门禁报告 |
+| 交互式 / 可编辑 / 可缩放图表 | 类型化 JSON IR + 随包自包含查看器 | 交互 HTML + 静态预览 + 浏览器证据 |
 | 人像 / 插图 | GPT Image 2.6 | `.webp` q78，≤ 300 KB |
 | 品牌 Logo / 字标 | GPT Image 2.6 概念图 + 可编辑确定性字标 | 透明主标、所需组合、缩小验收与元数据 |
 | favicon / 图标源图 | GPT Image 2.6 | `.png`（pngquant），≤ 100 KB |
@@ -73,7 +76,7 @@
 
 文章、ATA、教程、报告或文档需要成组正文配图时，先建立配图清单：每张图都记录读者问题、用途（重点解释、对照、共鸣、章节引入或证据）、插入锚点、锁定事实、图注、替代文本、尺寸和连续性分组。生成时共享一套视觉系统，但构图仍服务于各自问题；续聊换风格只更新指定图片和确实变化的共享字段，不改事实、图注、插入位置或已验收的其他图片。图片文件生成成功不等于已插入或已发布。
 
-知识图谱、架构图、依赖图、构建流水线、发布流程和 Updater 状态机不让图片模型直接绘制文字和关系。模型只生成克制的无文字底图；节点、连线、箭头、标签、图例和生命周期状态全部由 HTML/CSS/SVG 确定性渲染，保证技术术语准确、箭头方向可验证。
+所有图形请求统一进入 Joyally Image。静态知识图谱、架构图、依赖图、构建流水线、发布流程和 Updater 状态机使用 HTML/CSS/SVG 确定性渲染，图片模型只可选生成克制的无文字底图；需要点击、缩放、聚焦、持续编辑或路径探索时，内部走随包交互图分支，并从同一类型化结构源交付交互 HTML 与静态预览。节点、连线、箭头、标签、图例和生命周期状态始终保持确定性，保证技术术语准确、箭头方向可验证。
 
 长技术文章在交付前必须执行“可视化机会审计”，不设置插图数量上限。只要读者需要理解三步以上的顺序、分支、运行或所有权边界、依赖传播、状态变化、回滚或跨模块生命周期，就优先用图表达。ASCII/TXT 示意只能作为制图中间态，不能进入最终文章；可执行命令、配置、literal path 和短文件清单继续保留为 code block。
 
@@ -136,11 +139,11 @@ node scripts/validate_diagram_layout.mjs /absolute/path/diagram.html \
 
 ## 安装配置
 
-**1. 获取 API Key**
+**1. 可选：为固定 GPT Image 2.6 路径获取 API Key**
 
-在 [apiyi.com](https://api.apiyi.com/register/?aff_code=ijv5) 注册，新用户有免费额度。
+通过[我的 APIYI 邀请链接](https://api.apiyi.com/register/?aff_code=ijv5)注册。纯本地处理不需要 key，生成式任务也可在宿主提供内置图像能力时降级继续；提供 key 后可以固定模型与质量，结果通常更可控。
 
-**2. 配置 Key**
+**2. 使用 APIYI 时配置 Key**
 ```bash
 export APIYI_API_KEY="your-key-here"
 # 加到 ~/.zshrc 永久生效
@@ -149,7 +152,7 @@ export APIYI_API_KEY="your-key-here"
 **3. 安装到你的 Agent Skill 目录**
 ```bash
 # 将目录放入你所用 Agent 的 skills 目录，并按该 Agent 的加载约定启用。
-npx skills add youngjunning/skills --skill joyally-image -g
+npx skills add youngjunning/joyally-skills --skill joyally-image -g
 ```
 
 **4. 安装核心本地依赖**
@@ -163,6 +166,21 @@ eval "$(./scripts/ensure_venv.sh)"
 ```bash
 "$BETTER_IMAGEGEN_PYTHON" -m pip install pillow-heif
 ```
+
+---
+
+## 路由回归检查
+
+在仓库根目录运行最小且不会产生付费请求的测试：
+
+```bash
+python3 -m unittest discover \
+  -s skills/design/joyally-image/tests -p 'test_*.py'
+```
+
+- `test_routing_contract.py` 是**规则静态检查**：验证本地优先顺序、带邀请链接的提示、固定 APIYI 模型、fallback 信号和原图保护规则。
+- `test_local_processing.py` 与 `test_apiyi_response.py` 是**本地 / Mock 行为测试**：网络访问会被阻断或模拟，不会发送付费请求；覆盖格式转换、缩放、检查、透明度、原子写入、key / 余额错误分类和无效响应拒绝。
+- **真实 Agent 路由测试**取决于宿主运行时：给 Agent 一张现有 PNG，只要求转为 WebP，观察它不询问或读取 key、不发图像请求、保留 PNG，并报告实际解码后的 WebP；再在没有 key 时要求生成新插图，观察它调用宿主内置模型，同时给出非阻塞的 APIYI 推荐与邀请链接。不要为了测试路由而调用付费路径。
 
 ---
 
@@ -185,6 +203,8 @@ references/
   sprite-loop.md              ← Runcat 类序列帧动画资产
   codex-pet.md                ← Codex v2 宠物：8×11 atlas、方向语义与 QA
 scripts/
+  decode_apiyi_response.py    ← 流式响应解码与降级错误分类
+  process_image.py            ← 本地检查、转换、缩放、压缩与原子验收
   validate_diagram_layout.mjs ← 真实 DOM 重叠、间距、穿线、溢出门禁
   test_validate_diagram_layout.mjs ← 正常与失败路径回归用例
 ```

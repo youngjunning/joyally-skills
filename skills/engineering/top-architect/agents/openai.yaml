@@ -1,6 +1,0 @@
-interface:
-  display_name: "Top Architect"
-  short_description: "Business, product, AI architecture, and reliable delivery"
-  default_prompt: "Use $top-architect to connect this business or user problem to product scope, technical and AI choices, and verifiable delivery; for Skills, Agents or digital employees, define capability, execution, operating and acceptance boundaries."
-policy:
-  allow_implicit_invocation: true

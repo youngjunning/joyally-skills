@@ -1,0 +1,4 @@
+interface:
+  display_name: "Joyally Motion"
+  short_description: "设计、选型、实现并验收产品动效与代码动画"
+  default_prompt: "Use $joyally-motion to design and implement a purposeful, accessible motion system for this experience."

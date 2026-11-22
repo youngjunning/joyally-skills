@@ -1,6 +1,9 @@
 ---
 name: joyally-spotlight
 description: During UI automation, archive key real screenshots privately for later writing; find, redact, and verify product screenshots or demos before sharing.
+metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
 ---
 
 # Joyally Spotlight

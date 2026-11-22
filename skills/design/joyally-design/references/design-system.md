@@ -12,7 +12,7 @@ Choose the report's visual character from the product brief, brand assets, and r
 | Lake teal | Primary action, selection, focus, and progress |
 | Cypress green | Success, recovery, and validated capability |
 | Gray-blue structure | Secondary text, boundaries, inactive state, and metadata |
-| Deep lake ink | Primary text, conclusions, and evidence |
+| Neutral lake-shore ink | Primary text, conclusions, and evidence |
 | Dawn gold and clay | Warning and error signals used sparingly |
 | Sparse particles or gradients | Peripheral identity around the header, never behind evidence |
 
@@ -26,12 +26,12 @@ Empty work surfaces may use visible but soft neutral gray-white mist at their ed
 
 | Source cue | Token direction | UI use |
 | --- | --- | --- |
-| Shadowed cypress and matcha green | `#4E7159` / `#52795A` family | Primary actions, links, focus, navigation and Chat selection |
+| Clear lake teal and mist reflection | `#63ACA2` / `#78BEB3` family | Primary actions, focus, navigation and Chat selection |
 | Red and yellow cypress foliage | `#C86848` / `#D89848` sampled highlights; `#A7472D` / `#96620F` readable status text | Foliage artwork, error and warning feedback |
 | Low sun and water sparkle | Small localized highlights | Never a page-wide color wash |
-| Warm mist-white paper | `#F7F3EB` / `#FCFAF4` | Canvas, cards, readable content surfaces |
+| Warm mist-white paper | `#F8F7F3` / `#FFFDFB` | Canvas, cards, readable content surfaces |
 
-Primary actions use the theme's deep cypress green; selected navigation, Chat rows and other active controls use a quiet green fill with dark text. Red cypress is reserved for error and destructive feedback, yellow cypress for warning, each paired with an icon or label. Keep these semantic colors off large interactive surfaces; success remains green and the rest of the interface stays quiet.
+Primary actions, selected navigation, Chat rows and other active controls use clear lake-teal fills with dark text. The light theme does not use deep lake green as a seed or a large interaction surface. A stronger teal may support small links, icons and focus boundaries. Red cypress is reserved for error and destructive feedback, yellow cypress for warning, each paired with an icon or label. Keep these semantic colors off large interactive surfaces; success remains green and the rest of the interface stays quiet.
 
 Status colors keep the same meaning in every mode: use cypress red `#A7472D` for error text and icons with `#FBEAE2` / `#D9A28E` for the light fill and border; use cypress yellow's darker readable tone `#96620F` for warning text and icons with `#FFF2D9` / `#E5B663` for the fill and border. The brighter sampled foliage colors are source hues, not small-text colors.
 
@@ -74,7 +74,7 @@ Use traditional Chinese references as selective visual cues inside a modern, you
 
 | Cultural cue | Modern UI translation | Boundary |
 | --- | --- | --- |
-| Ink and stone | Deep ink text, quiet gray-blue structure, evidence hierarchy | Never use near-black for every label or border |
+| Ink and stone | Neutral ink text, quiet gray-blue structure, evidence hierarchy | Never use near-black for every label or border |
 | Celadon and lake water | Primary action, selection, focus, and progress | Keep controls readable and do not turn the whole surface green |
 | Cinnabar seal | Critical marker, destructive confirmation, or one key emphasis | Rare, semantic, and always paired with text or icon |
 | Xuan paper and mist | Canvas, empty state, and low-contrast surface | No texture beneath dense evidence or forms |
@@ -144,7 +144,7 @@ In product language, call `celadon-glaze` **青瓷釉** or a **surface material*
 | Validated outcome | `success` | Complete or verified state |
 | Attention and risk | `warning`, `error` | Explicit severity with text/icon support |
 
-The bundled 青山湖 palette anchors are cypress green primary `#397A46`, primary action `#275A34`, leaf green `#4F8D50`, text `#253C2D`, and warm mist-white background `#F7F5F0`. Copper foliage and cool mist remain local accents; lake mist `#85C7BA` can mark atmosphere without covering reading surfaces.
+The bundled 青山湖 palette anchors are lake teal `#63ACA2`, clear-lake action `#78BEB3` with neutral ink `#23393D`, focus teal `#57958E`, and warm mist-white background `#F8F7F3`. Cypress remains the success family rather than the main interaction fill. Copper foliage and cool mist remain local accents; lake mist `#A8D8CF` can mark atmosphere without covering reading surfaces.
 
 ## Report hierarchy
 

@@ -27,6 +27,6 @@
 
 ## Joyally 实现
 
-参考 [交互图表](interactive-diagrams.md) 和 `runtime/diagram/schemas/architecture.schema.json`。编写 `components`、`connections`，必要时才添加有事实依据的 `boundaries`；设置 `meta.locale: "zh-CN"` 与可移植的 `meta.output`。节点类别使用已有 `frontend`、`backend`、`database`、`cloud`、`security`、`messagebus`、`external`；类别色不代表验收状态。
+参考 [交互图表设计评审](interactive-diagrams.md) 和 `../joyally-image/runtime/diagram/schemas/architecture.schema.json`。编写 `components`、`connections`，必要时才添加有事实依据的 `boundaries`；设置 `meta.locale: "zh-CN"` 与可移植的 `meta.output`。节点类别使用已有 `frontend`、`backend`、`database`、`cloud`、`security`、`messagebus`、`external`；类别色不代表验收状态。
 
-先运行 `node scripts/design-engine.mjs diagram validate architecture input.json --quality showcase --json`，通过后运行 `diagram deliver architecture input.json output.html --quality showcase --json`。需要视觉证据时再运行 `visual-check`，核对桌面和窄屏、缩放、聚焦、边标签、打印及文字 fallback。交付时分别报告 IR 校验、HTML 生成和实际画面检查。
+生产命令统一由 `joyally-image/scripts/joyally-diagram.mjs` 提供：先运行 `validate architecture input.json --quality showcase --json`，通过后运行 `deliver architecture input.json output.html --quality showcase --json`。需要视觉证据时再运行 `visual-check`，核对桌面和窄屏、缩放、聚焦、边标签、打印及文字 fallback。交付时分别报告 IR 校验、HTML 生成和实际画面检查。

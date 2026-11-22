@@ -1,9 +1,9 @@
 [
   {
-    "name": "top-architect",
+    "name": "joyally-arch",
     "category": "engineering",
-    "path": "skills/engineering/top-architect",
-    "summary": "业务产品判断、AI 架构与 Skill、Agent、数字员工交付"
+    "path": "skills/engineering/joyally-arch",
+    "summary": "渐进式业务产品判断、AI 架构与 Skill、Agent、数字员工交付"
   },
   {
     "name": "joyally-image",
@@ -30,12 +30,6 @@
     "summary": "TDD、Web/API 与目标环境测试、AI/Agent evals、失败诊断和测试质量治理"
   },
   {
-    "name": "joyally-git",
-    "category": "engineering",
-    "path": "skills/engineering/joyally-git",
-    "summary": "判断 Git 改动应提交并推送、只提交、保留还是请求确认，并安全执行获准动作"
-  },
-  {
     "name": "joyally-writting",
     "category": "writing",
     "path": "skills/writing/joyally-writting",
@@ -48,9 +42,9 @@
     "summary": "Tauri 2 安全边界与 Node.js sidecar"
   },
   {
-    "name": "fiction-site-builder",
+    "name": "joyally-fiction",
     "category": "writing",
-    "path": "skills/writing/fiction-site-builder",
+    "path": "skills/writing/joyally-fiction",
     "summary": "小说创作与阅读站点建设"
   },
   {
@@ -78,16 +72,28 @@
     "path": "skills/productivity/distill-me"
   },
   {
-    "name": "distill-yangjunning",
-    "category": "productivity",
-    "summary": "维护俊宁的个人记录、资料、项目方案与工作脉络",
-    "path": "skills/productivity/distill-yangjunning"
-  },
-  {
     "name": "joyally-design",
     "category": "design",
     "summary": "跨平台界面、HTML 交付、可探索图表与图像设计，主导视觉方向、构图、版式、交互与设计验收",
     "path": "skills/design/joyally-design"
+  },
+  {
+    "name": "joyally-motion",
+    "category": "design",
+    "summary": "产品动效、网页动画、代码视频、2D/3D 与物理效果的意图、选型、实现和验收",
+    "path": "skills/design/joyally-motion"
+  },
+  {
+    "name": "joyally-voice",
+    "category": "design",
+    "summary": "人声录制、修复、合成、配音、克隆、音色转换、转写对齐与授权验收",
+    "path": "skills/design/joyally-voice"
+  },
+  {
+    "name": "joyally-music",
+    "category": "design",
+    "summary": "音乐创作、生成、歌声合成、分轨、音频转 MIDI、混音与母带验收",
+    "path": "skills/design/joyally-music"
   },
   {
     "name": "joyally-theme-creation",
@@ -100,5 +106,11 @@
     "category": "engineering",
     "path": "skills/engineering/macos-app-develop",
     "summary": "原生 macOS、SwiftUI 与 Instruments 工作流（含许可改编）"
+  },
+  {
+    "name": "joyally-media",
+    "category": "productivity",
+    "path": "skills/productivity/joyally-media",
+    "summary": "从 B 站、微信等视频链接或本地音视频提取字幕、时间线、关键画面和带证据边界的结构化内容"
   }
 ]

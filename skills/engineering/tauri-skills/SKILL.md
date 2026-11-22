@@ -1,6 +1,9 @@
 ---
 name: tauri-skills
 description: Design, implement, review, and verify secure Tauri 2 desktop applications with a Rust trusted core, React or TypeScript WebViews, scoped capabilities and permissions, typed IPC, and a managed Node.js sidecar. Use for Tauri architecture, src-tauri changes, commands, channels or events, remote WebViews, capability files, plugin permissions, shell access, externalBin packaging, sidecar lifecycle, updater boundaries, desktop security reviews, and Tauri build or test planning.
+metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
 ---
 
 # Tauri Skills

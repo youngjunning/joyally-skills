@@ -21,7 +21,6 @@ const commands = {
   'deck-gallery': 'build-deck-gallery.mjs',
   'deck-render': 'render-joyally-deck.mjs',
   'deck-bundle': 'bundle-joyally-deck.mjs',
-  diagram: 'joyally-diagram.mjs',
 };
 const [command, ...args] = process.argv.slice(2);
 if (!command || command === '--help') {
@@ -34,8 +33,7 @@ deck <output-dir> [--scenario <name>|--source <deck.json>]: generate a Joyally p
 deck-gallery <output-dir>: preview Joyally presentation themes and layouts
 deck-render <index.html> --format png|pdf: export slides
 deck-bundle <index.html> --out <standalone.html>: bundle a deck into one HTML file
-diagram --help: list diagram commands and formats
-image generation and editing: use the joyally-image skill
+interactive diagrams, image generation and editing: use the joyally-image skill
 path <relative-file>: show a bundled reference, asset or script path
 run <script-name> [...arguments]: run a bundled script
 `);

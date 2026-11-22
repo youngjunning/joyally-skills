@@ -20,7 +20,7 @@ The landscape imagery and lake colors below apply when the product selects the Q
 - Use scenic layers as gradients, restrained illustration, or low-density particles; do not use a literal tourism photo as the entire UI.
 - Keep hero copy on an opaque or controlled-contrast region. The atmosphere may surround the message but must not lower its legibility.
 - Use wildlife, leaves, or water movement as one signature motif, not a collection of simultaneous effects.
-- Keep primary actions lake-teal strong, secondary actions quiet, and warm dawn accents rare.
+- Keep primary actions clear lake teal with dark labels, secondary actions quiet, and warm dawn accents rare. Do not use a deep lake-green hero button or selected block in the light theme.
 
 ## Motion and performance
 

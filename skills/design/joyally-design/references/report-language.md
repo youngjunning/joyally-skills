@@ -40,7 +40,7 @@ Rename, reorder, or omit sections to match the material. Never force a generic r
 
 ## Visual identity boundary
 
-Joyally Design identity comes from composition and treatment: mist-white canvas, joyally-teal accents, deep lake text, quiet gray-blue structure, restrained warm states, compact professional density, precise borders, and controlled atmosphere. A report about finance, architecture, research, operations, strategy, or any other subject should keep its own domain language.
+Joyally Design identity comes from composition and treatment: mist-white canvas, clear lake-teal accents, neutral ink text, quiet gray-blue structure, restrained warm states, compact professional density, precise borders, and controlled atmosphere. A report about finance, architecture, research, operations, strategy, or any other subject should keep its own domain language.
 
 Use product logos, character art, screenshots, or named workflows only when they are part of the source material or explicitly requested.
 

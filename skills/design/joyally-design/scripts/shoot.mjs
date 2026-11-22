@@ -1167,10 +1167,159 @@ function lintPage() {
   return [...found.values()];
 }
 
+// Final SVGs can be hand-edited after IR validation. Measure the rendered text
+// and actual paths, independently of viewer CSS classes or composition metadata.
+function lintSvgGeometry() {
+  const findings = new Map(), coverage = [];
+  const EPS = 1e-7, STEP = 1, GAP = 8;
+  const specs = {
+    svgTextCollision: { tier: "floor", label: "SVG 文字与连线相交" },
+    svgTextClearance: { tier: "reflex", label: "SVG 文字与连线净距小于 8px" },
+    svgGeometryUnmeasured: { tier: "floor", label: "SVG 文字或连线几何未能测量" },
+  };
+  const css = (el) => getComputedStyle(el);
+  const visible = (el) => {
+    if (el.closest("defs,marker,symbol,clipPath,mask,pattern")) return false;
+    for (let node = el; node; node = node.parentElement) {
+      const s = css(node);
+      if (s.display === "none" || s.visibility === "hidden" || s.visibility === "collapse" || Number(s.opacity) <= 0.05) return false;
+    }
+    return true;
+  };
+  const describe = (el) => el.id || el.getAttribute("data-edge-id") || (el.textContent || "").trim().replace(/\s+/g, " ").slice(0, 48) || el.tagName.toLowerCase();
+  const add = (rule, el, note) => {
+    const spec = specs[rule];
+    let reason;
+    if (spec.tier === "reflex") for (let node = el; node && !reason; node = node.parentElement) {
+      for (const item of (node.getAttribute("data-joyally-waive") || "").split(";")) {
+        const split = item.indexOf(":");
+        if (item.slice(0, split).trim() === rule && item.slice(split + 1).trim().length >= 4) reason = item.slice(split + 1).trim();
+      }
+    }
+    const status = reason ? "waived" : "open", key = `${rule}:${status}`;
+    let item = findings.get(key);
+    if (!item) findings.set(key, item = { rule, ...spec, status, count: 0, examples: [], ...(reason ? { reasons: [] } : {}) });
+    item.count++;
+    if (item.examples.length < 3) item.examples.push(`${describe(el)}（${note}）`);
+    if (reason && !item.reasons.includes(reason)) item.reasons.push(reason);
+  };
+  const colorCanvas = document.createElement("canvas");
+  colorCanvas.width = colorCanvas.height = 1;
+  const colorContext = colorCanvas.getContext("2d", { willReadFrequently: true });
+  const alpha = (color) => {
+    if (!colorContext || !color || color === "none") return 0;
+    colorContext.clearRect(0, 0, 1, 1);
+    colorContext.fillStyle = "transparent"; colorContext.fillStyle = color;
+    colorContext.fillRect(0, 0, 1, 1);
+    return colorContext.getImageData(0, 0, 1, 1).data[3] / 255;
+  };
+  const transform = (p, m) => ({ x: m.a * p.x + m.c * p.y + m.e, y: m.b * p.x + m.d * p.y + m.f });
+  const matrix = (el) => {
+    const m = el.getScreenCTM();
+    if (!m || ![m.a, m.b, m.c, m.d, m.e, m.f].every(Number.isFinite) || Math.abs(m.a * m.d - m.b * m.c) <= EPS) throw new Error("无有效屏幕变换");
+    return m;
+  };
+  const scale = (m) => {
+    const a = m.a * m.a + m.b * m.b, b = m.c * m.c + m.d * m.d, c = m.a * m.c + m.b * m.d;
+    return Math.sqrt((a + b + Math.hypot(a - b, 2 * c)) / 2);
+  };
+  const polygon = (el) => {
+    const b = el.getBBox(), m = matrix(el);
+    if (![b.x, b.y, b.width, b.height].every(Number.isFinite) || !(b.width > 0 && b.height > 0)) throw new Error("无有效文字或遮罩边界");
+    return [{ x: b.x, y: b.y }, { x: b.x + b.width, y: b.y }, { x: b.x + b.width, y: b.y + b.height }, { x: b.x, y: b.y + b.height }].map((p) => transform(p, m));
+  };
+  const cross = (a, b, p) => (b.x - a.x) * (p.y - a.y) - (b.y - a.y) * (p.x - a.x);
+  const contains = (poly, p) => {
+    const signs = poly.map((a, i) => cross(a, poly[(i + 1) % poly.length], p));
+    return !signs.some((n) => n > EPS) || !signs.some((n) => n < -EPS);
+  };
+  const pointDistance = (p, a, b) => {
+    const dx = b.x - a.x, dy = b.y - a.y, length = dx * dx + dy * dy;
+    const t = length ? Math.max(0, Math.min(1, ((p.x - a.x) * dx + (p.y - a.y) * dy) / length)) : 0;
+    return Math.hypot(p.x - a.x - t * dx, p.y - a.y - t * dy);
+  };
+  const segmentDistance = (a, b, c, d) => {
+    const dx = b.x - a.x, dy = b.y - a.y, ex = d.x - c.x, ey = d.y - c.y, divisor = dx * ey - dy * ex;
+    if (Math.abs(divisor) > EPS) {
+      const t = ((c.x - a.x) * ey - (c.y - a.y) * ex) / divisor, u = ((c.x - a.x) * dy - (c.y - a.y) * dx) / divisor;
+      if (t >= 0 && t <= 1 && u >= 0 && u <= 1) return 0;
+    }
+    return Math.min(pointDistance(a, c, d), pointDistance(b, c, d), pointDistance(c, a, b), pointDistance(d, a, b));
+  };
+  const pathDistance = (points, poly) => {
+    let nearest = Infinity;
+    for (let i = 1; i < points.length; i++) {
+      const a = points[i - 1], b = points[i];
+      if (contains(poly, a) || contains(poly, b)) return 0;
+      for (let j = 0; j < poly.length; j++) nearest = Math.min(nearest, segmentDistance(a, b, poly[j], poly[(j + 1) % poly.length]));
+      if (nearest <= EPS) return 0;
+    }
+    return nearest;
+  };
+  const isEdge = (el) => el.matches("[data-edge-id],[data-edge-from][data-edge-to],.edge,.a-default,.a-emphasis,.a-security,.a-dashed")
+    || el.closest("g[data-edge-id],g[data-edge-from][data-edge-to],g.edge") || css(el).markerEnd !== "none";
+  for (const [index, svg] of [...document.querySelectorAll("svg")].filter((el) => !el.parentElement?.closest("svg") && visible(el)).entries()) {
+    const paths = [...svg.querySelectorAll("path,line,polyline")].filter((el) => visible(el) && isEdge(el) && alpha(css(el).stroke) * Number(css(el).strokeOpacity) > 0 && parseFloat(css(el).strokeWidth) > 0);
+    const texts = [...svg.querySelectorAll("text")].filter((el) => visible(el) && (el.textContent || "").trim() && parseFloat(css(el).fontSize) > 0 && (alpha(css(el).fill) * Number(css(el).fillOpacity) > 0 || alpha(css(el).stroke) * Number(css(el).strokeOpacity) > 0));
+    const row = { svg: svg.id || `svg[${index + 1}]`, texts: texts.length, paths: paths.length, measuredTexts: 0, measuredPaths: 0, checkedPairs: 0, maskedPairs: 0, status: paths.length ? "passed" : "not_applicable" };
+    coverage.push(row);
+    if (!paths.length) continue;
+    if (document.fonts.status !== "loaded") { add("svgGeometryUnmeasured", svg, "字体尚未就绪"); row.status = "failed"; continue; }
+    const edges = [], plates = [];
+    let sampleBudget = 0;
+    for (const path of paths) try {
+      const m = matrix(path), s = css(path), length = path.getTotalLength(), maximumScale = scale(m);
+      if (!(Number.isFinite(length) && length > 0)) throw new Error("路径长度无效");
+      const count = Math.max(1, Math.ceil(length * maximumScale / STEP));
+      sampleBudget += count;
+      if (sampleBudget > 100000 || texts.length > 500) throw new Error("超过几何采样预算，未完整测量");
+      const points = Array.from({ length: count + 1 }, (_, i) => transform(path.getPointAtLength(i === count ? length : length * i / count), m));
+      if (points.some((p) => !Number.isFinite(p.x) || !Number.isFinite(p.y))) throw new Error("路径采样非有限值");
+      edges.push({ el: path, points, radius: parseFloat(s.strokeWidth) / 2 * (s.vectorEffect === "non-scaling-stroke" ? 1 : maximumScale), error: length / count * maximumScale / 2 });
+      row.measuredPaths++;
+    } catch (error) { add("svgGeometryUnmeasured", path, error.message); row.status = "failed"; }
+    // Only actual opaque label plates painted above an edge can hide that edge.
+    // A same-edge label without such a plate is not exempt from collision checks.
+    for (const plate of svg.querySelectorAll("rect.c-mask")) {
+      if (!visible(plate) || plate.closest("[data-node-id],.node")) continue;
+      const s = css(plate);
+      let opacity = Number(s.fillOpacity) * alpha(s.fill);
+      for (let el = plate; el; el = el.parentElement) opacity *= Number(css(el).opacity);
+      if (opacity < 0.995 || s.clipPath !== "none" || s.filter !== "none") continue;
+      try {
+        polygon(plate);
+        plates.push({ el: plate, inverse: matrix(plate).inverse() });
+      } catch { /* An unmeasurable plate grants no exemption. */ }
+    }
+    for (const text of texts) try {
+      const poly = polygon(text);
+      row.measuredTexts++;
+      let nearest = null;
+      for (const edge of edges) {
+        row.checkedPairs++;
+        const clearance = pathDistance(edge.points, poly) - edge.radius - edge.error;
+        if (clearance >= GAP) continue;
+        if (plates.some((plate) => (edge.el.compareDocumentPosition(plate.el) & Node.DOCUMENT_POSITION_FOLLOWING) && poly.every((p) => plate.el.isPointInFill(transform(p, plate.inverse))))) { row.maskedPairs++; continue; }
+        if (!nearest || clearance < nearest.clearance) nearest = { edge, clearance };
+      }
+      if (nearest) {
+        const rule = nearest.clearance <= 0 ? "svgTextCollision" : "svgTextClearance";
+        add(rule, text, `连线 ${describe(nearest.edge.el)}；保守净距 ${nearest.clearance.toFixed(2)}px`);
+        row.status = "failed";
+      }
+    } catch (error) { add("svgGeometryUnmeasured", text, error.message); row.status = "failed"; }
+  }
+  return { findings: [...findings.values()], coverage };
+}
+
+let svgGeometryCoverage = [];
 async function lint() {
   try {
-    return await evaluate(`(${lintPage.toString()})()`);
+    const result = await evaluate(`(() => ({ page: (${lintPage.toString()})(), svg: (${lintSvgGeometry.toString()})() }))()`);
+    svgGeometryCoverage = result.svg.coverage;
+    return [...result.page, ...result.svg.findings];
   } catch (error) {
+    svgGeometryCoverage = [{ status: "failed", reason: error.message.slice(0, 160) }];
     return [{ rule: "lintError", tier: "floor", status: "open", label: "可读性检查没跑完", count: 1, examples: [error.message.slice(0, 160)] }];
   }
 }
@@ -2342,7 +2491,8 @@ async function captureBatch(selectedStates, selectedZooms, selectedGroups, useMa
         const preservationGates = preservation?.missing.filter((item) => item.status === "open" && item.gate) || [];
         const materialGates = materials?.findings.filter((item) => item.status === "open" && (item.tier === "floor" || item.tier === "reflex")) || [];
         const gateCount = openGates.length + preservationGates.length + materialGates.length;
-        entry = { file: basename(file), ...meta, ...(thumb ? { thumb: true } : {}), animationWaitMs, issues, lint: hints, ...(note ? { note } : {}),
+        entry = { file: basename(file), ...meta, ...(thumb ? { thumb: true } : {}), animationWaitMs, issues, lint: hints,
+          ...(!thumb ? { svgGeometry: svgGeometryCoverage } : {}), ...(note ? { note } : {}),
           ...(flags.has("gates") ? { gates: { open: gateCount, passed: gateCount === 0 } } : {}),
           ...(preservation ? { preservation } : {}), ...(materials ? { materials } : {}) };
         if (flags.has("gates") && gateCount) process.exitCode = 1;

@@ -124,7 +124,7 @@ THEME_MAPPING = {
     "--text-1": "semantic.text",
     "--text-2": "semantic.textSecondary",
     "--text-3": "semantic.textTertiary",
-    "--accent": "semantic.primaryAction",
+    "--accent": "color.accentInk",
     "--accent-2": "semantic.primary",
     "--accent-3": "color.lakeMist",
     "--good": "semantic.success",
@@ -338,6 +338,18 @@ def main() -> int:
         missing = sorted(REQUIRED_SEMANTIC - semantic.keys())
         if missing:
             errors.append(f"missing semantic roles: {', '.join(missing)}")
+
+    try:
+        action = resolve_color(document, "semantic.primaryAction")
+        primary = resolve_color(document, "semantic.primary")
+        action_foreground = resolve_color(document, "semantic.onPrimaryAction")
+        text = resolve_color(document, "semantic.text")
+        if relative_luminance(action) <= relative_luminance(primary):
+            errors.append("Qingshan Lake primaryAction must stay lighter than primary")
+        if action_foreground != text:
+            errors.append("Qingshan Lake light action must use the neutral text color")
+    except (KeyError, ValueError) as error:
+        errors.append(str(error))
 
     component = document.get("component")
     if not isinstance(component, dict):

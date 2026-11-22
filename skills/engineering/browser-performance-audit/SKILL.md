@@ -1,6 +1,9 @@
 ---
 name: browser-performance-audit
 description: "Perform a browser tab performance audit: collect Navigation Timing, Core Web Vitals, resource loading, console errors, and DOM structure, then cross-validate and output prioritized optimization suggestions. Use when the user asks to evaluate page performance, diagnose slow loading, analyze memory leaks, or investigate long-session degradation."
+metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
 ---
 
 # Browser Performance Audit

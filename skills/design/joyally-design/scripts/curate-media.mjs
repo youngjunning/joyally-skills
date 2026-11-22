@@ -10,7 +10,7 @@ import { promisify } from 'node:util';
 import { execFile } from 'node:child_process';
 
 const exec = promisify(execFile);
-const UA = 'joyally-design-curate-media/2.1 (+https://github.com/youngjunning/skills; Powered by Poly Haven)';
+const UA = 'joyally-design-curate-media/2.1 (+https://github.com/youngjunning/joyally-skills; Powered by Poly Haven)';
 const KINDS = ['all', 'texture', 'design', 'photo', 'blueprint', 'map', 'plate', 'science', 'video'];
 const PREFIX = { polyhaven: 'T', vam: 'V', loc: 'L', wellcome: 'W', nasa: 'N', commons: 'C', met: 'M', aic: 'A', cleveland: 'K', japan: 'J', rijks: 'R' };
 const USES = { page: 0, check: 1, reference: 2 };

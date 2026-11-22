@@ -1,8 +1,28 @@
 # Changelog
 
+## 2026-11-22
+
+10. `joyally-report` 的收尾技能清单改为逐项附带本轮具体作用，避免只罗列技能名而无法判断各技能实际贡献。
+9. 将 `distill-zisheng` 迁至独立仓库维护；本仓库保留外部入口，不再重复发布本地副本。
+8. 删除重复维护的 `joyally-git`；Git 交付能力统一迁移到独立 [JoyStack `joy-git`](https://github.com/youngjunning/joystack/tree/main/skills/engineering/joy-git)，并同步更新仍在使用的跨 Skill 引用。
+5. 优化 YingMusic-Singer 的旋律保持：分段对齐参考、目标与 VAE 时间轴，裁掉条件间隔；增加连续 F0 保音、原始人声对照、修正范围门禁与产物记录。固定 MIDI 短样和授权导唱副歌的自动音高校验通过，保留对原生模型偏移、音色与自然度验收的边界。
+4. 接入 `joyally-music` 与 YingMusic-Singer V1 本地试验入口，固定代码、权重与依赖版本，补充 CPU 注意力和音频读取适配及产物记录；MIDI、旋律音频与不同采样参数已实际出声。短句歌词检查通过，旋律保持和本人音色尚未验收；官方权重为 CC-BY-NC-4.0，不将试验能力标为成品质量。
+1. 将 `joyally-media-reading` 更名为 `joyally-media`，同步目录、Skill 名称、安装入口、UI 元数据与公开索引；能力与触发范围保持不变。
+
 ## 2026-11-21
 
+7. 优化 `joyally-git` 的并行交付：脏工作区、无关 staged 内容和分支分叉优先转入基于目标 ref 的隔离 worktree，复验任务补丁后 fast-forward push；只有任务语义无法拆分、真实冲突或目标不明时才停止请求决定。
+6. 新增 `joyally-media-reading`：从 B 站、微信视频号和公众号视频等托管页面、直接媒体链接及本地音视频提取字幕、转写、时间线和关键画面；显式报告覆盖范围与证据来源，并把结构化材料交给后续写作、小说或视频工作流。
+5. 将 `top-architect` 更名为 `joyally-arch`；吸收 arch-grower 的局部决策切片、显式待定与储备状态、Walking Skeleton、稳定子图折叠及失败路径学习机制，同时保留现有业务、产品、AI 架构和交付主线，不复制其 CLI、图 schema 或强制二选一/子代理策略。
+4. 新增 `joyally-voice`：覆盖录音、人声修复、TTS、配音、声音克隆、说话/歌声音色转换、转写对齐及授权与质量验收；配音作为 Voice 分支统一维护。
+3. 新增 `joyally-music`：独立维护作曲、写歌、音乐与歌声生成、分轨、音频转 MIDI、混音和母带；与 `joyally-voice` 按歌曲整体和人声身份分工。
+2. 新增 `joyally-motion`：基于 20 个官方开源项目建立产品动效、网页动画、代码视频、角色、2D/3D、物理与粒子选型矩阵，统一 motion intent、单一时钟、reduced motion、性能和真实交付验收；保留许可证与第三方资产边界。
 1. 将 `joyally-test-quality` 更名为 `joyally-test`，融合 10 个 AI Native 测试 Skill 的差异化机制，扩展为 TDD、性质/fuzz/mutation、Web/E2E/辅助技术、API 契约、AI/Agent evals、失败诊断与套件治理的统一入口；保留按真实回归判断测试价值的核心标准与来源许可边界。
+
+## 2026-11-20
+
+2. 将 `zisheng-site-sync` 的双站共同能力与定向内容同步流程合入 `distill-zisheng`：按方向审查接收受众，使用私有审核账本和只读规划器，分别验收与报告功能、内容流向及交付状态。
+1. `distill-zisheng` 明确：本人标为个人隐私的材料不得进入公司目标，即使已有公开原稿或技术价值；重新分类时按撤回移除当前源稿及派生引用，不将拒收原因留在公司仓库。
 
 ## 2026-11-18
 

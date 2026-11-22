@@ -14,6 +14,7 @@ Use the bundled layouts, CSS tokens, and local assets to create portable HTML:
 <report>/
 ├── index.html
 └── joyally-design/
+    ├── LICENSE
     ├── report-base.css
     └── joyally-theme.css
 ```

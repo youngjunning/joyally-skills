@@ -1,8 +1,8 @@
 # Report Types
 
-Choose the type by the next reader’s decision. Do not combine types unless the same reader genuinely needs both decisions. Keep the conclusion and action layer short; add detail only when it changes the judgment.
+Choose the type by the next reader’s decision. Do not combine types unless the same reader genuinely needs both decisions. Keep the conclusion concise, then provide enough evidence, scope, causality, and operational detail for the reader to independently judge or continue the work. Useful handoff and verification detail can be necessary even when it does not change the verdict.
 
-The examples below define content and section selection, not a mandatory literal layout. Select the output mode using `SKILL.md`. Markdown mode is the default: turn labels such as `【结论】` into `## 结论` headings and use numbered, Roman-numeral, or circled-number lists where helpful; never use unordered lists. In `terminal` mode, render them with plain-text sections and status emoji; convert tables into labeled metric blocks. Keep the same emoji-only status vocabulary in both modes.
+The examples below are content inventories, not final rendering templates. Their bracketed labels identify evidence slots for selection; do not copy those labels into the final answer. Rewrite the first judgment as a natural decision surface, then turn only the material evidence slots into the evidence surface; do not collapse the remaining evidence into the decision surface. Select the output mode using `SKILL.md`. Use numbered, Roman-numeral, or circled-number lists where helpful; never use unordered lists. In `terminal` mode, render them with plain-text sections and status emoji; convert tables into labeled metric blocks. Keep the same emoji-only status vocabulary in both modes.
 
 ## 1. Leadership or project status
 

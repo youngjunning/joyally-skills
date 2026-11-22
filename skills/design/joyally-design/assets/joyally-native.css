@@ -1,18 +1,18 @@
 :root {
-  --joyally-canvas: #f4f6f1;
-  --joyally-surface: #fbfcfa;
-  --joyally-surface-muted: #e8eeea;
-  --joyally-text: #183b40;
-  --joyally-text-secondary: #4d676b;
-  --joyally-primary: #2e948a;
-  --joyally-primary-action: #286b66;
-  --joyally-on-primary: #ffffff;
-  --joyally-primary-container: #dcefeb;
+  --joyally-canvas: #f8f7f3;
+  --joyally-surface: #fffdfb;
+  --joyally-surface-muted: #edf3f1;
+  --joyally-text: #23393d;
+  --joyally-text-secondary: #52696b;
+  --joyally-primary: #63aca2;
+  --joyally-primary-action: #78beb3;
+  --joyally-on-primary: #23393d;
+  --joyally-primary-container: #e1f2ee;
   --joyally-success: #356439;
   --joyally-warning: #7a5b1e;
   --joyally-error: #8e493e;
-  --joyally-border: #d4dfdc;
-  --joyally-focus: #286b66;
+  --joyally-border: #d9e5e2;
+  --joyally-focus: #57958e;
   --joyally-radius-control: 10px;
   --joyally-radius-surface: 16px;
   --joyally-duration-fast: 140ms;
@@ -22,16 +22,16 @@
 .joyally-canvas {
   color: var(--joyally-text);
   background:
-    radial-gradient(ellipse at 12% 8%, rgb(133 199 186 / 20%), transparent 34%),
+    radial-gradient(ellipse at 12% 8%, rgb(168 216 207 / 22%), transparent 34%),
     radial-gradient(ellipse at 88% 16%, rgb(184 204 219 / 22%), transparent 32%),
     var(--joyally-canvas);
 }
 
 .joyally-surface {
   background: rgb(251 252 250 / 86%);
-  border: 1px solid rgb(46 148 138 / 18%);
+  border: 1px solid rgb(99 172 162 / 20%);
   border-radius: var(--joyally-radius-surface);
-  box-shadow: 0 18px 48px rgb(15 43 54 / 8%);
+  box-shadow: 0 18px 48px rgb(35 57 61 / 7%);
   backdrop-filter: blur(18px) saturate(112%);
 }
 
@@ -39,17 +39,18 @@
   min-block-size: 40px;
   color: var(--joyally-on-primary);
   background: var(--joyally-primary-action);
-  border: 1px solid rgb(255 255 255 / 18%);
+  border: 1px solid rgb(35 57 61 / 12%);
   border-radius: var(--joyally-radius-control);
   transition: background-color var(--joyally-duration-fast) ease,
     transform var(--joyally-duration-fast) ease;
 }
 
 .joyally-primary-action:hover {
-  background: #205954;
+  background: #74b9ae;
 }
 
 .joyally-primary-action:active {
+  background: #68aaa1;
   transform: translateY(1px);
 }
 

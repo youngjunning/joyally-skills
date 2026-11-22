@@ -8,16 +8,16 @@
 
 在支持 Skills 的 Agent 中依次复制下面两句话。Codex、千问办公或其他能够安装本地 Skill 的宿主都可以执行。
 
-### 1. 安装 Skill
+### 1. 安装 Skill，并启用每轮自动蒸馏
 
 ```text
-请从 https://github.com/youngjunning/skills/tree/main/skills/productivity/distill-me 安装 distill-me Skill。只安装这个 Skill；安装完成后告诉我安装位置和结果。
+请从 https://github.com/youngjunning/joyally-skills/tree/main/skills/productivity/distill-me 把 distill-me Skill 安装到用户级全局目录 ~/.agents/skills/distill-me，只安装这一份。检查千问办公兼容入口 ~/.qwenworkcn/skills：不存在时创建指向 ~/.agents/skills 的软链接，已经是该链接时保留，存在冲突文件或目录时不要覆盖并向我报告。安装时读取其中的 references/host-integration.md，把 distill-me 的每轮自动蒸馏区块写入当前 Agent 确实会在每轮读取的用户级 AGENTS.md 或等价长期指令：修改前先备份，保留其他已有指令，使用安装后的 Skill 绝对路径，按标记区块幂等写入并回读验收。只有 Skill、兼容入口和长期指令都验收通过，才告诉我“自动蒸馏已启用”，并报告三者的位置与回读结果；如果宿主没有等价的每轮指令入口，只报告“Skill 已安装、自动蒸馏未启用”，不要安装 Hook，也不要把自动匹配 Skill 当成每轮自动调用。
 ```
 
-### 2. 初始化自动蒸馏与本地工作台
+### 2. 初始化本地工作台
 
 ```text
-请使用 distill-me 初始化我的本地数字分身：准备内置工作台所需的本地依赖并打开工作台；同时把 distill-me 的每轮自动蒸馏接入当前 Agent 的用户级长期指令，在每轮主任务完成后、最终回复前先经过轻量门禁，只在命中时整理本轮新增内容。不要安装或配置 Stop Hook、UserPromptSubmit Hook 等可见提示注入；若宿主已有统一收尾 Report，蒸馏结果只作为该 Report 的一项。所有数据只保存在我的本机；不部署，不创建账号、数据库或远程服务。完成后告诉我自动蒸馏写入了哪个长期指令文件、本地数据位置和工作台访问地址；宿主不支持每轮指令时请明确说明，不要声称已启用。
+请使用 distill-me 初始化我的本地数字分身：准备内置工作台所需的本地依赖并打开工作台，确认本地数据文件可写；同时回读安装时接入的用户级 AGENTS.md 或等价长期指令，确认其中的 distill-me 区块只出现一次、使用当前 Skill 的绝对路径且没有残留占位符。所有数据只保存在我的本机；不部署，不创建账号、数据库或远程服务。完成后告诉我 Skill 安装位置、长期指令文件及其回读结果、本地数据位置和工作台访问地址；长期指令未通过验收时请明确说明自动蒸馏未启用。
 ```
 
 初始化完成后，照常使用 Agent 即可。普通命令、代码修改、测试和状态查询不会单独变成个人内容；当你明确表达判断、选择、纠正、方法、值得长期保留的资料，或新写了值得继续发展的文章时，Agent 才会蒸馏本轮增量。工作台会显示自动蒸馏结果，也保留手动补充材料的入口。
@@ -51,7 +51,7 @@
 ### 更新 Skill
 
 ```text
-请把本机已安装的 distill-me 更新到 https://github.com/youngjunning/skills/tree/main/skills/productivity/distill-me 的最新版本。保留现有本地数据和每轮自动蒸馏指令；更新后重新打开工作台并告诉我结果，不要部署。
+请把本机已安装的 distill-me 更新到 https://github.com/youngjunning/joyally-skills/tree/main/skills/productivity/distill-me 的最新版本，并统一放到 ~/.agents/skills/distill-me，保留现有本地数据。检查 ~/.qwenworkcn/skills 是否为指向 ~/.agents/skills 的软链接：不存在时创建，已有冲突实体时不覆盖并报告。更新后读取 references/host-integration.md；先备份用户级 AGENTS.md 或等价长期指令，再按标记新增或整体替换 distill-me 区块，随后回读确认区块只出现一次、使用更新后的 Skill 绝对路径且没有残留占位符。再重新打开工作台并告诉我 Skill、兼容入口、长期指令和工作台的验收结果，不要部署。
 ```
 
 ## 本地与隐私
