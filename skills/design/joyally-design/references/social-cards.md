@@ -8,7 +8,7 @@ Create a 3:4 image card when the requested output is a social post cover, a caro
 | --- | --- | --- |
 | `editorial` | Essays and product thinking | Song-style display title, warm paper, ink-colored type, a single lake-green rule |
 | `swiss` | Technical points and measured updates | Strict left grid, large sans title, restrained accent |
-| `poster` | Strong cover and final takeaway | Heavy title, bold lake color, bottom band; `insight` layout becomes a deep-lake payoff panel |
+| `poster` | Strong cover and final takeaway | Heavy title, clear lake color, bottom band; `insight` layout uses a brighter lake-mist payoff panel |
 
 These styles adapt editorial typography, grid discipline, and cover-to-insight pacing to Joyally's lake palette. They do not import a third-party theme, logo, sample copy, or runtime.
 

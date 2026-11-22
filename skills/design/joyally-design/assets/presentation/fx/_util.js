@@ -8,9 +8,9 @@
     return v || fb;
   };
 
-  U.accent = (el, fb) => U.css(el, '--accent', fb || '#275a34');
-  U.accent2 = (el, fb) => U.css(el, '--accent-2', fb || '#397a46');
-  U.text = (el, fb) => U.css(el, '--text-1', fb || '#253c2d');
+  U.accent = (el, fb) => U.css(el, '--accent', fb || '#3c746e');
+  U.accent2 = (el, fb) => U.css(el, '--accent-2', fb || '#63aca2');
+  U.text = (el, fb) => U.css(el, '--text-1', fb || '#23393d');
   U.alpha = (el, token, opacity) => {
     const hex = U.css(el, token, '#f7f5f0').replace('#', '');
     if (!/^[0-9a-f]{6}$/i.test(hex)) return `rgba(247,245,240,${opacity})`;

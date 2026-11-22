@@ -5,10 +5,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft
 
 .social-card {
   --paper: #f7f3eb;
-  --ink: #253c2d;
-  --muted: #526a56;
-  --accent: #275a34;
-  --line: rgba(37, 60, 45, .52);
+  --ink: #23393d;
+  --muted: #52696b;
+  --accent: #3c746e;
+  --line: rgba(35, 57, 61, .46);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -129,11 +129,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft
 .social-card--swiss .social-card__highlight { align-self: flex-start; }
 
 .social-card--poster {
-  --paper: #e7eee6;
-  --ink: #183c35;
-  --muted: #315e4a;
-  --accent: #397a46;
-  --line: rgba(24, 60, 53, .5);
+  --paper: #e7f1ee;
+  --ink: #23393d;
+  --muted: #52696b;
+  --accent: #78beb3;
+  --line: rgba(35, 57, 61, .42);
   background: var(--paper);
 }
 .social-card--poster .social-card__top { border-top-width: 7px; }
@@ -148,25 +148,26 @@ body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft
 .social-card--poster .social-card__eyebrow { padding: 8px 16px; color: #fff; background: var(--ink); }
 .social-card--poster .social-card__rule { width: 100%; height: 12px; margin: 54px 0 34px; }
 .social-card--poster .social-card__subtitle { font-size: 38px; font-weight: 600; }
+.social-card--poster .social-card__highlight { color: var(--ink); }
 .social-card--poster .social-card__bottom {
   margin: 0 -80px -68px;
   padding: 30px 80px;
   border: 0;
-  color: #f4f6ef;
+  color: #f4f8f6;
   background: var(--ink);
 }
 .social-card--poster.social-card--insight {
-  --paper: #183c35;
-  --ink: #f4f6ef;
-  --muted: #c7dccd;
-  --accent: #85c7ba;
-  --line: rgba(244, 246, 239, .54);
+  --paper: #dff1ed;
+  --ink: #23393d;
+  --muted: #52696b;
+  --accent: #78beb3;
+  --line: rgba(35, 57, 61, .42);
 }
 .social-card--poster.social-card--insight .social-card__main { justify-content: flex-start; }
 .social-card--poster.social-card--insight .social-card__title { font-size: 108px; }
 .social-card--poster.social-card--insight .social-card__eyebrow,
-.social-card--poster.social-card--insight .social-card__highlight { color: #183c35; background: #85c7ba; }
-.social-card--poster.social-card--insight .social-card__bottom { color: #183c35; background: #85c7ba; }
+.social-card--poster.social-card--insight .social-card__highlight { color: #23393d; background: #a8d8cf; }
+.social-card--poster.social-card--insight .social-card__bottom { color: #23393d; background: #a8d8cf; }
 
 .social-card--insight .social-card__main { justify-content: flex-start; padding-top: 116px; }
 .social-card--insight .social-card__title { font-size: 90px; line-height: 1.16; }

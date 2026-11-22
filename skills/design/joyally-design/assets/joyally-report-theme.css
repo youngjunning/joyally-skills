@@ -1,27 +1,27 @@
 /* Joyally Design report theme */
 :root {
-  --bg: #f7f5f0;
-  --bg-soft: #e8eeea;
-  --surface: #fffdfa;
-  --surface-2: #eff6ed;
-  --border: rgba(57, 122, 70, 0.18);
-  --border-strong: rgba(39, 90, 52, 0.38);
-  --text-1: #253c2d;
-  --text-2: #526a56;
-  --text-3: #748b76;
-  --accent: #275a34;
-  --accent-2: #397a46;
-  --accent-3: #85c7ba;
+  --bg: #f8f7f3;
+  --bg-soft: #edf3f1;
+  --surface: #fffdfb;
+  --surface-2: #f1f8f6;
+  --border: rgba(99, 172, 162, 0.22);
+  --border-strong: rgba(87, 149, 142, 0.44);
+  --text-1: #23393d;
+  --text-2: #52696b;
+  --text-3: #5f7475;
+  --accent: #3c746e;
+  --accent-2: #63aca2;
+  --accent-3: #a8d8cf;
   --good: #356439;
   --warn: #96620f;
   --bad: #a7472d;
-  --grad: linear-gradient(90deg, #275a34 0%, #397a46 45%, #6ba66b 100%);
-  --grad-soft: linear-gradient(135deg, #eff6ed 0%, #f7f5f0 58%, #e8eeea 100%);
+  --grad: linear-gradient(90deg, #3c746e 0%, #4f8e87 50%, #57958e 100%);
+  --grad-soft: linear-gradient(135deg, #f1f8f6 0%, #f8f7f3 58%, #edf3f1 100%);
   --radius: 16px;
   --radius-sm: 10px;
   --radius-lg: 22px;
-  --shadow: 0 18px 48px rgba(15, 43, 54, 0.08);
-  --shadow-lg: 0 26px 70px rgba(15, 43, 54, 0.13);
+  --shadow: 0 18px 48px rgba(35, 57, 61, 0.07);
+  --shadow-lg: 0 26px 70px rgba(35, 57, 61, 0.11);
   --font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Inter, sans-serif;
   --font-display: "Songti SC", "Noto Serif CJK SC", "Noto Serif SC", Georgia, serif;
 }
@@ -30,7 +30,7 @@ body.joyally-report {
   min-height: 100vh;
   color: var(--text-1);
   background:
-    radial-gradient(circle at 8% 4%, rgba(46, 148, 138, 0.12), transparent 24rem),
+    radial-gradient(circle at 8% 4%, rgba(168, 216, 207, 0.2), transparent 24rem),
     radial-gradient(circle at 94% 2%, rgba(122, 91, 30, 0.07), transparent 20rem),
     var(--bg);
 }
@@ -96,16 +96,16 @@ body.joyally-report {
   margin: 28px 0 0;
   padding: clamp(30px, 4vw, 52px);
   border-top: 7px solid var(--accent-3);
-  color: #f2f6ed;
+  color: var(--text-1);
   background:
-    radial-gradient(circle at 85% 8%, rgba(169, 212, 180, .2), transparent 28%),
-    linear-gradient(125deg, #183c35, #244d3c 62%, #28513d);
-  box-shadow: 0 16px 32px rgba(19, 57, 42, .12);
+    radial-gradient(circle at 85% 8%, rgba(168, 216, 207, .38), transparent 30%),
+    linear-gradient(125deg, #dff1ed, #edf7f4 62%, #f7faf8);
+  box-shadow: 0 16px 32px rgba(35, 57, 61, .08);
 }
 
 .joyally-report .report-summary .kicker {
   margin: 0 0 18px;
-  color: #aed9b9;
+  color: var(--accent);
 }
 
 .joyally-report .report-summary h2 {
@@ -122,25 +122,25 @@ body.joyally-report {
 .joyally-report .report-summary p {
   max-width: 56ch;
   margin: 0;
-  color: #dce9df;
+  color: var(--text-2);
   font-size: 16px;
   line-height: 1.8;
 }
 
 .joyally-report .report-summary-metric {
   padding: 0 0 2px 24px;
-  border-left: 1px solid rgba(220, 233, 223, .36);
+  border-left: 1px solid rgba(87, 149, 142, .34);
 }
 
 .joyally-report .report-summary-metric > span:first-child {
-  color: #bdd8c5;
+  color: var(--text-2);
   font-size: 13px;
 }
 
 .joyally-report .report-summary-metric strong {
   display: block;
   margin: 4px 0 0;
-  color: #f8f8ec;
+  color: var(--text-1);
   font-size: clamp(64px, 7vw, 102px);
   font-weight: 600;
   line-height: 1;
@@ -157,7 +157,7 @@ body.joyally-report {
 
 .joyally-report .report-summary-metric p {
   margin-top: 18px;
-  color: #dce9df;
+  color: var(--text-2);
   font-size: 14px;
 }
 
@@ -512,14 +512,14 @@ body.joyally-report {
     margin-top: 18px;
     padding: 24px;
     border: 1px solid #4b7057;
-    color: #253c2d;
+    color: #23393d;
     background: #fff;
     box-shadow: none;
     backdrop-filter: none;
   }
 
   .joyally-report .report-summary :is(.kicker, p, .report-summary-metric > span:first-child, .report-summary-metric strong) {
-    color: #253c2d;
+    color: #23393d;
   }
 
   .joyally-report .report-summary-metric {
