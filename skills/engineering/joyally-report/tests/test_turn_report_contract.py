@@ -17,6 +17,8 @@ class TurnReportContractTests(unittest.TestCase):
         self.assertIn("Decision only: no divider.", CONTRACT_TEXT)
         self.assertIn("Decision + evidence + handoff: two dividers.", CONTRACT_TEXT)
         self.assertIn("claim → evidence → boundary", CONTRACT_TEXT)
+        self.assertIn("⎇ [owner/repository](repository URL)", CONTRACT_TEXT)
+        self.assertIn("browsable remote homepage", CONTRACT_TEXT)
         self.assertIn("do not copy those labels into the final answer", REPORT_TYPES_TEXT)
         self.assertNotIn("## 摘要", CONTRACT_TEXT)
         self.assertNotIn("## 收尾", CONTRACT_TEXT)
