@@ -51,7 +51,7 @@ OUT_DIR="${OUT_DIR:-$HOME/Pictures/better-imagegen}"; mkdir -p "$OUT_DIR"
 ART="/tmp/icon_art.png"
 PROMPT="$ICON_PROMPT"
 if   GEN_LOG=$(gen_image_apiyi "$MODEL_GPT"    "1024x1024" "$ART"); then MODEL_USED="$MODEL_GPT"
-else echo "ICON_ART_GENERATION_FAILED"; exit 1
+else GEN_STATUS=$?; if [ "$GEN_STATUS" -eq 4 ]; then echo "APIYI_FALLBACK_REQUIRED"; exit 4; fi; echo "ICON_ART_GENERATION_FAILED"; exit 1
 fi
 SIZE="1024x1024"
 GENERATION_MS=$(printf '%s\n' "$GEN_LOG" | awk -F: '/^ELAPSED_MS:/{v=$2} END{print v+0}')

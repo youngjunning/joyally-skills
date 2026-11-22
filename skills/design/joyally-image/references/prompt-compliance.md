@@ -1,6 +1,6 @@
 # GPT Prompt Compliance Layer
 
-Load this reference after `references/generation.md` and before any type-specific reference.
+Load this reference after the shared contracts in `references/generation.md` and before any type-specific reference. The prompt rules apply to APIYI and host-native model calls; they do not require executing the APIYI environment, model or request sections.
 
 Purpose: reduce accidental GPT Image rejections and malformed outputs by normalizing prompts into safe, visual, generation-friendly language. This layer is not for bypassing safety rules. If the user asks for disallowed content, refuse or transform it into an allowed, non-explicit concept before generation.
 

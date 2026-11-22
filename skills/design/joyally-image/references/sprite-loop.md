@@ -60,7 +60,7 @@ OUTPUT_PATH="/tmp/${SLUG}_sheet.png"
 SHEET_PATH="$OUT_DIR/sprite-sheet.png"
 
 if   GEN_LOG=$(gen_image_apiyi "$MODEL_GPT"    "1280x960" "$OUTPUT_PATH"); then MODEL_USED="$MODEL_GPT"
-else echo "SPRITE_LOOP_GENERATION_FAILED"; exit 1
+else GEN_STATUS=$?; if [ "$GEN_STATUS" -eq 4 ]; then echo "APIYI_FALLBACK_REQUIRED"; exit 4; fi; echo "SPRITE_LOOP_GENERATION_FAILED"; exit 1
 fi
 SIZE="1280x960"
 

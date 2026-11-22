@@ -42,6 +42,18 @@ PROMPT_DARK="${THEME}, deep night, moonlit, dark atmosphere, bioluminescent glow
 ## Generation — 2 Frames in Parallel
 
 ```bash
+wait_generation_pair() {
+  local light_pid="$1" dark_pid="$2" light_status=0 dark_status=0
+  if wait "$light_pid"; then :; else light_status=$?; fi
+  if wait "$dark_pid"; then :; else dark_status=$?; fi
+  if [ "$light_status" -eq 4 ] || [ "$dark_status" -eq 4 ]; then
+    return 4
+  fi
+  if [ "$light_status" -ne 0 ] || [ "$dark_status" -ne 0 ]; then
+    return 1
+  fi
+}
+
 OUT_DIR="$HOME/Pictures/better-imagegen/dynamic-wallpaper"
 mkdir -p "$OUT_DIR"
 
@@ -49,29 +61,39 @@ mkdir -p "$OUT_DIR"
   export PROMPT="$PROMPT_LIGHT"
   OUTPUT_PATH="/tmp/dw_light.png"
   if   GEN_LOG=$(gen_image_apiyi "$MODEL_GPT"    "3840x2160" "$OUTPUT_PATH"); then MODEL_USED="$MODEL_GPT";    SIZE="3840x2160"
-  else echo "⚠ light — generation failed"; exit 1; fi
+  else GEN_STATUS=$?; if [ "$GEN_STATUS" -eq 4 ]; then echo "APIYI_FALLBACK_REQUIRED"; exit 4; fi; echo "⚠ light — generation failed"; exit 1; fi
   GENERATION_MS=$(printf '%s\n' "$GEN_LOG" | awk -F: '/^ELAPSED_MS:/{v=$2} END{print v+0}')
   RESPONSE_FORMAT=$(printf '%s\n' "$GEN_LOG" | awk -F: '/^RESPONSE_FORMAT:/{v=$2} END{print v}')
   POSTPROCESS_NOTE="dynamic wallpaper light frame png"
   write_image_metadata "$OUTPUT_PATH" "$OUT_DIR/light-frame.json" "$MODEL_USED" "$SIZE" "$GENERATION_MS" "$RESPONSE_FORMAT" "$POSTPROCESS_NOTE"
   echo "✓ light — $MODEL_USED"
 ) > /tmp/dw_log_light.log 2>&1 &
+LIGHT_PID=$!
 
 (
   export PROMPT="$PROMPT_DARK"
   OUTPUT_PATH="/tmp/dw_dark.png"
   if   GEN_LOG=$(gen_image_apiyi "$MODEL_GPT"    "3840x2160" "$OUTPUT_PATH"); then MODEL_USED="$MODEL_GPT";    SIZE="3840x2160"
-  else echo "⚠ dark — generation failed"; exit 1; fi
+  else GEN_STATUS=$?; if [ "$GEN_STATUS" -eq 4 ]; then echo "APIYI_FALLBACK_REQUIRED"; exit 4; fi; echo "⚠ dark — generation failed"; exit 1; fi
   GENERATION_MS=$(printf '%s\n' "$GEN_LOG" | awk -F: '/^ELAPSED_MS:/{v=$2} END{print v+0}')
   RESPONSE_FORMAT=$(printf '%s\n' "$GEN_LOG" | awk -F: '/^RESPONSE_FORMAT:/{v=$2} END{print v}')
   POSTPROCESS_NOTE="dynamic wallpaper dark frame png"
   write_image_metadata "$OUTPUT_PATH" "$OUT_DIR/dark-frame.json" "$MODEL_USED" "$SIZE" "$GENERATION_MS" "$RESPONSE_FORMAT" "$POSTPROCESS_NOTE"
   echo "✓ dark — $MODEL_USED"
 ) > /tmp/dw_log_dark.log 2>&1 &
+DARK_PID=$!
 
-wait
+PAIR_STATUS=0
+if wait_generation_pair "$LIGHT_PID" "$DARK_PID"; then :; else PAIR_STATUS=$?; fi
 cat /tmp/dw_log_light.log /tmp/dw_log_dark.log
 rm -f /tmp/dw_log_*.log
+if [ "$PAIR_STATUS" -eq 4 ]; then
+  echo "APIYI_FALLBACK_REQUIRED"
+  exit 4
+elif [ "$PAIR_STATUS" -ne 0 ]; then
+  echo "DYNAMIC_WALLPAPER_GENERATION_FAILED"
+  exit 1
+fi
 [ -f /tmp/dw_light.png ] && [ -f /tmp/dw_dark.png ] || { echo "DYNAMIC_WALLPAPER_FRAME_MISSING"; exit 1; }
 ```
 
