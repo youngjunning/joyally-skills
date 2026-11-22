@@ -30,6 +30,24 @@
     "summary": "TDD、Web/API 与目标环境测试、AI/Agent evals、失败诊断和测试质量治理"
   },
   {
+    "name": "joyally-loop",
+    "category": "engineering",
+    "path": "skills/engineering/joyally-loop",
+    "summary": "在实质行为改动后自动用独立 reviewer 做有限轮次复查、修正与复验"
+  },
+  {
+    "name": "joyally-send",
+    "category": "engineering",
+    "path": "skills/engineering/joyally-send",
+    "summary": "让 Codex 自动完成工程实现、直接证明、独立复查与既有授权内的交付"
+  },
+  {
+    "name": "joyally-stop",
+    "category": "engineering",
+    "path": "skills/engineering/joyally-stop",
+    "summary": "完成工程实现、验证与复查，但停在 Git 和外部交付之前"
+  },
+  {
     "name": "joyally-writting",
     "category": "writing",
     "path": "skills/writing/joyally-writting",

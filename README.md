@@ -40,6 +40,9 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 | 向人说明进展、交付、排障或评审结论 | [joyally-report](skills/engineering/joyally-report/SKILL.md) |
 | 设计、实现、运行或治理测试与 AI/Agent evals，判断证据能否挡住真实回归 | [joyally-test](skills/engineering/joyally-test/SKILL.md) |
 | 判断 Git 改动是否应自动提交和推送，并安全收尾 | [JoyStack joy-git](https://github.com/youngjunning/joystack/tree/main/skills/engineering/joy-git) |
+| 让独立 reviewer 自动复查、修正并复验实质代码改动 | [joyally-loop](skills/engineering/joyally-loop/SKILL.md) |
+| 让 Codex 自动把工程任务做到验证和既有授权内的交付完成 | [joyally-send](skills/engineering/joyally-send/SKILL.md) |
+| 让 Codex 完成实现和验证，但停在 Git 与外部交付之前 | [joyally-stop](skills/engineering/joyally-stop/SKILL.md) |
 | 生成图像、漫画或静态架构图片 | [Joyally image](skills/design/joyally-image/SKILL.md) |
 | 自动留存关键操作截图、找回写作素材或制作脱敏演示 | [Joyally Spotlight](skills/design/joyally-spotlight/SKILL.md) |
 | 统一设计、制作 HTML 报告、HTML PPT 或交互图表 | [Joyally Design](skills/design/joyally-design/SKILL.md) |
@@ -64,6 +67,9 @@ Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作�
 | [joyally-browser-extension-dev](skills/engineering/joyally-browser-extension-dev/SKILL.md) | Agent 驱动浏览器扩展的 runtime、页面观察、业务 Skill 与受保护工具边界 |
 | [joyally-report](skills/engineering/joyally-report/SKILL.md) | 向人解释进展、结果、证据与下一步 |
 | [joyally-test](skills/engineering/joyally-test/SKILL.md) | TDD、测试策略与执行、Web/API 目标环境、AI/Agent evals、失败诊断与质量治理 |
+| [joyally-loop](skills/engineering/joyally-loop/SKILL.md) | 实质行为改动后的独立 reviewer、有限轮次、finding ledger 与最小修复闭环 |
+| [joyally-send](skills/engineering/joyally-send/SKILL.md) | Codex 自动完成事实确认、实现、直接证明、独立复查与既有授权内的 Git 交付 |
+| [joyally-stop](skills/engineering/joyally-stop/SKILL.md) | 完成相同的实现、证明与复查，但保留 commit、push 和外部交付决定 |
 | [tauri-skills](skills/engineering/tauri-skills/SKILL.md) | Tauri 2 安全边界与 Node.js sidecar |
 | [browser-performance-audit](skills/engineering/browser-performance-audit/SKILL.md) | 加载、资源与长会话性能审查 |
 | [macos-app-develop](skills/engineering/macos-app-develop/SKILL.md) | 原生 macOS、SwiftUI 与 Instruments 工作流（含许可改编） |
@@ -101,7 +107,7 @@ Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作�
 | [distill-me](skills/productivity/distill-me/SKILL.md) | 用零部署本地工作台整理材料与草稿，栏目可自由取舍 |
 | [distill-zisheng](https://github.com/youngjunning/distill-zisheng) | 独立维护硅基紫升与硅基俊宁的资料、项目方案、工作脉络与定向内容同步 |
 
-Joyally Design、Joyally Motion、Joyally Voice、Joyally Music、Joyally 主题制作、Joyally image、Joyally writting、Joyally Fiction 和 Joyally Media 的安装与调用标识分别为 `joyally-design`、`joyally-motion`、`joyally-voice`、`joyally-music`、`joyally-theme-creation`、`joyally-image`、`joyally-writting`、`joyally-fiction` 和 `joyally-media`。机器可读目录见 [catalog.json](catalog.json)。
+Joyally Design、Joyally Motion、Joyally Voice、Joyally Music、Joyally 主题制作、Joyally image、Joyally writting、Joyally Fiction、Joyally Media、Joyally Loop、Joyally Send 和 Joyally Stop 的安装与调用标识分别为 `joyally-design`、`joyally-motion`、`joyally-voice`、`joyally-music`、`joyally-theme-creation`、`joyally-image`、`joyally-writting`、`joyally-fiction`、`joyally-media`、`joyally-loop`、`joyally-send` 和 `joyally-stop`。机器可读目录见 [catalog.json](catalog.json)。
 
 ## 使用与维护
 

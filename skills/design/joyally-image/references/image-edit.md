@@ -26,7 +26,7 @@ When the edit target is a poster, timeline, architecture diagram, knowledge map,
 Do not spend an image API call on a text-only correction when deterministic overlay editing can preserve identity exactly.
 
 Load first:
-- `references/generation.md`
+- `references/generation.md` for shared metadata/response contracts and, only on the APIYI branch, its environment/model/request setup
 - `references/prompt-compliance.md`
 - `references/post-process.md`
 
@@ -34,19 +34,33 @@ Load first:
 
 ## Endpoint
 
-`POST https://api.apiyi.com/v1/images/edits` — multipart form (NOT JSON). Load the model setup from `references/generation.md` first; editing uses the same Sunburst model and high quality as generation:
+On the APIYI branch, use `POST https://api.apiyi.com/v1/images/edits` with multipart form data. Load its model setup from `references/generation.md` first; editing uses the same Sunburst model and high quality as generation. When the key is missing/invalid or a confirmed balance failure occurs, do not call this endpoint: use an available host-native image-edit tool with the same identity locks, record its actual model/provider, and preserve the source on failure.
 
 ```bash
-curl -s --max-time 300 "https://api.apiyi.com/v1/images/edits" \
-  -H "Authorization: Bearer $APIYI_API_KEY" \
-  -F "model=$MODEL_GPT" \
-  -F "quality=$QUALITY_GPT" \
-  -F "image=@input.png" \
-  -F "prompt=$PROMPT" \
-  -F "size=1280x1280"
+OUTPUT_PATH="/tmp/image-edit-output.png"
+if check_apiyi_key; then
+  curl -s --max-time 300 "https://api.apiyi.com/v1/images/edits" \
+    -H "Authorization: Bearer $APIYI_API_KEY" \
+    -F "model=$MODEL_GPT" \
+    -F "quality=$QUALITY_GPT" \
+    -F "image=@input.png" \
+    -F "prompt=$PROMPT" \
+    -F "size=1280x1280" \
+  | OUTPUT_PATH="$OUTPUT_PATH" "$BETTER_IMAGEGEN_PYTHON" \
+      "$SKILL_DIR/scripts/decode_apiyi_response.py"
+  EDIT_STATUS=$?
+else
+  EDIT_STATUS=$?
+fi
+if [ "$EDIT_STATUS" -eq 4 ]; then
+  echo "APIYI_FALLBACK_REQUIRED"
+  exit 4  # Return to the calling Agent, which uses the host-native edit route.
+elif [ "$EDIT_STATUS" -ne 0 ]; then
+  exit "$EDIT_STATUS"
+fi
 ```
 
-Response is the same shape as generations: `data[0].b64_json` or `data[0].url`. Reuse the same Python extraction block from `gen_image_apiyi` in `references/generation.md`.
+Response is the same shape as generations: `data[0].b64_json` or `data[0].url`. Reuse the same streaming decoder as `gen_image_apiyi`; never claim success unless it validates and atomically writes the image. The illustrative fallback comment above is an Agent handoff, not permission for the shell snippet to continue as if an image exists.
 
 Notes:
 - `image` accepts PNG with alpha; small inputs (e.g. 96px pixel art) work fine.

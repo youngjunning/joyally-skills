@@ -1,0 +1,6 @@
+interface:
+  display_name: "Joyally Loop"
+  short_description: "自动用独立 reviewer 复查、修正并复验实质代码改动"
+  default_prompt: "Use $joyally-loop to independently review and fix this task's changes until they pass or reach an evidence-backed blocker."
+policy:
+  allow_implicit_invocation: true

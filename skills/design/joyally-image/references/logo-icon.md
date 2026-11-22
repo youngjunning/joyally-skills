@@ -46,7 +46,7 @@ OUTPUT_PATH="/tmp/logo_output.png"
 FINAL_PATH="$OUT_DIR/${OUTPUT_NAME:-logo}.png"
 
 if   GEN_LOG=$(gen_image_apiyi "$MODEL_GPT"    "1280x1280" "$OUTPUT_PATH"); then MODEL_USED="$MODEL_GPT"
-else echo "LOGO_GENERATION_FAILED"; exit 1
+else GEN_STATUS=$?; if [ "$GEN_STATUS" -eq 4 ]; then echo "APIYI_FALLBACK_REQUIRED"; exit 4; fi; echo "LOGO_GENERATION_FAILED"; exit 1
 fi
 SIZE="1280x1280"
 

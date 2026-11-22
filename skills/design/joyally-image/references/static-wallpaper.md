@@ -32,7 +32,7 @@ FINAL_PATH="$OUT_DIR/wallpaper.png"
 
 SIZE="${REQ_SIZE:-3840x2160}"
 if   GEN_LOG=$(gen_image_apiyi "$MODEL_GPT"    "$SIZE" "$OUTPUT_PATH"); then MODEL_USED="$MODEL_GPT"
-else echo "GPT_IMAGE_GENERATION_FAILED"; exit 1
+else GEN_STATUS=$?; if [ "$GEN_STATUS" -eq 4 ]; then echo "APIYI_FALLBACK_REQUIRED"; exit 4; fi; echo "GPT_IMAGE_GENERATION_FAILED"; exit 1
 fi
 
 GENERATION_MS=$(printf '%s\n' "$GEN_LOG" | awk -F: '/^ELAPSED_MS:/{v=$2} END{print v+0}')

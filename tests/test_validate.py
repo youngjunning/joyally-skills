@@ -27,6 +27,30 @@ class ValidateRepositoryTests(unittest.TestCase):
 
             self.assertEqual(module.validate(root), [])
 
+    def test_missing_workflow_command_path_is_reported(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'catalog.json').write_text('[]')
+            (root / 'README.md').write_text('')
+            (root / 'skills').mkdir()
+            workflows = root / '.github/workflows'
+            workflows.mkdir(parents=True)
+            workflow = workflows / 'validate.yml'
+            workflow.write_text(
+                'jobs:\n'
+                '  validate:\n'
+                '    steps:\n'
+                '      - run: python3 -m unittest discover '
+                "-s skills/productivity/moved-skill/scripts -p 'test_*.py'\n"
+            )
+
+            self.assertIn(
+                'workflow command path does not exist: '
+                '.github/workflows/validate.yml:4: '
+                'skills/productivity/moved-skill/scripts',
+                module.validate(root),
+            )
+
 
 if __name__ == '__main__':
     unittest.main()

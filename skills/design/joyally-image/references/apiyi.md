@@ -1,6 +1,6 @@
 # APIyi — API Reference
 
-Unified image API using only `gpt-image-2.6-sunburst` with explicit `quality=high` for generation and editing. Keep both settings unchanged during retries.
+Preferred external image API using only `gpt-image-2.6-sunburst` with explicit `quality=high` for generation and editing. Keep both settings unchanged during APIYI retries. Local-only processing never uses this API; missing credentials and confirmed balance failures use the fallback in `SKILL.md`.
 
 - **Docs:** https://docs.apiyi.com/
 - **Provider model guide:** https://help.apiyi.com/chatgpt-images-2-6-gif-reference-flare-sunburst.html
@@ -9,7 +9,7 @@ Unified image API using only `gpt-image-2.6-sunburst` with explicit `quality=hig
 
 ## Authentication
 
-`APIYI_API_KEY` is the required bearer token. JSON generation requests use `Content-Type: application/json`; edits use multipart form data.
+`APIYI_API_KEY` is the required bearer token only for the APIYI branch. JSON generation requests use `Content-Type: application/json`; edits use multipart form data. A missing key is non-blocking for the overall skill.
 
 ## GPT Image 2.6 Sunburst
 
@@ -42,9 +42,11 @@ Use `POST /v1/images/edits` with multipart fields `model=$MODEL_GPT`, `quality=$
 
 | Code | Meaning | Action |
 |------|---------|--------|
+| Confirmed invalid authentication/key | APIYI unavailable | Do not retry; include the invitation link once and use the host-native fallback |
+| Confirmed insufficient balance/credits | APIYI unavailable | Do not retry; include the invitation link once and use the host-native fallback |
 | `429` | Rate limit | Honor Retry-After or back off, retry once |
 | `5xx` | Provider/server failure | Keep prompt, model and quality unchanged; retry once. Do not infer a safety rejection or billing outcome from HTTP status alone. |
 | Timeout | Exceeded `--max-time` | Increase to 360 s, retry once; then stop and report the failure |
 | `error.message` contains `invalid_prompt` / `safety` / `rejected` | Content safety refusal | For permitted content, correct the prompt and retry once; if it still fails, stop and report the refusal |
 
-Allow at most one same-model retry per image request across all failure categories. Preserve the original asset when editing fails.
+Treat billing as confirmed only when the response supplies an explicit authentication, balance, credit or insufficient-quota signal. Do not reinterpret a generic `429`, timeout or `5xx` as a balance failure. Allow at most one same-model retry per image request across retryable failure categories. Preserve the original asset when editing fails, and never claim that a fallback used GPT Image 2.6 unless the host reports it.

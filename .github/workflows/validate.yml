@@ -15,8 +15,6 @@ jobs:
           node-version: '22'
       - run: python3 scripts/validate.py
       - run: python3 -m unittest discover -s tests
-      - run: python3 -m unittest discover -s skills/productivity/distill-zisheng/scripts -p 'test_*.py'
-      - run: node --test skills/productivity/distill-zisheng/tests/*.test.mjs
       - run: python3 skills/design/joyally-design/scripts/validate-joyally-tokens.py
       - run: python3 -m unittest discover -s skills/writing/joyally-writting/tests
       - run: python3 -m pip install -r skills/design/joyally-image/requirements.txt

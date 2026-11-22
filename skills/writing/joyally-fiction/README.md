@@ -65,6 +65,7 @@ Use joyally-fiction to add a new book.
 Use these files as the source of truth:
 
 - `SKILL.md` — routing, pipeline, required gates, and operating rules.
+- `references/story-human-drafting.md` — human-led emotional beats, character triggers, dialogue subtext, controlled drafting units, decision pass, and detector limits.
 - `references/story-long-write.md` — long-form chapter writing.
 - `references/story-short-write.md` — short-form story writing.
 - `references/story-import.md` — manuscript import.

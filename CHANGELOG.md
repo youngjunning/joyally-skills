@@ -2,6 +2,7 @@
 
 ## 2026-11-22
 
+11. 重整 `joyally-loop`、`joyally-send` 与 `joyally-stop`：从 PR 和分支编排改为 Codex 可自动选择的工程完成闭环；分别负责独立复查修正、既有授权内完成交付，以及完成本地验证后停在 Git 与外部交付之前。保留 t3dotgg/tstack 的 MIT 来源与署名。
 10. `joyally-report` 的收尾技能清单改为逐项附带本轮具体作用，避免只罗列技能名而无法判断各技能实际贡献。
 9. 将 `distill-zisheng` 迁至独立仓库维护；本仓库保留外部入口，不再重复发布本地副本。
 8. 删除重复维护的 `joyally-git`；Git 交付能力统一迁移到独立 [JoyStack `joy-git`](https://github.com/youngjunning/joystack/tree/main/skills/engineering/joy-git)，并同步更新仍在使用的跨 Skill 引用。
@@ -11,6 +12,7 @@
 
 ## 2026-11-21
 
+8. Joyally Fiction 新增 Authoring、Traffic site 与 Hybrid 模式路由，普通小说创作不再默认继承广告套利的 201 章、统一 cliffhanger、固定群像和 Meta 封面约束；同时加入人类主导的生成工作流：先固定故事事实、情绪因果、人物触发机制和对话潜台词，再按场景小批生成并执行因果、人设、信息增量、语言与原创决策走读。AI 检测分数只作噪声较高的诊断线索，不作为作者身份、原创性、平台合规或规避检测的目标。
 7. 优化 `joyally-git` 的并行交付：脏工作区、无关 staged 内容和分支分叉优先转入基于目标 ref 的隔离 worktree，复验任务补丁后 fast-forward push；只有任务语义无法拆分、真实冲突或目标不明时才停止请求决定。
 6. 新增 `joyally-media-reading`：从 B 站、微信视频号和公众号视频等托管页面、直接媒体链接及本地音视频提取字幕、转写、时间线和关键画面；显式报告覆盖范围与证据来源，并把结构化材料交给后续写作、小说或视频工作流。
 5. 将 `top-architect` 更名为 `joyally-arch`；吸收 arch-grower 的局部决策切片、显式待定与储备状态、Walking Skeleton、稳定子图折叠及失败路径学习机制，同时保留现有业务、产品、AI 架构和交付主线，不复制其 CLI、图 schema 或强制二选一/子代理策略。
