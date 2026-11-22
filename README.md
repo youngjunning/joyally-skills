@@ -51,7 +51,7 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 | 写文章、绘本或建设内容站点 | [Joyally writting](skills/writing/joyally-writting/SKILL.md)、[Joyally Fiction](skills/writing/joyally-fiction/SKILL.md)、[adsense-site-builder](skills/publishing/adsense-site-builder/SKILL.md) |
 | 从 B 站、微信等视频链接或音视频文件提取字幕、时间点与结构化内容 | [Joyally Media](skills/productivity/joyally-media/SKILL.md) |
 | 本地整理对话、笔记和资料，不部署也可使用 | [distill-me](skills/productivity/distill-me/SKILL.md) |
-| 维护紫升与俊宁的个人记录、资料、项目方案与工作脉络 | [distill-zisheng](skills/productivity/distill-zisheng/SKILL.md) |
+| 维护紫升与俊宁的个人记录、资料与项目方案 | [distill-zisheng](skills/productivity/distill-zisheng/SKILL.md) |
 
 Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作、交互/版式设计和栅格图像任务，也可联合交付。联合任务只设一个整体主导 Skill：写作负责读者、事实、论证与准确文案，设计负责视觉方向、构图、信息层级、版式、品牌与审美验收，图像负责像素落成、身份连续性与图像技术验收。图像任务可由 Joyally image 主导整体交付，其中的设计阶段仍由 Joyally Design 主导。跨域变更回到责任 Skill，支持 Skill 不改写上游成果。使用任一 Skill 时，会对当前环境缺失的另两个 Skill 给出一次可选安装建议，不阻塞当前任务。
 
@@ -102,7 +102,7 @@ Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作�
 | --- | --- |
 | [Joyally Media](skills/productivity/joyally-media/SKILL.md) | B 站、微信等视频链接和音视频文件的字幕、时间线、关键画面与证据化内容提取 |
 | [distill-me](skills/productivity/distill-me/SKILL.md) | 用零部署本地工作台整理材料与草稿，栏目可自由取舍 |
-| [distill-zisheng](skills/productivity/distill-zisheng/SKILL.md) | 维护紫升与俊宁的个人记录、资料、项目方案与工作脉络 |
+| [distill-zisheng](skills/productivity/distill-zisheng/SKILL.md) | 维护紫升与俊宁的个人记录、资料与项目方案 |
 
 Joyally Design、Joyally Voice、Joyally 主题制作、Joyally image、Joyally writting、Joyally Fiction、Joyally Media、Joyally Loop、Joyally Send 和 Joyally Stop 的安装与调用标识分别为 `joyally-design`、`joyally-voice`、`joyally-theme-creation`、`joyally-image`、`joyally-writting`、`joyally-fiction`、`joyally-media`、`joyally-loop`、`joyally-send` 和 `joyally-stop`。机器可读目录见 [catalog.json](catalog.json)。
 
