@@ -8,6 +8,8 @@ Codex calls the user-visible closeout the **final answer**. Design it as a desce
 2. **Evidence surface** — the optional judgment and continuation layer. Organize it by the reader's questions, not the agent's chronology. Each material claim should carry the evidence that supports it and, when incomplete, the boundary or condition that changes it. Use a short heading only for a real topic inside this region; the region itself has no heading.
 3. **Handoff strip** — optional host-owned closing facts such as distillation, used Skills, Git delivery, deployment, or other domain receipts. Keep one compact line per applicable owner, preserve the host-defined order, and omit absent domains. This region records operational provenance; it does not repeat the result or evidence.
 
+When reporting Git delivery, start every repository receipt with a stable repository display name such as `owner/repository` or the project-defined name. A remote ref, branch, worktree path, or commit hash does not identify the repository and must not stand in for its name. Report multiple repositories on separate lines.
+
 ## Presence and separators
 
 Render only regions that contain useful information. Separate adjacent regions exactly once with a blank line, `---`, and another blank line:
@@ -39,7 +41,7 @@ Never create an empty region, stacked dividers, a leading divider, or a trailing
 
 蒸馏：无新增。
 Skills：joyally-report、joyally-git。
-Git：已提交并推送，commit abc1234；未部署。
+Git：owner/repository 已提交并推送，commit abc1234；未部署。
 ```
 
 For a direct factual answer, return only the answer. For an exact-format request such as JSON or a command, preserve that format instead of imposing this layout.
