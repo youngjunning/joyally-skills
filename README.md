@@ -49,7 +49,7 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 | 录音、配音、人声修复、TTS、声音克隆、音色转换或转写对齐 | [Joyally Voice](skills/design/joyally-voice/SKILL.md) |
 | 为产品制作或重做整套主题，避免只换配色 | [Joyally 主题制作](skills/design/joyally-theme-creation/SKILL.md) |
 | 写文章、绘本或建设内容站点 | [Joyally writting](skills/writing/joyally-writting/SKILL.md)、[Joyally Fiction](skills/writing/joyally-fiction/SKILL.md)、[adsense-site-builder](skills/publishing/adsense-site-builder/SKILL.md) |
-| 从 B 站、微信等视频链接或音视频文件提取字幕、时间点与结构化内容 | [Joyally Media Reading](skills/productivity/joyally-media-reading/SKILL.md) |
+| 从 B 站、微信等视频链接或音视频文件提取字幕、时间点与结构化内容 | [Joyally Media](skills/productivity/joyally-media/SKILL.md) |
 | 本地整理对话、笔记和资料，不部署也可使用 | [distill-me](skills/productivity/distill-me/SKILL.md) |
 | 维护紫升与俊宁的个人记录、资料、项目方案与工作脉络 | [distill-zisheng](skills/productivity/distill-zisheng/SKILL.md) |
 
@@ -100,11 +100,11 @@ Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作�
 
 | 技能 | 用途 |
 | --- | --- |
-| [Joyally Media Reading](skills/productivity/joyally-media-reading/SKILL.md) | B 站、微信等视频链接和音视频文件的字幕、时间线、关键画面与证据化内容提取 |
+| [Joyally Media](skills/productivity/joyally-media/SKILL.md) | B 站、微信等视频链接和音视频文件的字幕、时间线、关键画面与证据化内容提取 |
 | [distill-me](skills/productivity/distill-me/SKILL.md) | 用零部署本地工作台整理材料与草稿，栏目可自由取舍 |
 | [distill-zisheng](skills/productivity/distill-zisheng/SKILL.md) | 维护紫升与俊宁的个人记录、资料、项目方案与工作脉络 |
 
-Joyally Design、Joyally Voice、Joyally 主题制作、Joyally image、Joyally writting、Joyally Fiction、Joyally Media Reading、Joyally Loop、Joyally Send 和 Joyally Stop 的安装与调用标识分别为 `joyally-design`、`joyally-voice`、`joyally-theme-creation`、`joyally-image`、`joyally-writting`、`joyally-fiction`、`joyally-media-reading`、`joyally-loop`、`joyally-send` 和 `joyally-stop`。机器可读目录见 [catalog.json](catalog.json)。
+Joyally Design、Joyally Voice、Joyally 主题制作、Joyally image、Joyally writting、Joyally Fiction、Joyally Media、Joyally Loop、Joyally Send 和 Joyally Stop 的安装与调用标识分别为 `joyally-design`、`joyally-voice`、`joyally-theme-creation`、`joyally-image`、`joyally-writting`、`joyally-fiction`、`joyally-media`、`joyally-loop`、`joyally-send` 和 `joyally-stop`。机器可读目录见 [catalog.json](catalog.json)。
 
 ## 使用与维护
 

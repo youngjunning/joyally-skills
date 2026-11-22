@@ -2,6 +2,7 @@
 
 ## 2026-11-22
 
+2. 将 `joyally-media-reading` 更名为 `joyally-media`，同步目录、Skill 名称、安装入口、UI 元数据与公开索引；能力与触发范围保持不变。
 1. 新增 `joyally-loop`、`joyally-send` 与 `joyally-stop`：把有限轮次独立复审、无人值守 PR 合并和“做到可合并但不合并”三种信任边界接入 Joyally Skills；保留 t3dotgg/tstack 的 MIT 来源与署名，并用宿主无关的 reviewer、证明、merge gate 和 handoff 规则替代 T3 Code 专用接口。
 
 ## 2026-11-21
