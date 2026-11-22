@@ -1,32 +1,54 @@
-# Opening summary and section layout contract
+# Final-answer information architecture
 
-The input is the user's objective and the verified state at the moment of writing. The output is the first region of the main reply. Use the reader's language. Put the summary directly in the opening paragraph. For a small answer, a single opening sentence carries the summary.
+Codex calls the user-visible closeout the **final answer**. Design it as a descending information gradient: decision first, evidence second, operational handoff last. These are internal region names, not visible headings.
 
-1. State what the user can now do or decide. Qualify the claim to the environment where it was observed.
-2. When required work remains, include the highest-impact gap and the next condition that changes the result. Keep the entire summary to one to three sentences. This limit applies only to the summary; it never caps the evidence body.
-3. When a main body follows, insert a blank line, `---`, and another blank line between the summary and body.
-4. When host-required closing records follow the body, insert the same divider between body and closing, then place the closing facts directly below it. The two dividers are the only region markers; do not add a summary or closing heading. Never place a divider before the first region, after the last region, or beside an omitted region. Keep one copy of the summary.
-5. Keep status identifiers visually stable: write skill names, branches, short commit IDs, and remote refs as plain text or links. Use inline code only when exact code syntax is part of the evidence. Render Git and other closing records as ordinary list items, not blockquotes.
+## The three regions
 
-For a complete Markdown reply, assemble the regions as:
+1. **Decision surface** — one to three sentences that let the reader act without reading further. State the outcome or current landing point first, then the single limitation, decision, or completion condition that most changes the verdict. Put status words inside natural prose; do not open with a label such as “summary”.
+2. **Evidence surface** — the optional judgment and continuation layer. Organize it by the reader's questions, not the agent's chronology. Each material claim should carry the evidence that supports it and, when incomplete, the boundary or condition that changes it. Use a short heading only for a real topic inside this region; the region itself has no heading.
+3. **Handoff strip** — optional host-owned closing facts such as distillation, used Skills, Git delivery, deployment, or other domain receipts. Keep one compact line per applicable owner, preserve the host-defined order, and omit absent domains. This region records operational provenance; it does not repeat the result or evidence.
+
+## Presence and separators
+
+Render only regions that contain useful information. Separate adjacent regions exactly once with a blank line, `---`, and another blank line:
+
+- Decision only: no divider.
+- Decision + evidence or decision + handoff: one divider.
+- Decision + evidence + handoff: two dividers.
+
+Never create an empty region, stacked dividers, a leading divider, or a trailing divider. The dividers are the only region markers; do not add summary, body, or closing headings.
+
+## Compression and ownership
+
+- Give each fact one home: verdict and highest-impact caveat in the decision surface; proof, scope, risks, and next conditions in the evidence surface; receipts and delivery metadata in the handoff strip.
+- Keep the decision surface free of file inventories, test lists, commit IDs, and process narration unless one of them changes the verdict.
+- Prefer a claim → evidence → boundary sequence inside the evidence surface. Keep implementation, tests, artifacts, push, deployment, and user acceptance as distinct gates.
+- Put clickable evidence and file references beside the supported claim. Put commit IDs and domain receipts in the handoff strip unless they are themselves the user's requested result.
+- Draft for completeness first, then remove repetition and ceremony. Compression must preserve blockers, unknowns, scope boundaries, and the condition for continuing.
+
+## Complete example
 
 ```markdown
-一句到三句结论。
+目录滚动高亮已修复，Chromium 验收通过。Safari 尚未验收，因此当前可以交接，但还不能声称跨浏览器完成。
 
 ---
 
-正文证据与关键未完成项。
+改动集中在目录激活区间计算与样式；路由和数据结构未变。相关单元测试通过，Chromium 中逐段滚动 6 个标题均正确切换。Safari 的完成条件是同样 6 个标题全部正确切换。
 
 ---
 
-领域收尾事实。
+蒸馏：无新增。
+Skills：joyally-report、joyally-git。
+Git：已提交并推送，commit abc1234；未部署。
 ```
+
+For a direct factual answer, return only the answer. For an exact-format request such as JSON or a command, preserve that format instead of imposing this layout.
 
 ## Acceptance examples
 
-| Input | Expected opening or output |
+| Input | Expected decision surface |
 | --- | --- |
-| Search results appeared in Debug, signed build passed, release pending | Open directly with: 开发版已经能定位搜索结果。用户安装版需要等新版发布后再验收。 |
+| Search results appeared in Debug, signed build passed, release pending | 开发版已经能定位搜索结果。用户安装版需要等新版发布后再验收。 |
 | User asks whether a specific test passed, with one verified result | 搜索定位回归测试已通过。 |
-| Deployment is blocked by a rejected permission check | Open directly with: 预发部署被权限检查拦住，目标环境验收还在等部署账号获得权限。 |
+| Deployment is blocked by a rejected permission check | 预发部署被权限检查拦住，目标环境验收还在等部署账号获得权限。 |
 | User requests only a JSON object | Return the requested JSON object verbatim in structure. |
