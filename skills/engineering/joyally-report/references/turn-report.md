@@ -1,13 +1,13 @@
 # Final-answer information architecture
 
-Codex calls the user-visible closeout the **final answer**. Design it as four ordered regions: summary first, body second, distillation third, and status last. These are internal region names, not visible headings.
+Codex calls the user-visible closeout the **final answer**. Design it as four ordered regions: summary first, body second, distillation third, and status last. These are internal region names, not Markdown headings; structured reports expose only the compact bold labels defined below.
 
 ## The four regions
 
-1. **Summary / decision surface** — one to three sentences that let the reader act without reading further. State the outcome or current landing point first, then the single limitation, decision, or completion condition that most changes the verdict. Put status words inside natural prose; do not open with a label such as “summary”.
+1. **Summary / decision surface** — one to three sentences that let the reader act without reading further. In a structured report, start with the inline label `**摘要：**`; keep the following text at normal weight. State the outcome or current landing point first, then the single limitation, decision, or completion condition that most changes the verdict. Direct factual and exact-format answers may omit the label with the rest of the report structure.
 2. **Body / evidence surface** — the optional judgment and continuation layer. Organize it by the reader's questions, not the agent's chronology. Each material claim should carry the evidence that supports it and, when incomplete, the boundary or condition that changes it. Use a short heading only for a real topic inside this region; the region itself has no heading.
-3. **Distillation strip** — optional host-owned distillation result. Keep the verified distillation fact compact and omit the region when the host does not require it. Do not mix used Skills, Git delivery, deployment, or other operational status into this region.
-4. **Status strip** — optional host-owned operational facts such as used Skills, Git delivery, deployment, or other domain receipts. Keep one compact line per applicable owner, preserve the host-defined order, and omit absent domains. For used Skills, give every Skill one concise, task-specific contribution in the form `skill-name（本轮主要作用）`; a bare name list is incomplete. This region records operational provenance; it does not repeat the result, evidence, or distillation result.
+3. **Distillation strip** — optional host-owned distillation result. Start it with `**蒸馏：**`, then keep the verified fact at normal weight. Omit the region when the host does not require it. Do not mix used Skills, Git delivery, deployment, or other operational status into this region.
+4. **Status strip** — optional host-owned operational facts such as used Skills, Git delivery, deployment, or other domain receipts. Keep one compact line per applicable owner, preserve the host-defined order, and omit absent domains. Start the used-Skills line with `**技能：**`; give every Skill one concise, task-specific contribution in the form `skill-name（本轮主要作用）`. A bare name list is incomplete. This region records operational provenance; it does not repeat the result, evidence, or distillation result.
 
 When reporting Git delivery, give every repository its own line in the form `[owner/repository](repository URL) …`. Link the stable repository display name to its browsable remote homepage; when no browsable remote exists, link it to the absolute local repository root. Start directly with the linked repository name, without an icon or a `Git:` or `Git：` label. A remote ref, branch, worktree path, or commit hash does not identify the repository and must not stand in for its name.
 
@@ -20,7 +20,7 @@ Render only regions that contain useful information, preserve their fixed order,
 - Summary + distillation + status: two dividers.
 - Summary + body + distillation + status: three dividers.
 
-Never create an empty region, stacked dividers, a leading divider, or a trailing divider. The dividers are the only region markers; do not add summary, body, distillation, or status headings around the regions. Domain-owned labels such as `蒸馏：` and `使用技能：` remain part of their facts.
+Never create an empty region, stacked dividers, a leading divider, or a trailing divider. The dividers are the only region markers; do not add Markdown headings around the regions. In structured reports, use the inline bold labels `**摘要：**`, `**蒸馏：**`, and `**技能：**`; keep each label's following text at normal weight.
 
 ## Compression and ownership
 
@@ -33,7 +33,7 @@ Never create an empty region, stacked dividers, a leading divider, or a trailing
 ## Complete example
 
 ```markdown
-目录滚动高亮已修复，Chromium 验收通过。Safari 尚未验收，因此当前可以交接，但还不能声称跨浏览器完成。
+**摘要：** 目录滚动高亮已修复，Chromium 验收通过。Safari 尚未验收，因此当前可以交接，但还不能声称跨浏览器完成。
 
 ---
 
@@ -41,11 +41,11 @@ Never create an empty region, stacked dividers, a leading divider, or a trailing
 
 ---
 
-蒸馏：无新增。
+**蒸馏：** 无新增。
 
 ---
 
-使用技能：joyally-report（整理交付结论与证据）；joy-git（核对并完成提交推送）。
+**技能：** joyally-report（整理交付结论与证据）；joy-git（核对并完成提交推送）。
 [owner/repository](https://git.example.com/owner/repository) 已提交并推送，commit abc1234；未部署。
 [owner/website](https://git.example.com/owner/website) 保留本地改动，尚未提交。
 ```
