@@ -1,6 +1,9 @@
 ---
 name: joyally-send
 description: 用户要求实现、修复、重构或完成一项工程任务，并期待 Codex 在当前环境内自主推进到可验证、可交付结果时自动使用；持续完成安全且在范围内的步骤，不把普通实现请求扩展为生产、发版或数据操作授权。
+metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
 ---
 
 # Joyally Send

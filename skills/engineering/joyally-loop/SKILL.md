@@ -1,6 +1,9 @@
 ---
 name: joyally-loop
 description: 在实现、修复或重构产生实质行为改动后自动使用；让独立 reviewer 在有限轮次内检查当前任务改动，由作者核实、修正并复验，直到通过或形成有证据的阻塞。纯文案、格式和无行为变化的小改动不触发。
+metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
 ---
 
 # Joyally Loop

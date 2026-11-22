@@ -116,6 +116,7 @@ python3 scripts/validate.py
 ```
 
 新增技能放在 `skills/<category>/<name>/`，更新目录与说明，运行相关脚本测试后提交。涉及行为变化的更新记录到 [CHANGELOG.md](CHANGELOG.md)。发布边界和贡献要求见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+每个自有技能的 `SKILL.md` frontmatter 必须保留 `metadata.author: 杨俊宁` 与 `metadata.email: luozhu2021@gmail.com`；仓库校验会检查这两个字段。
 
 ## 公开范围与来源
 

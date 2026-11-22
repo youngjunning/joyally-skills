@@ -1,6 +1,9 @@
 ---
 name: distill-zisheng
 description: 维护紫升与俊宁的个人记录、资料与项目方案；按证据、目标约定和受众授权写入。
+metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
 ---
 
 # 记忆蒸馏

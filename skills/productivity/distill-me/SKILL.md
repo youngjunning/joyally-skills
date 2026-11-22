@@ -1,6 +1,9 @@
 ---
 name: distill-me
 description: 在 Codex、千问办公等 Agent 的日常对话收尾时，自动蒸馏个人记录、做事方式、文章、百宝箱与关注主题，并在本地形成可持续生长的数字分身；也用于手动整理指定材料和打开内置工作台。
+metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
 ---
 
 # Distill Me

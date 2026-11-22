@@ -1,6 +1,9 @@
 ---
 name: joyally-report
 description: Compose evidence-complete Codex final answers for progress, delivery, diagnosis, review, and decisions. Lead with a decision surface, support it with an evidence surface, and append a compact handoff strip when the host requires closing records.
+metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
 ---
 
 # Joyally Report

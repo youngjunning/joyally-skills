@@ -1,6 +1,9 @@
 ---
 name: macos-app-develop
 description: Implement, review, refactor, debug, and profile native macOS applications with SwiftUI or AppKit. Use for macOS API availability, windows and scenes, state management, view composition, lists, focus, localization, animation, performance, Instruments traces, and platform compatibility; use Joyally Design for visible UI design decisions.
+metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
 ---
 
 # macOS App Development

@@ -1,6 +1,9 @@
 ---
 name: joyally-writting
 description: Write or edit reader-facing articles, books, picture books, copy, speeches, and formal reports. Lead audience, facts, argument, narrative structure, and exact copy; hand interactive layout and visual systems to joyally-design, and all static or interactive diagram and raster-artwork production to joyally-image. All three skills can work independently; a combined task has one lead. Engineering artifacts remain in their owning workflows unless an editorial pass is explicitly requested.
+metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
 ---
 
 # Joyally writting

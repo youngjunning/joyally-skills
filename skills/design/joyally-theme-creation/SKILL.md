@@ -1,6 +1,9 @@
 ---
 name: joyally-theme-creation
 description: 为 Joyally Design 或现有产品创建、重做、扩展整套视觉主题时使用。把参考素材转成独特的布局、导航、组件和语义 token，并用同内容对比与真实交互验收主题差异；单点配色微调不需要启动整套流程。
+metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
 ---
 
 # Joyally 主题制作

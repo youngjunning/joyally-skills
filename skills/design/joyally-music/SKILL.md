@@ -1,6 +1,9 @@
 ---
 name: joyally-music
 description: 创作、生成、编排、分离、转录、混音或评审音乐；用于作曲、写歌、歌词与旋律结合、歌声合成、伴奏与音效生成、音频转 MIDI、stem 分离、混音和母带。人声身份、说话语音、声音克隆与音色授权使用 joyally-voice。
+metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
 ---
 
 # Joyally Music

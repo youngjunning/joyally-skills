@@ -1,6 +1,9 @@
 ---
 name: joyally-stop
 description: 用户要求把工程任务完整做到本地可验证状态，但明确说暂不提交、暂不推送、只改本地或停在交付前时自动使用；完成实现、验证和必要复审，把 Git 与外部交付保留给用户。
+metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
 ---
 
 # Joyally Stop

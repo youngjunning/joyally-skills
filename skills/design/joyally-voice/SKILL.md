@@ -1,6 +1,9 @@
 ---
 name: joyally-voice
 description: 设计、生成、克隆、转换、清理、转写或评审人声与语音；用于录音、人声修复、TTS、声音克隆、音色设计、配音、歌声音色迁移、说话人处理、字幕对齐与人声交付。作曲、编曲、整曲生成和音乐母带使用 joyally-music。
+metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
 ---
 
 # Joyally Voice

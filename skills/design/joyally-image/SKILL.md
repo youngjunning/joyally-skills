@@ -1,6 +1,9 @@
 ---
 name: joyally-image
 description: Automatically use for any request to generate, edit, repair, transform, resize, upscale, remove a background from, or otherwise process an image or diagram. Produces raster images, comics, picture-book illustrations, covers, brand marks, game-ready 2D assets, static diagrams, interactive diagrams, icons, wallpapers, animation frames, and pet spritesheets, with asset routing, semantic authoring, packaging, and technical QA.
+metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
 ---
 
 # Joyally image

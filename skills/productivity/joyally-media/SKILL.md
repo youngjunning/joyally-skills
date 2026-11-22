@@ -1,6 +1,9 @@
 ---
 name: joyally-media
 description: Extract evidence-backed content from Bilibili, WeChat Channels or Official Account video links, other hosted video pages, direct media URLs, and uploaded or local audio/video. Use when the user asks for subtitles, transcription, timestamped notes, a summary, a breakdown, or source material for later writing. Not for creating or editing media.
+metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
 ---
 
 # Joyally Media

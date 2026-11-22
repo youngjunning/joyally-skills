@@ -1,6 +1,9 @@
 ---
 name: joyally-design
 description: 设计和精修 Web、macOS、iOS、Android 与 React Native 界面，也用于 HTML 报告、HTML PPT、社交卡片，以及图像和图表任务的视觉系统、构图与设计验收。图表及其运行时统一由 joyally-image 负责，本 Skill 只提供可选设计支持；文稿交给 joyally-writting。三者可独立使用，联合任务仅设一个整体主导 Skill。
+metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
 ---
 
 # Joyally Design

@@ -1,6 +1,9 @@
 ---
 name: joyally-test
 description: 规划、编写、运行、诊断和治理软件测试与 AI/Agent evals。用于选择测试层级与验证范围、以 TDD 实现行为、测试 Web/API 和目标环境、分析失败与不稳定测试、评审 AI 生成测试及控制套件成本；普通功能实现只做与风险相称的验证，不自动展开全仓测试审计。
+metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
 ---
 
 # Joyally Test

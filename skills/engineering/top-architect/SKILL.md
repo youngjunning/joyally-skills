@@ -2,6 +2,8 @@
 name: top-architect
 description: Discuss, decide, or review business, product, and technical tradeoffs for software and AI systems. Use for product bets, build-versus-buy, architecture, Skill and Agent systems, digital employees, system evolution, and runtime performance when a consequential decision needs evidence and reliable delivery. Excludes routine implementation, copywriting, and generic career advice.
 metadata:
+  author: 杨俊宁
+  email: luozhu2021@gmail.com
   short-description: Business, product, AI architecture, and reliable delivery
 ---
 
