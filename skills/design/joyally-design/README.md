@@ -57,4 +57,4 @@ node ../joyally-image/scripts/joyally-diagram.mjs validate workflow "$example" &
 
 报告、原生示例与图表遵循 [token 契约](references/token-contract.md)。交互图表的四种样式 共用语义颜色，保留构图、线条与动效特点。旧项目已复制的源码不自动重写；原生 CSS 统一使用 `joyally-` 前缀。
 
-默认本地交付，托管使用调用项目已授权的服务。公开包不依赖内部上传工具。Joyally Design 自身源码采用 [PolyForm Noncommercial 1.0.0](LICENSE)，允许非商业使用、修改和分发；商业使用需另行授权。演示资源的 MIT 许可随产物打包。从 `node scripts/design-engine.mjs --help` 查看报告、演示和图表命令。
+默认本地交付，托管使用调用项目已授权的服务。公开包不依赖内部上传工具。Joyally Design 自身源码采用 [PolyForm Noncommercial 1.0.0](LICENSE)，允许非商业使用、修改和分发；商业使用需另行授权。演示资源的 MIT 许可随产物打包。从 `node scripts/design-engine.mjs --help` 查看报告与演示命令；图表新调用统一使用 `joyally-image/scripts/joyally-diagram.mjs`，旧 `diagram` 命令仅作弃用转发。

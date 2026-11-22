@@ -77,6 +77,8 @@ Full model specifications and size constraints are in `references/apiyi.md`.
 
 All diagram requests enter Joyally Image. Static knowledge maps, architecture diagrams, dependency graphs, build pipelines, release flows, and updater state machines use deterministic HTML/CSS/SVG; the image model may generate only a restrained text-free backdrop. Interactive, editable, zoomable, focusable, or explorable diagrams use the bundled interactive branch and deliver a self-contained HTML viewer plus a static preview from the same typed source. Every node, edge, arrow, label, legend, and lifecycle state remains deterministic so technical terminology and directionality stay exact.
 
+The standalone interactive entrypoint is `node scripts/joyally-diagram.mjs <command> ...`. Existing callers of Joyally Design's former `design-engine.mjs diagram` command are temporarily forwarded when both Skills are installed, but should migrate to the Joyally Image entrypoint. The full mapping is in [interactive diagram migration](references/interactive-diagram.md#migration-from-joyally-design).
+
 Long technical articles get an illustration-opportunity audit before delivery. There is no maximum image count: a diagram is preferred whenever readers must understand three or more ordered steps, branches, ownership or runtime boundaries, dependency propagation, state transitions, rollback, or cross-module lifecycle differences. ASCII/TXT diagrams are content-model drafts, not final article assets. Executable commands, configuration, literal paths, and short copyable inventories remain code blocks.
 
 Every deterministic diagram must pass the rendered-DOM layout gate before export or publication:

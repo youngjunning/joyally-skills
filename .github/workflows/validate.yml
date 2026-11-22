@@ -20,6 +20,12 @@ jobs:
       - run: python3 -m pip install -r skills/design/joyally-image/requirements.txt
       - run: python3 -m unittest discover -s skills/design/joyally-image/scripts -p 'test_*.py'
       - run: python3 -m unittest discover -s skills/design/joyally-image/tests
+      - name: Validate standalone Joyally Image installation
+        run: |
+          standalone_root="$(mktemp -d)"
+          mkdir -p "$standalone_root/joyally-image"
+          git archive HEAD skills/design/joyally-image | tar -x -C "$standalone_root/joyally-image" --strip-components=3
+          python3 -m unittest discover -s "$standalone_root/joyally-image/tests"
       - run: python3 skills/design/joyally-design/scripts/validate-native-tokens.py
       - run: node skills/design/joyally-image/scripts/joyally-diagram.mjs doctor
       - run: node skills/design/joyally-image/scripts/joyally-diagram.mjs validate workflow skills/design/joyally-image/examples/interactive-minimal.workflow.json --json

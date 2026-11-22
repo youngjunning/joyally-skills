@@ -78,6 +78,8 @@
 
 所有图形请求统一进入 Joyally Image。静态知识图谱、架构图、依赖图、构建流水线、发布流程和 Updater 状态机使用 HTML/CSS/SVG 确定性渲染，图片模型只可选生成克制的无文字底图；需要点击、缩放、聚焦、持续编辑或路径探索时，内部走随包交互图分支，并从同一类型化结构源交付交互 HTML 与静态预览。节点、连线、箭头、标签、图例和生命周期状态始终保持确定性，保证技术术语准确、箭头方向可验证。
 
+交互图的独立入口是 `node scripts/joyally-diagram.mjs <command> ...`。旧的 Joyally Design `design-engine.mjs diagram` 调用在两个 Skill 同时安装时会暂时转发，但调用方应迁移到 Joyally Image 入口；完整映射见[交互图迁移说明](references/interactive-diagram.md#migration-from-joyally-design)。
+
 长技术文章在交付前必须执行“可视化机会审计”，不设置插图数量上限。只要读者需要理解三步以上的顺序、分支、运行或所有权边界、依赖传播、状态变化、回滚或跨模块生命周期，就优先用图表达。ASCII/TXT 示意只能作为制图中间态，不能进入最终文章；可执行命令、配置、literal path 和短文件清单继续保留为 code block。
 
 所有确定性技术图在导出和发布前必须通过真实浏览器几何门禁：

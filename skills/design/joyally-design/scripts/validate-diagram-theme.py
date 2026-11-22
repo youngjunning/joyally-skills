@@ -14,11 +14,13 @@ spec.loader.exec_module(tokens)
 
 def validate():
     document = json.loads((ROOT / 'assets/joyally-design.tokens.json').read_text())
+    snapshot = json.loads((DIAGRAM_RUNTIME / 'assets/joyally-diagram.tokens.json').read_text())
     template = (DIAGRAM_RUNTIME / 'assets/template.html').read_text()
     count = 0
     for mode in ('light', 'dark'):
         expected = {key: tokens.resolve_color(document, f'diagram.{mode}.{key}')
                     for key in document['diagram'][mode]}
+        assert snapshot['diagram'][mode] == expected, f'Bundled snapshot drift: {mode}'
         for preset in ('classic', 'signal-flow', 'blueprint', 'editorial'):
             selector = ('' if preset == 'classic' else f'[data-preset="{preset}"]') + f'[data-theme="{mode}"]'
             matches = re.findall(r'^    ' + re.escape(selector) + r' \{(.*?)\n    \}', template, re.M | re.S)
@@ -44,6 +46,7 @@ def validate():
     expected_print.update(bg='#FFFFFF', panel='#FFFFFF', mask='#FFFFFF', grid='TRANSPARENT')
     assert {k: v.upper() for k, v in printed.items()} == expected_print, 'Print palette drift'
     reader = (DIAGRAM_RUNTIME / 'explainer/reader.css').read_text()
+    assert snapshot['readerMapping'] == document['readerMapping'], 'Bundled reader mapping drift'
     reader_count = 0
     for line in reader.splitlines():
         if '--paper:' not in line:
@@ -60,7 +63,7 @@ def validate():
         assert all(actual.get(key, '').upper() == value for key, value in expected.items()), 'Explainer palette drift'
         reader_count += 1
     assert reader_count == 13, f'Expected 12 explainer theme blocks and print, got {reader_count}'
-    print(f'Validated {count} viewer palettes, 13 explainer palettes, print mappings and 72 contrast pairs')
+    print(f'Validated bundled snapshot, {count} viewer palettes, 13 explainer palettes, print mappings and 72 contrast pairs')
 
 
 if __name__ == '__main__':

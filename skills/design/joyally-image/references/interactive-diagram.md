@@ -28,4 +28,16 @@ node <joyally-image-dir>/scripts/joyally-diagram.mjs validate architecture input
 node <joyally-image-dir>/scripts/joyally-diagram.mjs deliver architecture input.json output.html --quality showcase --json
 ```
 
-The legacy compatibility filename may remain for existing automation, but new documentation, examples, CI and callers use only `joyally-diagram.mjs`.
+`scripts/joyally-archify.mjs` remains a filename-only compatibility alias inside Joyally Image. New documentation, examples, CI and callers use only `joyally-diagram.mjs`.
+
+## Migration from Joyally Design
+
+The runtime no longer belongs to Joyally Design. Update callers as follows:
+
+| Deprecated call | Canonical call |
+| --- | --- |
+| `node <joyally-design>/scripts/design-engine.mjs diagram <args>` | `node <joyally-image>/scripts/joyally-diagram.mjs <args>` |
+| `node <joyally-design>/scripts/joyally-diagram.mjs <args>` | `node <joyally-image>/scripts/joyally-diagram.mjs <args>` |
+| `node <joyally-design>/scripts/joyally-archify.mjs <args>` | `node <joyally-image>/scripts/joyally-archify.mjs <args>` for temporary filename compatibility, then migrate to `joyally-diagram.mjs` |
+
+Joyally Design retains only a deprecated forwarder for existing callers and never bundles or discovers a diagram runtime of its own. The forwarder requires `joyally-image` to be installed beside it and emits an actionable error when that optional companion is absent. A standalone Joyally Image installation does not require Joyally Design.
