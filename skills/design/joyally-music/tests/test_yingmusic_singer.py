@@ -11,6 +11,24 @@ spec.loader.exec_module(adapter)
 
 @unittest.skipUnless(importlib.util.find_spec('torch'), 'Run with the model environment')
 class AttentionContract(unittest.TestCase):
+    def test_reference_target_and_gap_use_independent_clocks(self):
+        import torch
+        reference = torch.full((1, 582), 50.)
+        target = torch.cat([torch.full((1, 200), 60.), torch.full((1, 200), 64.)], dim=1)
+        actual = adapter.align_melody_segments(reference, target, 169, 100)
+        expected = torch.tensor([[50.] * 169 + [0.] * 2 + [60.] * 50 + [64.] * 50])
+        torch.testing.assert_close(actual, expected)
+
+    def test_reference_duration_does_not_move_target_notes(self):
+        import torch
+        reference = torch.full((1, 860), 50.)
+        target = torch.tensor([[0., 60., 64., 0.]]).repeat_interleave(100, dim=1)
+        for reference_frames in (13, 250):
+            actual = adapter.align_melody_segments(reference, target, reference_frames,
+                                                    100, pitch_shift=-2)
+            expected = torch.tensor([[0.] * 25 + [58.] * 25 + [62.] * 25 + [0.] * 25])
+            torch.testing.assert_close(actual[:, reference_frames + 2:], expected)
+
     def test_audio_loader_downmixes_and_resamples_for_the_vae(self):
         import tempfile
         import numpy as np
@@ -54,6 +72,52 @@ class AttentionContract(unittest.TestCase):
         actual = adapter.portable_attention(q, k, v, causal=True,
                                              k_lens=torch.tensor([3]))
         torch.testing.assert_close(actual[0, :, 0, 0], torch.tensor([2., 3., 6.]))
+
+
+@unittest.skipUnless(importlib.util.find_spec('torch') and importlib.util.find_spec('pyworld'),
+                     'Requires the music runtime')
+class MelodyLockContract(unittest.TestCase):
+    def test_midi_changes_pitch_without_changing_duration(self):
+        import tempfile
+        import numpy as np
+        import pretty_midi
+        import torch
+        sr = 48000
+        t = np.arange(sr * 2) / sr
+        source = sum(np.sin(2 * np.pi * 220 * k * t) / k for k in range(1, 9)) * .15
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'target.mid'
+            score = pretty_midi.PrettyMIDI()
+            inst = pretty_midi.Instrument(0)
+            inst.notes.append(pretty_midi.Note(100, 62, 0., 2.))
+            score.instruments.append(inst)
+            score.write(str(path))
+            output, info = adapter.lock_pitch_to_melody(torch.tensor(source[None]).float(),
+                                                       sr, midi=path)
+        self.assertEqual(tuple(output.shape), (1, len(source)))
+        center = output.numpy()[0, sr // 2:sr * 3 // 2]
+        spectrum = abs(np.fft.rfft(center * np.hanning(len(center))))
+        frequency = np.fft.rfftfreq(len(center), 1 / sr)[np.argmax(spectrum)]
+        self.assertLess(abs(frequency - 293.665), 2.)
+        self.assertEqual(info['spectralEnvelopeSource'], 'generated-candidate')
+
+    def test_polyphonic_midi_is_rejected(self):
+        import tempfile
+        import numpy as np
+        import pretty_midi
+        import torch
+        sr = 48000
+        t = np.arange(sr) / sr
+        audio = sum(np.sin(2 * np.pi * 220 * k * t) / k for k in range(1, 9)) * .15
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'chord.mid'
+            score = pretty_midi.PrettyMIDI()
+            inst = pretty_midi.Instrument(0)
+            inst.notes = [pretty_midi.Note(100, n, 0., 1.) for n in (60, 64)]
+            score.instruments.append(inst)
+            score.write(str(path))
+            with self.assertRaisesRegex(ValueError, 'monophonic'):
+                adapter.lock_pitch_to_melody(torch.tensor(audio[None]).float(), sr, midi=path)
 
 
 if __name__ == '__main__':

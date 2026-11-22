@@ -15,7 +15,7 @@
 | 工具 | 适合 | 边界 |
 | --- | --- | --- |
 | [DiffSinger](https://github.com/openvpi/DiffSinger) | 歌词、音符/MIDI 驱动的可控歌声合成 | 声库、数据集和模型的许可独立于框架 |
-| [YingMusic-Singer](https://github.com/GiantAILab/YingMusic-Singer) | 参考音色、歌词与 MIDI/旋律音频驱动的零样本歌声合成 | V1 代码 MIT、官方权重 CC-BY-NC-4.0；本地适配与运行方法见 [接入说明](yingmusic-singer.md)，声音相似度与自然度仍需短样盲听 |
+| [YingMusic-Singer](https://github.com/GiantAILab/YingMusic-Singer) | 参考音色、歌词与 MIDI/旋律音频驱动的零样本歌声合成，默认进行连续 F0 保音并保留原始人声 | V1 代码 MIT、官方权重 CC-BY-NC-4.0；[接入说明](yingmusic-singer.md)区分模型原生输出与校音结果，声音相似度与自然度仍需短样盲听 |
 | [RVC WebUI](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI) | 已有演唱的音色转换 | 不负责作曲、歌词或旋律生成；音色身份由 `joyally-voice` 授权 |
 | [so-vits-svc](https://github.com/svc-develop-team/so-vits-svc) | Singing Voice Conversion 研究与旧工程回看 | 仓库归档且 AGPL；新项目优先评估仍维护方案 |
 | [DDSP-SVC](https://github.com/yxlllc/DDSP-SVC) | 低延迟歌声转换、F0 与音色实验 | 目标音色授权和分离质量决定可用性 |
