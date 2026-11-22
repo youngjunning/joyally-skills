@@ -39,7 +39,7 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 | 开发或评审 Agent 驱动的浏览器扩展，避免脚本写死业务流程 | [joyally-browser-extension-dev](skills/engineering/joyally-browser-extension-dev/SKILL.md) |
 | 向人说明进展、交付、排障或评审结论 | [joyally-report](skills/engineering/joyally-report/SKILL.md) |
 | 设计、实现、运行或治理测试与 AI/Agent evals，判断证据能否挡住真实回归 | [joyally-test](skills/engineering/joyally-test/SKILL.md) |
-| 判断 Git 改动是否应自动提交和推送，并安全收尾 | [joyally-git](skills/engineering/joyally-git/SKILL.md) |
+| 判断 Git 改动是否应自动提交和推送，并安全收尾 | [JoyStack joy-git](https://github.com/youngjunning/joystack/tree/main/skills/engineering/joy-git) |
 | 让独立 reviewer 自动复查、修正并复验实质代码改动 | [joyally-loop](skills/engineering/joyally-loop/SKILL.md) |
 | 让 Codex 自动把工程任务做到验证和既有授权内的交付完成 | [joyally-send](skills/engineering/joyally-send/SKILL.md) |
 | 让 Codex 完成实现和验证，但停在 Git 与外部交付之前 | [joyally-stop](skills/engineering/joyally-stop/SKILL.md) |
@@ -66,7 +66,6 @@ Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作�
 | [joyally-browser-extension-dev](skills/engineering/joyally-browser-extension-dev/SKILL.md) | Agent 驱动浏览器扩展的 runtime、页面观察、业务 Skill 与受保护工具边界 |
 | [joyally-report](skills/engineering/joyally-report/SKILL.md) | 向人解释进展、结果、证据与下一步 |
 | [joyally-test](skills/engineering/joyally-test/SKILL.md) | TDD、测试策略与执行、Web/API 目标环境、AI/Agent evals、失败诊断与质量治理 |
-| [joyally-git](skills/engineering/joyally-git/SKILL.md) | 判断任务改动应提交并推送、只提交、保留还是请求确认，并安全执行获准动作 |
 | [joyally-loop](skills/engineering/joyally-loop/SKILL.md) | 实质行为改动后的独立 reviewer、有限轮次、finding ledger 与最小修复闭环 |
 | [joyally-send](skills/engineering/joyally-send/SKILL.md) | Codex 自动完成事实确认、实现、直接证明、独立复查与既有授权内的 Git 交付 |
 | [joyally-stop](skills/engineering/joyally-stop/SKILL.md) | 完成相同的实现、证明与复查，但保留 commit、push 和外部交付决定 |

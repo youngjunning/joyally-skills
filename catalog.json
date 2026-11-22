@@ -30,12 +30,6 @@
     "summary": "TDD、Web/API 与目标环境测试、AI/Agent evals、失败诊断和测试质量治理"
   },
   {
-    "name": "joyally-git",
-    "category": "engineering",
-    "path": "skills/engineering/joyally-git",
-    "summary": "判断 Git 改动应提交并推送、只提交、保留还是请求确认，并安全执行获准动作"
-  },
-  {
     "name": "joyally-loop",
     "category": "engineering",
     "path": "skills/engineering/joyally-loop",

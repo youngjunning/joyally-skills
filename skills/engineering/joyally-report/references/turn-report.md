@@ -40,7 +40,7 @@ Never create an empty region, stacked dividers, a leading divider, or a trailing
 ---
 
 蒸馏：无新增。
-Skills：joyally-report、joyally-git。
+Skills：joyally-report、joy-git。
 Git：owner/repository 已提交并推送，commit abc1234；未部署。
 ```
 
