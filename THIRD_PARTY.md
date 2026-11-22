@@ -17,6 +17,6 @@
 | macos-app-develop | [NOTICE](skills/engineering/macos-app-develop/NOTICE) 说明 SwiftUI-Agent-Skill 的改编、MIT 许可和未分发的无许可参考材料 |
 | joyally-test | 原有质量治理分支参考 [Marcello Curto 的 Test Quality Audit](https://github.com/marcellocurto/skills/tree/main/skills/test-quality-audit) 的审查目标；扩展能力融合的 10 个 Agent Skill、固定版本与 MIT、Apache-2.0、CC BY-SA 4.0 边界见[来源复核](skills/engineering/joyally-test/references/source-review.md)。全部流程独立编写，未复制无许可原文或上游脚本 |
 | joyally-arch | 渐进式架构分支参考 [Tobi1chi/arch-grower](https://github.com/Tobi1chi/arch-grower)（MIT）的局部切片、待定/储备状态、Walking Skeleton、稳定子图折叠与失败路径学习；流程独立编写，未复制上游 CLI、图 schema、脚本或强制交互策略 |
-| joyally-loop / joyally-send / joyally-stop | 分别改编自 Theo Browne 的 [t3dotgg/tstack](https://github.com/t3dotgg/tstack/tree/11e37a74d0a6868c121cd0910ab2b3bd9873b92a) `sol-loop`、`full-send`、`full-stop`；各目录保留上游 MIT License 与固定版本来源说明，Joyally 版把 PR 自动化改造成 Codex 可自动选择的实现、验证、复查与交付边界 |
+| joyally-loop | 改编自 Theo Browne 的 [t3dotgg/tstack](https://github.com/t3dotgg/tstack/tree/11e37a74d0a6868c121cd0910ab2b3bd9873b92a) `sol-loop`；目录保留上游 MIT License 与固定版本来源说明，Joyally 版将专用 reviewer 接口泛化为独立复查、修正与复验闭环 |
 
 仓库管理方式参考 Matt Pocock 的 [skills](https://github.com/mattpocock/skills)。本仓库的管理脚本单独实现。

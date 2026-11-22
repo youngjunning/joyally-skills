@@ -2,6 +2,7 @@
 
 ## 2026-11-22
 
+12. 删除 `joyally-send` 与 `joyally-stop`：两者原本服务显式触发的 PR 合并与停在合并前工作流；移除 PR 语义后分别与全局执行约定和 JoyStack `joy-git` 重复。保留职责独立的 `joyally-loop` 代码复查闭环。
 11. 重整 `joyally-loop`、`joyally-send` 与 `joyally-stop`：从 PR 和分支编排改为 Codex 可自动选择的工程完成闭环；分别负责独立复查修正、既有授权内完成交付，以及完成本地验证后停在 Git 与外部交付之前。保留 t3dotgg/tstack 的 MIT 来源与署名。
 10. `joyally-report` 的收尾技能清单改为逐项附带本轮具体作用，避免只罗列技能名而无法判断各技能实际贡献。
 9. 将 `distill-zisheng` 迁至独立仓库维护；本仓库保留外部入口，不再重复发布本地副本。

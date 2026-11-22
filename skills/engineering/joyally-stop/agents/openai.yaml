@@ -1,6 +1,0 @@
-interface:
-  display_name: "Joyally Stop"
-  short_description: "自动完成实现、验证和复查，并停在 Git 与外部交付之前"
-  default_prompt: "Use $joyally-stop to complete and verify this task locally without committing, pushing, or deploying it."
-policy:
-  allow_implicit_invocation: true
