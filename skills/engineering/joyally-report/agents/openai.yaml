@@ -1,6 +1,6 @@
 interface:
   display_name: "Joyally Report"
   short_description: "Clear, evidence-based progress, completion, and decision updates"
-  default_prompt: "Use $joyally-report before drafting the final answer. Lead with the decision, support it with evidence needed to judge or continue, and append compact host-owned handoff facts only when applicable."
+  default_prompt: "Use $joyally-report to explain the result, evidence, delivery state, and next action, keeping summary, body, distillation, and status in separate ordered regions when those closing facts apply."
 policy:
   allow_implicit_invocation: true
