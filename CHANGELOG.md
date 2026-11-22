@@ -2,6 +2,7 @@
 
 ## 2026-11-22
 
+14. 将 `joyally-loop` 晋升并迁移为独立 [JoyStack `joy-loop`](https://github.com/youngjunning/joystack/tree/main/skills/engineering/joy-loop)：有限轮次、finding ledger 与停止条件归 Loop，评审、修正、验证和 Git 交付分别复用 `joy-review`、`joy-build`、`joy-verify` 与 `joy-git`；本仓库移除重复实体、目录项与许可副本。
 13. 将 `distill-me` 迁至独立仓库维护并保留原目录 Git 历史；本仓库移除重复实体和目录项，改为链接 [youngjunning/distill-me](https://github.com/youngjunning/distill-me)。
 12. 删除 `joyally-send` 与 `joyally-stop`：两者原本服务显式触发的 PR 合并与停在合并前工作流；移除 PR 语义后分别与全局执行约定和 JoyStack `joy-git` 重复。保留职责独立的 `joyally-loop` 代码复查闭环。
 11. 重整 `joyally-loop`、`joyally-send` 与 `joyally-stop`：从 PR 和分支编排改为 Codex 可自动选择的工程完成闭环；分别负责独立复查修正、既有授权内完成交付，以及完成本地验证后停在 Git 与外部交付之前。保留 t3dotgg/tstack 的 MIT 来源与署名。

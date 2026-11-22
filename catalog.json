@@ -30,12 +30,6 @@
     "summary": "TDD、Web/API 与目标环境测试、AI/Agent evals、失败诊断和测试质量治理"
   },
   {
-    "name": "joyally-loop",
-    "category": "engineering",
-    "path": "skills/engineering/joyally-loop",
-    "summary": "在实质行为改动后自动用独立 reviewer 做有限轮次复查、修正与复验"
-  },
-  {
     "name": "joyally-writting",
     "category": "writing",
     "path": "skills/writing/joyally-writting",
