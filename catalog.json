@@ -72,12 +72,6 @@
     "summary": "开发和评审 Agent 驱动的浏览器扩展，区分 runtime、页面观察、业务 Skill 与受保护工具边界"
   },
   {
-    "name": "distill-me",
-    "category": "productivity",
-    "summary": "用零部署本地工作台整理材料与草稿，栏目可自由取舍",
-    "path": "skills/productivity/distill-me"
-  },
-  {
     "name": "joyally-design",
     "category": "design",
     "summary": "跨平台界面、HTML 交付、可探索图表与图像设计，主导视觉方向、构图、版式、交互与设计验收",
