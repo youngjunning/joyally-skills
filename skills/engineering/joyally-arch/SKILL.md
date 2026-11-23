@@ -41,7 +41,11 @@ When the work will span several decisions or sessions, keep a compact architectu
 - Keep permission and evidence boundaries explicit. Analysis does not authorize customer contact, purchases, external publication, production changes, or data transfers. Follow existing authorization and project rules when executing.
 - Treat constraints as a budget. Tie every runtime restriction to a concrete threat or invariant, place it at the narrowest trusted boundary, and define its owner, recovery path, and acceptance evidence. Keep ordinary task state observable and Agent reasoning capable by default; isolate actual secrets and irreversible authority without hiding non-secret facts, erasing progress, or moving business decisions into generic orchestration. A broader restriction needs evidence that the narrower boundary cannot protect the outcome.
 
-### Minimum-complete path
+### Minimum-complete path — non-front-end only
+
+**Scope:** this entire subsection applies only to non-front-end work, such as backend services, data pipelines, CLI tools, and operational workflows. Do not apply its change-surface/reuse-ladder/deliberate-ceiling method to front-end architecture, pages, visual design, component presentation, client-side interaction, or motion, including reviews of those areas. For full-stack work, scope this method to the non-front-end portion; the front-end portion stays excluded.
+
+For front-end work, preserve the requested visual hierarchy, layout, density, responsive behavior, interaction states, accessibility and motion. Do not remove or defer these requirements to satisfy this subsection's simplification method. Use the requested product experience and the appropriate design/motion skills; for rendering, state or component architecture questions, read [Web architecture patterns](references/web-architecture-patterns.md). Ordinary security, trust-boundary validation, functional completeness and testing obligations still apply; this exclusion does not waive them.
 
 Before choosing a solution, map the whole change surface that the promise must reach: callers and users, contracts and state, tests and fixtures, configuration and packaging, migration and rollback, operations and support. This is the required scope. Optional flexibility and speculative features are not.
 
