@@ -1,6 +1,6 @@
 ---
 name: joyally-fiction
-description: write fiction and build the reading site end-to-end. use when the user asks to write a novel or short story (long-form novel, short-form story, write chapters, continue writing, story setup, import a manuscript, review prose, remove AI flavor), or asks for a mobile-first fiction reading site, web novel H5, work list/detail/catalog/reader pages, markdown chapters, multilingual reading sites in english/spanish/korean, or a simple fiction site for social traffic campaigns. do not use for creator dashboards, ranking systems, bookshelf platforms, or reader community features unless the user explicitly asks for those.
+description: "Write, import, review, de-slop or continue novels and short stories, or build mobile-first fiction reading sites: work lists, details, catalogs, readers, Markdown chapters, multilingual content and social-campaign H5 pages. Creator dashboards, rankings, bookshelves and reader communities are out of scope unless explicitly requested."
 metadata:
   author: 杨俊宁
   email: luozhu2021@gmail.com
