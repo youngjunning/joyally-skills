@@ -1,34 +1,34 @@
 # Final-answer information architecture
 
-Codex calls the user-visible closeout the **final answer**. Design it as four ordered regions: summary first, body second, distillation third, and status last. These are internal region names, not Markdown headings; structured reports expose only the compact bold labels defined below.
+Codex calls the user-visible closeout the **final answer**. Design it as four ordered regions: summary first, body second, a combined distillation-and-Skills closing strip third, and Git delivery last. These are internal region names, not Markdown headings.
 
 ## The four regions
 
-1. **Summary / decision surface** — one to three sentences that let the reader act without reading further. In a structured report, start with the inline label `**摘要：**`; keep the following text at normal weight. State the outcome or current landing point first, then the single limitation, decision, or completion condition that most changes the verdict. Direct factual and exact-format answers may omit the label with the rest of the report structure.
-2. **Body / evidence surface** — the optional judgment and continuation layer. Organize it by the reader's questions, not the agent's chronology. Each material claim should carry the evidence that supports it and, when incomplete, the boundary or condition that changes it. Use a short heading only for a real topic inside this region; the region itself has no heading.
-3. **Distillation strip** — optional host-owned distillation result. Start it with `**蒸馏：**`, then keep the verified fact at normal weight. Omit the region when the host does not require it. Do not mix used Skills, Git delivery, deployment, or other operational status into this region.
-4. **Status strip** — optional host-owned operational facts such as used Skills, Git delivery, deployment, or other domain receipts. Keep one compact line per applicable owner, preserve the host-defined order, and omit absent domains. Start the used-Skills line with `**技能：**`; give every Skill one concise, task-specific contribution in the form `skill-name（本轮主要作用）`. A bare name list is incomplete. This region records operational provenance; it does not repeat the result, evidence, or distillation result.
+1. **Summary / decision surface** — one to three sentences that let the reader act without reading further. In a structured report, start with `**摘要：**`; keep the following text at normal weight. State the outcome and the highest-impact limitation or next condition. Direct factual and exact-format answers may omit the label.
+2. **Body / evidence surface** — the optional judgment and continuation layer. Organize it by reader question. Include material evidence, boundaries, and current-conversation open work; use headings only for real topics, not for the region itself.
+3. **Combined closing strip** — distillation results followed by used Skills in one group, with no divider between them. Keep each domain on its own line: start with `**蒸馏：**` and `**技能：**` (or the caller's required labels). Give every Skill one concise, task-specific contribution in the form `skill-name（本轮主要作用）`. A bare name list is incomplete. Omit an absent domain rather than creating an empty line or placeholder. Shared layout does not merge domain ownership or turn Skill use into a distillation result.
+4. **Git strip** — optional host-owned repository delivery facts, separate from the combined closing strip. Keep one repository per line and preserve the host-defined order. Omit this region when no repository applies; do not repeat the result, evidence, distillation, or Skills receipt.
 
-When reporting Git delivery, give every repository its own line in the form `[owner/repository](repository URL) …`. Link the stable repository display name to its browsable remote homepage; when no browsable remote exists, link it to the absolute local repository root. Start directly with the linked repository name, without an icon or a `Git:` or `Git：` label. A remote ref, branch, worktree path, or commit hash does not identify the repository and must not stand in for its name.
+When reporting Git delivery, use `[owner/repository](repository URL) …` for each repository. Link its browsable remote homepage, or the absolute local root when no browsable remote exists. Start directly with the linked repository name, without an icon or `Git:` label. A branch, path, ref, or commit does not replace repository identity.
 
 ## Presence and separators
 
-Render only regions that contain useful information, preserve their fixed order, and separate every pair of rendered regions exactly once with a blank line, `---`, and another blank line:
+Render only nonempty regions in the fixed order. Separate adjacent regions exactly once with a blank line, `---`, and another blank line. Within the combined closing strip, put a blank line between the two domain lines, not a divider.
 
 - Summary only: no divider.
 - Summary + body: one divider.
-- Summary + distillation + status: two dividers.
-- Summary + body + distillation + status: three dividers.
+- Summary + combined closing + Git: two dividers.
+- Summary + body + combined closing + Git: three dividers.
 
-Never create an empty region, stacked dividers, a leading divider, or a trailing divider. The dividers are the only region markers; do not add Markdown headings around the regions. In structured reports, use the inline bold labels `**摘要：**`, `**蒸馏：**`, and `**技能：**`; keep each label's following text at normal weight.
+Do not insert a divider between distillation and Skills. If only one domain is present, it alone forms the combined closing strip. Never create empty regions, stacked, leading, or trailing dividers. Structured labels are `**摘要：**`, `**蒸馏：**`, and `**技能：**`; following text stays at normal weight. Honor caller-defined wording without changing the grouping.
 
 ## Compression and ownership
 
-- Give each fact one home: verdict and highest-impact caveat in the summary; proof, scope, risks, and next conditions in the body; the distillation result in the distillation strip; operational receipts and delivery metadata in the status strip.
-- Keep the decision surface free of file inventories, test lists, commit IDs, and process narration unless one of them changes the verdict.
-- Prefer a claim → evidence → boundary sequence inside the evidence surface. Keep implementation, tests, artifacts, push, deployment, and user acceptance as distinct gates.
-- Put clickable evidence and file references beside the supported claim. Put commit IDs and operational domain receipts in the status strip unless they are themselves the user's requested result.
-- Draft for completeness first, then remove repetition and ceremony. Compression must preserve blockers, unknowns, scope boundaries, and the condition for continuing.
+- Give each fact one home: verdict and highest-impact caveat in the summary; evidence, risks, and next conditions in the body; separate distillation and Skills facts inside their combined closing strip; repository delivery metadata in the Git strip.
+- Keep file inventories, test lists, commit IDs, and process narration out of the decision surface unless they change the verdict.
+- Prefer a claim → evidence → boundary sequence. Implementation, tests, artifacts, push, deployment, and user acceptance are separate gates.
+- Put clickable evidence beside the supported claim; keep commit IDs in Git receipts unless they are the requested result.
+- Compression must preserve blockers, unknowns, scope boundaries, and the condition for continuing.
 
 ## Current-conversation open work
 
@@ -61,9 +61,10 @@ Acceptance cases:
 
 **蒸馏：** 无新增。
 
+**技能：** joyally-report（整理交付结论与证据）；joy-git（核对并完成提交推送）。
+
 ---
 
-**技能：** joyally-report（整理交付结论与证据）；joy-git（核对并完成提交推送）。
 [owner/repository](https://git.example.com/owner/repository) 已提交并推送，commit abc1234；未部署。
 [owner/website](https://git.example.com/owner/website) 保留本地改动，尚未提交。
 ```
