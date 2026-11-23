@@ -96,9 +96,9 @@
     "path": "skills/design/joyally-theme-creation"
   },
   {
-    "name": "macos-app-develop",
+    "name": "joyally-macos",
     "category": "engineering",
-    "path": "skills/engineering/macos-app-develop",
+    "path": "skills/engineering/joyally-macos",
     "summary": "原生 macOS、SwiftUI 与 Instruments 工作流（含许可改编）"
   },
   {

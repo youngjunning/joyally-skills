@@ -1,12 +1,12 @@
 ---
-name: macos-app-develop
+name: joyally-macos
 description: Implement, review, refactor, debug, and profile native macOS applications with SwiftUI or AppKit. Use for macOS API availability, windows and scenes, state management, view composition, lists, focus, localization, animation, performance, Instruments traces, and platform compatibility; use Joyally Design for visible UI design decisions.
 metadata:
   author: 杨俊宁
   email: luozhu2021@gmail.com
 ---
 
-# macOS App Development
+# Joyally macOS
 
 Build a good Mac citizen whose SwiftUI implementation is correct, efficient, accessible, and compatible with the repository deployment target. Joyally Design owns product visual direction, semantic tokens, component appearance, and visual acceptance; this Skill owns the macOS engineering implementation.
 
@@ -26,7 +26,7 @@ Build a good Mac citizen whose SwiftUI implementation is correct, efficient, acc
 
 - Read repository instructions, deployment target, shared design tokens, and existing components.
 - Identify the app archetype, window model, primary commands, data ownership, and accessibility path.
-- For any visible surface, read global `~/.codex/skills/joyally-design/SKILL.md` and its macOS, token, and validation references. Treat that design contract and the repository's existing components as the visual source of truth.
+- For any visible surface, read global `~/.agents/skills/joyally-design/SKILL.md` and its macOS, token, and validation references. Treat that design contract and the repository's existing components as the visual source of truth.
 - Read the actual deployment target. Do not introduce unguarded APIs from a newer macOS release, including Liquid Glass.
 
 ### 2. Route the task
@@ -35,7 +35,7 @@ Read every reference relevant to the task:
 
 | Topic | Reference |
 |---|---|
-| Native macOS design, tokens, component states, and visual acceptance | global `~/.codex/skills/joyally-design/SKILL.md` plus its `references/macos.md`, `references/token-contract.md`, and `references/validation.md` |
+| Native macOS design, tokens, component states, and visual acceptance | global `~/.agents/skills/joyally-design/SKILL.md` plus its `references/macos.md`, `references/token-contract.md`, and `references/validation.md` |
 | Modern and deprecated APIs | `references/latest-apis.md`, `references/soft-deprecation.md` |
 | State management and data flow | `references/state-management.md` |
 | View composition, invalidation, and UI responsiveness | `references/view-structure.md`, `references/performance-patterns.md` |

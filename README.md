@@ -67,7 +67,7 @@ Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作�
 | [joyally-test](skills/engineering/joyally-test/SKILL.md) | TDD、测试策略与执行、Web/API 目标环境、AI/Agent evals、失败诊断与质量治理 |
 | [tauri-skills](skills/engineering/tauri-skills/SKILL.md) | Tauri 2 安全边界与 Node.js sidecar |
 | [browser-performance-audit](skills/engineering/browser-performance-audit/SKILL.md) | 加载、资源与长会话性能审查 |
-| [macos-app-develop](skills/engineering/macos-app-develop/SKILL.md) | 原生 macOS、SwiftUI 与 Instruments 工作流（含许可改编） |
+| [joyally-macos](skills/engineering/joyally-macos/SKILL.md) | 原生 macOS、SwiftUI 与 Instruments 工作流（含许可改编） |
 
 ### Design
 
