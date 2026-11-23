@@ -10,6 +10,7 @@
     "assets/template.html": "Joyally semantic palettes replace all four presets in light and dark mode. Source: assets/joyally-diagram.tokens.json diagram. Geometry and export workflow preserved.",
     "verification": "Standalone resources: node ../../scripts/joyally-diagram.mjs doctor from runtime/diagram. Repository parity with optional Joyally Design tokens: python3 skills/design/joyally-design/scripts/validate-diagram-theme.py from the repository root.",
     "presentation": "Joyally Image branding for viewer, explainers, comparison, preview, evidence and CLI. Preserve upstream identity in licenses, provenance, compatibility internals and distributed notice text; preserve protocol keys, machine-readable receipts and schemas.",
-    "explainer/reader.css": "All clean/editorial/product/swiss themes, system dark fallback and print share Joyally diagram colors via readerMapping."
+    "explainer/reader.css": "All clean/editorial/product/swiss themes, system dark fallback and print share Joyally diagram colors via readerMapping.",
+    "references": "Authoring, delivery and repository references link to Joyally Image's Type Routing and Output Convention and to the included Agent tool-call workflow fixture, rather than omitted upstream skill instructions or holiday examples."
   }
 }
