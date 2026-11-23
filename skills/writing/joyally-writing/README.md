@@ -139,7 +139,7 @@ technical term, caveat, and link, but make the decision and tradeoffs easier to 
 Run an audit without changing the source:
 
 ```text
-使用 $joyally-writing 审阅这份报告，列出事实、论证、结构、语气和 AI 味问题，先不要改正文。
+使用 $joyally-writing 审阅这份报告，定位事实、论证、结构、语气和 AI 味问题，说明阅读影响和具体改法，先不要改正文。
 ```
 
 ## Workflow

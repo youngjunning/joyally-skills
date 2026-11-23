@@ -105,6 +105,8 @@ Load [references/styles.md](references/styles.md) when the user requests a named
 
 Load [references/deslop.md](references/deslop.md) for every substantial reader-facing prose task covered by this skill. The deslop gate is mandatory before delivery for articles, ATA, blogs, technical documentation, proposals, reports, product copy, speeches, and similar prose. It is a non-fiction gate: do not import fiction-only checks about chapters, characters, dialogue, plot, or endings.
 
+For an explicit Chinese AI-tone audit or rewrite, also load [references/chinese-tone-audit.md](references/chinese-tone-audit.md). It adds located evidence, contextual decisions, and before/after review; it does not require an external detector or turn an authorized rewrite into an approval-only turn.
+
 For 体系化技术长文、系统性知识梳理、原理/架构/工程实践文章，or requests that need to turn a broad technical field into a navigable engineering model, also load [references/style-systematic-engineering.md](references/style-systematic-engineering.md). Use it only when the article needs synthesis across several mechanisms; do not inflate a narrow topic into a survey.
 
 ## Workflow
@@ -227,9 +229,9 @@ Do not ban a phrase because it appears once. Rewrite repeated patterns or cluste
 Run the non-fiction deslop pass after the structural and factual review, before final delivery. It is a quality gate, not a request to flatten the author's voice:
 
 1. scan for the patterns in [references/deslop.md](references/deslop.md) and record a compact baseline of repeated clusters, including pronoun-led sentence openings and chatty explanatory transitions; for long Markdown, marker counts can reveal over-formatting but are diagnostic rather than quotas;
-2. distinguish product-owned labels, quoted language, and established terminology from narrator-added metaphors or promotional phrasing before rewriting;
+2. distinguish product-owned labels, quoted language, and established terminology from narrator-added metaphors or promotional phrasing before rewriting; resolve confirmed concept aliases without erasing real distinctions;
 3. make the minimum effective rewrite in this order: composition and repeated claims, paragraph-level templates and vague agency, then decorative formatting;
-4. re-scan the same categories, inspect each surviving cluster in context, and confirm the argument still holds;
+4. re-scan the same categories under the same measurement scope, inspect each surviving cluster in context, and confirm the argument still holds; keep false positives, justified survivors, and unresolved findings distinct from fixed problems;
 5. classify the pass internally as `clean`, `light`, `moderate`, or `heavy`; expose the classification only when the user asks for an editorial audit or when an unresolved issue blocks delivery.
 
 Do not deliver a substantial prose artifact with an unresolved repeated template pattern, vague authority claim, unsupported grandeur, or editorial-process leakage when a concrete rewrite is possible. If the pattern is intentional, retain it only when the surrounding context makes the reason clear.

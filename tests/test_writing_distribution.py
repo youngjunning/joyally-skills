@@ -2,11 +2,13 @@
 import importlib.util
 import json
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import sys
 import tempfile
 import unittest
+from urllib.parse import unquote
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -50,6 +52,19 @@ class WritingDistributionTests(unittest.TestCase):
                                         timeout=15)
                 self.assertEqual(result.returncode, 0, result.stderr)
                 self.assertIn('usage:', result.stdout.lower())
+
+    def test_internal_reference_links_survive_a_standalone_copy(self):
+        copied = self.dest / self.entry['name']
+        shutil.copytree(self.source, copied)
+        root = copied.resolve()
+        for document in copied.rglob('*.md'):
+            for target in re.findall(r'\]\(([^\s)]+)\)', document.read_text()):
+                if '://' in target or target.startswith(('#', '/', '~')) or '<' in target:
+                    continue
+                resolved = (document.parent / unquote(target.split('#')[0])).resolve()
+                if resolved.is_relative_to(root):
+                    with self.subTest(document=str(document.relative_to(copied)), link=target):
+                        self.assertTrue(resolved.exists(), f'Missing internal reference: {target}')
 
 
 if __name__ == '__main__':

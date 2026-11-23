@@ -31,6 +31,12 @@ Use a baseline-and-rescan pass when the document is long enough that repeated pa
 
 Do not optimize for the lowest marker count. A technical article may legitimately need bold labels, arrow flows, or one defined metaphor. The failure mode is clustering and repetition without additional information.
 
+### Evidence and intervention
+
+A pattern match is an observation, not yet an editing decision. Locate the passage and explain the reading problem before changing it: ambiguity, redundant setup, an unsupported claim, or an avoidable memory burden. Keep protected content, useful structure, and deliberate voice out of the defect count. Uncertain cases stay uncertain rather than becoming automatic deletions.
+
+Treat corpus findings as research context, not proof about this author or draft. Model-specific habits, whole-document distributions, and editorial preferences are different kinds of evidence. None justifies adding filler, inventing numbers, varying sentence length mechanically, or breaking a valid argument to resemble a reference corpus. For an explicit Chinese tone audit or rewrite, use [chinese-tone-audit.md](chinese-tone-audit.md) for the evidence and recheck contract.
+
 ## Gate A — Empty language and jargon
 
 Replace abstract or inflated wording with the specific action, object, scope, or result.
@@ -59,6 +65,8 @@ Prefer direct statements over familiar AI patterns:
 - conversational technical narration: “这句话看起来像……”“说白了……”“你会发现……”“真正执行时却会……” when the phrasing simulates a chat but does not clarify the actor, mechanism, condition, or result;
 - repeated sentence openings or three-item parallel lists that add rhythm but no distinction;
 - listicle paragraphs disguised as prose.
+
+Numbered headings, questions, colons, and genuine parallel lists are not defects merely because they occur. Evaluate their job: does the heading guide the reader, the question frame a real problem, the colon bind a useful label, or the list compare distinct items? Remove repeated announcement around a claim when it adds nothing; preserve the claim and its scope.
 
 Rewrite to state the point, use a real transition, name the responsible role or system, or make the list explicit. Chinese exposition can omit a subject that is already clear. Use a direct imperative instead of “你可以……” in procedural writing. Keep a personal pronoun when it establishes verified experience, responsibility, viewpoint, or deliberate reader relationship; keep a contrast when the contrast itself is evidence-bearing.
 
@@ -105,7 +113,7 @@ Review the whole piece for patterns that sentence-level edits cannot fix:
 - signposted conclusions such as “综上所述”“最后总结一下”;
 - internal editing or repository narration that the target reader does not need.
 
-Also inventory metaphor families across the whole document. Product-owned names such as a branded UI label may stay, but narrator-added metaphors should not shift repeatedly among magic, mining, finance, medicine, combat, and manufacturing unless each one explains a distinct mechanism. Prefer one useful framing and plain engineering language elsewhere.
+Also inventory metaphor families across the whole document. Product-owned names such as a branded UI label may stay, but narrator-added metaphors should not shift repeatedly among magic, mining, finance, medicine, combat, and manufacturing unless each one explains a distinct mechanism. Prefer one useful framing and plain engineering language elsewhere. Distinguish a metaphor that misstates a mechanism from one whose appeal is a matter of taste: explain the factual mismatch in the former; preserve author-approved voice or leave an optional suggestion in the latter. A model's confidence is not evidence of the author's intended meaning.
 
 Keep one useful metaphor or framing when it clarifies a mechanism. Remove or define invented labels. End with the next decision, observable milestone, operating boundary, or implication rather than a generic uplift.
 
@@ -118,6 +126,7 @@ Read difficult passages from left to right once. Mark the point where the reader
 | An abstract or inanimate subject is given intention, emotion, or an unexpected action | State the actual requirement, event, or responsible actor. Keep a metaphor when its meaning is immediately recoverable and it serves the requested voice. |
 | A subject and its main verb, or a verb and its object, are separated by several qualifications | Bring the core relationship together. Move supporting detail to an adjacent sentence or a clearly attached clause; preserve each condition and its scope. |
 | Stacked nouns or an unfamiliar compressed label hide how concepts relate | Keep established domain terms; unpack narrator-invented compounds into actors, actions, objects, and explicit relationships. Define an unfamiliar necessary term on first use. |
+| Several names appear to refer to one concept, forcing repeated equivalence guesses | Verify the referent and return unnecessary aliases to its source name. Repeating a precise term is preferable to decorative synonym rotation; preserve names that encode different roles, states, or abstraction levels. |
 | A missing connector, referent, or clause boundary creates a plausible wrong reading | Restore the minimum cue that disambiguates the relationship: an antecedent, punctuation, a relative-clause marker, or a justified condition/contrast connector. Add a causal connector only when the evidence establishes causality. |
 | A shorter rewrite removes the cues needed to reconstruct the meaning | Spend words on the relationship and remove duplication elsewhere. Respect requested limits without dropping a condition, exception, uncertainty, ownership boundary, or required technical detail. |
 
