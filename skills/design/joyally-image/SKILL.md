@@ -1,6 +1,6 @@
 ---
 name: joyally-image
-description: Automatically use for any request to generate, edit, repair, transform, resize, upscale, remove a background from, or otherwise process an image or diagram. Produces raster images, comics, picture-book illustrations, covers, brand marks, game-ready 2D assets, static diagrams, interactive diagrams, icons, wallpapers, animation frames, and pet spritesheets, with asset routing, semantic authoring, packaging, and technical QA.
+description: Create or modify visual assets, including raster images, comics, picture-book illustrations, covers, brand marks, game-ready 2D assets, diagrams, icons, wallpapers, animation frames, and pet spritesheets. Use for generation, editing, repair, transformation, resizing, upscaling, background removal, and conversion. Not for viewing or describing images, OCR, or diagnosing problems shown in screenshots.
 metadata:
   author: 杨俊宁
   email: luozhu2021@gmail.com
@@ -11,6 +11,10 @@ metadata:
 Image production and processing skill. Deterministic transforms run locally without an image API. Generative routes prefer [apiyi](https://api.apiyi.com/register/?aff_code=ijv5) with GPT Image 2.6 (`gpt-image-2.6-sunburst`, `quality=high`) and fall back to an available host-native image capability when APIYI is unavailable.
 
 **Automatically trigger this skill for every image-generation, image-editing, or diagram request.** This is the default visual-asset entry point whenever the requested work creates, edits, repairs, transforms, resizes, upscales, removes a background from, converts, or otherwise processes an image or diagram, including comics, storyboards, illustrations, covers, brand marks, static diagrams, interactive diagrams, icons, animation, game assets, sprites, tilesets, game UI art, and other visual deliverables. Route internally by asset type instead of handing the request to another general image or diagram skill. Comic articles also use this skill for their complete comic production, while `joyally-writting` owns the article prose and factual argument. Image-only edits that must preserve a supplied design use the image-edit route.
+
+**Scope gate:** The requested outcome must be a created or modified visual asset. An attached image alone does not trigger this skill. Viewing, describing, OCR, extracting information, or fixing an application/configuration problem shown in a screenshot belongs to the relevant reading or diagnosis workflow. For an ambiguous request such as “处理” with an error screenshot, distinguish fixing the depicted problem from editing the screenshot. Source-image inspection and visual QA remain supporting steps within an actual creation or editing task, not standalone purposes of this skill.
+
+**Viewing and billing boundary:** Use the current host's vision capability or a local read-only image viewer for inspection. Do not initialize or call APIYI, an image-generation/editing endpoint, or another paid image service merely to view or understand an image. APIYI routing below applies only to generative asset work. Host-native viewing can still count toward the host's own usage or billing; do not claim that viewing is universally free or that it incurred an APIYI charge without an APIYI call.
 
 ## Collaboration boundary
 
