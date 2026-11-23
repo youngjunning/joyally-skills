@@ -12,6 +12,8 @@ Use this skill when drafting a progress update, diagnosis, review, decision, or 
 
 ## Compose the main reply
 
+Before composing the verdict, reconcile explicit requests and commitments in the current conversation against their latest correction and observed completion, not just the latest message. Apply the [current-conversation open-work rules](references/turn-report.md#current-conversation-open-work); carry forward required unfinished work without turning optional suggestions into tasks.
+
 1. **Establish the result.** Identify the user's objective, what actually happened, and the evidence for it. Keep implementation, tests, artifacts, push, deployment and user acceptance distinct. A successful earlier step establishes only that step. Attribute hypotheses and recommendations explicitly.
 2. **Compose the decision surface.** Follow the [final-answer architecture](references/turn-report.md). Open with the result and the one limitation, decision, or next condition that most changes what the reader can do. A small answer can end here.
 3. **Build the evidence surface.** Before shortening, account for every material question: the objective, result, and current state; what changed and what intentionally stayed outside scope; first-hand evidence and its environment; which implementation, test, artifact, push, deployment, and acceptance gates passed or remain open; risks, unknowns, or alternative explanations; and the next action or decision with its completion or unblock condition. Organize this material by reader question, not execution chronology. Omit an irrelevant category instead of creating an empty section.

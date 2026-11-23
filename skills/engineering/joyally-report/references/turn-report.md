@@ -30,6 +30,24 @@ Never create an empty region, stacked dividers, a leading divider, or a trailing
 - Put clickable evidence and file references beside the supported claim. Put commit IDs and operational domain receipts in the status strip unless they are themselves the user's requested result.
 - Draft for completeness first, then remove repetition and ceremony. Compression must preserve blockers, unknowns, scope boundaries, and the condition for continuing.
 
+## Current-conversation open work
+
+Before a progress, delivery, diagnosis, or handoff answer, check the available current conversation for explicit requests and commitments that have not reached their required endpoint. This is a reconciliation step, not a new task manager or an extra closing region.
+
+1. Follow the latest correction, cancellation, deferral, and completion evidence. A side question does not cancel an earlier task. Do not scan other sessions, guess missing history, reopen completed work, or promote optional suggestions into required tasks. Disclose missing context when it prevents a reliable check.
+2. Separate pending implementation / 待实现 (required code, configuration, documentation, release, or external action is missing) from pending verification / 待验证 (the result exists but required acceptance evidence is missing). A blocker is a present condition preventing the next step; a risk is a possible adverse outcome, not merely an unrun test.
+3. If required work remains, put the highest-impact item in the opening decision surface. In the body, group the other known items under the smallest useful “当前会话未完成” or lifecycle label; give each its next concrete action, known owner, and completion or unblock condition. Do not repeat an item already explained in the same answer.
+4. If the check establishes that nothing required remains, a delivery or handoff may say “No known required work remains in the available current conversation.” Do not add an empty checklist to every factual reply. Optional deployment or extra device checks remain evidence boundaries unless the user requested them or an acceptance gate requires them.
+
+Acceptance cases:
+
+| Available conversation | Expected result |
+| --- | --- |
+| Delete a standalone site after preserving its source; backup prepared; then a keyboard question is answered | Source preservation and deletion are still pending implementation; the keyboard answer must not hide them. In particular, deletion is still pending implementation, not pending verification. |
+| The user later says to pause deletion | Preserve the deferral; do not auto-resume or report it as currently actionable work. |
+| Source preserved, remote repository and deployment deleted, readback confirms the endpoints | Close the deletion task; do not keep listing it as pending. |
+| User asks to save a note; source saved, validated, and pushed; live page has not been checked and no publication check was requested | Saving is complete; disclose the unverified live page as a boundary. Saving a note does not silently add a deployment task. |
+
 ## Complete example
 
 ```markdown
