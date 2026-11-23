@@ -1,12 +1,12 @@
 ---
-name: joyally-writting
+name: joyally-writing
 description: Write or edit reader-facing articles, books, picture books, copy, speeches, and formal reports. Lead audience, facts, argument, narrative structure, and exact copy; hand interactive layout and visual systems to joyally-design, and all static or interactive diagram and raster-artwork production to joyally-image. All three skills can work independently; a combined task has one lead. Engineering artifacts remain in their owning workflows unless an editorial pass is explicitly requested.
 metadata:
   author: 杨俊宁
   email: luozhu2021@gmail.com
 ---
 
-# Joyally writting
+# Joyally Writing
 
 Produce useful writing, not merely polished sentences. Establish the task, build a defensible structure, draft from verified material, and review accuracy, clarity, structure, and voice before delivery.
 
@@ -22,7 +22,7 @@ Routine explanations, engineering handoffs, progress replies, PR descriptions, i
 
 ## Collaboration boundary
 
-Joyally writting, `joyally-design`, and `joyally-image` are independent skills that can cooperate. Use only the skill that matches a single-domain request. Combine two or three of them only when the requested deliverable genuinely crosses the corresponding domains of prose, its container, and raster artwork.
+Joyally Writing, `joyally-design`, and `joyally-image` are independent skills that can cooperate. Use only the skill that matches a single-domain request. Combine two or three of them only when the requested deliverable genuinely crosses the corresponding domains of prose, its container, and raster artwork.
 
 - A combined task has exactly one lead skill, selected by the final deliverable. The lead owns decomposition, assembly, whole-deliverable acceptance, and delivery. Supporting skills return bounded sub-artifacts and do not re-plan the task.
 - This skill owns audience, factual claims, argument, narrative structure, exact copy, citations, and publication logic. `joyally-design` owns visual direction, composition rules, information hierarchy, layout and typography, brand adaptation, interaction, visual tokens, component states, and design acceptance. `joyally-image` owns pixel production, character identity continuity, image generation or editing, image formats, and technical image QA.
@@ -173,6 +173,7 @@ Keep this reasoning visible in analytical work and mostly implicit in personal, 
 - Start with substance instead of announcing the topic's importance.
 - Keep editorial process out of reader-facing prose. Omit statements about chapter aggregation, source-file splits, migration history, maintenance copies, publication workflow, or where content is maintained, unless that fact changes the reader's decision or operation. Put such information only in an explicit editor handoff, never in the document body by default.
 - Give claims an actor, object, mechanism, example, source, or consequence.
+- Draft for first-pass comprehension using [reading load](references/deslop.md#gate-f--first-pass-comprehension): make relationships explicit before shortening sentences.
 - Check whether each personal pronoun performs real work. In Chinese exposition, remove a recoverable pronoun, use an imperative for a direct procedure, or replace a vague third person with the exact role or system. Keep first person for verified experience, accountability, method, or disclosed judgment; keep second person for deliberate reader address; keep third person only with a clear antecedent.
 - Keep paragraphs focused, but vary their rhythm naturally.
 - Use tables and lists for repeated fields or real comparisons, not decoration.
@@ -210,6 +211,7 @@ Scan for:
 | I | Editorial leakage: repository, chapter-assembly, maintenance, or publication-process narration that gives the target reader no usable information |
 | J | Concept distance: a product article delays the visible product and normal user task behind history, architecture, or terminology |
 | K | Pronoun and register drift: repeated `我 / 我们 / 你 / 他 / 她 / 他们` framing, vague third-person reference, or conversational technical narration that does not serve viewpoint, responsibility, instruction, quotation, or voice |
+| L | Reading load: unexpected semantic pairings, long dependencies, stacked nouns, missing relation cues, or compression that forces backtracking |
 
 Classify the pass:
 

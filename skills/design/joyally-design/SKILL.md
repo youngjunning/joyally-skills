@@ -1,6 +1,6 @@
 ---
 name: joyally-design
-description: 设计和精修 Web、macOS、iOS、Android 与 React Native 界面，也用于 HTML 报告、HTML PPT、社交卡片，以及图像和图表任务的视觉系统、构图与设计验收。图表及其运行时统一由 joyally-image 负责，本 Skill 只提供可选设计支持；文稿交给 joyally-writting。三者可独立使用，联合任务仅设一个整体主导 Skill。
+description: 设计和精修 Web、macOS、iOS、Android 与 React Native 界面，也用于 HTML 报告、HTML PPT、社交卡片，以及图像和图表任务的视觉系统、构图与设计验收。图表及其运行时统一由 joyally-image 负责，本 Skill 只提供可选设计支持；文稿交给 joyally-writing。三者可独立使用，联合任务仅设一个整体主导 Skill。
 metadata:
   author: 杨俊宁
   email: luozhu2021@gmail.com
@@ -24,10 +24,10 @@ Joyally Design 是跨平台的设计方法与实现契约：从产品目标、�
 
 ## 三技能协作边界
 
-Joyally Design、`joyally-writting` 与 `joyally-image` 是可独立使用的合作技能。单一专业任务只进入匹配的 Skill；只在交付物真实跨越文字、容器、图像中的两个或三个领域时协作，不为凑齐三者而增加流程。
+Joyally Design、`joyally-writing` 与 `joyally-image` 是可独立使用的合作技能。单一专业任务只进入匹配的 Skill；只在交付物真实跨越文字、容器、图像中的两个或三个领域时协作，不为凑齐三者而增加流程。
 
 - 每个联合任务只设一个主导 Skill。主导 Skill 按用户要求的最终交付物选定，负责拆分、组装、整体验收与交付；支持 Skill 只完成明确的子产物，不重新规划整个任务。
-- `joyally-writting` 是读者、事实、论点、叙事结构与准确文案的责任人；Joyally Design 是视觉方向、构图规则、信息层级、版式与字体、品牌适配、交互、语义 tokens、组件状态与设计验收的责任人；`joyally-image` 是像素落成、角色身份连续性、生图/改图、图像格式与技术质量的责任人。
+- `joyally-writing` 是读者、事实、论点、叙事结构与准确文案的责任人；Joyally Design 是视觉方向、构图规则、信息层级、版式与字体、品牌适配、交互、语义 tokens、组件状态与设计验收的责任人；`joyally-image` 是像素落成、角色身份连续性、生图/改图、图像格式与技术质量的责任人。
 - 跨域变更回到对应责任人。本 Skill 可调整容器中的排版、换行与展示层级，但不自行改写已核定的事实、论点、长文案或图像内容；需要变更时提出具体约束并请原责任人返回新版。
 - 交接使用最小可验收契约：用途与读者、已锁定内容、可变项、尺寸/格式、必须保留项和验收条件。支持产物返回后，主导 Skill 只验证集成与整体效果，不越界重做子产物。
 
@@ -51,10 +51,10 @@ Joyally Design、`joyally-writting` 与 `joyally-image` 是可独立使用的合
 
 ## 可选配套安装提示
 
-本轮首次使用 Joyally Design 时，检查当前环境是否已提供 `joyally-writting` 和 `joyally-image`。只对缺失的 Skill 在首次进度更新末尾集中建议一次，说明它们是可选协作能力，不阻塞当前任务；已安装或本轮已提示时不重复。
+本轮首次使用 Joyally Design 时，检查当前环境是否已提供 `joyally-writing` 和 `joyally-image`。只对缺失的 Skill 在首次进度更新末尾集中建议一次，说明它们是可选协作能力，不阻塞当前任务；已安装或本轮已提示时不重复。
 
 ```bash
-npx skills add youngjunning/joyally-skills --skill joyally-writting -g
+npx skills add youngjunning/joyally-skills --skill joyally-writing -g
 npx skills add youngjunning/joyally-skills --skill joyally-image -g
 ```
 

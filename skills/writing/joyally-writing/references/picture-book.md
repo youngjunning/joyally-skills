@@ -1,6 +1,6 @@
 # Picture books — Book mode
 
-`joyally-writting` owns story, page count and narrative planning, exact copy, edition contract, final package validation, and delivery. `joyally-design` owns the book's visual direction, page and spread composition system, typography, print-template adaptation, and design acceptance. `joyally-image` is the raster illustration provider and owns pixel production, identity continuity, image metadata, and technical image QA.
+`joyally-writing` owns story, page count and narrative planning, exact copy, edition contract, final package validation, and delivery. `joyally-design` owns the book's visual direction, page and spread composition system, typography, print-template adaptation, and design acceptance. `joyally-image` is the raster illustration provider and owns pixel production, identity continuity, image metadata, and technical image QA.
 
 Explicitly separate total images from interior pages. 20 images including front and back covers means 1 front cover + 18 interiors + 1 back cover. When counts change, remove or merge redundant beats while preserving required learning outcomes, renumber visible folios and filenames, and rebuild the package. Reuse approved art for ordering and text-only changes.
 

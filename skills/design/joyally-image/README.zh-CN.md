@@ -2,7 +2,7 @@
 
 **通用图像生产与处理 Skill** — 可接入支持 `SKILL.md` 的 Agent 运行时或直接复用其脚本。格式转换、尺寸缩放、压缩、元数据与透明度检查在本地确定性完成；生成式任务优先通过 [apiyi](https://api.apiyi.com/register/?aff_code=ijv5) 使用 GPT Image 2.6 高质量模式，APIYI 不可用时可降级到宿主内置图像能力。
 
-它可独立完成图像任务，也可与 Joyally writting 和 Joyally Design 协作。联合任务只设一个整体主导 Skill：Joyally image 负责像素落成、角色身份连续性、生图/改图和图像技术验收；文稿事实由 Joyally writting 负责，视觉方向、构图、版式、品牌与审美验收由 Joyally Design 负责。图像任务可继续由 Joyally image 主导整体交付，其中的设计阶段由 Joyally Design 主导。使用本 Skill 时，会对缺失的另两个技能给出一次可选安装建议。
+它可独立完成图像任务，也可与 Joyally Writing 和 Joyally Design 协作。联合任务只设一个整体主导 Skill：Joyally image 负责像素落成、角色身份连续性、生图/改图和图像技术验收；文稿事实由 Joyally Writing 负责，视觉方向、构图、版式、品牌与审美验收由 Joyally Design 负责。图像任务可继续由 Joyally image 主导整体交付，其中的设计阶段由 Joyally Design 主导。使用本 Skill 时，会对缺失的另两个技能给出一次可选安装建议。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent-Skill-blueviolet)](#)

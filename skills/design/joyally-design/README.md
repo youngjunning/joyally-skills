@@ -2,7 +2,7 @@
 
 按产品任务选择设计与走查方法，按需使用语义 tokens、跨平台状态、主题资产、报告与交互图表；主题和组件预设均不代替当前产品的品牌与既有设计。选择依据见[完整设计方法](references/fused-method.md)。
 
-它可独立使用，也可与 Joyally writting 和 Joyally image 协作。联合任务只设一个整体主导 Skill：Joyally Design 负责视觉方向、构图、信息层级、版式、品牌、交互与设计验收；准确文稿由 Joyally writting 负责，像素落成与图像技术验收由 Joyally image 负责。图像任务可由 Joyally image 主导整体交付，其中的设计阶段由 Joyally Design 主导。使用本 Skill 时，会对缺失的另两个技能给出一次可选安装建议。
+它可独立使用，也可与 Joyally Writing 和 Joyally image 协作。联合任务只设一个整体主导 Skill：Joyally Design 负责视觉方向、构图、信息层级、版式、品牌、交互与设计验收；准确文稿由 Joyally Writing 负责，像素落成与图像技术验收由 Joyally image 负责。图像任务可由 Joyally image 主导整体交付，其中的设计阶段由 Joyally Design 主导。使用本 Skill 时，会对缺失的另两个技能给出一次可选安装建议。
 
 统一的跨平台设计 Skill：从产品与品牌建立视觉语言，覆盖原生平台适配、React 组件契约、可移植 HTML 报告、HTML PPT，并可为 `joyally-image` 的图表分支提供视觉系统和设计评审；图表运行时由 `joyally-image` 自己维护。七套并列主题为「青山湖」「西湖」「苏州园林」「马尔代夫」「阿尔卑斯雪山」、[香奈儿风](references/fashion-xiaoxiang.md)与[太空](references/space.md)；青山湖正在补齐四季参考，其余六套主题各有 20 张可追溯的参考画面。前五套的[景观视觉规则](references/visual-language.md)从地点取景，香奈儿风从包袋、山茶花、巴黎夜景、时装细节与编辑式呈现取材，太空主题从真实观测影像研究轨道与行星地平线。香奈儿风与太空分别有[浅色与深色 token 样本](assets/xiaoxiang-theme.tokens.json)和[浅色与深色 token 样本](assets/space-theme.tokens.json)；现有平台 tokens 与四季预设是青山湖主题的实现样本。真实参考画面保存在[青山湖](assets/references/qingshan-lake/README.md)、[西湖](assets/references/west-lake/README.md)、[苏州园林](assets/references/suzhou-gardens/README.md)、[马尔代夫](assets/references/maldives/README.md)、[阿尔卑斯雪山](assets/references/alpine-snow-mountains/README.md)、[香奈儿风](assets/references/xiaoxiang/README.md)与[太空](assets/references/space/README.md)目录；苏州园林也使用[留园照片](assets/references/lingering-garden/README.md)。
 

@@ -4,7 +4,7 @@ Use this reference for every persistent reader-facing article, blog post, ATA, t
 
 ## Ownership
 
-`joyally-writting` owns the cover's editorial decision: what promise it should make, which identity and facts it must preserve, where it appears, whether an existing cover remains valid, and what evidence proves it is deliverable. `joyally-design` owns the visual direction, composition, typography, brand adaptation, and design acceptance. `joyally-image` owns pixel production, identity-preserving generation or editing, file output, and technical image QA. The article's thesis and publication state remain here.
+`joyally-writing` owns the cover's editorial decision: what promise it should make, which identity and facts it must preserve, where it appears, whether an existing cover remains valid, and what evidence proves it is deliverable. `joyally-design` owns the visual direction, composition, typography, brand adaptation, and design acceptance. `joyally-image` owns pixel production, identity-preserving generation or editing, file output, and technical image QA. The article's thesis and publication state remain here.
 
 ## Hard requirement
 

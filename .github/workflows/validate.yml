@@ -16,7 +16,7 @@ jobs:
       - run: python3 scripts/validate.py
       - run: python3 -m unittest discover -s tests
       - run: python3 skills/design/joyally-design/scripts/validate-joyally-tokens.py
-      - run: python3 -m unittest discover -s skills/writing/joyally-writting/tests
+      - run: python3 -m unittest discover -s skills/writing/joyally-writing/tests
       - run: python3 -m pip install -r skills/design/joyally-image/requirements.txt
       - run: python3 -m unittest discover -s skills/design/joyally-image/scripts -p 'test_*.py'
       - run: python3 -m unittest discover -s skills/design/joyally-image/tests

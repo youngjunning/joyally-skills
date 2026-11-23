@@ -48,12 +48,12 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 | 录音、配音、人声修复、TTS、声音克隆、音色转换或转写对齐 | [Joyally Voice](skills/design/joyally-voice/SKILL.md) |
 | 作曲、写歌、音乐生成、歌声合成、分轨、混音或母带 | [Joyally Music](skills/design/joyally-music/SKILL.md) |
 | 为产品制作或重做整套主题，避免只换配色 | [Joyally 主题制作](skills/design/joyally-theme-creation/SKILL.md) |
-| 写文章、绘本或建设内容站点 | [Joyally writting](skills/writing/joyally-writting/SKILL.md)、[Joyally Fiction](skills/writing/joyally-fiction/SKILL.md)、[adsense-site-builder](skills/publishing/adsense-site-builder/SKILL.md) |
+| 写文章、绘本或建设内容站点 | [Joyally Writing](skills/writing/joyally-writing/SKILL.md)、[Joyally Fiction](skills/writing/joyally-fiction/SKILL.md)、[adsense-site-builder](skills/publishing/adsense-site-builder/SKILL.md) |
 | 从 B 站、微信等视频链接或音视频文件提取字幕、时间点与结构化内容 | [Joyally Media](skills/productivity/joyally-media/SKILL.md) |
 | 本地整理对话、笔记和资料，不部署也可使用 | [distill-me](https://github.com/youngjunning/distill-me) |
 | 维护硅基紫升与硅基俊宁的资料、项目方案、工作脉络与定向同步 | [distill-zisheng](https://github.com/youngjunning/distill-zisheng) |
 
-Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作、交互/版式设计和栅格图像任务，也可联合交付。联合任务只设一个整体主导 Skill：写作负责读者、事实、论证与准确文案，设计负责视觉方向、构图、信息层级、版式、品牌与审美验收，图像负责像素落成、身份连续性与图像技术验收。图像任务可由 Joyally image 主导整体交付，其中的设计阶段仍由 Joyally Design 主导。跨域变更回到责任 Skill，支持 Skill 不改写上游成果。使用任一 Skill 时，会对当前环境缺失的另两个 Skill 给出一次可选安装建议，不阻塞当前任务。
+Joyally Writing、Joyally Design 和 Joyally image 可分别独立完成写作、交互/版式设计和栅格图像任务，也可联合交付。联合任务只设一个整体主导 Skill：写作负责读者、事实、论证与准确文案，设计负责视觉方向、构图、信息层级、版式、品牌与审美验收，图像负责像素落成、身份连续性与图像技术验收。图像任务可由 Joyally image 主导整体交付，其中的设计阶段仍由 Joyally Design 主导。跨域变更回到责任 Skill，支持 Skill 不改写上游成果。使用任一 Skill 时，会对当前环境缺失的另两个 Skill 给出一次可选安装建议，不阻塞当前任务。
 
 ## 分类索引
 
@@ -85,7 +85,7 @@ Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作�
 
 | 技能 | 用途 |
 | --- | --- |
-| [Joyally writting](skills/writing/joyally-writting/SKILL.md) | 中英文章、书稿与绘本写作，主导读者、事实、论证、叙事与准确文案 |
+| [Joyally Writing](skills/writing/joyally-writing/SKILL.md) | 中英文章、书稿与绘本写作，主导读者、事实、论证、叙事与准确文案 |
 | [Joyally Fiction](skills/writing/joyally-fiction/SKILL.md) | 小说创作与阅读站点建设 |
 
 ### Publishing
@@ -102,7 +102,7 @@ Joyally writting、Joyally Design 和 Joyally image 可分别独立完成写作�
 | [distill-me](https://github.com/youngjunning/distill-me) | 用零部署本地工作台整理材料与草稿，栏目可自由取舍 |
 | [distill-zisheng](https://github.com/youngjunning/distill-zisheng) | 独立维护硅基紫升与硅基俊宁的资料、项目方案、工作脉络与定向内容同步 |
 
-Joyally Design、Joyally Motion、Joyally Voice、Joyally Music、Joyally 主题制作、Joyally image、Joyally writting、Joyally Fiction 和 Joyally Media 的安装与调用标识分别为 `joyally-design`、`joyally-motion`、`joyally-voice`、`joyally-music`、`joyally-theme-creation`、`joyally-image`、`joyally-writting`、`joyally-fiction` 和 `joyally-media`。机器可读目录见 [catalog.json](catalog.json)。
+Joyally Design、Joyally Motion、Joyally Voice、Joyally Music、Joyally 主题制作、Joyally image、Joyally Writing、Joyally Fiction 和 Joyally Media 的安装与调用标识分别为 `joyally-design`、`joyally-motion`、`joyally-voice`、`joyally-music`、`joyally-theme-creation`、`joyally-image`、`joyally-writing`、`joyally-fiction` 和 `joyally-media`。机器可读目录见 [catalog.json](catalog.json)。
 
 ## 使用与维护
 

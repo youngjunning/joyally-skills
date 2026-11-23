@@ -2,7 +2,7 @@
 
 Use this workflow for a coordinated set of inline figures for an article, ATA, tutorial, report, or document. It supplements the type-specific image references; it does not replace them.
 
-When `joyally-writting` is available, consume its approved illustration manifest and keep its reader question, locked facts, caption, alt text, and insertion anchor unchanged. When this skill is used independently with a source document, first create the smallest equivalent manifest: figure ID, purpose, reader question, anchor, locked semantics, route, brief, caption, alt text, dimensions, continuity group, and status. Do not rewrite the article merely to make image production easier.
+When `joyally-writing` is available, consume its approved illustration manifest and keep its reader question, locked facts, caption, alt text, and insertion anchor unchanged. When this skill is used independently with a source document, first create the smallest equivalent manifest: figure ID, purpose, reader question, anchor, locked semantics, route, brief, caption, alt text, dimensions, continuity group, and status. Do not rewrite the article merely to make image production easier.
 
 ## Produce by purpose
 

@@ -2,7 +2,7 @@
 
 **A general-purpose image production and processing Skill** — usable from any Agent runtime that supports `SKILL.md`, or by reusing its scripts directly. Deterministic conversion, resize, compression, metadata and alpha work runs locally. Generative work prefers GPT Image 2.6 at high quality through [apiyi](https://api.apiyi.com/register/?aff_code=ijv5) and can fall back to a host-native image capability when APIYI is unavailable.
 
-It can work independently or cooperate with Joyally writting and Joyally Design. A combined task keeps one overall lead: this skill owns pixel production, identity continuity, generation or editing, and technical image QA; Joyally writting owns factual copy, while Joyally Design owns visual direction, composition, layout, brand adaptation, and design acceptance. An image task can keep Joyally image as its overall lead while Joyally Design leads its design phase. On first use, the skill recommends any missing companions once as optional installations without blocking the task.
+It can work independently or cooperate with Joyally Writing and Joyally Design. A combined task keeps one overall lead: this skill owns pixel production, identity continuity, generation or editing, and technical image QA; Joyally Writing owns factual copy, while Joyally Design owns visual direction, composition, layout, brand adaptation, and design acceptance. An image task can keep Joyally image as its overall lead while Joyally Design leads its design phase. On first use, the skill recommends any missing companions once as optional installations without blocking the task.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent-Skill-blueviolet)](#)

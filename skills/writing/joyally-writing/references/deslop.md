@@ -6,15 +6,17 @@ Use this reference for articles, ATA, blogs, technical documentation, proposals,
 
 Deslop removes writing that sounds generated, padded, or over-produced while keeping the author's facts, judgment, evidence, terminology, and voice. It is a final quality gate, not a synonym for simplification and not permission to rewrite a document into a generic house style.
 
+Optimize for first-pass comprehension, not for looking human or minimizing word count. A sentence can contain no cliché and still force the reader to guess its structure, hold several unfinished relationships in memory, or reread it. Review those costs as well as the visible style patterns.
+
 Run it after the structure and facts are stable and before delivery. Use the smallest change that fixes the pattern. Never delete a paragraph merely because its wording is weak; preserve its information or rewrite it with a concrete actor, action, object, evidence, or consequence.
 
 ## Scope router
 
 | Content | Required pass |
 | --- | --- |
-| Article, ATA, blog, product or project introduction | Gates A–E + quick checks |
-| Technical documentation, proposal, report, speech | Gates A–D + E where the document makes broad claims |
-| Short transactional copy | Gates A, B, E + quick checks |
+| Article, ATA, blog, product or project introduction | Gates A–F + quick checks |
+| Technical documentation, proposal, report, speech | Gates A–D, F + E where the document makes broad claims |
+| Short transactional copy | Gates A, B, E, F + quick checks |
 | Code, configuration, logs, legal text, machine-readable data, verbatim quotation | Do not rewrite; inspect only for surrounding prose if requested |
 
 ## Two-pass workflow for long Markdown
@@ -23,7 +25,7 @@ Use a baseline-and-rescan pass when the document is long enough that repeated pa
 
 1. **Inventory clusters before editing.** Search for repeated binary reversals, rhetorical setup, pronoun-led sentence openings, chatty explanatory transitions, bold spans, em dashes, decorative arrows, slogan-like one-line endings, and metaphor families. Counts are navigation aids, not quality scores or mandatory limits.
 2. **Separate source language from narrator language.** Preserve verified product labels, UI names, quotations, domain terms, code, and deliberate voice. Review narrator-added emphasis and metaphor more aggressively.
-3. **Edit from large to small.** Remove repeated claims and competing metaphors first; then repair paragraph templates, vague actors, and unsupported certainty; reduce decorative formatting last.
+3. **Edit from large to small.** Remove repeated claims and competing metaphors first; repair paragraph relationships and reading load; then repair templates, vague actors, and unsupported certainty; reduce decorative formatting last.
 4. **Re-scan the same categories.** Read each survivor in context. Keep it only when it carries a real contrast, navigation function, product identity, or necessary emphasis.
 5. **Compare the before and after meaning.** Numbers, conditions, states, links, code, examples, and decision boundaries must remain intact even when the prose becomes shorter.
 
@@ -107,6 +109,37 @@ Also inventory metaphor families across the whole document. Product-owned names 
 
 Keep one useful metaphor or framing when it clarifies a mechanism. Remove or define invented labels. End with the next decision, observable milestone, operating boundary, or implication rather than a generic uplift.
 
+## Gate F — First-pass comprehension
+
+Read difficult passages from left to right once. Mark the point where the reader must revise an earlier interpretation or keep an unresolved relationship in memory; repair that point before trimming words. Use context and the intended reader, not a banned-word list or a fixed sentence-length threshold.
+
+| Reading obstacle | Editorial action |
+| --- | --- |
+| An abstract or inanimate subject is given intention, emotion, or an unexpected action | State the actual requirement, event, or responsible actor. Keep a metaphor when its meaning is immediately recoverable and it serves the requested voice. |
+| A subject and its main verb, or a verb and its object, are separated by several qualifications | Bring the core relationship together. Move supporting detail to an adjacent sentence or a clearly attached clause; preserve each condition and its scope. |
+| Stacked nouns or an unfamiliar compressed label hide how concepts relate | Keep established domain terms; unpack narrator-invented compounds into actors, actions, objects, and explicit relationships. Define an unfamiliar necessary term on first use. |
+| A missing connector, referent, or clause boundary creates a plausible wrong reading | Restore the minimum cue that disambiguates the relationship: an antecedent, punctuation, a relative-clause marker, or a justified condition/contrast connector. Add a causal connector only when the evidence establishes causality. |
+| A shorter rewrite removes the cues needed to reconstruct the meaning | Spend words on the relationship and remove duplication elsewhere. Respect requested limits without dropping a condition, exception, uncertainty, ownership boundary, or required technical detail. |
+
+An inanimate subject is not an error by itself: “缓存拒绝了过期请求” describes an implemented operation; “延迟增加了” describes a measurable state. Preserve those meanings. Passive voice may also be appropriate when the actor is unknown or irrelevant. Review comprehension, not grammatical category membership.
+
+After editing, compare the propositions before and after: who did what, to which object, under which conditions, with what certainty and result? Then read the surrounding paragraph once and check that its referents and logical relationships remain clear. Passing means the marked obstacle is resolved or deliberately retained for a concrete genre or voice reason; marker counts and AI-detector scores are not acceptance evidence.
+
+Round-trip translation can suggest an alternative paraphrase for a stubborn sentence, but is optional and never the accepted text automatically. Compare it against the protected facts, scope, terminology, and voice; translation can change all of them. Use only an available authorized tool and material permitted for that service. Ordinary editorial review needs no translation service.
+
+### Acceptance cases
+
+These are synthetic examples for applying the gate, not quotations or automatic replacement rules.
+
+| Input | Expected editorial decision |
+| --- | --- |
+| “流程渴望更完整的证据。” | If the source establishes a submission requirement, write “流程要求提交完整证据。” Otherwise identify the real requirement before rewriting. |
+| “本轮只评审了在隔离环境完成构建但尚未进行真实订单验收的版本。” | Write “本轮评审的版本已在隔离环境完成构建，但尚未进行真实订单验收。其他版本不在本轮评审范围内。” Keep the limited review scope and incomplete acceptance state. |
+| “The report the analyst said the committee requested was delayed.” | Write “The report was delayed. The analyst said that the committee requested it.” Keep the attribution rather than asserting the request as an independently verified fact. |
+| “上线完成，投诉下降。” | Keep the observations separate or clarify timing. Add “因此” only if there is evidence that the release caused the decline. |
+| “缓存拒绝了过期请求。” / “模型预测下一个词。” | Retain the technical actions when supported by the implementation; do not replace every inanimate subject with a human actor. |
+| A clear metaphor in a requested speech or an exact quotation | Preserve the voice or quotation; explain only if the intended audience would otherwise misread it. |
+
 ## Quick checks
 
 Before delivery, ask:
@@ -120,6 +153,7 @@ Before delivery, ask:
 - Is conversational wording confined to a genre, voice, prompt, dialogue, quotation, or UI context that actually benefits from it?
 - Is every non-fiction explanatory sentence rigorous, accurate, plain, and free of narrator-added colloquialism, vague claims, and promotional inflation?
 - Did any paragraph become more abstract after editing?
+- Can the reader resolve each difficult passage without guessing the clause structure, holding avoidable unfinished relationships, or losing information removed for brevity?
 - Are private names, domains, identifiers, unpublished metrics, and internal process details appropriate for the target audience?
 - Is the final paragraph a useful implication or next step rather than a slogan?
 

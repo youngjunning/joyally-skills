@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-23
+
+1. 将 `joyally-writting` 更名为 `joyally-writing`，同步目录、调用标识、UI 元数据、协作引用、公开索引与 CI 测试入口。基于老王《AI味到底是什么？》及其引用的英语研究，在 deslop 中加入首遍理解检查：语义搭配、长依赖、名词堆叠、关系提示与过度压缩；保留有效技术表达、事实限定及原声线，不将词数或 AI 检测分数当验收标准。
+
 ## 2026-11-22
 
 14. 将 `joyally-loop` 晋升并迁移为独立 [JoyStack `joy-loop`](https://github.com/youngjunning/joystack/tree/main/skills/engineering/joy-loop)：有限轮次、finding ledger 与停止条件归 Loop，评审、修正、验证和 Git 交付分别复用 `joy-review`、`joy-build`、`joy-verify` 与 `joy-git`；本仓库移除重复实体、目录项与许可副本。
