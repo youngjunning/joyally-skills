@@ -84,6 +84,12 @@
     "path": "skills/design/joyally-music"
   },
   {
+    "name": "joyally-video",
+    "category": "design",
+    "summary": "统筹视频脚本、美术、动画、人声、配乐与合成，以短样确认和成片视听验收驱动交付",
+    "path": "skills/design/joyally-video"
+  },
+  {
     "name": "joyally-theme-creation",
     "category": "design",
     "summary": "从参考素材制作有结构差异的主题，完成语义 token、自有组件与同内容验收",

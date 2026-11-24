@@ -45,6 +45,7 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 | 自动留存关键操作截图、找回写作素材或制作脱敏演示 | [Joyally Spotlight](skills/design/joyally-spotlight/SKILL.md) |
 | 统一设计、制作 HTML 报告、HTML PPT 或交互图表 | [Joyally Design](skills/design/joyally-design/SKILL.md) |
 | 设计、实现或评审产品动效、网页动画、代码视频与 2D/3D 运动 | [Joyally Motion](skills/design/joyally-motion/SKILL.md) |
+| 制作或整改视频，统筹脚本、美术、动画与音频，以短样和成片视听验收驱动交付 | [Joyally Video](skills/design/joyally-video/SKILL.md) |
 | 录音、配音、人声修复、TTS、声音克隆、音色转换或转写对齐 | [Joyally Voice](skills/design/joyally-voice/SKILL.md) |
 | 作曲、写歌、音乐生成、歌声合成、分轨、混音或母带 | [Joyally Music](skills/design/joyally-music/SKILL.md) |
 | 为产品制作或重做整套主题，避免只换配色 | [Joyally 主题制作](skills/design/joyally-theme-creation/SKILL.md) |
@@ -78,6 +79,7 @@ Joyally Writing、Joyally Design 和 Joyally image 可分别独立完成写作�
 | [Joyally Spotlight](skills/design/joyally-spotlight/SKILL.md) | 关键操作截图私有归档与检索；真实演示素材扫描、遮盖与成品复核 |
 | [Joyally Design](skills/design/joyally-design/SKILL.md) | 跨平台界面、HTML 交付、可探索图表与图像设计，主导视觉方向、构图、版式、交互与设计验收 |
 | [Joyally Motion](skills/design/joyally-motion/SKILL.md) | 产品动效、网页动画、代码视频、2D/3D 与物理效果的意图、选型、实现和验收 |
+| [Joyally Video](skills/design/joyally-video/SKILL.md) | 视频总流程：专项交接、组合短样确认、成片实际音轨与观看验收、可追溯交付 |
 | [Joyally Voice](skills/design/joyally-voice/SKILL.md) | 人声录制、修复、合成、配音、克隆、音色转换、转写对齐与授权验收 |
 | [Joyally Music](skills/design/joyally-music/SKILL.md) | 音乐创作、生成、歌声合成、分轨、音频转 MIDI、混音与母带验收 |
 | [Joyally 主题制作](skills/design/joyally-theme-creation/SKILL.md) | 从参考素材提炼构图与交互，设计有区分度的布局、自有组件和语义 token |
@@ -104,6 +106,8 @@ Joyally Writing、Joyally Design 和 Joyally image 可分别独立完成写作�
 | [distill-zisheng](https://github.com/youngjunning/distill-zisheng) | 独立维护硅基紫升与硅基俊宁的资料、项目方案、工作脉络与定向内容同步 |
 
 Joyally Design、Joyally Motion、Joyally Voice、Joyally Music、Joyally 主题制作、Joyally image、Joyally Writing、Joyally Fiction 和 Joyally Media 的安装与调用标识分别为 `joyally-design`、`joyally-motion`、`joyally-voice`、`joyally-music`、`joyally-theme-creation`、`joyally-image`、`joyally-writing`、`joyally-fiction` 和 `joyally-media`。机器可读目录见 [catalog.json](catalog.json)。
+
+视频整片制作与质量整改的总入口为 `joyally-video`：按任务选择上述专项与当前可用的HyperFrames能力，先验证组合短样，再交付实际成片；单独配音、作曲或提取内容仍使用原专项。
 
 ## 使用与维护
 

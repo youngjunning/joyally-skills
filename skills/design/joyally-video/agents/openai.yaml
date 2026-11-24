@@ -1,0 +1,6 @@
+interface:
+  display_name: "Joyally Video"
+  short_description: "统筹视频脚本、美术、动画与音频，以短样和成片验收驱动交付"
+  default_prompt: "使用 $joyally-video 制作或优化视频，先确认本轮范围并验证短样，再交付可追溯成片。"
+policy:
+  allow_implicit_invocation: true
