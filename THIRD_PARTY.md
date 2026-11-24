@@ -15,7 +15,7 @@
 | joyally-voice | [人声工具矩阵](skills/design/joyally-voice/references/tool-matrix.md) 链接官方语音、转换、分离与对齐项目；流程与审查协议为独立编写，不复制上游源码、模型或第三方 Skill |
 | joyally-music | [音乐工具矩阵](skills/design/joyally-music/references/tool-matrix.md) 链接官方生成、歌声、分轨与转录项目；流程为独立编写，模型权重、训练数据和输出许可仍按上游分别核对 |
 | joyally-macos | [NOTICE](skills/engineering/joyally-macos/NOTICE) 说明 SwiftUI-Agent-Skill 的改编、MIT 许可和未分发的无许可参考材料 |
-| joyally-test | 原有质量治理分支参考 [Marcello Curto 的 Test Quality Audit](https://github.com/marcellocurto/skills/tree/main/skills/test-quality-audit) 的审查目标；扩展能力融合的 10 个 Agent Skill、固定版本与 MIT、Apache-2.0、CC BY-SA 4.0 边界见[来源复核](skills/engineering/joyally-test/references/source-review.md)。全部流程独立编写，未复制无许可原文或上游脚本 |
+| joyally-test（已迁入 JoyStack joy-test） | 原有质量治理分支参考 [Marcello Curto 的 Test Quality Audit](https://github.com/marcellocurto/skills/tree/main/skills/test-quality-audit) 的审查目标；扩展能力融合的 10 个 Agent Skill、固定版本与 MIT、Apache-2.0、CC BY-SA 4.0 边界见[来源复核](https://github.com/youngjunning/joystack/blob/main/skills/engineering/joy-test/references/source-review.md)。全部流程独立编写，未复制无许可原文或上游脚本 |
 | joyally-arch | 渐进式架构分支参考 [Tobi1chi/arch-grower](https://github.com/Tobi1chi/arch-grower)（MIT）的局部切片、待定/储备状态、Walking Skeleton、稳定子图折叠与失败路径学习；流程独立编写，未复制上游 CLI、图 schema、脚本或强制交互策略 |
 
 仓库管理方式参考 Matt Pocock 的 [skills](https://github.com/mattpocock/skills)。本仓库的管理脚本单独实现。

@@ -24,12 +24,6 @@
     "summary": "默认用于工作进度、测试、排障、评审和交付回复，无需点名，按事情大小调整篇幅"
   },
   {
-    "name": "joyally-test",
-    "category": "engineering",
-    "path": "skills/engineering/joyally-test",
-    "summary": "TDD、Web/API 与目标环境测试、AI/Agent evals、失败诊断和测试质量治理"
-  },
-  {
     "name": "joyally-writing",
     "category": "writing",
     "path": "skills/writing/joyally-writing",

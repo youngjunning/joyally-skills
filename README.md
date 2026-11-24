@@ -38,7 +38,7 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 | 判断产品方向、渐进推演系统边界或设计 AI Agent 方案 | [joyally-arch](skills/engineering/joyally-arch/SKILL.md) |
 | 开发或评审 Agent 驱动的浏览器扩展，避免脚本写死业务流程 | [joyally-browser-extension-dev](skills/engineering/joyally-browser-extension-dev/SKILL.md) |
 | 向人说明进展、交付、排障或评审结论 | [joyally-report](skills/engineering/joyally-report/SKILL.md) |
-| 设计、实现、运行或治理测试与 AI/Agent evals，判断证据能否挡住真实回归 | [joyally-test](skills/engineering/joyally-test/SKILL.md) |
+| 设计、实现、运行或治理测试与 AI/Agent evals，判断证据能否挡住真实回归 | [joy-test](https://github.com/youngjunning/joystack/tree/main/skills/engineering/joy-test) |
 | 判断 Git 改动是否应自动提交和推送，并安全收尾 | [JoyStack joy-git](https://github.com/youngjunning/joystack/tree/main/skills/engineering/joy-git) |
 | 让独立 reviewer 自动复查、修正并复验实质代码改动 | [JoyStack joy-loop](https://github.com/youngjunning/joystack/tree/main/skills/engineering/joy-loop) |
 | 生成图像、漫画或静态架构图片 | [Joyally image](skills/design/joyally-image/SKILL.md) |
@@ -55,6 +55,8 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 
 Joyally Writing、Joyally Design 和 Joyally image 可分别独立完成写作、交互/版式设计和栅格图像任务，也可联合交付。联合任务只设一个整体主导 Skill：写作负责读者、事实、论证与准确文案，设计负责视觉方向、构图、信息层级、版式、品牌与审美验收，图像负责像素落成、身份连续性与图像技术验收。图像任务可由 Joyally image 主导整体交付，其中的设计阶段仍由 Joyally Design 主导。跨域变更回到责任 Skill，支持 Skill 不改写上游成果。使用任一 Skill 时，会对当前环境缺失的另两个 Skill 给出一次可选安装建议，不阻塞当前任务。
 
+测试能力于 2026-11-24 从 joyally-test 迁入 JoyStack 并改名 joy-test；本仓库不再分发旧入口，完整测试参考和来源归属随新模块维护。
+
 ## 分类索引
 
 ### Engineering
@@ -64,7 +66,6 @@ Joyally Writing、Joyally Design 和 Joyally image 可分别独立完成写作�
 | [joyally-arch](skills/engineering/joyally-arch/SKILL.md) | 渐进式业务产品判断、AI 架构与 Skill、Agent、数字员工交付 |
 | [joyally-browser-extension-dev](skills/engineering/joyally-browser-extension-dev/SKILL.md) | Agent 驱动浏览器扩展的 runtime、页面观察、业务 Skill 与受保护工具边界 |
 | [joyally-report](skills/engineering/joyally-report/SKILL.md) | 向人解释进展、结果、证据与下一步 |
-| [joyally-test](skills/engineering/joyally-test/SKILL.md) | TDD、测试策略与执行、Web/API 目标环境、AI/Agent evals、失败诊断与质量治理 |
 | [tauri-skills](skills/engineering/tauri-skills/SKILL.md) | Tauri 2 安全边界与 Node.js sidecar |
 | [browser-performance-audit](skills/engineering/browser-performance-audit/SKILL.md) | 加载、资源与长会话性能审查 |
 | [joyally-macos](skills/engineering/joyally-macos/SKILL.md) | 原生 macOS、SwiftUI 与 Instruments 工作流（含许可改编） |
