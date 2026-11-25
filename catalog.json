@@ -54,9 +54,9 @@
     "summary": "浏览器加载、资源与长会话性能审查"
   },
   {
-    "name": "joyally-browser-extension-dev",
+    "name": "joyally-aice",
     "category": "engineering",
-    "path": "skills/engineering/joyally-browser-extension-dev",
+    "path": "skills/engineering/joyally-aice",
     "summary": "开发和评审 Agent 驱动的浏览器扩展，区分 runtime、页面观察、业务 Skill 与受保护工具边界"
   },
   {

@@ -1,12 +1,12 @@
 ---
-name: joyally-browser-extension-dev
+name: joyally-aice
 description: 开发、重构或评审由 Agent 操作网页的 Chrome、Edge 等浏览器扩展。用于 DOM/ARIA 快照、页面工具、业务 Skill、受保护接口、通用 runtime 与项目宿主分层、MV3 后台生命周期、打包与安装端验收，尤其适合排查扩展脚本写死按钮、步骤、重试或业务分支的问题。
 metadata:
   author: 杨俊宁
   email: luozhu2021@gmail.com
 ---
 
-# Joyally Browser Extension Dev
+# Joyally AICE
 
 把扩展做成 Agent 的可靠执行环境，不把一次页面观察固化成业务流程。目标是同一套机制能承受按钮文案、空格、控件层级和页面阶段变化，同时把不可逆操作限制在可验证的边界内。
 

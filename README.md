@@ -36,7 +36,7 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 | 你要解决的问题 | 从这里开始 |
 | --- | --- |
 | 判断产品方向、渐进推演系统边界或设计 AI Agent 方案 | [joyally-arch](skills/engineering/joyally-arch/SKILL.md) |
-| 开发或评审 Agent 驱动的浏览器扩展，避免脚本写死业务流程 | [joyally-browser-extension-dev](skills/engineering/joyally-browser-extension-dev/SKILL.md) |
+| 开发或评审 Agent 驱动的浏览器扩展，避免脚本写死业务流程 | [joyally-aice](skills/engineering/joyally-aice/SKILL.md) |
 | 向人说明进展、交付、排障或评审结论 | [joyally-report](skills/engineering/joyally-report/SKILL.md) |
 | 设计、实现、运行或治理测试与 AI/Agent evals，判断证据能否挡住真实回归 | [joy-test](https://github.com/youngjunning/joystack/tree/main/skills/engineering/joy-test) |
 | 判断 Git 改动是否应自动提交和推送，并安全收尾 | [JoyStack joy-git](https://github.com/youngjunning/joystack/tree/main/skills/engineering/joy-git) |
@@ -65,7 +65,7 @@ Joyally Writing、Joyally Design 和 Joyally image 可分别独立完成写作�
 | 技能 | 用途 |
 | --- | --- |
 | [joyally-arch](skills/engineering/joyally-arch/SKILL.md) | 渐进式业务产品判断、AI 架构与 Skill、Agent、数字员工交付 |
-| [joyally-browser-extension-dev](skills/engineering/joyally-browser-extension-dev/SKILL.md) | Agent 驱动浏览器扩展的 runtime、页面观察、业务 Skill 与受保护工具边界 |
+| [joyally-aice](skills/engineering/joyally-aice/SKILL.md) | Agent 驱动浏览器扩展的 runtime、页面观察、业务 Skill 与受保护工具边界 |
 | [joyally-report](skills/engineering/joyally-report/SKILL.md) | 向人解释进展、结果、证据与下一步 |
 | [tauri-skills](skills/engineering/tauri-skills/SKILL.md) | Tauri 2 安全边界与 Node.js sidecar |
 | [browser-performance-audit](skills/engineering/browser-performance-audit/SKILL.md) | 加载、资源与长会话性能审查 |
