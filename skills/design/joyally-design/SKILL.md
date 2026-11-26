@@ -75,12 +75,12 @@ npx skills add youngjunning/joyally-skills --skill joyally-image -g
 | Android 原生 App / Compose | [Android](references/android.md)；使用 Jetpack Compose Material 3 |
 | React Native / Expo | [React Native](references/react-native.md) |
 | H5 页面 | [H5 界面](references/h5-ui.md)；Joyally 自有 React 新界面使用 shadcn/ui，非 React 或存量项目沿用现有组件基础 |
-| 中后台／工作台（React Web） | 新建中后台使用 Next.js App Router，按[官方安装文档](https://nextjs.org/docs/app/getting-started/installation)建立项目；读 [React](references/react-design-system.md) 与[工作台](references/web-dashboard.md)。Joyally Design 的 React Web 主组件体系为完整 shadcn/ui，可按任务加入 Magic UI 或 React Bits 组件；存量项目沿用现有架构和组件，框架迁移单独评估 |
+| 中后台／工作台（Next.js Web） | Joyally 自有中后台与可交互 Demo 使用 Next.js App Router；读 [React 设计系统](references/react-design-system.md) 与[工作台](references/web-dashboard.md)。基础控件来自项目维护的 Joyally 组件库，使用 shadcn/ui 作为组件基线；同时按页面任务实际接入 Magic UI 组件，承担信息呈现或操作反馈的明确职责。不能只用原生 HTML、CSS、JavaScript 仿造产品界面。存量非 Next.js 项目的框架迁移单独评估 |
 | 落地页（含官网首页、产品介绍页） | [Landing page](references/web-landing-page.md)；按实际平台选组件基础，需要展示或交互动效时再考虑 Magic UI、React Bits；制作产品界面演示、Banner 或 Bento 展示素材时读 [StageShow 接入](references/stageshow.md) |
 | Chrome 扩展界面 | [扩展界面](references/chrome-extension-ui.md)；Joyally 自有 React 新界面使用 shadcn/ui，非 React 或存量扩展沿用现有组件基础 |
 | Chrome 扩展图标 | [扩展图标](references/chrome-extension-icon.md) |
 
-按交付场景选组件基础：Joyally Design 的 React Web 主组件体系统一为 shadcn/ui，H5 与 Chrome 扩展的 React 新界面仍按各自平台路径处理触控、尺寸、CSP 和打包；非 React 页面、React Native 与其他原生平台沿用对应组件基础。其他项目已有组件体系先沿用并按获准范围升级。
+按交付场景选组件基础：Joyally Design 自有的 Next.js Web 产品界面在本地维护 shadcn/ui 基线和 Joyally 业务组合组件，中后台及其可交互 Demo 同时接入合适的 Magic UI 组件；HTML 报告、静态介绍页和 HTML PPT 仍按各自交付模式处理。H5 与 Chrome 扩展的新界面按平台路径处理触控、尺寸、CSP 和打包；存量其他项目先沿用已有组件体系并按获准范围升级。验收时核对组件源码、导入、实际渲染状态和关键交互，不把安装依赖或手写相似外观当成接入。
 
 移动端保留原生触控热区与字体缩放；桌面根据任务选择信息密度。先布局与层级，再语义颜色、表面、组件状态，最后加入品牌氛围与动效。原生示例和随包湖色预设见 [平台视觉参考](references/native-visual-system.md)。
 
