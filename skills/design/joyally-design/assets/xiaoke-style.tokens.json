@@ -1,0 +1,66 @@
+{
+  "name": "Joyally Design 小可风格主题样本",
+  "direction": "xiaoke-style",
+  "theme": "xiaoke-style",
+  "version": "1.2.0",
+  "format": "semantic-value-sample",
+  "seed": {
+    "silverWhite": "#F7F7F6",
+    "graphite": "#242427",
+    "metal": "#C7C8CB",
+    "gold": "#AD8D5B",
+    "ivory": "#F5F1EA"
+  },
+  "semantic": {
+    "light": {
+      "background": "#F7F7F6",
+      "surface": "#FFFFFF",
+      "surfaceStrong": "#FFFFFF",
+      "surfaceMuted": "#EFEFEE",
+      "text": "#242427",
+      "textSecondary": "#5E6065",
+      "textTertiary": "#66686D",
+      "primary": "#242427",
+      "primaryHover": "#414144",
+      "primaryAction": "#242427",
+      "onPrimaryAction": "#FFFFFF",
+      "primaryContainer": "#E9E9E8",
+      "onPrimaryContainer": "#242427",
+      "success": "#28684C",
+      "warning": "#87510D",
+      "error": "#A23842",
+      "info": "#3C556A",
+      "border": "#C7C8CB",
+      "focus": "#8C6A39"
+    },
+    "dark": {
+      "background": "#212223",
+      "surface": "#2C2D2F",
+      "surfaceStrong": "#3A3B3D",
+      "surfaceMuted": "#343537",
+      "text": "#F3F3F4",
+      "textSecondary": "#CACACC",
+      "textTertiary": "#CACACC",
+      "primary": "#E8E8E9",
+      "primaryHover": "#FFFFFF",
+      "primaryAction": "#E8E8E9",
+      "onPrimaryAction": "#212223",
+      "primaryContainer": "#48494C",
+      "onPrimaryContainer": "#F3F3F4",
+      "success": "#8ACCA8",
+      "warning": "#E8BC74",
+      "error": "#F1A4AA",
+      "info": "#AEC3D2",
+      "border": "#6A6C70",
+      "focus": "#D3B88B"
+    }
+  },
+  "component": {
+    "headingWeight": 680,
+    "bodyWeight": 400,
+    "outlineWidth": "1px",
+    "cornerRadius": "16px",
+    "focusWidth": "2px",
+    "texture": "single-editorial-image; translucent-navigation-only; opaque-evidence-surfaces"
+  }
+}
