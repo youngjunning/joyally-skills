@@ -77,6 +77,8 @@ Reader-facing reports, non-engineering proposals, explanatory technical prose, p
 
 For a weekly report intended for a meeting, also load [references/weekly-meeting-report.md](references/weekly-meeting-report.md). Its audience and detail rules apply to the report prose; project evidence and delivery checks remain with the owning workflow.
 
+For a monthly progress report synthesized from weekly updates, also load [references/monthly-report.md](references/monthly-report.md). It covers the report's editorial structure, evidence boundaries, and copy-ready reading flow; the destination product owns its visual and clipboard implementation.
+
 Load [references/logic.md](references/logic.md) for argumentative articles, proposals, analytical reports, causal or predictive claims, contested recommendations, or any request about 逻辑、论证、推理、说服力, or fallacies. Load [references/patterns.md](references/patterns.md) for a thorough AI-flavor audit or when a pattern is hard to classify. Load [references/attribution.md](references/attribution.md) only when provenance matters.
 
 In Blog mode, load [references/blog-writing.md](references/blog-writing.md), [references/publication-value.md](references/publication-value.md), and [references/article-cover.md](references/article-cover.md). Blog writing owns article structure, the product-facing reality gate, publication checks; the publication-value reference blocks concept-only, wrapper-demo, slide-expansion, trend-forcing, and unsupported-impact drafts; the cover reference owns the mandatory article-cover brief, placement, reuse, generation handoff, and acceptance gate.
