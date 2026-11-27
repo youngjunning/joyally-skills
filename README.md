@@ -51,6 +51,7 @@ python3 scripts/link-skills.py --dest ~/.codex/skills
 | 为产品制作或重做整套主题，避免只换配色 | [Joyally 主题制作](skills/design/joyally-theme-creation/SKILL.md) |
 | 写文章、绘本或建设内容站点 | [Joyally Writing](skills/writing/joyally-writing/SKILL.md)、[Joyally Fiction](skills/writing/joyally-fiction/SKILL.md)、[adsense-site-builder](skills/publishing/adsense-site-builder/SKILL.md) |
 | 从 B 站、微信等视频链接或音视频文件提取字幕、时间点与结构化内容 | [Joyally Media](skills/productivity/joyally-media/SKILL.md) |
+| 把复杂解释、比较或决策做成可回看的一页 HTML 回答 | [Joyally Answer Page](skills/productivity/joyally-answer-page/SKILL.md) |
 | 本地整理对话、笔记和资料，不部署也可使用 | [distill-me](https://github.com/youngjunning/distill-me) |
 | 维护硅基紫升与硅基俊宁的资料、项目方案、工作脉络与定向同步 | [distill-zisheng](https://github.com/youngjunning/distill-zisheng) |
 
@@ -102,10 +103,11 @@ Joyally Writing、Joyally Design 和 Joyally image 可分别独立完成写作�
 | 技能 | 用途 |
 | --- | --- |
 | [Joyally Media](skills/productivity/joyally-media/SKILL.md) | B 站、微信等视频链接和音视频文件的字幕、时间线、关键画面与证据化内容提取 |
+| [Joyally Answer Page](skills/productivity/joyally-answer-page/SKILL.md) | 复杂回答的内容结构、证据与一页 HTML 交付，版式复用 Joyally Design |
 | [distill-me](https://github.com/youngjunning/distill-me) | 用零部署本地工作台整理材料与草稿，栏目可自由取舍 |
 | [distill-zisheng](https://github.com/youngjunning/distill-zisheng) | 独立维护硅基紫升与硅基俊宁的资料、项目方案、工作脉络与定向内容同步 |
 
-Joyally Design、Joyally Motion、Joyally Voice、Joyally Music、Joyally 主题制作、Joyally image、Joyally Writing、Joyally Fiction 和 Joyally Media 的安装与调用标识分别为 `joyally-design`、`joyally-motion`、`joyally-voice`、`joyally-music`、`joyally-theme-creation`、`joyally-image`、`joyally-writing`、`joyally-fiction` 和 `joyally-media`。机器可读目录见 [catalog.json](catalog.json)。
+Joyally Design、Joyally Motion、Joyally Voice、Joyally Music、Joyally 主题制作、Joyally image、Joyally Writing、Joyally Fiction、Joyally Media 和 Joyally Answer Page 的安装与调用标识分别为 `joyally-design`、`joyally-motion`、`joyally-voice`、`joyally-music`、`joyally-theme-creation`、`joyally-image`、`joyally-writing`、`joyally-fiction`、`joyally-media` 和 `joyally-answer-page`。机器可读目录见 [catalog.json](catalog.json)。
 
 视频整片制作与质量整改的总入口为 `joyally-video`：按任务选择上述专项与当前可用的HyperFrames能力，先验证组合短样，再交付实际成片；单独配音、作曲或提取内容仍使用原专项。
 

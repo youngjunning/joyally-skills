@@ -10,6 +10,7 @@
 | joyally-fiction | `references/*attribution.md` 保留小说写作与 deslop 参考的归属及使用说明；`story-human-drafting.md` 标注熊叔的茅草屋视频启发并独立改写工作流，未复制其完整提示词 |
 | joyally-writing | [attribution.md](skills/writing/joyally-writing/references/attribution.md) 保留写作规则来源 |
 | joyally-design | [第三方声明](skills/design/joyally-design/THIRD_PARTY_NOTICES.md) 保留演示素材与其他依赖的许可、资产声明及来源版本 |
+| joyally-answer-page | [QingYunA/answer-me-with-html](https://github.com/QingYunA/answer-me-with-html)（MIT）启发了简短内容稿与一页 HTML 回答的分工；本技能独立编写，复用 Joyally Design，不包含上游 CLI、模板或基准测试结论 |
 | joyally-image | [动态与双色 UI 图标流程](skills/design/joyally-image/references/animated-ui-icon.md) 链接 Kubai Icons 官方目录与包；图标数据及 React、Vue、JavaScript、静态 SVG 组件包按 MIT 使用，Kubai Skill、规则、引擎、自检、网站与双色风格说明仍遵循上游独立许可；Joyally 仅独立编写路由和验收契约，不复制或改写上游 Skill 文本 |
 | joyally-motion | [工具能力矩阵](skills/design/joyally-motion/references/tool-matrix.md) 链接 20 个官方项目并记录选型与许可证边界；流程为独立编写，不复制视频稿件、第三方 Skill 或源码 |
 | joyally-voice | [人声工具矩阵](skills/design/joyally-voice/references/tool-matrix.md) 链接官方语音、转换、分离与对齐项目；流程与审查协议为独立编写，不复制上游源码、模型或第三方 Skill |

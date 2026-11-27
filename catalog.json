@@ -106,5 +106,11 @@
     "category": "productivity",
     "path": "skills/productivity/joyally-media",
     "summary": "从 B 站、微信等视频链接或本地音视频提取字幕、时间线、关键画面和带证据边界的结构化内容"
+  },
+  {
+    "name": "joyally-answer-page",
+    "category": "productivity",
+    "path": "skills/productivity/joyally-answer-page",
+    "summary": "把复杂解释、比较或决策整理成可回看的一页 HTML 回答，复用 Joyally Design 静态成品模式"
   }
 ]

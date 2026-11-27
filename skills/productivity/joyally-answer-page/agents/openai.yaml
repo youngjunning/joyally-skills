@@ -1,0 +1,4 @@
+interface:
+  display_name: "Joyally Answer Page"
+  short_description: "把复杂回答制作成可回看的一页 HTML"
+  default_prompt: "Use $joyally-answer-page to answer this question and make a readable one-page HTML artifact."
